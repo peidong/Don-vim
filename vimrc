@@ -28,6 +28,7 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'vim-scripts/promela.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.

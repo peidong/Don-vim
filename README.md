@@ -31,7 +31,14 @@ Keybinding         | Description
 <kbd>:DIstop</kbd> | Stop to draw comment
 <kbd>C-y ,</kbd>   | Emmet-vim
 <kbd>; f l</kbd>   | Open file list.`<CR>`:open,`r`:refresh,`I`:show or show off hidden files,`m`:show functions list
-<kbd>; b l</kbd>   | Show on or show off buffer tabs
+<kbd>; b l</kbd>   | `:MBEToggle<cr>`:Show on or show off buffer tabs,`s`and`v`will show both tabs
+<kbd>; b n</kbd>   | `:MBEbn<cr>`:Jump to next buffer tab
+<kbd>; b p</kbd>   | `:MBEbp<cr>`:Jump to previous buffer tab
+<kbd>; u d</kbd>   | `:GundoToggle<CR>`:Show undo list
+<kbd>; ; f ?</kbd> | Jump to the ? word
+<kbd>v ; ; f ?</kbd>| Select to the ? word
+<kbd>d ; ; f ?</kbd>| Delete to the ? word
+<kbd>y ; ; f ?</kbd>| Copy to the ? word
 
 
 #### Insert Mode
@@ -53,18 +60,3 @@ Keybinding         | Description
     ./install.sh --clang-completer --omnisharp-completer --gocode-completer
 ## Installing on Windows
 Not done
-# General Settings
-# Plugins
-Here are a few of the plugins:
-## mattn/emmet-vim
-## Lokaltog/vim-powerline
-## nathanaelkane/vim-indent-guides
-## vim-scripts/a.vim
-## dyng/ctrlsf.vim
-## scrooloose/nerdcommenter
-## vim-scripts/DrawIt
-## scrooloose/nerdtree
-## fholgado/minibufexpl.vim
-## scrooloose/syntastic
-## sjl/gundo.vim
-## Lokaltog/vim-easymotion

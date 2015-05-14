@@ -45,7 +45,7 @@ Keybinding         | Description
 
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>jj</kbd>      | <ESC> : return to Normal Mode
+<kbd>jj</kbd>      | `<ESC>` : return to Normal Mode
 
 # Installation
 ## Linux, \*nix, Mac OSX Installation

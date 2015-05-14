@@ -112,17 +112,17 @@ nmap <Leader>WQ :wa<CR>:q<CR>
 " 不做任何保存，直接退出 vim
 nmap <Leader>Q :qa!<CR>
 " 依次遍历子窗口
-nnoremap <Leader>nw <C-W><C-W>
+" nnoremap <Leader>nw <C-W><C-W>
 " 跳转至右方的窗口
-nnoremap <Leader>lw <C-W>l
+" nnoremap <Leader>lw <C-W>l
 " 跳转至方的窗口
-nnoremap <Leader>hw <C-W>h
+" nnoremap <Leader>hw <C-W>h
 " 跳转至上方的子窗口
-nnoremap <Leader>kw <C-W>k
+" nnoremap <Leader>kw <C-W>k
 " 跳转至下方的子窗口
-nnoremap <Leader>jw <C-W>j
+" nnoremap <Leader>jw <C-W>j
 " 定义快捷键在结对符之间跳转，助记pair
-nmap <Leader>pa %
+" nmap <Leader>pa %
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

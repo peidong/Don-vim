@@ -1,3 +1,9 @@
+"""""""""""""""""""""""""""""""""""""""""""""
+"                                           "
+" Vundle Plugin 05/13/2015 added by Peidong "
+"                                           "
+"""""""""""""""""""""""""""""""""""""""""""""
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -30,7 +36,13 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" General settings 05/13/2015 added by Peidong "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+"
 set nu
 set smartindent
 " 开启语法高亮功能
@@ -60,13 +72,20 @@ set ruler
 " 开启实时搜索功能
 set incsearch
 " 搜索时大小写不敏感
-" set ignorecase
+set ignorecase
 " vim 自身命令行模式智能补全
 set wildmenu
 " map
 inoremap jj <ESC>
-"""""""""""""""""""""""""""
-"ycm
+" 定义快捷键的前缀，即<Leader>
+let mapleader=";"
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" YCM Settings     05/13/2015 added by Peidong "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
 " YCM 补全菜单配色
 " 菜单
 highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
@@ -88,4 +107,20 @@ let g:ycm_min_num_of_chars_for_completion=1
 " let g:ycm_cache_omnifunc=0
 " 语法关键字补全         
 let g:ycm_seed_identifiers_with_syntax=1
-""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" color            05/13/2015 added by Peidong "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 配色方案
+set t_Co=256
+set background=dark
+"colorscheme solarized
+
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+"colorscheme phd

@@ -42,7 +42,6 @@ Keybinding         | Description
 <kbd>d ; ; f ?</kbd>| Delete to the ? word
 <kbd>y ; ; f ?</kbd>| Copy to the ? word
 
-
 #### Insert Mode
 
 Keybinding         | Description

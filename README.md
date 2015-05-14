@@ -1,11 +1,10 @@
 # Keymap
-<leader> = ;
 #### Normal Mode
 
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd><Leader>WQ</kbd>   | `:wa<CR>:q<CR>`
-<kbd>C-+</kbd>     | Increase font size(`text-scale-increase`).
+<kbd>; W Q</kbd>   | `:wa<CR>:q<CR>` : save all windows' contents and quit all
+<kbd>; Q</kbd>     | `:qa!<CR>` : quit all without saving
 <kbd>C--</kbd>     | Decrease font size(`text-scale-decrease`).
 <kbd>C-x O</kbd>   | Go back to previous window (the inverse of `other-window` (`C-x o`)).
 <kbd>C-^</kbd>     | Join two lines into one(`prelude-top-join-line`).
@@ -78,4 +77,3 @@ Here are a few of the plugins:
 ## scrooloose/syntastic
 ## sjl/gundo.vim
 ## Lokaltog/vim-easymotion
-

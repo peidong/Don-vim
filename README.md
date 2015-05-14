@@ -3,6 +3,8 @@
 
 Keybinding         | Description
 -------------------|------------------------------------------------------------
+<kbd>; q</kbd>     | `:q<CR>` : quit this window
+<kbd>; w</kbd>     | `:w<CR>` : save this window
 <kbd>; W Q</kbd>   | `:wa<CR>:q<CR>` : save all windows' contents and quit all
 <kbd>; Q</kbd>     | `:qa!<CR>` : quit all without saving
 <kbd>C-w C-w</kbd> | Jump to next window

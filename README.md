@@ -59,5 +59,6 @@ Keybinding         | Description
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     cd ~/.vim/bundle/YouCompleteMe
     ./install.sh --clang-completer --omnisharp-completer --gocode-completer
+    mkdir ~/.undo_history/
 ## Installing on Windows
 Not done

@@ -153,6 +153,7 @@ let g:ycm_min_num_of_chars_for_completion=1
 " let g:ycm_cache_omnifunc=0
 " 语法关键字补全         
 let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_filetype_blacklist = {}
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 " 只能是 #include 或已打开的文件
 nnoremap <leader>je :YcmCompleter GoToDefinition<CR>

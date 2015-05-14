@@ -2,7 +2,7 @@ vim settings
 ============
 #This is my vim settings
 
-You need to add This line
+You need to add This lines
 
     git clone https://github.com/peidong/vimrc.git
     mv vimrc .vim

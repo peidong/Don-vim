@@ -5,52 +5,44 @@ Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>; W Q</kbd>   | `:wa<CR>:q<CR>` : save all windows' contents and quit all
 <kbd>; Q</kbd>     | `:qa!<CR>` : quit all without saving
-<kbd>C--</kbd>     | Decrease font size(`text-scale-decrease`).
-<kbd>C-x O</kbd>   | Go back to previous window (the inverse of `other-window` (`C-x o`)).
-<kbd>C-^</kbd>     | Join two lines into one(`prelude-top-join-line`).
-<kbd>C-x p</kbd>   | Start `proced` (manage processes from Emacs; works only in Linux).
-<kbd>C-x m</kbd>   | Start `eshell`.
-<kbd>C-x M-m</kbd> | Start your default shell.
-<kbd>C-x C-m</kbd> | Alias for `M-x`.
-<kbd>M-X</kbd>     | Like `M-x` but limited to commands that are relevant to the active major mode.
-<kbd>C-h A</kbd>   | Run `apropos` (search in all Emacs symbols).
-<kbd>C-h C-m</kbd> | Display key bindings of current major mode and descriptions of every binding.
-<kbd>M-/</kbd>     | Run `hippie-expand` (a replacement for the default `dabbrev-expand`).
-<kbd>C-x C-b</kbd> | Open `ibuffer` (a replacement for the default `buffer-list`).
-<kbd>F11</kbd>     | Make the window full screen.
-<kbd>F12</kbd>     | Toggle the Emacs menu bar.
-<kbd>C-x g</kbd>   | Open Magit's status buffer.
-<kbd>M-Z</kbd>     | Zap up to char.
-<kbd>C-=</kbd>     | Run `expand-region` (incremental text selection).
-<kbd>C-a</kbd>     | Run `prelude-move-beginning-of-line`.
+<kbd>C-w C-w</kbd> | Jump to next window
+<kbd>C-x h</kbd>   | Jump to left window
+<kbd>C-x l</kbd>   | Jump to right window
+<kbd>C-x j</kbd>   | Jump to below window
+<kbd>C-x k</kbd>   | Jump to top window
+<kbd>%</kbd>       | Go to pairing operator
+<kbd>; j d</kbd>   | `:YcmCompleter GoToDeclaration<CR>`
+<kbd>; j e</kbd>   | `:YcmCompleter GoToDefinition<CR>`
+<kbd>; i</kbd>     | Turn on or turn off Indent lines
+<kbd>z a</kbd>     | Turn on or turn off cursor current code foldings
+<kbd>z M</kbd>     | Turn off all code foldings
+<kbd>z R</kbd>     | Turn on all code foldings
+<kbd>; c h</kbd>   | `:A<CR>` : change between *.cpp and *.h
+<kbd>; s c h</kbd> | `:AS<CR>` : change between *.cpp and *.h in sub-window
+<kbd>; s p</kbd>   | `:CtrlSF<CR>`:search the cursor word,`q`:quit,`p`:see details
+<kbd>; R</kbd>     | Replace the cursor word,without confirmation,without whole word
+<kbd>; r w</kbd>   | Replace the cursor word,without confirmation,with whole word
+<kbd>; r c</kbd>   | Replace the cursor word,with confirmation,without whole word
+<kbd>; r c w</kbd> | Replace the cursor word,with confirmation,with whole word
+<kbd>; r w c</kbd> | Replace the cursor word,with confirmation,with whole word
+<kbd>; c c</kbd>   | Comment the context
+<kbd>; c u</kbd>   | Uncomment the context
+<kbd>:DIstart</kbd>| Draw comment
+<kbd>:DIstop</kbd> | Stop to draw comment
+<kbd>C-y ,</kbd>   | Emmet-vim
+<kbd>; f l</kbd>   | Open file list.`<CR>`:open,`r`:refresh,`I`:show or show off hidden files,`m`:show functions list
+<kbd>; b l</kbd>   | Show on or show off buffer tabs
+
 
 #### Insert Mode
 
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>jj</kbd>      | <ESC> : return to Normal Mode
-<kbd>C-+</kbd>     | Increase font size(`text-scale-increase`).
-<kbd>C--</kbd>     | Decrease font size(`text-scale-decrease`).
-<kbd>C-x O</kbd>   | Go back to previous window (the inverse of `other-window` (`C-x o`)).
-<kbd>C-^</kbd>     | Join two lines into one(`prelude-top-join-line`).
-<kbd>C-x p</kbd>   | Start `proced` (manage processes from Emacs; works only in Linux).
-<kbd>C-x m</kbd>   | Start `eshell`.
-<kbd>C-x M-m</kbd> | Start your default shell.
-<kbd>C-x C-m</kbd> | Alias for `M-x`.
-<kbd>M-X</kbd>     | Like `M-x` but limited to commands that are relevant to the active major mode.
-<kbd>C-h A</kbd>   | Run `apropos` (search in all Emacs symbols).
-<kbd>C-h C-m</kbd> | Display key bindings of current major mode and descriptions of every binding.
-<kbd>M-/</kbd>     | Run `hippie-expand` (a replacement for the default `dabbrev-expand`).
-<kbd>C-x C-b</kbd> | Open `ibuffer` (a replacement for the default `buffer-list`).
-<kbd>F11</kbd>     | Make the window full screen.
-<kbd>F12</kbd>     | Toggle the Emacs menu bar.
-<kbd>C-x g</kbd>   | Open Magit's status buffer.
-<kbd>M-Z</kbd>     | Zap up to char.
-<kbd>C-=</kbd>     | Run `expand-region` (incremental text selection).
-<kbd>C-a</kbd>     | Run `prelude-move-beginning-of-line`.
 
 # Installation
 ## Linux, \*nix, Mac OSX Installation
+    sudo apt-get install exuberant-ctags ack-grep git build-essential cmake python-dev
     cd ~
     git clone https://github.com/peidong/vimrc.git
     mv vimrc .vim
@@ -64,7 +56,6 @@ Not done
 # General Settings
 # Plugins
 Here are a few of the plugins:
-## Valloric/YouCompleteMe
 ## mattn/emmet-vim
 ## Lokaltog/vim-powerline
 ## nathanaelkane/vim-indent-guides

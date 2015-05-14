@@ -1,9 +1,7 @@
-vim settings
-============
-#This is my vim settings
-
-You need to add This lines
-
+# Keyboard Bindings
+# Installation
+## Linux, \*nix, Mac OSX Installation
+    cd ~
     git clone https://github.com/peidong/vimrc.git
     mv vimrc .vim
     ln -s ~/.vim/vimrc ~/.vimrc
@@ -11,3 +9,8 @@ You need to add This lines
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     cd ~/.vim/bundle/YouCompleteMe
     ./install.sh --clang-completer --omnisharp-completer --gocode-completer
+## Installing on Windows
+Not done
+# Plugins
+Here are a few of the plugins:
+## [Undotree]

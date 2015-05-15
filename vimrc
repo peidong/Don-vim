@@ -171,12 +171,18 @@ set t_Co=256
 " solarized dark
 "set background=dark
 "let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
 "colorscheme solarized
 
 " solarized light
-set background=light
-let g:solarized_termcolors=256
-colorscheme solarized
+"set background=light
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"colorscheme solarized
 
 " molokai
 "set background=dark
@@ -186,6 +192,9 @@ colorscheme solarized
 
 " phd
 "colorscheme phd
+
+" desert
+colorscheme desert
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

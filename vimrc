@@ -350,4 +350,3 @@ nnoremap <Leader>ud :GundoToggle<CR>
 set undofile
 " undo 历史保存路径
 set undodir=~/.undo_history/
-

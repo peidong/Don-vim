@@ -165,15 +165,26 @@ nnoremap <leader>je :YcmCompleter GoToDefinition<CR>
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-" 配色方案
+" basic color settings
 set t_Co=256
-set background=dark
+
+" solarized dark
+"set background=dark
+"let g:solarized_termcolors=256
 "colorscheme solarized
 
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
+" solarized light
+set background=light
+"let g:solarized_termcolors=256
+colorscheme solarized
 
+" molokai
+"set background=dark
+"let g:molokai_original = 1
+"let g:rehash256 = 1
+"colorscheme molokai
+
+" phd
 "colorscheme phd
 
 """"""""""""""""""""""""""""""""""""""""""""""""

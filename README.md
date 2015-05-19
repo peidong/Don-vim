@@ -41,6 +41,8 @@ Keybinding         | Description
 <kbd>v ; ; f ?</kbd>| Select to the ? word
 <kbd>d ; ; f ?</kbd>| Delete to the ? word
 <kbd>y ; ; f ?</kbd>| Copy to the ? word
+<kbd>:LLPStartPreview</kbd>| Using pdf to preview Latex
+<kbd>] ]</kbd>| Create close envelope
 
 #### Insert Mode
 

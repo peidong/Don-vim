@@ -29,6 +29,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'vim-scripts/promela.vim'
+Plugin 'xuhdev/vim-latex-live-preview'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -341,9 +342,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -359,3 +360,12 @@ nnoremap <Leader>ud :GundoToggle<CR>
 set undofile
 " undo 历史保存路径
 set undodir=~/.undo_history/
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin xuhdev/vim-latex-live-preview         "
+"             05/19/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:livepreview_previewer = 'okular'

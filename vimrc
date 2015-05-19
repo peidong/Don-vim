@@ -30,6 +30,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'vim-scripts/promela.vim'
 Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'lervag/vimtex'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -152,7 +153,7 @@ set completeopt-=preview
 " 从第一个键入字符就开始罗列匹配项
 let g:ycm_min_num_of_chars_for_completion=1
 " 禁止缓存匹配项，每次都重新生成匹配项
-" let g:ycm_cache_omnifunc=0
+let g:ycm_cache_omnifunc=0
 " 语法关键字补全         
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_filetype_blacklist = {}
@@ -336,7 +337,7 @@ map <Leader>bp :MBEbp<cr>
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-let g:syntastic_error_symbol = '✗'
+let g:syntastic_error_symbol = 'x'
 let g:syntastic_warning_symbol = '?'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -369,3 +370,20 @@ set undodir=~/.undo_history/
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 let g:livepreview_previewer = 'okular'
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin lervag/vimtex                         "
+"             05/19/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" make it work with YouCompleteMe
+if !exists('g:ycm_semantic_triggers') 
+    let g:ycm_semantic_triggers = {} 
+endif 
+let g:ycm_semantic_triggers.tex = [ 
+    \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*' 
+    \ ] 
+" This option controls whether to append a closing brace after a label or a citation has been completed. 
+let g:vimtex_complete_close_braces = 1

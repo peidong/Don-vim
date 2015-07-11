@@ -88,6 +88,11 @@ set incsearch
 set ignorecase
 " vim 自身命令行模式智能补全
 set wildmenu
+" 文件在Vim之外修改过，自动重新读入
+set autoread
+" 代码匹配
+set showmatch
+set matchtime=3
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

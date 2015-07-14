@@ -43,6 +43,7 @@ Keybinding         | Description
 <kbd>y ; ; f ?</kbd>| Copy to the ? word
 <kbd>:LLPStartPreview</kbd>| Using pdf to preview Latex
 <kbd>] ]</kbd>| Create close envelope
+<kbd>C-n</kbd>| several times for terryma/vim-multiple-cursors
 
 #### Insert Mode
 

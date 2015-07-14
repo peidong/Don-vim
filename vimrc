@@ -31,6 +31,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'vim-scripts/promela.vim'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'lervag/vimtex'
+Plugin 'terryma/vim-multiple-cursors'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -392,3 +393,11 @@ let g:ycm_semantic_triggers.tex = [
     \ ] 
 " This option controls whether to append a closing brace after a label or a citation has been completed. 
 let g:vimtex_complete_close_braces = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin terryma/vim-multiple-cursors          "
+"             07/14/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+" nothing need to be set

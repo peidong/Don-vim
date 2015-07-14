@@ -32,6 +32,8 @@ Plugin 'vim-scripts/promela.vim'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'lervag/vimtex'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -401,3 +403,18 @@ let g:vimtex_complete_close_braces = 1
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 " nothing need to be set
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin SirVer/ultisnips                      "
+"             07/14/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"

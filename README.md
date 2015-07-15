@@ -67,7 +67,7 @@ Keybinding         | Description
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>; u d</kbd>   | `:GundoToggle<CR>`:Show undo list
-###### Plugin 'Lokaltog/vim-easymotion'
+###### Plugin 'easymotion/vim-easymotion'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>; ; f ?</kbd> | Jump to the ? word

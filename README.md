@@ -44,6 +44,14 @@ Keybinding         | Description
 <kbd>:LLPStartPreview</kbd>| Using pdf to preview Latex
 <kbd>] ]</kbd>| Create close envelope
 <kbd>C-n</kbd>| several times for terryma/vim-multiple-cursors
+##### Plugin 'tpope/vim-surround'
+<kbd>ds</kbd>| delete a surrounding
+<kbd>cs</kbd>| change a surrounding
+<kbd>ys</kbd>| add a surrounding
+<kbd>yS</kbd>| add a surrounding and place the surrounded text on a new line + indent it
+<kbd>yss</kbd>| add a surrounding to the whole line
+<kbd>ySs</kbd>| add a surrounding to the whole line, place it on a new line + indent it
+<kbd>ySS</kbd>| same as ySs
 
 #### Insert Mode
 

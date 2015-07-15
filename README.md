@@ -44,7 +44,9 @@ Keybinding         | Description
 <kbd>:LLPStartPreview</kbd>| Using pdf to preview Latex
 <kbd>] ]</kbd>| Create close envelope
 <kbd>C-n</kbd>| several times for terryma/vim-multiple-cursors
-##### Plugin 'tpope/vim-surround'
+###### Plugin 'tpope/vim-surround'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
 <kbd>ds</kbd>| delete a surrounding
 <kbd>cs</kbd>| change a surrounding
 <kbd>ys</kbd>| add a surrounding

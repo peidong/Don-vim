@@ -116,13 +116,13 @@ let mapleader=";"
 " 设置快捷键将系统剪贴板内容粘贴至 vim
 " nmap <Leader>p "+p
 " 定义快捷键关闭当前分割窗口
-nmap <Leader>q :q<CR>
+"nmap <Leader>q :q<CR>
 " 定义快捷键保存当前窗口内容
-nmap <Leader>w :w<CR>
+"nmap <Leader>w :w<CR>
 " 定义快捷键保存所有窗口内容并退出 vim
-nmap <Leader>WQ :wa<CR>:q<CR>
+"nmap <Leader>WQ :wa<CR>:q<CR>
 " 不做任何保存，直接退出 vim
-nmap <Leader>Q :qa!<CR>
+"nmap <Leader>Q :qa!<CR>
 " 依次遍历子窗口
 " nnoremap <Leader>nw <C-W><C-W>
 " 跳转至右方的窗口

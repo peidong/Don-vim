@@ -61,6 +61,7 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 set nu
+set relativenumber
 set smartindent
 " 开启语法高亮功能
 syntax enable

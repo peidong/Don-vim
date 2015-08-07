@@ -35,6 +35,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
+Plugin 'rizzatti/dash.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.

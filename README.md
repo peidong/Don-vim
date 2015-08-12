@@ -3,10 +3,10 @@
 ###### General Keymap
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<!--<kbd>; q</kbd>     | `:q<CR>` : quit this window-->
-<!--<kbd>; w</kbd>     | `:w<CR>` : save this window-->
-<!--<kbd>; W Q</kbd>   | `:wa<CR>:q<CR>` : save all windows' contents and quit all-->
-<!--<kbd>; Q</kbd>     | `:qa!<CR>` : quit all without saving-->
+<!--<kbd>; q</kbd>     | `:q<CR>` : quit this window
+<kbd>; w</kbd>     | `:w<CR>` : save this window
+<kbd>; W Q</kbd>   | `:wa<CR>:q<CR>` : save all windows' contents and quit all
+<kbd>; Q</kbd>     | `:qa!<CR>` : quit all without saving-->
 <kbd>C-w C-w</kbd> | Jump to next window
 <kbd>C-x h</kbd>   | Jump to left window
 <kbd>C-x l</kbd>   | Jump to right window

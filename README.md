@@ -101,13 +101,15 @@ Keybinding         | Description
 
 # Installation
 ## Linux, \*nix, Mac OSX Installation
-    sudo apt-get install exuberant-ctags ack-grep git build-essential cmake python-dev
+    sudo apt-get install aptitude
+    sudo aptitude install exuberant-ctags ack-grep git build-essential cmake python-dev
     cd ~
     git clone https://github.com/peidong/vimrc.git
     mv vimrc .vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+Then vim, and :PluginInstall
     cd ~/.vim/bundle/YouCompleteMe
     ./install.sh --clang-completer --omnisharp-completer --gocode-completer
     mkdir ~/.undo_history/

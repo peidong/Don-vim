@@ -112,7 +112,7 @@ Keybinding         | Description
 Then vim, and :PluginInstall
 
     cd ~/.vim/bundle/YouCompleteMe
-    ./install.sh --clang-completer --omnisharp-completer --gocode-completer
+    ./install.py --clang-completer --omnisharp-completer --gocode-completer
     mkdir ~/.undo_history/
 ## Installing on Windows
 Not done

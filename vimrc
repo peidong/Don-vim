@@ -36,6 +36,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'rizzatti/dash.vim'
+Plugin 'MikeCoder/markdown-preview.vim'
+Plugin 'airblade/vim-gitgutter'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -422,3 +424,12 @@ let g:vimtex_complete_close_braces = 1
 
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin MikeCoder/markdown-preview.vim        "
+"             11/07/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <leader>m :MarkdownPreview GitHub<CR>

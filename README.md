@@ -92,6 +92,10 @@ Keybinding         | Description
 <kbd>yss</kbd>| add a surrounding to the whole line
 <kbd>ySs</kbd>| add a surrounding to the whole line, place it on a new line + indent it
 <kbd>ySS</kbd>| same as ySs
+###### Plugin 'MikeCoder/markdown-preview.vim'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>; m</kbd>| Markdown Preview in Github format
 
 #### Insert Mode
 

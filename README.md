@@ -96,6 +96,11 @@ Keybinding         | Description
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>; m</kbd>| Markdown Preview in Github format
+###### Plugin 'dyng/ctrlsf.vim'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>p</kbd>| Preview
+<kbd>q</kbd>| Quit search mode
 
 #### Insert Mode
 

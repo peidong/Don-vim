@@ -81,7 +81,7 @@ set shiftwidth=4
 set softtabstop=4
 " 高亮显示当前行/列
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 " 高亮显示搜索结果
 set hlsearch
 " 总是显示状态栏

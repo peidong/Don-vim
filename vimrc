@@ -40,6 +40,7 @@ Plugin 'MikeCoder/markdown-preview.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'Raimondi/delimitMate'
+Plugin 'szw/vim-ctrlspace'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -435,3 +436,12 @@ let g:vimtex_complete_close_braces = 1
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 map <leader>m :MarkdownPreview GitHub<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin vim-ctrlspace                         "
+"             11/12/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+set hidden

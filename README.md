@@ -52,6 +52,18 @@ Keybinding         | Description
 ###### Plugin 'scrooloose/nerdtree'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
+<kbd>x</kbd>   | close the tree
+<kbd>X</kbd>   | close the tree(recursive)
+<kbd>r</kbd>   | refresh the tree
+<kbd>R</kbd>   | refresh the tree(recursive)
+<kbd>p</kbd>   | jump to the parent
+<kbd>P</kbd>   | jump to the parent(root)
+<kbd>j(k)</kbd>   | down(up)
+<kbd>K(J)</kbd>   | big down(up)
+<kbd>o</kbd>   | open
+<kbd>i(s)</kbd>   | split up/down(left/right)
+<kbd>c</kbd>   | change to root
+<kbd>q</kbd>   | close
 ###### Plugin 'fholgado/minibufexpl.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -67,6 +79,9 @@ Keybinding         | Description
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>; ; f ?</kbd> | Jump to the ? word
+<kbd>; ; j(k)</kbd> | Jump to the next(below) lines
+<kbd>; ; w(e)</kbd> | Jump to the words begining(end)
+<kbd>; ; .</kbd> | repeat jump
 <kbd>v ; ; f ?</kbd>| Select to the ? word
 <kbd>d ; ; f ?</kbd>| Delete to the ? word
 <kbd>y ; ; f ?</kbd>| Copy to the ? word
@@ -101,6 +116,15 @@ Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>p</kbd>| Preview
 <kbd>q</kbd>| Quit search mode
+###### Plugin 'vim-ctrlspace'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>C-<space></kbd>| show tab buffers
+<kbd>j(k)</kbd>| down(up)
+<kbd><return></kbd>| open file
+<kbd>v(V)</kbd>| vertical split open (cursor in ctrlspace)
+<kbd>s(S)</kbd>| split open (cursor in ctrlspace)
+<kbd><ESC>/q</kbd>| close
 
 #### Insert Mode
 

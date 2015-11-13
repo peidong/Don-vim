@@ -119,12 +119,12 @@ Keybinding         | Description
 ###### Plugin 'vim-ctrlspace'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>C-<space></kbd>| show tab buffers
+<kbd>C-space</kbd>| show tab buffers
 <kbd>j(k)</kbd>| down(up)
-<kbd><return></kbd>| open file
+<kbd>return</kbd>| open file
 <kbd>v(V)</kbd>| vertical split open (cursor in ctrlspace)
 <kbd>s(S)</kbd>| split open (cursor in ctrlspace)
-<kbd><ESC>/q</kbd>| close
+<kbd>ESC/q</kbd>| close
 
 #### Insert Mode
 

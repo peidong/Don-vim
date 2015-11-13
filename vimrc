@@ -39,6 +39,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'MikeCoder/markdown-preview.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'Raimondi/delimitMate'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.

@@ -17,7 +17,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'powerline/powerline'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-scripts/a.vim'
 Plugin 'dyng/ctrlsf.vim'

@@ -44,6 +44,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'szw/vim-ctrlspace'
 Plugin 'docunext/closetag.vim'
 Plugin 'tpope/vim-repeat'
+Plugin 'svermeulen/vim-easyclip'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.

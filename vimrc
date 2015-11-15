@@ -116,7 +116,8 @@ set matchtime=3
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-inoremap jj <ESC>
+inoremap jj <ESC>l
+inoremap kk <ESC>:w<CR>li
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
 " 定义快捷键到行首和行尾

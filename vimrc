@@ -419,9 +419,9 @@ let g:vimtex_complete_close_braces = 1
 "             07/14/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_next_key='<S-n>'
-let g:multi_cursor_prev_key='<S-p>'
-let g:multi_cursor_skip_key='<S-x>'
+let g:multi_cursor_next_key='<S-x>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""

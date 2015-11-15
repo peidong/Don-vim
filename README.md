@@ -9,37 +9,37 @@ Keybinding         | Description
 <kbd>C-x j</kbd>   | Jump to below window
 <kbd>C-x k</kbd>   | Jump to top window
 <kbd>%</kbd>       | Go to pairing operator
-<kbd>; R</kbd>     | Replace the cursor word,without confirmation,without whole word
-<kbd>; r w</kbd>   | Replace the cursor word,without confirmation,with whole word
-<kbd>; r c</kbd>   | Replace the cursor word,with confirmation,without whole word
-<kbd>; r c w</kbd> | Replace the cursor word,with confirmation,with whole word
-<kbd>; r w c</kbd> | Replace the cursor word,with confirmation,with whole word
+<kbd>leader R</kbd>     | Replace the cursor word,without confirmation,without whole word
+<kbd>leader r w</kbd>   | Replace the cursor word,without confirmation,with whole word
+<kbd>leader r c</kbd>   | Replace the cursor word,with confirmation,without whole word
+<kbd>leader r c w</kbd> | Replace the cursor word,with confirmation,with whole word
+<kbd>leader r w c</kbd> | Replace the cursor word,with confirmation,with whole word
 ###### Plugin 'Valloric/YouCompleteMe'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>; j d</kbd>   | `:YcmCompleter GoToDeclaration<CR>`
-<kbd>; j e</kbd>   | `:YcmCompleter GoToDefinition<CR>`
+<kbd>leader j d</kbd>   | `:YcmCompleter GoToDeclaration<CR>`
+<kbd>leader j e</kbd>   | `:YcmCompleter GoToDefinition<CR>`
 ###### Plugin 'nathanaelkane/vim-indent-guides'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>; i</kbd>     | Turn on or turn off Indent lines
+<kbd>leader i</kbd>     | Turn on or turn off Indent lines
 <kbd>z a</kbd>     | Turn on or turn off cursor current code foldings
 <kbd>z M</kbd>     | Turn off all code foldings
 <kbd>z R</kbd>     | Turn on all code foldings
 ###### Plugin 'vim-scripts/a.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>; c h</kbd>   | `:A<CR>` : change between *.cpp and *.h
-<kbd>; s c h</kbd> | `:AS<CR>` : change between *.cpp and *.h in sub-window
+<kbd>leader c h</kbd>   | `:A<CR>` : change between *.cpp and *.h
+<kbd>leader s c h</kbd> | `:AS<CR>` : change between *.cpp and *.h in sub-window
 ###### Plugin 'dyng/ctrlsf.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>; s p</kbd>   | `:CtrlSF<CR>`:search the cursor word,`q`:quit,`p`:see details
+<kbd>leader s p</kbd>   | `:CtrlSF<CR>`:search the cursor word,`q`:quit,`p`:see details
 ###### Plugin 'scrooloose/nerdcommenter'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>; c c</kbd>   | Comment the context
-<kbd>; c u</kbd>   | Uncomment the context
+<kbd>leader c c</kbd>   | Comment the context
+<kbd>leader c u</kbd>   | Uncomment the context
 ###### Plugin 'vim-scripts/DrawIt'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -67,24 +67,24 @@ Keybinding         | Description
 ###### Plugin 'fholgado/minibufexpl.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>; f l</kbd>   | Open file list.`<CR>`:open,`r`:refresh,`I`:show or show off hidden files,`m`:show functions list
-<kbd>; b l</kbd>   | `:MBEToggle<cr>`:Show on or show off buffer tabs,`s`and`v`will show both tabs
-<kbd>; b n</kbd>   | `:MBEbn<cr>`:Jump to next buffer tab
-<kbd>; b p</kbd>   | `:MBEbp<cr>`:Jump to previous buffer tab
+<kbd>leader f l</kbd>   | Open file list.`<CR>`:open,`r`:refresh,`I`:show or show off hidden files,`m`:show functions list
+<kbd>leader b l</kbd>   | `:MBEToggle<cr>`:Show on or show off buffer tabs,`s`and`v`will show both tabs
+<kbd>leader b n</kbd>   | `:MBEbn<cr>`:Jump to next buffer tab
+<kbd>leader b p</kbd>   | `:MBEbp<cr>`:Jump to previous buffer tab
 ###### Plugin 'sjl/gundo.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>; u d</kbd>   | `:GundoToggle<CR>`:Show undo list
+<kbd>leader u d</kbd>   | `:GundoToggle<CR>`:Show undo list
 ###### Plugin 'easymotion/vim-easymotion'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>; ; f ?</kbd> | Jump to the ? word
-<kbd>; ; j(k)</kbd> | Jump to the next(below) lines
-<kbd>; ; w(e)</kbd> | Jump to the words begining(end)
-<kbd>; ; .</kbd> | repeat jump
-<kbd>v ; ; f ?</kbd>| Select to the ? word
-<kbd>d ; ; f ?</kbd>| Delete to the ? word
-<kbd>y ; ; f ?</kbd>| Copy to the ? word
+<kbd>leader leader f ?</kbd> | Jump to the ? word
+<kbd>leader leader j(k)</kbd> | Jump to the next(below) lines
+<kbd>leader leader w(e)</kbd> | Jump to the words begining(end)
+<kbd>leader leader .</kbd> | repeat jump
+<kbd>v leader leader f ?</kbd>| Select to the ? word
+<kbd>d leader leader f ?</kbd>| Delete to the ? word
+<kbd>y leader leader f ?</kbd>| Copy to the ? word
 ###### Plugin 'xuhdev/vim-latex-live-preview'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -96,7 +96,9 @@ Keybinding         | Description
 ###### Plugin 'terryma/vim-multiple-cursors'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>C-n</kbd>| several times for terryma/vim-multiple-cursors
+<kbd>S-n</kbd>| search the next word
+<kbd>S-p</kbd>| search the previous word
+<kbd>S-x</kbd>| search skip
 ###### Plugin 'tpope/vim-surround'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -110,7 +112,7 @@ Keybinding         | Description
 ###### Plugin 'MikeCoder/markdown-preview.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>; m</kbd>| Markdown Preview in Github format
+<kbd>leader m</kbd>| Markdown Preview in Github format
 ###### Plugin 'dyng/ctrlsf.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -125,6 +127,14 @@ Keybinding         | Description
 <kbd>v(V)</kbd>| vertical split open (cursor in ctrlspace)
 <kbd>s(S)</kbd>| split open (cursor in ctrlspace)
 <kbd>ESC/q</kbd>| close
+###### Plugin 'svermeulen/vim-easyclip'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>gp(P)</kbd>| Same as p(P) but preserves the current cursor position
+<kbd>m motion</kbd>| Delete over the given motion and copy text to clipboard
+<kbd>leader p</kbd>| Same as p except does not auto-format text. This is only relevant if the auto-format option is enabled
+<kbd>C-p(n)</kbd>| Rotate the previous paste forward(backward) in yank buffer. Note that this binding will only work if executed immediately after a paste
+<kbd>s motion</kbd>| Substitute over the given motion with specified register (or default register if unspecified)
 
 #### Insert Mode
 

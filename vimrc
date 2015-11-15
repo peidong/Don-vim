@@ -418,7 +418,10 @@ let g:vimtex_complete_close_braces = 1
 "             07/14/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
-" nothing need to be set
+let g:multi_cursor_next_key='<S-n>'
+let g:multi_cursor_prev_key='<S-p>'
+let g:multi_cursor_skip_key='<S-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -452,3 +455,14 @@ map <leader>m :MarkdownPreview GitHub<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 set hidden
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin svermeulen/vim-easyclip               "
+"             11/14/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:EasyClipUseSubstituteDefaults = 1
+let g:EasyClipAutoFormat = 1
+let g:EasyClipShareYanks = 1

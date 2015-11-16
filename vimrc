@@ -1,67 +1,69 @@
 """""""""""""""""""""""""""""""""""""""""""""
 "                                           "
-" Vundle Plugin 05/13/2015 added by Peidong "
+" Neobundle 11/16/2015 added by Peidong     "
 "                                           "
 """""""""""""""""""""""""""""""""""""""""""""
+" Note: Skip initialization for vim-tiny or vim-small.
+ if 0 | endif
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+ if has('vim_starting')
+   if &compatible
+     set nocompatible               " Be iMproved
+   endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+   " Required:
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+ endif
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'mattn/emmet-vim'
-"Plugin 'powerline/powerline'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vim-scripts/a.vim'
-Plugin 'dyng/ctrlsf.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-scripts/DrawIt'
-Plugin 'scrooloose/nerdtree'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'sjl/gundo.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'vim-scripts/promela.vim'
-Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'lervag/vimtex'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-surround'
-Plugin 'rizzatti/dash.vim'
-Plugin 'MikeCoder/markdown-preview.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'Raimondi/delimitMate'
-Plugin 'szw/vim-ctrlspace'
-Plugin 'docunext/closetag.vim'
-Plugin 'tpope/vim-repeat'
-Plugin 'svermeulen/vim-easyclip'
+ " Required:
+ call neobundle#begin(expand('~/.vim/bundle/'))
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
+ " Let NeoBundle manage NeoBundle
+ " Required:
+ NeoBundleFetch 'Shougo/neobundle.vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+ " My Bundles here:
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'dyng/ctrlsf.vim'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'vim-scripts/DrawIt'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'fholgado/minibufexpl.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'easymotion/vim-easymotion'
+NeoBundle 'vim-scripts/promela.vim'
+NeoBundle 'xuhdev/vim-latex-live-preview'
+NeoBundle 'lervag/vimtex'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'MikeCoder/markdown-preview.vim'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'ntpeters/vim-better-whitespace'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'szw/vim-ctrlspace'
+NeoBundle 'docunext/closetag.vim'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'svermeulen/vim-easyclip'
+ " Refer to |:NeoBundle-examples|.
+ " Note: You don't set neobundle setting in .gvimrc!
+
+ call neobundle#end()
+
+ " Required:
+ filetype plugin indent on
+
+ " If there are uninstalled bundles found on startup,
+ " this will conveniently prompt you to install them.
+ NeoBundleCheck
+
 " Put your non-Plugin stuff after this line
 
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -227,7 +229,18 @@ colorscheme desert
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 " 设置状态栏主题风格
-let g:Powerline_colorscheme='solarized256'
+"let g:Powerline_colorscheme='solarized256'
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin bling/vim-airline                     "
+"             11/16/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

@@ -52,6 +52,7 @@ Keybinding         | Description
 ###### Plugin 'scrooloose/nerdtree'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
+<kbd>leader f l</kbd>   | Open file list.`<CR>`:open,`r`:refresh,`I`:show or show off hidden files,`m`:show functions list
 <kbd>x</kbd>   | close the tree
 <kbd>X</kbd>   | close the tree(recursive)
 <kbd>r</kbd>   | refresh the tree
@@ -67,7 +68,6 @@ Keybinding         | Description
 ###### Plugin 'fholgado/minibufexpl.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>leader f l</kbd>   | Open file list.`<CR>`:open,`r`:refresh,`I`:show or show off hidden files,`m`:show functions list
 <kbd>leader b l</kbd>   | `:MBEToggle<cr>`:Show on or show off buffer tabs,`s`and`v`will show both tabs
 <kbd>leader b n</kbd>   | `:MBEbn<cr>`:Jump to next buffer tab
 <kbd>leader b p</kbd>   | `:MBEbp<cr>`:Jump to previous buffer tab

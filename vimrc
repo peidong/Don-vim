@@ -177,12 +177,12 @@ set completeopt-=preview
 let g:ycm_min_num_of_chars_for_completion=1
 " 禁止缓存匹配项，每次都重新生成匹配项
 let g:ycm_cache_omnifunc=0
-" 语法关键字补全         
+" 语法关键字补全
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_filetype_blacklist = {}
-nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>cjd :YcmCompleter GoToDeclaration<CR>
 " 只能是 #include 或已打开的文件
-nnoremap <leader>je :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>cje :YcmCompleter GoToDefinition<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -256,7 +256,7 @@ let g:indent_guides_start_level=2
 " 色块宽度
 let g:indent_guides_guide_size=1
 " 快捷键 i 开/关缩进可视化
-:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+:nmap <silent> <Leader>ci <Plug>IndentGuidesToggle
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -281,7 +281,7 @@ set nofoldenable
 " *.cpp 和 *.h 间切换
 nmap <Leader>ch :A<CR>
 " 子窗口中显示 *.cpp 或 *.h
-nmap <Leader>sch :AS<CR>
+nmap <Leader>csh :AS<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -291,7 +291,7 @@ nmap <Leader>sch :AS<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
-nnoremap <Leader>sp :CtrlSF<CR>
+nnoremap <Leader>rt :CtrlSF<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -322,7 +322,7 @@ function! Replace(confirm, wholeword, replace)
     execute 'argdo %s/' . search . '/' . replace . '/' . flag . '| update'
 endfunction
 " 不确认、非整词
-nnoremap <Leader>R :call Replace(0, 0, input('Replace '.expand('<cword>').' with: '))<CR>
+nnoremap <Leader>rr :call Replace(0, 0, input('Replace '.expand('<cword>').' with: '))<CR>
 " 不确认、整词
 nnoremap <Leader>rw :call Replace(0, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 " 确认、非整词
@@ -339,7 +339,7 @@ nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' wi
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
-nmap <Leader>fl :NERDTreeToggle<CR>
+nmap <Leader>bf :NERDTreeToggle<CR>
 " 设置NERDTree子窗口宽度
 let NERDTreeWinSize=32
 " 设置NERDTree子窗口位置
@@ -394,7 +394,7 @@ let g:syntastic_loc_list_height = 4
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 " 调用 gundo 树
-nnoremap <Leader>ud :GundoToggle<CR>
+nnoremap <Leader>bu :GundoToggle<CR>
 " 开启保存 undo 历史功能
 set undofile
 " undo 历史保存路径
@@ -459,7 +459,7 @@ let g:multi_cursor_quit_key='<Esc>'
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-map <leader>m :MarkdownPreview GitHub<CR>
+map <leader>bm :MarkdownPreview GitHub<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -482,5 +482,5 @@ let g:EasyClipAutoFormat = 1
 "let g:EasyClipShareYanks = 1
 
 let g:EasyClipUsePasteToggleDefaults = 0
-nmap <leader>en <plug>EasyClipSwapPasteForward
-nmap <leader>ep <plug>EasyClipSwapPasteBackwards
+nmap <leader>rn <plug>EasyClipSwapPasteForward
+nmap <leader>rp <plug>EasyClipSwapPasteBackwards

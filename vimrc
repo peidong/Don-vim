@@ -34,7 +34,7 @@ NeoBundle 'vim-scripts/DrawIt'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'sjl/gundo.vim'
+NeoBundle 'mbbill/undotree'
 NeoBundle 'easymotion/vim-easymotion'
 NeoBundle 'vim-scripts/promela.vim'
 NeoBundle 'xuhdev/vim-latex-live-preview'
@@ -388,17 +388,17 @@ let g:syntastic_loc_list_height = 4
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Plugin sjl/gundo.vim                         "
-"             05/13/2015 added by Peidong      "
+" Plugin mbbill/undotree                       "
+"             11/16/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-" 调用 gundo 树
-nnoremap <Leader>bu :GundoToggle<CR>
-" 开启保存 undo 历史功能
-set undofile
-" undo 历史保存路径
-set undodir=~/.undo_history/
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
+
+nnoremap <Leader>bu :UndotreeToggle<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -482,5 +482,5 @@ let g:EasyClipAutoFormat = 1
 "let g:EasyClipShareYanks = 1
 
 let g:EasyClipUsePasteToggleDefaults = 0
-nmap <leader>rn <plug>EasyClipSwapPasteForward
-nmap <leader>rp <plug>EasyClipSwapPasteBackwards
+nmap <Leader>rn <plug>EasyClipSwapPasteForward
+nmap <Leader>rp <plug>EasyClipSwapPasteBackwards

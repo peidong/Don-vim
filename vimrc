@@ -53,6 +53,7 @@ NeoBundle 'docunext/closetag.vim'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'svermeulen/vim-easyclip'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'NLKNguyen/papercolor-theme'
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
 
@@ -223,7 +224,12 @@ set t_Co=256
 "colorscheme desert
 
 " khaki
-colorscheme khaki
+"colorscheme khaki
+
+" NLKNguyen/papercolor-theme
+set background=light
+"set background=dark
+colorscheme PaperColor
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

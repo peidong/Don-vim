@@ -141,6 +141,7 @@ Keybinding         | Description
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>jj</kbd>      | `<ESC>` : return to Normal Mode
+<kbd>kk</kbd>      | save the file and go back to insert mode
 
 # Installation
 ## Linux, \*nix, Mac OSX Installation
@@ -151,8 +152,10 @@ Keybinding         | Description
     mv vimrc .vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-Then vim, and :PluginInstall
+    mkdir -p ~/.vim/bundle
+    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
+Then vim, and `:NeoBundleInstall`
 
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --clang-completer --omnisharp-completer --gocode-completer

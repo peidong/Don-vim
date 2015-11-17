@@ -52,6 +52,7 @@ NeoBundle 'szw/vim-ctrlspace'
 NeoBundle 'docunext/closetag.vim'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'svermeulen/vim-easyclip'
+NeoBundle 'kien/ctrlp.vim'
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
 

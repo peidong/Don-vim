@@ -135,6 +135,12 @@ Keybinding         | Description
 <kbd>`<leader>` p</kbd>| Same as p except does not auto-format text. This is only relevant if the auto-format option is enabled
 <kbd>`<leader>`r p(n)</kbd>| Rotate the previous paste forward(backward) in yank buffer. Note that this binding will only work if executed immediately after a paste
 <kbd>s`<motion>`</kbd>| Substitute over the given motion with specified register (or default register if unspecified)
+###### Plugin 'kien/ctrlp.vim'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>C-p</kbd>| invoke CtrlP in find file mode
+<kbd>C-j(k)</kbd>| navigate the result list
+<kbd>`Enter`</kbd>| open the file
 
 #### Insert Mode
 

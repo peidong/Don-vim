@@ -220,7 +220,10 @@ set t_Co=256
 "colorscheme phd
 
 " desert
-colorscheme desert
+"colorscheme desert
+
+" khaki
+colorscheme khaki
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

@@ -68,9 +68,9 @@ Keybinding         | Description
 ###### Plugin 'fholgado/minibufexpl.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>`<leader>` b l</kbd>   | `:MBEToggle<cr>`:Show on or show off buffer tabs,`s`and`v`will show both tabs
-<kbd>`<leader>` b n</kbd>   | `:MBEbn<cr>`:Jump to next buffer tab
-<kbd>`<leader>` b p</kbd>   | `:MBEbp<cr>`:Jump to previous buffer tab
+<kbd>`<leader>`b l</kbd>   | `:MBEToggle<cr>`:Show on or show off buffer tabs,`s`and`v`will show both tabs
+<kbd>`<leader>`b n</kbd>   | `:MBEbn<cr>`:Jump to next buffer tab
+<kbd>`<leader>`b p</kbd>   | `:MBEbp<cr>`:Jump to previous buffer tab
 ###### Plugin 'sjl/gundo.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------

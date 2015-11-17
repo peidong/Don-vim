@@ -96,9 +96,9 @@ Keybinding         | Description
 ###### Plugin 'terryma/vim-multiple-cursors'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>S-n</kbd>| search the next word
-<kbd>S-p</kbd>| search the previous word
-<kbd>S-x</kbd>| search skip
+<kbd>C-n</kbd>| search the next word
+<kbd>C-p</kbd>| search the previous word
+<kbd>C-x</kbd>| search skip
 ###### Plugin 'tpope/vim-surround'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -133,7 +133,7 @@ Keybinding         | Description
 <kbd>gp(P)</kbd>| Same as p(P) but preserves the current cursor position
 <kbd>m`<motion>`</kbd>| Delete over the given motion and copy text to clipboard
 <kbd>`<leader>` p</kbd>| Same as p except does not auto-format text. This is only relevant if the auto-format option is enabled
-<kbd>C-p(n)</kbd>| Rotate the previous paste forward(backward) in yank buffer. Note that this binding will only work if executed immediately after a paste
+<kbd>`<leader>`e p(n)</kbd>| Rotate the previous paste forward(backward) in yank buffer. Note that this binding will only work if executed immediately after a paste
 <kbd>s`<motion>`</kbd>| Substitute over the given motion with specified register (or default register if unspecified)
 
 #### Insert Mode

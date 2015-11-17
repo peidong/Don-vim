@@ -432,7 +432,7 @@ let g:vimtex_complete_close_braces = 1
 "             07/14/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_next_key='<S-x>'
+let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
@@ -479,4 +479,8 @@ set hidden
 
 let g:EasyClipUseSubstituteDefaults = 1
 let g:EasyClipAutoFormat = 1
-let g:EasyClipShareYanks = 1
+"let g:EasyClipShareYanks = 1
+
+let g:EasyClipUsePasteToggleDefaults = 0
+nmap <leader>en <plug>EasyClipSwapPasteForward
+nmap <leader>ep <plug>EasyClipSwapPasteBackwards

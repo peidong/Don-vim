@@ -104,7 +104,7 @@ Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>ds</kbd>| delete a surrounding
 <kbd>cs</kbd>| change a surrounding
-<kbd>ys</kbd>| add a surrounding
+<kbd>ys`<motion>`</kbd>| add a surrounding
 <kbd>yS</kbd>| add a surrounding and place the surrounded text on a new line + indent it
 <kbd>yss</kbd>| add a surrounding to the whole line
 <kbd>ySs</kbd>| add a surrounding to the whole line, place it on a new line + indent it
@@ -121,20 +121,20 @@ Keybinding         | Description
 ###### Plugin 'vim-ctrlspace'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>C-space</kbd>| show tab buffers
+<kbd>C-`<space>`</kbd>| show tab buffers
 <kbd>j(k)</kbd>| down(up)
-<kbd>return</kbd>| open file
+<kbd>`<return>`</kbd>| open file
 <kbd>v(V)</kbd>| vertical split open (cursor in ctrlspace)
 <kbd>s(S)</kbd>| split open (cursor in ctrlspace)
-<kbd>ESC/q</kbd>| close
+<kbd>`<ESC>`/q</kbd>| close
 ###### Plugin 'svermeulen/vim-easyclip'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>gp(P)</kbd>| Same as p(P) but preserves the current cursor position
-<kbd>m motion</kbd>| Delete over the given motion and copy text to clipboard
+<kbd>m`<motion>`</kbd>| Delete over the given motion and copy text to clipboard
 <kbd>leader p</kbd>| Same as p except does not auto-format text. This is only relevant if the auto-format option is enabled
 <kbd>C-p(n)</kbd>| Rotate the previous paste forward(backward) in yank buffer. Note that this binding will only work if executed immediately after a paste
-<kbd>s motion</kbd>| Substitute over the given motion with specified register (or default register if unspecified)
+<kbd>s`<motion>`</kbd>| Substitute over the given motion with specified register (or default register if unspecified)
 
 #### Insert Mode
 

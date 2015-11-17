@@ -78,13 +78,13 @@ Keybinding         | Description
 ###### Plugin 'easymotion/vim-easymotion'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>`<leader>`` `<leader>`` f ?</kbd> | Jump to the ? word
-<kbd>`<leader>`` `<leader>`` j(k)</kbd> | Jump to the next(below) lines
-<kbd>`<leader>`` `<leader>`` w(e)</kbd> | Jump to the words begining(end)
-<kbd>`<leader>`` `<leader>`` .</kbd> | repeat jump
-<kbd>v `<leader>`` `<leader>`` f ?</kbd>| Select to the ? word
-<kbd>d `<leader>`` `<leader>`` f ?</kbd>| Delete to the ? word
-<kbd>y `<leader>`` `<leader>`` f ?</kbd>| Copy to the ? word
+<kbd>`<leader>` `<leader>` f ?</kbd> | Jump to the ? word
+<kbd>`<leader>` `<leader>` j(k)</kbd> | Jump to the next(below) lines
+<kbd>`<leader>` `<leader>` w(e)</kbd> | Jump to the words begining(end)
+<kbd>`<leader>` `<leader>` .</kbd> | repeat jump
+<kbd>v `<leader>` `<leader>` f ?</kbd>| Select to the ? word
+<kbd>d `<leader>` `<leader>` f ?</kbd>| Delete to the ? word
+<kbd>y `<leader>` `<leader>` f ?</kbd>| Copy to the ? word
 ###### Plugin 'xuhdev/vim-latex-live-preview'
 Keybinding         | Description
 -------------------|------------------------------------------------------------

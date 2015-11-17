@@ -165,6 +165,6 @@ Then vim, and `:NeoBundleInstall`
 
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --clang-completer --omnisharp-completer --gocode-completer
-    mkdir ~/.undo_history/
+    mkdir ~/.undodir/
 ## Installing on Windows
 Not done

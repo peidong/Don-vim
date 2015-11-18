@@ -23,8 +23,10 @@
  NeoBundleFetch 'Shougo/neobundle.vim'
 
  " My Bundles here:
-NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'mattn/emmet-vim'
+ " pure vimscript plugins:
+ NeoBundle 'mattn/emmet-vim'
+ " other code plugins:
+ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'vim-scripts/a.vim'

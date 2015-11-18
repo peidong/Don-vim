@@ -264,6 +264,169 @@ nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' wi
 "                                              ""                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin bling/vim-airline                     "
+"             11/16/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin nathanaelkane/vim-indent-guides       "
+"             05/13/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>ci <Plug>IndentGuidesToggle
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin vim-scripts/a.vim                     "
+"             05/13/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" *.cpp 和 *.h 间切换
+nmap <Leader>ch :A<CR>
+" 子窗口中显示 *.cpp 或 *.h
+nmap <Leader>csh :AS<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin scrooloose/nerdtree                   "
+"             05/13/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+nmap <Leader>bf :NERDTreeToggle<CR>
+" 设置NERDTree子窗口宽度
+let NERDTreeWinSize=32
+" 设置NERDTree子窗口位置
+let NERDTreeWinPos="left"
+" 显示隐藏文件
+let NERDTreeShowHidden=1
+" NERDTree 子窗口中不显示冗余帮助信息
+let NERDTreeMinimalUI=1
+" 删除文件时自动删除文件对应 buffer
+let NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeDirArrows = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin fholgado/minibufexpl.vim              "
+"             05/13/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 显示/隐藏 MiniBufExplorer 窗口
+map <Leader>bl :MBEToggle<cr>
+" buffer 切换快捷键
+map <Leader>bn :MBEbn<cr>
+map <Leader>bp :MBEbp<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin mbbill/undotree                       "
+"             11/16/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
+
+nnoremap <Leader>bu :UndotreeToggle<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin xuhdev/vim-latex-live-preview         "
+"             05/19/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:livepreview_previewer = 'okular'
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin lervag/vimtex                         "
+"             05/19/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" make it work with YouCompleteMe
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = [
+            \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
+            \ ]
+" This option controls whether to append a closing brace after a label or a citation has been completed.
+let g:vimtex_complete_close_braces = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin Xuyuanp/nerdtree-git-plugin           "
+"             11/17/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:NERDTreeIndicatorMapCustom = {
+            \ "Modified"  : "✹",
+            \ "Staged"    : "✚",
+            \ "Untracked" : "✭",
+            \ "Renamed"   : "➜",
+            \ "Unmerged"  : "═",
+            \ "Deleted"   : "✖",
+            \ "Dirty"     : "✗",
+            \ "Clean"     : "✔︎",
+            \ "Unknown"   : "?"
+            \ }
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin luochen1990/rainbow                   "
+"             11/17/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+            \   'guifgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
+            \   'ctermfgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
+            \   'operators': '_,_',
+            \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+            \   'separately': {
+            \       '*': {},
+            \       'tex': {
+            \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+            \       },
+            \       'lisp': {
+            \           'guifgs': ['DarkBlue', 'DarkMagenta', 'Black', 'Red','DarkGray', 'DarkGreen', 'DarkYellow'],
+            \       },
+            \       'vim': {
+            \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+            \       },
+            \       'html': {
+            \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+            \       },
+            \       'css': 0,
+            \   }
+            \}
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "
 " Other plugins    11/18/2015 added by Peidong "" Other plugins    11/18/2015 added by Peidong "
@@ -306,46 +469,6 @@ nnoremap <leader>cje :YcmCompleter GoToDefinition<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Plugin bling/vim-airline                     "
-"             11/16/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin nathanaelkane/vim-indent-guides       "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 随 vim 自启动
-let g:indent_guides_enable_on_vim_startup=1
-" 从第二层开始可视化显示缩进
-let g:indent_guides_start_level=2
-" 色块宽度
-let g:indent_guides_guide_size=1
-" 快捷键 i 开/关缩进可视化
-:nmap <silent> <Leader>ci <Plug>IndentGuidesToggle
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin vim-scripts/a.vim                     "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" *.cpp 和 *.h 间切换
-nmap <Leader>ch :A<CR>
-" 子窗口中显示 *.cpp 或 *.h
-nmap <Leader>csh :AS<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
 " Plugin dyng/ctrlsf.vim                       "
 "             05/13/2015 added by Peidong      "
 "                                              "
@@ -353,40 +476,6 @@ nmap <Leader>csh :AS<CR>
 
 " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
 nnoremap <Leader>rt :CtrlSF<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin scrooloose/nerdtree                   "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
-nmap <Leader>bf :NERDTreeToggle<CR>
-" 设置NERDTree子窗口宽度
-let NERDTreeWinSize=32
-" 设置NERDTree子窗口位置
-let NERDTreeWinPos="left"
-" 显示隐藏文件
-let NERDTreeShowHidden=1
-" NERDTree 子窗口中不显示冗余帮助信息
-let NERDTreeMinimalUI=1
-" 删除文件时自动删除文件对应 buffer
-let NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeDirArrows = 0
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin fholgado/minibufexpl.vim              "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 显示/隐藏 MiniBufExplorer 窗口
-map <Leader>bl :MBEToggle<cr>
-" buffer 切换快捷键
-map <Leader>bn :MBEbn<cr>
-map <Leader>bp :MBEbp<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -409,46 +498,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 4
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin mbbill/undotree                       "
-"             11/16/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-if has("persistent_undo")
-    set undodir=~/.undodir/
-    set undofile
-endif
-
-nnoremap <Leader>bu :UndotreeToggle<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin xuhdev/vim-latex-live-preview         "
-"             05/19/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:livepreview_previewer = 'okular'
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin lervag/vimtex                         "
-"             05/19/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" make it work with YouCompleteMe
-if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = [
-    \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
-    \ ]
-" This option controls whether to append a closing brace after a label or a citation has been completed.
-let g:vimtex_complete_close_braces = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -508,53 +557,3 @@ let g:EasyClipAutoFormat = 1
 let g:EasyClipUsePasteToggleDefaults = 0
 nmap <Leader>rn <plug>EasyClipSwapPasteForward
 nmap <Leader>rp <plug>EasyClipSwapPasteBackwards
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin Xuyuanp/nerdtree-git-plugin           "
-"             11/17/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Unknown"   : "?"
-    \ }
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin luochen1990/rainbow                   "
-"             11/17/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-    \   'guifgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
-    \   'ctermfgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
-    \   'operators': '_,_',
-    \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-    \   'separately': {
-    \       '*': {},
-    \       'tex': {
-    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-    \       },
-    \       'lisp': {
-    \           'guifgs': ['DarkBlue', 'DarkMagenta', 'Black', 'Red','DarkGray', 'DarkGreen', 'DarkYellow'],
-    \       },
-    \       'vim': {
-    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-    \       },
-    \       'html': {
-    \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-    \       },
-    \       'css': 0,
-    \   }
-    \}

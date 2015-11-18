@@ -138,6 +138,11 @@ Keybinding         | Description
 <kbd>C-p</kbd>| invoke CtrlP in find file mode
 <kbd>C-j(k)</kbd>| navigate the result list
 <kbd>`Enter`</kbd>| open the file
+###### Plugin 'gcmt/wildfire.vim'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`Enter`</kbd>| select the area
+<kbd>`Backspace`</kbd>| backward
 
 #### Insert Mode
 

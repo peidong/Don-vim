@@ -35,6 +35,8 @@ Keybinding         | Description
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>`<leader>` r t</kbd>   | `:CtrlSF<CR>`:search the cursor word,`q`:quit,`p`:see details
+<kbd>p</kbd>| Preview
+<kbd>q</kbd>| Quit search mode
 ###### Plugin 'scrooloose/nerdcommenter'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -113,11 +115,6 @@ Keybinding         | Description
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>`<leader>` b m</kbd>| Markdown Preview in Github format
-###### Plugin 'dyng/ctrlsf.vim'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>p</kbd>| Preview
-<kbd>q</kbd>| Quit search mode
 ###### Plugin 'vim-ctrlspace'
 Keybinding         | Description
 -------------------|------------------------------------------------------------

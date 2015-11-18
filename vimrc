@@ -23,6 +23,7 @@
  NeoBundleFetch 'Shougo/neobundle.vim'
 
  " My Bundles here:
+
  " pure vimscript plugins:
  NeoBundle 'mattn/emmet-vim'
  NeoBundle 'bling/vim-airline'
@@ -48,7 +49,9 @@
  NeoBundle 'NLKNguyen/papercolor-theme'
  NeoBundle 'gcmt/wildfire.vim'
  NeoBundle 'luochen1990/rainbow'
+
  " other code plugins:
+
  NeoBundle 'Valloric/YouCompleteMe'
  NeoBundle 'dyng/ctrlsf.vim'
  NeoBundle 'scrooloose/nerdcommenter'
@@ -160,37 +163,16 @@ let mapleader=";"
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" YCM Settings     05/13/2015 added by Peidong "
+" Code Foldering                               "
+"             05/13/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-" YCM 补全菜单配色
-" 菜单
-" highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
-" 选中项
-" highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
-" 补全功能在注释中同样有效
-let g:ycm_complete_in_comments=1
-" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
-let g:ycm_confirm_extra_conf=0
-" 开启 YCM 标签补全引擎
-let g:ycm_collect_identifiers_from_tags_files=1
-" 引入 C++ 标准库tags
-set tags+=/data/misc/software/misc./vim/stdcpp.tags
-" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
-" inoremap <leader>; <C-x><C-o>
-" 补全内容不以分割子窗口形式出现，只显示补全列表
-set completeopt-=preview
-" 从第一个键入字符就开始罗列匹配项
-let g:ycm_min_num_of_chars_for_completion=1
-" 禁止缓存匹配项，每次都重新生成匹配项
-let g:ycm_cache_omnifunc=0
-" 语法关键字补全
-let g:ycm_seed_identifiers_with_syntax=1
-let g:ycm_filetype_blacklist = {}
-nnoremap <leader>cjd :YcmCompleter GoToDeclaration<CR>
-" 只能是 #include 或已打开的文件
-nnoremap <leader>cje :YcmCompleter GoToDefinition<CR>
+" 基于缩进或语法进行代码折叠
+"set foldmethod=indent
+set foldmethod=syntax
+" 启动 vim 时关闭折叠代码
+set nofoldenable
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -240,78 +222,6 @@ let g:airline_theme='sol'
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Plugin Powerline_colorscheme                 "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 设置状态栏主题风格
-"let g:Powerline_colorscheme='solarized256'
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin bling/vim-airline                     "
-"             11/16/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin nathanaelkane/vim-indent-guides       "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 随 vim 自启动
-let g:indent_guides_enable_on_vim_startup=1
-" 从第二层开始可视化显示缩进
-let g:indent_guides_start_level=2
-" 色块宽度
-let g:indent_guides_guide_size=1
-" 快捷键 i 开/关缩进可视化
-:nmap <silent> <Leader>ci <Plug>IndentGuidesToggle
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Code Foldering                               "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 基于缩进或语法进行代码折叠
-"set foldmethod=indent
-set foldmethod=syntax
-" 启动 vim 时关闭折叠代码
-set nofoldenable
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin vim-scripts/a.vim                     "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" *.cpp 和 *.h 间切换
-nmap <Leader>ch :A<CR>
-" 子窗口中显示 *.cpp 或 *.h
-nmap <Leader>csh :AS<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin dyng/ctrlsf.vim                       "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
-nnoremap <Leader>rt :CtrlSF<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
 " Replace function                             "
 "             05/13/2015 added by Peidong      "
 "                                              "
@@ -347,6 +257,102 @@ nnoremap <Leader>rc :call Replace(1, 0, input('Replace '.expand('<cword>').' wit
 " 确认、整词
 nnoremap <Leader>rcw :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              ""                                              "
+" Vimscript plugin 11/18/2015 added by Peidong "" Vimscript plugin 11/18/2015 added by Peidong "
+"                                              ""                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              ""                                              "
+" Other plugins    11/18/2015 added by Peidong "" Other plugins    11/18/2015 added by Peidong "
+"                                              ""                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" YCM Settings     05/13/2015 added by Peidong "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" YCM 补全菜单配色
+" 菜单
+" highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+" 选中项
+" highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+" 补全功能在注释中同样有效
+let g:ycm_complete_in_comments=1
+" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
+let g:ycm_confirm_extra_conf=0
+" 开启 YCM 标签补全引擎
+let g:ycm_collect_identifiers_from_tags_files=1
+" 引入 C++ 标准库tags
+set tags+=/data/misc/software/misc./vim/stdcpp.tags
+" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
+" inoremap <leader>; <C-x><C-o>
+" 补全内容不以分割子窗口形式出现，只显示补全列表
+set completeopt-=preview
+" 从第一个键入字符就开始罗列匹配项
+let g:ycm_min_num_of_chars_for_completion=1
+" 禁止缓存匹配项，每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+" 语法关键字补全
+let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_filetype_blacklist = {}
+nnoremap <leader>cjd :YcmCompleter GoToDeclaration<CR>
+" 只能是 #include 或已打开的文件
+nnoremap <leader>cje :YcmCompleter GoToDefinition<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin bling/vim-airline                     "
+"             11/16/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin nathanaelkane/vim-indent-guides       "
+"             05/13/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>ci <Plug>IndentGuidesToggle
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin vim-scripts/a.vim                     "
+"             05/13/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" *.cpp 和 *.h 间切换
+nmap <Leader>ch :A<CR>
+" 子窗口中显示 *.cpp 或 *.h
+nmap <Leader>csh :AS<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin dyng/ctrlsf.vim                       "
+"             05/13/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
+nnoremap <Leader>rt :CtrlSF<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -435,13 +441,13 @@ let g:livepreview_previewer = 'okular'
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 " make it work with YouCompleteMe
-if !exists('g:ycm_semantic_triggers') 
-    let g:ycm_semantic_triggers = {} 
-endif 
-let g:ycm_semantic_triggers.tex = [ 
-    \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*' 
-    \ ] 
-" This option controls whether to append a closing brace after a label or a citation has been completed. 
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = [
+    \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
+    \ ]
+" This option controls whether to append a closing brace after a label or a citation has been completed.
 let g:vimtex_complete_close_braces = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""

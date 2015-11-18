@@ -14,6 +14,8 @@ Keybinding         | Description
 <kbd>`<leader>` r c</kbd>   | Replace the cursor word,with confirmation,without whole word
 <kbd>`<leader>` r c w</kbd> | Replace the cursor word,with confirmation,with whole word
 <kbd>`<leader>` r w c</kbd> | Replace the cursor word,with confirmation,with whole word
+##### Pure vimscript plugins
+##### Other plugins
 ###### Plugin 'Valloric/YouCompleteMe'
 Keybinding         | Description
 -------------------|------------------------------------------------------------

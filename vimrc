@@ -531,8 +531,8 @@ let g:NERDTreeIndicatorMapCustom = {
 
 let g:rainbow_active = 1
 let g:rainbow_conf = {
-    \   'guifgs': ['DarkBlue', 'DarkMagenta', 'Black', 'Red', 'DarkGreen', 'DarkYellow', 'DarkGray'],
-    \   'ctermfgs': ['DarkBlue', 'DarkMagenta', 'Black', 'Red', 'DarkGreen', 'DarkYellow', 'DarkGray'],
+    \   'guifgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
+    \   'ctermfgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
     \   'operators': '_,_',
     \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
     \   'separately': {
@@ -541,7 +541,7 @@ let g:rainbow_conf = {
     \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
     \       },
     \       'lisp': {
-    \           'guifgs': ['DarkBlue', 'DarkMagenta', 'Black', 'Red', 'DarkGreen', 'DarkYellow', 'DarkGray'],
+    \           'guifgs': ['DarkBlue', 'DarkMagenta', 'Black', 'Red','DarkGray', 'DarkGreen', 'DarkYellow'],
     \       },
     \       'vim': {
     \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],

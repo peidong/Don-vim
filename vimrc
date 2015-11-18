@@ -56,6 +56,7 @@ NeoBundle 'svermeulen/vim-easyclip'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'NLKNguyen/papercolor-theme'
 NeoBundle 'gcmt/wildfire.vim'
+NeoBundle 'luochen1990/rainbow'
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
 
@@ -518,3 +519,12 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin luochen1990/rainbow                   "
+"             11/17/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:rainbow_active = 1

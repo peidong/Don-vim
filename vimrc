@@ -55,6 +55,7 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'svermeulen/vim-easyclip'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'NLKNguyen/papercolor-theme'
+NeoBundle 'gcmt/wildfire.vim'
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
 

@@ -32,6 +32,7 @@ NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'vim-scripts/DrawIt'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mbbill/undotree'
@@ -74,6 +75,7 @@ NeoBundle 'NLKNguyen/papercolor-theme'
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
+set encoding=utf-8
 set nu
 set relativenumber
 set smartindent
@@ -361,6 +363,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeDirArrows = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -495,3 +498,22 @@ let g:EasyClipAutoFormat = 1
 let g:EasyClipUsePasteToggleDefaults = 0
 nmap <Leader>rn <plug>EasyClipSwapPasteForward
 nmap <Leader>rp <plug>EasyClipSwapPasteBackwards
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin Xuyuanp/nerdtree-git-plugin           "
+"             11/17/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }

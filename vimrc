@@ -32,7 +32,8 @@
  NeoBundle 'vim-scripts/DrawIt'
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
- NeoBundle 'fholgado/minibufexpl.vim'
+ "Comment MiniBufExplorer because conflict with UndotreeToggle
+ "NeoBundle 'fholgado/minibufexpl.vim'
  NeoBundle 'mbbill/undotree'
  NeoBundle 'easymotion/vim-easymotion'
  NeoBundle 'vim-scripts/promela.vim'
@@ -49,6 +50,7 @@
  NeoBundle 'NLKNguyen/papercolor-theme'
  NeoBundle 'gcmt/wildfire.vim'
  NeoBundle 'luochen1990/rainbow'
+ NeoBundle 'vim-scripts/YankRing.vim'
 
  " other code plugins:
 
@@ -61,7 +63,7 @@
  NeoBundle 'honza/vim-snippets'
  NeoBundle 'MikeCoder/markdown-preview.vim'
  NeoBundle 'szw/vim-ctrlspace'
- NeoBundle 'svermeulen/vim-easyclip'
+ "NeoBundle 'svermeulen/vim-easyclip'
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
 
@@ -76,11 +78,11 @@
 
 " Put your non-Plugin stuff after this line
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" General settings 05/13/2015 added by Peidong "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              ""                                              "
+" General settings 05/13/2015 added by Peidong "" General settings 05/13/2015 added by Peidong "
+"                                              ""                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set encoding=utf-8
 set nu
@@ -134,7 +136,7 @@ set clipboard=unnamed
 inoremap jj <ESC>l
 inoremap kk <ESC>:w<CR>li
 " 定义快捷键的前缀，即<Leader>
-let mapleader="\"
+let mapleader="\<Space>"
 " 定义快捷键到行首和行尾
 " nmap lb 0
 " nmap le $
@@ -334,10 +336,10 @@ let g:NERDTreeDirArrows = 0
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 " 显示/隐藏 MiniBufExplorer 窗口
-map <Leader>bl :MBEToggle<cr>
+"map <Leader>bl :MBEToggle<cr>
 " buffer 切换快捷键
-map <Leader>bn :MBEbn<cr>
-map <Leader>bp :MBEbp<cr>
+"map <Leader>bn :MBEbn<cr>
+"map <Leader>bp :MBEbp<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -428,6 +430,16 @@ let g:rainbow_conf = {
             \       'css': 0,
             \   }
             \}
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin luochen1990/rainbow                   "
+"             11/17/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:yankring_replace_n_pkey = '<Leader>p'
+let g:yankring_replace_n_nkey = '<Leader>n'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "
@@ -552,10 +564,10 @@ set hidden
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-let g:EasyClipUseSubstituteDefaults = 1
-let g:EasyClipAutoFormat = 1
-let g:EasyClipShareYanks = 1
+"let g:EasyClipUseSubstituteDefaults = 1
+"let g:EasyClipAutoFormat = 1
+"let g:EasyClipShareYanks = 1
 
-let g:EasyClipUsePasteToggleDefaults = 0
-nmap <Leader>rn <plug>EasyClipSwapPasteForward
-nmap <Leader>rp <plug>EasyClipSwapPasteBackwards
+"let g:EasyClipUsePasteToggleDefaults = 0
+"nmap <Leader>rn <plug>EasyClipSwapPasteForward
+"nmap <Leader>rp <plug>EasyClipSwapPasteBackwards

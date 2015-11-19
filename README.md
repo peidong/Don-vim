@@ -15,12 +15,6 @@ Keybinding         | Description
 <kbd>`<leader>` r c w</kbd> | Replace the cursor word,with confirmation,with whole word
 <kbd>`<leader>` r w c</kbd> | Replace the cursor word,with confirmation,with whole word
 ##### Pure vimscript plugins
-##### Other plugins
-###### Plugin 'Valloric/YouCompleteMe'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`<leader>` c j d</kbd>   | `:YcmCompleter GoToDeclaration<CR>`
-<kbd>`<leader>` c j e</kbd>   | `:YcmCompleter GoToDefinition<CR>`
 ###### Plugin 'nathanaelkane/vim-indent-guides'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -33,17 +27,6 @@ Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>`<leader>` c h</kbd>   | `:A<CR>` : change between *.cpp and *.h
 <kbd>`<leader>` c s h</kbd> | `:AS<CR>` : change between *.cpp and *.h in sub-window
-###### Plugin 'dyng/ctrlsf.vim'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`<leader>` r t</kbd>   | `:CtrlSF<CR>`:search the cursor word,`q`:quit,`p`:see details
-<kbd>p</kbd>| Preview
-<kbd>q</kbd>| Quit search mode
-###### Plugin 'scrooloose/nerdcommenter'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`<leader>` c c</kbd>   | Comment the context
-<kbd>`<leader>` c u</kbd>   | Uncomment the context
 ###### Plugin 'vim-scripts/DrawIt'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -69,26 +52,10 @@ Keybinding         | Description
 <kbd>i(s)</kbd>   | split up/down(left/right)
 <kbd>c</kbd>   | change to root
 <kbd>q</kbd>   | close
-###### Plugin 'fholgado/minibufexpl.vim'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`<leader>`b l</kbd>   | `:MBEToggle<cr>`:Show on or show off buffer tabs,`s`and`v`will show both tabs
-<kbd>`<leader>`b n</kbd>   | `:MBEbn<cr>`:Jump to next buffer tab
-<kbd>`<leader>`b p</kbd>   | `:MBEbp<cr>`:Jump to previous buffer tab
 ###### Plugin 'mbbill/undotree'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>`<leader>` b u</kbd>   | show undo list
-###### Plugin 'easymotion/vim-easymotion'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`<leader>` `<leader>` f ?</kbd> | Jump to the ? word
-<kbd>`<leader>` `<leader>` j(k)</kbd> | Jump to the next(below) lines
-<kbd>`<leader>` `<leader>` w(e)</kbd> | Jump to the words begining(end)
-<kbd>`<leader>` `<leader>` .</kbd> | repeat jump
-<kbd>v `<leader>` `<leader>` f ?</kbd>| Select to the ? word
-<kbd>d `<leader>` `<leader>` f ?</kbd>| Delete to the ? word
-<kbd>y `<leader>` `<leader>` f ?</kbd>| Copy to the ? word
 ###### Plugin 'xuhdev/vim-latex-live-preview'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -97,12 +64,6 @@ Keybinding         | Description
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>] ]</kbd>| Create close envelope
-###### Plugin 'terryma/vim-multiple-cursors'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>C-n</kbd>| search the next word
-<kbd>C-p</kbd>| search the previous word
-<kbd>C-x</kbd>| search skip
 ###### Plugin 'tpope/vim-surround'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -113,6 +74,50 @@ Keybinding         | Description
 <kbd>yss</kbd>| add a surrounding to the whole line
 <kbd>ySs</kbd>| add a surrounding to the whole line, place it on a new line + indent it
 <kbd>ySS</kbd>| same as ySs
+###### Plugin 'kien/ctrlp.vim'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>C-p</kbd>| invoke CtrlP in find file mode
+<kbd>C-j(k)</kbd>| navigate the result list
+<kbd>`Enter`</kbd>| open the file
+###### Plugin 'gcmt/wildfire.vim'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`Enter`</kbd>| select the area
+<kbd>`Backspace`</kbd>| backward
+##### Other plugins
+###### Plugin 'Valloric/YouCompleteMe'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`<leader>` c j d</kbd>   | `:YcmCompleter GoToDeclaration<CR>`
+<kbd>`<leader>` c j e</kbd>   | `:YcmCompleter GoToDefinition<CR>`
+###### Plugin 'dyng/ctrlsf.vim'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`<leader>` r t</kbd>   | `:CtrlSF<CR>`:search the cursor word,`q`:quit,`p`:see details
+<kbd>p</kbd>| Preview
+<kbd>q</kbd>| Quit search mode
+###### Plugin 'scrooloose/nerdcommenter'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`<leader>` c c</kbd>   | Comment the context
+<kbd>`<leader>` c u</kbd>   | Uncomment the context
+###### Plugin 'easymotion/vim-easymotion'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`<leader>` `<leader>` f ?</kbd> | Jump to the ? word
+<kbd>`<leader>` `<leader>` j(k)</kbd> | Jump to the next(below) lines
+<kbd>`<leader>` `<leader>` w(e)</kbd> | Jump to the words begining(end)
+<kbd>`<leader>` `<leader>` .</kbd> | repeat jump
+<kbd>v `<leader>` `<leader>` f ?</kbd>| Select to the ? word
+<kbd>d `<leader>` `<leader>` f ?</kbd>| Delete to the ? word
+<kbd>y `<leader>` `<leader>` f ?</kbd>| Copy to the ? word
+###### Plugin 'terryma/vim-multiple-cursors'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>C-n</kbd>| search the next word
+<kbd>C-p</kbd>| search the previous word
+<kbd>C-x</kbd>| search skip
 ###### Plugin 'MikeCoder/markdown-preview.vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -126,25 +131,6 @@ Keybinding         | Description
 <kbd>v(V)</kbd>| vertical split open (cursor in ctrlspace)
 <kbd>s(S)</kbd>| split open (cursor in ctrlspace)
 <kbd>`<ESC>`/q</kbd>| close
-###### Plugin 'svermeulen/vim-easyclip'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>gp(P)</kbd>| Same as p(P) but preserves the current cursor position
-<kbd>m`<motion>`</kbd>| Delete over the given motion and copy text to clipboard
-<kbd>`<leader>` p</kbd>| Same as p except does not auto-format text. This is only relevant if the auto-format option is enabled
-<kbd>`<leader>`r p(n)</kbd>| Rotate the previous paste forward(backward) in yank buffer. Note that this binding will only work if executed immediately after a paste
-<kbd>s`<motion>`</kbd>| Substitute over the given motion with specified register (or default register if unspecified)
-###### Plugin 'kien/ctrlp.vim'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>C-p</kbd>| invoke CtrlP in find file mode
-<kbd>C-j(k)</kbd>| navigate the result list
-<kbd>`Enter`</kbd>| open the file
-###### Plugin 'gcmt/wildfire.vim'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`Enter`</kbd>| select the area
-<kbd>`Backspace`</kbd>| backward
 
 #### Insert Mode
 

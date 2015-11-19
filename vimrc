@@ -25,6 +25,7 @@
  " My Bundles here:
 
  " pure vimscript plugins:
+ NeoBundle 'godlygeek/tabular'
  NeoBundle 'mattn/emmet-vim'
  NeoBundle 'bling/vim-airline'
  NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -51,6 +52,16 @@
  NeoBundle 'gcmt/wildfire.vim'
  NeoBundle 'luochen1990/rainbow'
  NeoBundle 'vim-scripts/YankRing.vim'
+ "Markdown
+ NeoBundle 'tpope/vim-markdown'
+ "The tabular plugin must come before vim-markdown.
+ "NeoBundle 'plasticboy/vim-markdown'
+ "Json
+ NeoBundle 'elzr/vim-json'
+ "Matlab
+ NeoBundle 'vim-scripts/MatlabFilesEdition'
+ "Javascript
+ NeoBundle 'pangloss/vim-javascript'
 
  " other code plugins:
 
@@ -63,6 +74,10 @@
  NeoBundle 'honza/vim-snippets'
  NeoBundle 'MikeCoder/markdown-preview.vim'
  NeoBundle 'szw/vim-ctrlspace'
+ "PHP
+ NeoBundle 'StanAngeloff/php.vim'
+ NeoBundle 'shawncplus/phpcomplete.vim'
+ "Unused
  "NeoBundle 'svermeulen/vim-easyclip'
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
@@ -361,8 +376,16 @@ nnoremap <Leader>bu :UndotreeToggle<cr>
 "             05/19/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
-
-let g:livepreview_previewer = 'okular'
+if has("unix")
+	let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+    	" Do Mac stuff here
+        let g:livepreview_previewer = 'open -a Preview'
+    else
+        " Do Linux stuff here
+        let g:livepreview_previewer = 'okular'
+    endif
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -559,15 +582,19 @@ set hidden
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Plugin svermeulen/vim-easyclip               "
-"             11/14/2015 added by Peidong      "
+" Plugin StanAngeloff/php.vim                  "
+"             11/18/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-"let g:EasyClipUseSubstituteDefaults = 1
-"let g:EasyClipAutoFormat = 1
-"let g:EasyClipShareYanks = 1
+" Put at the very end of your .vimrc file.
 
-"let g:EasyClipUsePasteToggleDefaults = 0
-"nmap <Leader>rn <plug>EasyClipSwapPasteForward
-"nmap <Leader>rp <plug>EasyClipSwapPasteBackwards
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END

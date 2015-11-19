@@ -42,7 +42,9 @@
  NeoBundle 'lervag/vimtex'
  NeoBundle 'tpope/vim-surround'
  NeoBundle 'rizzatti/dash.vim'
+ "Git
  NeoBundle 'airblade/vim-gitgutter'
+ NeoBundle 'tpope/vim-fugitive'
  NeoBundle 'ntpeters/vim-better-whitespace'
  NeoBundle 'Raimondi/delimitMate'
  NeoBundle 'docunext/closetag.vim'

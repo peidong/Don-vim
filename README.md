@@ -80,6 +80,18 @@ Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>`Enter`</kbd>| select the area
 <kbd>`Backspace`</kbd>| backward
+###### Plugin 'tpope/vim-fugitive'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`:Gcommit`</kbd>| git commit
+<kbd>`:Gpush`</kbd>| git push
+<kbd>`:Gdiff`</kbd>| git diff
+<kbd>`:Gstatus`</kbd>| git status
+<kbd>`D`</kbd>| git diff
+<kbd>C-n(p)</kbd>| next(previous) file
+<kbd>-</kbd>| add file
+<kbd>cc</kbd>| git commit
+<kbd>q</kbd>| quit
 ##### Other plugins
 ###### Plugin 'Valloric/YouCompleteMe'
 Keybinding         | Description

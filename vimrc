@@ -65,6 +65,8 @@
  "Emacs
  "NeoBundle 'vim-scripts/Vimacs'
  NeoBundle 'neg-serg/vim-like-emacs'
+ "Sftp
+ "NeoBundle 'eshion/vim-sftp-sync'
 
  " other code plugins:
 
@@ -459,13 +461,36 @@ let g:rainbow_conf = {
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Plugin luochen1990/rainbow                   "
+" Plugin vim-scripts/YankRing.vim              "
 "             11/17/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 let g:yankring_replace_n_pkey = '<Leader>p'
 let g:yankring_replace_n_nkey = '<Leader>n'
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin eshion/vim-sftp-sync                  "
+"             11/19/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+"let g:vim_sftp_configs = {
+"\   'webmaster@fryer' : {
+"\       'upload_on_save'   : 1,
+"\       'download_on_open' : 1,
+"\       'confirm_downloads': 1,
+"\       'confirm_uploads'  : 1,
+"\       'local_base_path'  : '/home/webmaster/test',
+"\       'remote_base_path' : '/home/webmaster/vim-for-server',
+"\       'sftp_command' : 'sftp',
+"\       'complete_prompt_regexp' : '100\%',
+"\       'user' : 'webmaster',
+"\       'pass' : 'bh68117',
+"\       'host' : '-P22 webmaster@fryer.ee.ucla.edu'
+"\   }
+"\}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "

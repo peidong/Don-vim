@@ -476,6 +476,16 @@ let g:yankring_replace_n_nkey = '<Leader>n'
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
+" Plugin peidong/Vimacs                        "
+"             11/19/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+"let g:VM_CmdHeightAdj = 0
+let g:VM_NormalMetaXRemap = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
 " Plugin eshion/vim-sftp-sync                  "
 "             11/19/2015 added by Peidong      "
 "                                              "

@@ -65,8 +65,7 @@
  "Javascript
  NeoBundle 'pangloss/vim-javascript'
  "Emacs
- "NeoBundle 'vim-scripts/Vimacs'
- NeoBundle 'neg-serg/vim-like-emacs'
+ NeoBundle 'peidong/Vimacs'
  "Sftp
  "NeoBundle 'eshion/vim-sftp-sync'
 

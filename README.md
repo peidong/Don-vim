@@ -22,11 +22,6 @@ Keybinding         | Description
 <kbd>z a</kbd>     | Turn on or turn off cursor current code foldings
 <kbd>z M</kbd>     | Turn off all code foldings
 <kbd>z R</kbd>     | Turn on all code foldings
-###### Plugin 'vim-scripts/a.vim'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`<leader>` c h</kbd>   | `:A<CR>` : change between *.cpp and *.h
-<kbd>`<leader>` c s h</kbd> | `:AS<CR>` : change between *.cpp and *.h in sub-window
 ###### Plugin 'vim-scripts/DrawIt'
 Keybinding         | Description
 -------------------|------------------------------------------------------------

@@ -29,7 +29,7 @@
  NeoBundle 'mattn/emmet-vim'
  NeoBundle 'bling/vim-airline'
  NeoBundle 'nathanaelkane/vim-indent-guides'
- NeoBundle 'vim-scripts/a.vim'
+ "NeoBundle 'vim-scripts/a.vim'
  NeoBundle 'vim-scripts/DrawIt'
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
@@ -318,9 +318,9 @@ let g:indent_guides_guide_size=1
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 " *.cpp 和 *.h 间切换
-nmap <Leader>ch :A<CR>
+"nmap <Leader>ch :A<CR>
 " 子窗口中显示 *.cpp 或 *.h
-nmap <Leader>csh :AS<CR>
+"nmap <Leader>csh :AS<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

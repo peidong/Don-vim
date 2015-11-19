@@ -205,6 +205,8 @@ set nofoldenable
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
+let rainbow_background="light"
+"let rainbow_background="dark"
 " basic color settings
 set t_Co=256
 
@@ -437,28 +439,30 @@ let g:NERDTreeIndicatorMapCustom = {
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 let g:rainbow_active = 1
-let g:rainbow_conf = {
-            \   'guifgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
-            \   'ctermfgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
-            \   'operators': '_,_',
-            \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-            \   'separately': {
-            \       '*': {},
-            \       'tex': {
-            \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-            \       },
-            \       'lisp': {
-            \           'guifgs': ['DarkBlue', 'DarkMagenta', 'Black', 'Red','DarkGray', 'DarkGreen', 'DarkYellow'],
-            \       },
-            \       'vim': {
-            \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-            \       },
-            \       'html': {
-            \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-            \       },
-            \       'css': 0,
-            \   }
-            \}
+if rainbow_background == "light"
+    let g:rainbow_conf = {
+                \   'guifgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
+                \   'ctermfgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
+                \   'operators': '_,_',
+                \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+                \   'separately': {
+                \       '*': {},
+                \       'tex': {
+                \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+                \       },
+                \       'lisp': {
+                \           'guifgs': ['DarkBlue', 'DarkMagenta', 'Black', 'Red','DarkGray', 'DarkGreen', 'DarkYellow'],
+                \       },
+                \       'vim': {
+                \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+                \       },
+                \       'html': {
+                \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+                \       },
+                \       'css': 0,
+                \   }
+                \}
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

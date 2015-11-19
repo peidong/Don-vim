@@ -121,6 +121,8 @@ set autoread
 " 代码匹配
 set showmatch
 set matchtime=3
+"https://github.com/svermeulen/vim-easyclip#clipboard-setting
+set clipboard=unnamed
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -132,7 +134,7 @@ set matchtime=3
 inoremap jj <ESC>l
 inoremap kk <ESC>:w<CR>li
 " 定义快捷键的前缀，即<Leader>
-let mapleader=";"
+let mapleader="\"
 " 定义快捷键到行首和行尾
 " nmap lb 0
 " nmap le $
@@ -552,7 +554,7 @@ set hidden
 
 let g:EasyClipUseSubstituteDefaults = 1
 let g:EasyClipAutoFormat = 1
-"let g:EasyClipShareYanks = 1
+let g:EasyClipShareYanks = 1
 
 let g:EasyClipUsePasteToggleDefaults = 0
 nmap <Leader>rn <plug>EasyClipSwapPasteForward

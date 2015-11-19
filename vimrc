@@ -62,6 +62,9 @@
  NeoBundle 'vim-scripts/MatlabFilesEdition'
  "Javascript
  NeoBundle 'pangloss/vim-javascript'
+ "Emacs
+ "NeoBundle 'vim-scripts/Vimacs'
+ NeoBundle 'neg-serg/vim-like-emacs'
 
  " other code plugins:
 

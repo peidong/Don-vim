@@ -588,6 +588,7 @@ let g:ycm_filetype_blacklist = {}
 nnoremap <leader>cjd :YcmCompleter GoToDeclaration<CR>
 " 只能是 #include 或已打开的文件
 nnoremap <leader>cje :YcmCompleter GoToDefinition<CR>
+let g:ycm_show_diagnostics_ui = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

@@ -68,23 +68,23 @@
  "NeoBundle 'peidong/Vimacs'
  "Sftp
  "NeoBundle 'eshion/vim-sftp-sync'
-
- " other code plugins:
-
- NeoBundle 'Valloric/YouCompleteMe'
- NeoBundle 'dyng/ctrlsf.vim'
  NeoBundle 'scrooloose/nerdcommenter'
  NeoBundle 'scrooloose/syntastic'
  NeoBundle 'terryma/vim-multiple-cursors'
- NeoBundle 'SirVer/ultisnips'
  NeoBundle 'honza/vim-snippets'
- NeoBundle 'MikeCoder/markdown-preview.vim'
  NeoBundle 'szw/vim-ctrlspace'
  "PHP
  NeoBundle 'StanAngeloff/php.vim'
  NeoBundle 'shawncplus/phpcomplete.vim'
+
+ " other code plugins:
+ NeoBundle 'Valloric/YouCompleteMe'
+ NeoBundle 'dyng/ctrlsf.vim'
+ NeoBundle 'SirVer/ultisnips'
+ NeoBundle 'MikeCoder/markdown-preview.vim'
  "Unused
  "NeoBundle 'svermeulen/vim-easyclip'
+
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
 
@@ -507,6 +507,48 @@ let g:VM_NormalMetaXRemap = 0
 "\   }
 "\}
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin scrooloose/syntastic                  "
+"             05/13/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Better :sign interface symbols
+let g:syntastic_error_symbol = '✗✗'
+let g:syntastic_style_error_symbol = '✠✠'
+let g:syntastic_warning_symbol = '∆∆'
+let g:syntastic_style_warning_symbol = '≈≈'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 4
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin terryma/vim-multiple-cursors          "
+"             07/14/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin vim-ctrlspace                         "
+"             11/12/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+set hidden
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "
 " Other plugins    11/18/2015 added by Peidong "" Other plugins    11/18/2015 added by Peidong "
@@ -559,39 +601,6 @@ nnoremap <Leader>rt :CtrlSF<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Plugin scrooloose/syntastic                  "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Better :sign interface symbols
-let g:syntastic_error_symbol = '✗✗'
-let g:syntastic_style_error_symbol = '✠✠'
-let g:syntastic_warning_symbol = '∆∆'
-let g:syntastic_style_warning_symbol = '≈≈'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 4
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin terryma/vim-multiple-cursors          "
-"             07/14/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
 " Plugin SirVer/ultisnips                      "
 "             07/14/2015 added by Peidong      "
 "                                              "
@@ -614,15 +623,11 @@ let g:multi_cursor_quit_key='<Esc>'
 
 map <leader>bm :MarkdownPreview GitHub<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin vim-ctrlspace                         "
-"             11/12/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-set hidden
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              ""                                              "
+" Other needs      11/18/2015 added by Peidong "" Other needs      11/18/2015 added by Peidong "
+"                                              ""                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
 " Plugin StanAngeloff/php.vim                  "

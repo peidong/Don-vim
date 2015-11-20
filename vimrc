@@ -206,8 +206,12 @@ set nofoldenable
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-let rainbow_background="light"
-"let rainbow_background="dark"
+let current_time_hour = strftime("%H")
+if current_time_hour < 18 && current_time_hour > 5
+    let rainbow_background="light"
+else
+    let rainbow_background="dark"
+endif
 " basic color settings
 set t_Co=256
 
@@ -243,10 +247,14 @@ set t_Co=256
 "colorscheme khaki
 
 " NLKNguyen/papercolor-theme
-set background=light
-"set background=dark
+if rainbow_background == "light"
+    set background=light
+    let g:airline_theme='sol'
+elseif rainbow_background == "dark"
+    set background=dark
+    let g:airline_theme='dark'
+endif
 colorscheme PaperColor
-let g:airline_theme='sol'
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

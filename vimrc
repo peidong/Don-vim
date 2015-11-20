@@ -76,6 +76,7 @@
  "PHP
  NeoBundle 'StanAngeloff/php.vim'
  NeoBundle 'shawncplus/phpcomplete.vim'
+ NeoBundle 'chrisbra/vim-diff-enhanced'
 
  " other code plugins:
  NeoBundle 'Valloric/YouCompleteMe'

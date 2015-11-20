@@ -92,18 +92,6 @@ Keybinding         | Description
 <kbd>-</kbd>| add file
 <kbd>cc</kbd>| git commit
 <kbd>q</kbd>| quit
-##### Other plugins
-###### Plugin 'Valloric/YouCompleteMe'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`<leader>` c j d</kbd>   | `:YcmCompleter GoToDeclaration<CR>`
-<kbd>`<leader>` c j e</kbd>   | `:YcmCompleter GoToDefinition<CR>`
-###### Plugin 'dyng/ctrlsf.vim'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`<leader>` r t</kbd>   | `:CtrlSF<CR>`:search the cursor word,`q`:quit,`p`:see details
-<kbd>p</kbd>| Preview
-<kbd>q</kbd>| Quit search mode
 ###### Plugin 'scrooloose/nerdcommenter'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -125,10 +113,6 @@ Keybinding         | Description
 <kbd>C-n</kbd>| search the next word
 <kbd>C-p</kbd>| search the previous word
 <kbd>C-x</kbd>| search skip
-###### Plugin 'MikeCoder/markdown-preview.vim'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`<leader>` b m</kbd>| Markdown Preview in Github format
 ###### Plugin 'vim-ctrlspace'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -138,6 +122,22 @@ Keybinding         | Description
 <kbd>v(V)</kbd>| vertical split open (cursor in ctrlspace)
 <kbd>s(S)</kbd>| split open (cursor in ctrlspace)
 <kbd>`<ESC>`/q</kbd>| close
+##### Other plugins
+###### Plugin 'Valloric/YouCompleteMe'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`<leader>` c j d</kbd>   | `:YcmCompleter GoToDeclaration<CR>`
+<kbd>`<leader>` c j e</kbd>   | `:YcmCompleter GoToDefinition<CR>`
+###### Plugin 'dyng/ctrlsf.vim'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`<leader>` r t</kbd>   | `:CtrlSF<CR>`:search the cursor word,`q`:quit,`p`:see details
+<kbd>p</kbd>| Preview
+<kbd>q</kbd>| Quit search mode
+###### Plugin 'MikeCoder/markdown-preview.vim'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`<leader>` b m</kbd>| Markdown Preview in Github format
 
 #### Insert Mode
 

@@ -481,7 +481,7 @@ let g:yankring_replace_n_nkey = '<Leader>n'
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-"let g:VM_CmdHeightAdj = 0
+let g:VM_CmdHeightAdj = 0
 let g:VM_NormalMetaXRemap = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""

@@ -25,6 +25,15 @@
  " My Bundles here:
 
  " pure vimscript plugins:
+ NeoBundle 'Shougo/vimproc.vim', {
+             \ 'build' : {
+             \     'windows' : 'tools\\update-dll-mingw',
+             \     'cygwin' : 'make -f make_cygwin.mak',
+             \     'mac' : 'make',
+             \     'linux' : 'make',
+             \     'unix' : 'gmake',
+             \    },
+             \ }
  NeoBundle 'godlygeek/tabular'
  NeoBundle 'mattn/emmet-vim'
  NeoBundle 'bling/vim-airline'
@@ -77,6 +86,7 @@
  NeoBundle 'StanAngeloff/php.vim'
  NeoBundle 'shawncplus/phpcomplete.vim'
  NeoBundle 'chrisbra/vim-diff-enhanced'
+ NeoBundle 'Shougo/vimshell.vim'
 
  " other code plugins:
  NeoBundle 'Valloric/YouCompleteMe'
@@ -514,8 +524,8 @@ let g:yankring_replace_n_nkey = '<Leader>n'
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-let g:VM_CmdHeightAdj = 0
-let g:VM_NormalMetaXRemap = 0
+"let g:VM_CmdHeightAdj = 0
+"let g:VM_NormalMetaXRemap = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -581,6 +591,15 @@ let g:multi_cursor_quit_key='<Esc>'
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 set hidden
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin Shougo/vimshell.vim                   "
+"             11/20/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:vimshell_editor_command = '/Users/peidong/Developer/ProgramFiles/MacVim/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "

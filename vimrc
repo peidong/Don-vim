@@ -215,6 +215,16 @@ endif
 " basic color settings
 set t_Co=256
 
+" NLKNguyen/papercolor-theme
+if rainbow_background == "light"
+    set background=light
+    let g:airline_theme='sol'
+elseif rainbow_background == "dark"
+    set background=dark
+    let g:airline_theme='dark'
+endif
+colorscheme PaperColor
+
 " solarized dark
 "set background=dark
 "let g:solarized_termcolors=256
@@ -245,16 +255,6 @@ set t_Co=256
 
 " khaki
 "colorscheme khaki
-
-" NLKNguyen/papercolor-theme
-if rainbow_background == "light"
-    set background=light
-    let g:airline_theme='sol'
-elseif rainbow_background == "dark"
-    set background=dark
-    let g:airline_theme='dark'
-endif
-colorscheme PaperColor
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -461,6 +461,29 @@ if rainbow_background == "light"
                 \       },
                 \       'lisp': {
                 \           'guifgs': ['DarkBlue', 'DarkMagenta', 'Black', 'Red','DarkGray', 'DarkGreen', 'DarkYellow'],
+                \       },
+                \       'vim': {
+                \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+                \       },
+                \       'html': {
+                \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+                \       },
+                \       'css': 0,
+                \   }
+                \}
+elseif rainbow_background == "dark"
+    let g:rainbow_conf = {
+                \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+                \   'ctermfgs': ['lightblue', 'lightyellow', 'red', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white'],
+                \   'operators': '_,_',
+                \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+                \   'separately': {
+                \       '*': {},
+                \       'tex': {
+                \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+                \       },
+                \       'lisp': {
+                \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
                 \       },
                 \       'vim': {
                 \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],

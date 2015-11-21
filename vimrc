@@ -59,7 +59,7 @@
  NeoBundle 'docunext/closetag.vim'
  NeoBundle 'tpope/vim-repeat'
  NeoBundle 'kien/ctrlp.vim'
- NeoBundle 'flazz/vim-colorschemes'
+ "NeoBundle 'flazz/vim-colorschemes'
  NeoBundle 'NLKNguyen/papercolor-theme'
  NeoBundle 'gcmt/wildfire.vim'
  NeoBundle 'luochen1990/rainbow'

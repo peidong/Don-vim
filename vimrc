@@ -87,6 +87,7 @@
  NeoBundle 'shawncplus/phpcomplete.vim'
  NeoBundle 'chrisbra/vim-diff-enhanced'
  NeoBundle 'Shougo/vimshell.vim'
+ NeoBundle 'Shougo/unite.vim'
 
  " other code plugins:
  NeoBundle 'Valloric/YouCompleteMe'
@@ -404,6 +405,7 @@ nnoremap <Leader>bu :UndotreeToggle<cr>
 "             05/19/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
+
 if has("unix")
 	let s:uname = system("uname")
     if s:uname == "Darwin\n"
@@ -599,7 +601,20 @@ set hidden
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-let g:vimshell_editor_command = '/Users/peidong/Developer/ProgramFiles/MacVim/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
+if has("unix")
+	let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+    	" Do Mac stuff here
+        let g:vimshell_editor_command = '/Users/peidong/Developer/ProgramFiles/MacVim/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
+    else
+        " Do Linux stuff here
+    endif
+endif
+if executable('zsh') && filereadable(expand('~/.zsh_history'))
+    " Use zsh history in vimshell/history source.
+    let g:unite_source_vimshell_external_history_path =
+                \ expand('~/.zsh_history')
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "

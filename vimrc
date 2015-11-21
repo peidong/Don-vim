@@ -370,7 +370,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeDirArrows = 0
+let g:NERDTreeDirArrows = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -615,6 +615,15 @@ if executable('zsh') && filereadable(expand('~/.zsh_history'))
     let g:unite_source_vimshell_external_history_path =
                 \ expand('~/.zsh_history')
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin Shougo/unite.vim                      "
+"             11/21/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:unite_source_history_yank_enable = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "

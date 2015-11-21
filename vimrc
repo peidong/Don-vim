@@ -60,6 +60,7 @@
  NeoBundle 'tpope/vim-repeat'
  NeoBundle 'kien/ctrlp.vim'
  NeoBundle 'NLKNguyen/papercolor-theme'
+ NeoBundle 'altercation/vim-colors-solarized'
  NeoBundle 'gcmt/wildfire.vim'
  NeoBundle 'luochen1990/rainbow'
  NeoBundle 'vim-scripts/YankRing.vim'
@@ -227,7 +228,6 @@ endif
 " basic color settings
 set t_Co=256
 
-" NLKNguyen/papercolor-theme
 if rainbow_background == "light"
     set background=light
     let g:airline_theme='sol'
@@ -235,18 +235,11 @@ elseif rainbow_background == "dark"
     set background=dark
     let g:airline_theme='dark'
 endif
+
+" NLKNguyen/papercolor-theme
 colorscheme PaperColor
 
-" solarized dark
-"set background=dark
-"let g:solarized_termcolors=256
-"let g:solarized_termtrans=1
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"colorscheme solarized
-
-" solarized light
-"set background=light
+" solarized
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans=1
 "let g:solarized_contrast="high"

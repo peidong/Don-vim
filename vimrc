@@ -106,6 +106,7 @@
 "                                              ""                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+autocmd BufNewFile,BufReadPost *.h set filetype=c
 set encoding=utf-8
 set nu
 set relativenumber

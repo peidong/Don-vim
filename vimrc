@@ -605,7 +605,8 @@ if has("unix")
 	let s:uname = system("uname")
     if s:uname == "Darwin\n"
     	" Do Mac stuff here
-        let g:vimshell_editor_command = '/Users/peidong/Developer/ProgramFiles/MacVim/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
+        "let g:vimshell_editor_command = '/Users/peidong/Developer/ProgramFiles/MacVim/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
+        let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
     else
         " Do Linux stuff here
     endif

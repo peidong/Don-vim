@@ -662,6 +662,7 @@ nnoremap <leader>cjd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>cje :YcmCompleter GoToDefinition<CR>
 let g:ycm_error_symbol = '✗✗'
 let g:ycm_warning_symbol = '∆∆'
+"let g:ycm_show_diagnostics_ui = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

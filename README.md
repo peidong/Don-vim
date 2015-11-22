@@ -165,3 +165,7 @@ Then vim, and `:NeoBundleInstall`
     mkdir ~/.undodir/
 ## Installing on Windows
 Not done
+
+## How to install (MacVim)[https://github.com/macvim-dev/macvim/releases/tag/snapshot-80]
+
+    ./configure --with-features=huge --enable-cscope --enable-largefile --enable-luainterp=yes --enable-multibyte --enable-mzschemeinterp --enable-perlinterp=yes --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.7/config --enable-rubyinterp=yes --enable-tclinterp

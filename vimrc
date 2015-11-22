@@ -95,6 +95,8 @@
  NeoBundle 'dyng/ctrlsf.vim'
  NeoBundle 'SirVer/ultisnips'
  NeoBundle 'MikeCoder/markdown-preview.vim'
+ "Python
+ NeoBundle 'hdima/python-syntax'
  "Unused
  "NeoBundle 'svermeulen/vim-easyclip'
 
@@ -697,6 +699,15 @@ nnoremap <Leader>rt :CtrlSF<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 map <leader>bm :MarkdownPreview GitHub<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin hdima/python-syntax                   "
+"             11/22/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let python_highlight_all = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "

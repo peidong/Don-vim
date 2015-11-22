@@ -120,7 +120,9 @@
 
 "autocmd BufNewFile,BufReadPost *.h set filetype=c
 set encoding=utf-8
-set nu
+autocmd InsertEnter * :set norelativenumber number
+autocmd InsertLeave * :set relativenumber nonumber
+"set number
 set relativenumber
 set smartindent
 " 开启语法高亮功能

@@ -173,7 +173,8 @@ set clipboard=unnamed
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 inoremap jj <ESC>l
-inoremap kk <ESC>:w<CR>li
+nnoremap j jzz
+nnoremap k kzz
 " 定义快捷键的前缀，即<Leader>
 let mapleader="\<Space>"
 " 定义快捷键到行首和行尾

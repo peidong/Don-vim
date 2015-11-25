@@ -37,7 +37,8 @@
  NeoBundle 'godlygeek/tabular'
  NeoBundle 'mattn/emmet-vim'
  NeoBundle 'bling/vim-airline'
- NeoBundle 'nathanaelkane/vim-indent-guides'
+ "NeoBundle 'nathanaelkane/vim-indent-guides'
+ NeoBundle 'Yggdroot/indentLine'
  "NeoBundle 'vim-scripts/a.vim'
  NeoBundle 'vim-scripts/DrawIt'
  NeoBundle 'scrooloose/nerdtree'
@@ -326,26 +327,26 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-" 随 vim 自启动
-let g:indent_guides_enable_on_vim_startup=1
-" 从第二层开始可视化显示缩进
-"let g:indent_guides_start_level=2
-" 色块宽度
-let g:indent_guides_guide_size=1
-" 快捷键 i 开/关缩进可视化
-":nmap <silent> <Leader>ci <Plug>IndentGuidesToggle
-if has("gui_running")
-    let g:indent_guides_auto_colors=1
-else
-    let g:indent_guides_auto_colors=0
-    if rainbow_background=="light"
-        hi IndentGuidesOdd  ctermbg=green
-        hi IndentGuidesEven ctermbg=brown
-    elseif rainbow_background=="dark"
-        hi IndentGuidesOdd  ctermbg=lightgreen
-        hi IndentGuidesEven ctermbg=yellow
-    endif
-endif
+"" 随 vim 自启动
+"let g:indent_guides_enable_on_vim_startup=1
+"" 从第二层开始可视化显示缩进
+""let g:indent_guides_start_level=2
+"" 色块宽度
+"let g:indent_guides_guide_size=1
+"" 快捷键 i 开/关缩进可视化
+"":nmap <silent> <Leader>ci <Plug>IndentGuidesToggle
+"if has("gui_running")
+    "let g:indent_guides_auto_colors=1
+"else
+    "let g:indent_guides_auto_colors=0
+    "if rainbow_background=="light"
+        "hi IndentGuidesOdd  ctermbg=green
+        "hi IndentGuidesEven ctermbg=brown
+    "elseif rainbow_background=="dark"
+        "hi IndentGuidesOdd  ctermbg=lightgreen
+        "hi IndentGuidesEven ctermbg=yellow
+    "endif
+"endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

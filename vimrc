@@ -121,10 +121,13 @@
 "                                              ""                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"autocmd BufNewFile,BufReadPost *.h set filetype=c
+augroup vimrc_autocmd
+    autocmd!
+    "autocmd BufNewFile,BufReadPost *.h set filetype=c
+    autocmd InsertEnter * :set norelativenumber number
+    autocmd InsertLeave * :set relativenumber nonumber
+augroup END
 set encoding=utf-8
-autocmd InsertEnter * :set norelativenumber number
-autocmd InsertLeave * :set relativenumber nonumber
 "set number
 set relativenumber
 set smartindent

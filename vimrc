@@ -34,24 +34,24 @@
              \     'unix' : 'gmake',
              \    },
              \ }
- NeoBundle 'godlygeek/tabular'
- NeoBundle 'mattn/emmet-vim'
+ NeoBundleLazy 'godlygeek/tabular'
+ NeoBundleLazy 'mattn/emmet-vim'
  NeoBundle 'bling/vim-airline'
  "NeoBundle 'nathanaelkane/vim-indent-guides'
  NeoBundle 'Yggdroot/indentLine'
  "NeoBundle 'vim-scripts/a.vim'
- NeoBundle 'vim-scripts/DrawIt'
+ NeoBundleLazy 'vim-scripts/DrawIt'
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
  "Comment MiniBufExplorer because conflict with UndotreeToggle
  "NeoBundle 'fholgado/minibufexpl.vim'
- NeoBundle 'mbbill/undotree'
+ NeoBundleLazy 'mbbill/undotree'
  NeoBundle 'easymotion/vim-easymotion'
- NeoBundle 'vim-scripts/promela.vim'
- NeoBundle 'xuhdev/vim-latex-live-preview'
- NeoBundle 'lervag/vimtex'
+ NeoBundleLazy 'vim-scripts/promela.vim'
+ NeoBundleLazy 'xuhdev/vim-latex-live-preview'
+ NeoBundleLazy 'lervag/vimtex'
  NeoBundle 'tpope/vim-surround'
- NeoBundle 'rizzatti/dash.vim'
+ NeoBundleLazy 'rizzatti/dash.vim'
  "Git
  NeoBundle 'airblade/vim-gitgutter'
  NeoBundle 'tpope/vim-fugitive'
@@ -66,15 +66,15 @@
  NeoBundle 'luochen1990/rainbow'
  NeoBundle 'vim-scripts/YankRing.vim'
  "Markdown
- NeoBundle 'tpope/vim-markdown'
+ NeoBundleLazy 'tpope/vim-markdown'
  "The tabular plugin must come before vim-markdown.
  "NeoBundle 'plasticboy/vim-markdown'
  "Json
- NeoBundle 'elzr/vim-json'
+ NeoBundleLazy 'elzr/vim-json'
  "Matlab
- NeoBundle 'vim-scripts/MatlabFilesEdition'
+ NeoBundleLazy 'vim-scripts/MatlabFilesEdition'
  "Javascript
- NeoBundle 'pangloss/vim-javascript'
+ NeoBundleLazy 'pangloss/vim-javascript'
  "Emacs
  "NeoBundle 'peidong/Vimacs'
  "Sftp
@@ -82,22 +82,22 @@
  NeoBundle 'scrooloose/nerdcommenter'
  NeoBundle 'scrooloose/syntastic'
  NeoBundle 'terryma/vim-multiple-cursors'
- NeoBundle 'honza/vim-snippets'
+ NeoBundleLazy 'honza/vim-snippets'
  NeoBundle 'szw/vim-ctrlspace'
  "PHP
- NeoBundle 'StanAngeloff/php.vim'
- NeoBundle 'shawncplus/phpcomplete.vim'
+ NeoBundleLazy 'StanAngeloff/php.vim'
+ NeoBundleLazy 'shawncplus/phpcomplete.vim'
  NeoBundle 'chrisbra/vim-diff-enhanced'
  NeoBundle 'Shougo/vimshell.vim'
  NeoBundle 'Shougo/unite.vim'
 
  " other code plugins:
  NeoBundle 'Valloric/YouCompleteMe'
- NeoBundle 'dyng/ctrlsf.vim'
- NeoBundle 'SirVer/ultisnips'
- NeoBundle 'MikeCoder/markdown-preview.vim'
+ NeoBundleLazy 'dyng/ctrlsf.vim'
+ NeoBundleLazy 'SirVer/ultisnips'
+ NeoBundleLazy 'MikeCoder/markdown-preview.vim'
  "Python
- NeoBundle 'hdima/python-syntax'
+ NeoBundleLazy 'hdima/python-syntax'
  "Unused
  "NeoBundle 'svermeulen/vim-easyclip'
 
@@ -121,15 +121,9 @@
 "                                              ""                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-augroup vimrc_autocmd
-    autocmd!
-    "autocmd BufNewFile,BufReadPost *.h set filetype=c
-    autocmd InsertEnter * :set norelativenumber number
-    autocmd InsertLeave * :set relativenumber nonumber
-augroup END
 set encoding=utf-8
-"set number
-set relativenumber
+set number
+"set relativenumber
 set smartindent
 " 开启语法高亮功能
 syntax enable
@@ -137,7 +131,7 @@ syntax enable
 syntax on
 " 自适应不同语言的智能缩进
 " filetype indent on
-filetype plugin indent on
+"filetype plugin indent on
 " 将制表符扩展为空格
 set expandtab
 " 设置编辑时制表符占用空格数
@@ -148,7 +142,7 @@ set shiftwidth=4
 set softtabstop=4
 " 高亮显示当前行/列
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 " 高亮显示搜索结果
 set hlsearch
 " 总是显示状态栏
@@ -167,7 +161,7 @@ set autoread
 set showmatch
 set matchtime=3
 "https://github.com/svermeulen/vim-easyclip#clipboard-setting
-set clipboard=unnamed
+"set clipboard=unnamed
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -215,8 +209,8 @@ let mapleader="\<Space>"
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 " 基于缩进或语法进行代码折叠
-"set foldmethod=indent
-set foldmethod=syntax
+set foldmethod=indent
+"set foldmethod=syntax
 " 启动 vim 时关闭折叠代码
 set nofoldenable
 
@@ -279,6 +273,7 @@ colorscheme PaperColor
 " confirm：是否替换前逐一确认
 " wholeword：是否整词匹配
 " replace：被替换字符串
+
 function! Replace(confirm, wholeword, replace)
     wa
     let flag = ''

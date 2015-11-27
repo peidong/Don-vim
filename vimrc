@@ -34,24 +34,24 @@
              \     'unix' : 'gmake',
              \    },
              \ }
- NeoBundleLazy 'godlygeek/tabular'
- NeoBundleLazy 'mattn/emmet-vim'
+ NeoBundle 'godlygeek/tabular'
+ NeoBundle 'mattn/emmet-vim'
  NeoBundle 'bling/vim-airline'
  "NeoBundle 'nathanaelkane/vim-indent-guides'
  NeoBundle 'Yggdroot/indentLine'
  "NeoBundle 'vim-scripts/a.vim'
- NeoBundleLazy 'vim-scripts/DrawIt'
+ NeoBundle 'vim-scripts/DrawIt'
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
  "Comment MiniBufExplorer because conflict with UndotreeToggle
  "NeoBundle 'fholgado/minibufexpl.vim'
- NeoBundleLazy 'mbbill/undotree'
+ NeoBundle 'mbbill/undotree'
  NeoBundle 'easymotion/vim-easymotion'
- NeoBundleLazy 'vim-scripts/promela.vim'
- NeoBundleLazy 'xuhdev/vim-latex-live-preview'
- NeoBundleLazy 'lervag/vimtex'
+ NeoBundle 'vim-scripts/promela.vim'
+ NeoBundle 'xuhdev/vim-latex-live-preview'
+ NeoBundle 'lervag/vimtex'
  NeoBundle 'tpope/vim-surround'
- NeoBundleLazy 'rizzatti/dash.vim'
+ NeoBundle 'rizzatti/dash.vim'
  "Git
  NeoBundle 'airblade/vim-gitgutter'
  NeoBundle 'tpope/vim-fugitive'
@@ -66,15 +66,15 @@
  NeoBundle 'luochen1990/rainbow'
  NeoBundle 'vim-scripts/YankRing.vim'
  "Markdown
- NeoBundleLazy 'tpope/vim-markdown'
+ NeoBundle 'tpope/vim-markdown'
  "The tabular plugin must come before vim-markdown.
  "NeoBundle 'plasticboy/vim-markdown'
  "Json
- NeoBundleLazy 'elzr/vim-json'
+ NeoBundle 'elzr/vim-json'
  "Matlab
- NeoBundleLazy 'vim-scripts/MatlabFilesEdition'
+ NeoBundle 'vim-scripts/MatlabFilesEdition'
  "Javascript
- NeoBundleLazy 'pangloss/vim-javascript'
+ NeoBundle 'pangloss/vim-javascript'
  "Emacs
  "NeoBundle 'peidong/Vimacs'
  "Sftp
@@ -82,22 +82,22 @@
  NeoBundle 'scrooloose/nerdcommenter'
  NeoBundle 'scrooloose/syntastic'
  NeoBundle 'terryma/vim-multiple-cursors'
- NeoBundleLazy 'honza/vim-snippets'
+ NeoBundle 'honza/vim-snippets'
  NeoBundle 'szw/vim-ctrlspace'
  "PHP
- NeoBundleLazy 'StanAngeloff/php.vim'
- NeoBundleLazy 'shawncplus/phpcomplete.vim'
+ NeoBundle 'StanAngeloff/php.vim'
+ NeoBundle 'shawncplus/phpcomplete.vim'
  NeoBundle 'chrisbra/vim-diff-enhanced'
  NeoBundle 'Shougo/vimshell.vim'
  NeoBundle 'Shougo/unite.vim'
 
  " other code plugins:
  NeoBundle 'Valloric/YouCompleteMe'
- NeoBundleLazy 'dyng/ctrlsf.vim'
- NeoBundleLazy 'SirVer/ultisnips'
- NeoBundleLazy 'MikeCoder/markdown-preview.vim'
+ NeoBundle 'dyng/ctrlsf.vim'
+ "NeoBundle 'SirVer/ultisnips'
+ NeoBundle 'MikeCoder/markdown-preview.vim'
  "Python
- NeoBundleLazy 'hdima/python-syntax'
+ NeoBundle 'hdima/python-syntax'
  "Unused
  "NeoBundle 'svermeulen/vim-easyclip'
 

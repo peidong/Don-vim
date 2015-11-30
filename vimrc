@@ -96,16 +96,21 @@
  "Latex
  NeoBundleLazy 'xuhdev/vim-latex-live-preview'
  NeoBundleLazy 'lervag/vimtex'
-
- " other code plugins:
- NeoBundleLazy 'Valloric/YouCompleteMe'
- NeoBundleLazy 'dyng/ctrlsf.vim'
- "NeoBundleLazy 'SirVer/ultisnips'
- NeoBundleLazy 'MikeCoder/markdown-preview.vim'
  "Python
  NeoBundleLazy 'hdima/python-syntax'
  "Emacs
  "NeoBundleLazy 'peidong/Vimacs'
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Other plugins                                "
+"             11/29/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+ NeoBundle 'Valloric/YouCompleteMe'
+ NeoBundle 'dyng/ctrlsf.vim'
+ "NeoBundle 'SirVer/ultisnips'
+ NeoBundleLazy 'MikeCoder/markdown-preview.vim'
 
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!

@@ -1,3 +1,5 @@
+- [Installation](#Installation)
+- [Keymap](#Keymap)
 # Installation
 ## Ubuntu Installation
     sudo apt-get install aptitude

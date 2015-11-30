@@ -25,6 +25,12 @@
  " My Bundles here:
 
  " pure vimscript plugins:
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Base Plugins                                 "
+"             11/29/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
  NeoBundle 'Shougo/vimproc.vim', {
              \ 'build' : {
              \     'windows' : 'tools\\update-dll-mingw',
@@ -34,22 +40,24 @@
              \     'unix' : 'gmake',
              \    },
              \ }
- NeoBundle 'godlygeek/tabular'
- NeoBundle 'mattn/emmet-vim'
+ NeoBundle 'Shougo/vimshell.vim'
+ NeoBundle 'Shougo/unite.vim'
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Important Plugins                            "
+"             11/29/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+ NeoBundle 'scrooloose/nerdcommenter'
+ NeoBundle 'scrooloose/syntastic'
+ NeoBundle 'terryma/vim-multiple-cursors'
  NeoBundle 'bling/vim-airline'
  NeoBundle 'Yggdroot/indentLine'
- NeoBundle 'vim-scripts/DrawIt'
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
- "Comment MiniBufExplorer because conflict with UndotreeToggle
- "NeoBundle 'fholgado/minibufexpl.vim'
  NeoBundle 'mbbill/undotree'
  NeoBundle 'easymotion/vim-easymotion'
- NeoBundle 'vim-scripts/promela.vim'
- NeoBundle 'xuhdev/vim-latex-live-preview'
- NeoBundle 'lervag/vimtex'
  NeoBundle 'tpope/vim-surround'
- NeoBundle 'rizzatti/dash.vim'
  "Git
  NeoBundle 'airblade/vim-gitgutter'
  NeoBundle 'tpope/vim-fugitive'
@@ -63,41 +71,41 @@
  NeoBundle 'gcmt/wildfire.vim'
  NeoBundle 'luochen1990/rainbow'
  NeoBundle 'vim-scripts/YankRing.vim'
- "Markdown
- NeoBundle 'tpope/vim-markdown'
- "The tabular plugin must come before vim-markdown.
- "NeoBundle 'plasticboy/vim-markdown'
- "Json
- NeoBundle 'elzr/vim-json'
- "Matlab
- NeoBundle 'vim-scripts/MatlabFilesEdition'
- "Javascript
- NeoBundle 'pangloss/vim-javascript'
- "Emacs
- "NeoBundle 'peidong/Vimacs'
- "Sftp
- "NeoBundle 'eshion/vim-sftp-sync'
- NeoBundle 'scrooloose/nerdcommenter'
- NeoBundle 'scrooloose/syntastic'
- NeoBundle 'terryma/vim-multiple-cursors'
- NeoBundle 'honza/vim-snippets'
  NeoBundle 'szw/vim-ctrlspace'
- "PHP
- NeoBundle 'StanAngeloff/php.vim'
- NeoBundle 'shawncplus/phpcomplete.vim'
  NeoBundle 'chrisbra/vim-diff-enhanced'
- NeoBundle 'Shougo/vimshell.vim'
- NeoBundle 'Shougo/unite.vim'
+ NeoBundle 'mattn/emmet-vim'
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Lazy                                         "
+"             11/29/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+ NeoBundleLazy 'rizzatti/dash.vim'
+ NeoBundleLazy 'honza/vim-snippets'
+ "Markdown
+ NeoBundleLazy 'tpope/vim-markdown'
+ "Json
+ NeoBundleLazy 'elzr/vim-json'
+ "Matlab
+ NeoBundleLazy 'vim-scripts/MatlabFilesEdition'
+ "Javascript
+ NeoBundleLazy 'pangloss/vim-javascript'
+ "PHP
+ NeoBundleLazy 'StanAngeloff/php.vim'
+ NeoBundleLazy 'shawncplus/phpcomplete.vim'
+ "Latex
+ NeoBundleLazy 'xuhdev/vim-latex-live-preview'
+ NeoBundleLazy 'lervag/vimtex'
 
  " other code plugins:
- NeoBundle 'Valloric/YouCompleteMe'
- NeoBundle 'dyng/ctrlsf.vim'
- "NeoBundle 'SirVer/ultisnips'
- NeoBundle 'MikeCoder/markdown-preview.vim'
+ NeoBundleLazy 'Valloric/YouCompleteMe'
+ NeoBundleLazy 'dyng/ctrlsf.vim'
+ "NeoBundleLazy 'SirVer/ultisnips'
+ NeoBundleLazy 'MikeCoder/markdown-preview.vim'
  "Python
- NeoBundle 'hdima/python-syntax'
- "Unused
- "NeoBundle 'svermeulen/vim-easyclip'
+ NeoBundleLazy 'hdima/python-syntax'
+ "Emacs
+ "NeoBundleLazy 'peidong/Vimacs'
 
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
@@ -238,27 +246,8 @@ endif
 " NLKNguyen/papercolor-theme
 colorscheme PaperColor
 
-" solarized
-"let g:solarized_termcolors=256
-"let g:solarized_termtrans=1
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"colorscheme solarized
-
-" molokai
-"set background=dark
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-"colorscheme molokai
-
-" phd
-"colorscheme phd
-
 " desert
 "colorscheme desert
-
-" khaki
-"colorscheme khaki
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -339,19 +328,6 @@ let g:NERDTreeDirArrows = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Plugin fholgado/minibufexpl.vim              "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 显示/隐藏 MiniBufExplorer 窗口
-"map <Leader>bl :MBEToggle<cr>
-" buffer 切换快捷键
-"map <Leader>bn :MBEbn<cr>
-"map <Leader>bp :MBEbp<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
 " Plugin mbbill/undotree                       "
 "             11/16/2015 added by Peidong      "
 "                                              "
@@ -362,7 +338,7 @@ if has("persistent_undo")
     set undofile
 endif
 
-nnoremap <Leader>bu :UndotreeToggle<cr>
+"nnoremap <Leader>bu :UndotreeToggle<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -493,29 +469,6 @@ let g:yankring_replace_n_nkey = '<Leader>n'
 
 "let g:VM_CmdHeightAdj = 0
 "let g:VM_NormalMetaXRemap = 0
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin eshion/vim-sftp-sync                  "
-"             11/19/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-"let g:vim_sftp_configs = {
-"\   'webmaster@fryer' : {
-"\       'upload_on_save'   : 1,
-"\       'download_on_open' : 1,
-"\       'confirm_downloads': 1,
-"\       'confirm_uploads'  : 1,
-"\       'local_base_path'  : '/home/webmaster/test',
-"\       'remote_base_path' : '/home/webmaster/vim-for-server',
-"\       'sftp_command' : 'sftp',
-"\       'complete_prompt_regexp' : '100\%',
-"\       'user' : 'webmaster',
-"\       'pass' : 'bh68117',
-"\       'host' : '-P22 webmaster@fryer.ee.ucla.edu'
-"\   }
-"\}
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

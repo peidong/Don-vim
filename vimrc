@@ -37,9 +37,7 @@
  NeoBundle 'godlygeek/tabular'
  NeoBundle 'mattn/emmet-vim'
  NeoBundle 'bling/vim-airline'
- "NeoBundle 'nathanaelkane/vim-indent-guides'
  NeoBundle 'Yggdroot/indentLine'
- "NeoBundle 'vim-scripts/a.vim'
  NeoBundle 'vim-scripts/DrawIt'
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
@@ -122,8 +120,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set encoding=utf-8
-set number
-"set relativenumber
+"set number
+set relativenumber
 set smartindent
 " 开启语法高亮功能
 syntax enable
@@ -274,32 +272,32 @@ colorscheme PaperColor
 " wholeword：是否整词匹配
 " replace：被替换字符串
 
-function! Replace(confirm, wholeword, replace)
-    wa
-    let flag = ''
-    if a:confirm
-        let flag .= 'gec'
-    else
-        let flag .= 'ge'
-    endif
-    let search = ''
-    if a:wholeword
-        let search .= '\<' . escape(expand('<cword>'), '/\.*$^~[') . '\>'
-    else
-        let search .= expand('<cword>')
-    endif
-    let replace = escape(a:replace, '/\&~')
-    execute 'argdo %s/' . search . '/' . replace . '/' . flag . '| update'
-endfunction
-" 不确认、非整词
-nnoremap <Leader>rr :call Replace(0, 0, input('Replace '.expand('<cword>').' with: '))<CR>
-" 不确认、整词
-nnoremap <Leader>rw :call Replace(0, 1, input('Replace '.expand('<cword>').' with: '))<CR>
-" 确认、非整词
-nnoremap <Leader>rc :call Replace(1, 0, input('Replace '.expand('<cword>').' with: '))<CR>
-" 确认、整词
-nnoremap <Leader>rcw :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
-nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
+"function! Replace(confirm, wholeword, replace)
+    "wa
+    "let flag = ''
+    "if a:confirm
+        "let flag .= 'gec'
+    "else
+        "let flag .= 'ge'
+    "endif
+    "let search = ''
+    "if a:wholeword
+        "let search .= '\<' . escape(expand('<cword>'), '/\.*$^~[') . '\>'
+    "else
+        "let search .= expand('<cword>')
+    "endif
+    "let replace = escape(a:replace, '/\&~')
+    "execute 'argdo %s/' . search . '/' . replace . '/' . flag . '| update'
+"endfunction
+"" 不确认、非整词
+"nnoremap <Leader>rr :call Replace(0, 0, input('Replace '.expand('<cword>').' with: '))<CR>
+"" 不确认、整词
+"nnoremap <Leader>rw :call Replace(0, 1, input('Replace '.expand('<cword>').' with: '))<CR>
+"" 确认、非整词
+"nnoremap <Leader>rc :call Replace(1, 0, input('Replace '.expand('<cword>').' with: '))<CR>
+"" 确认、整词
+"nnoremap <Leader>rcw :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
+"nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "
@@ -317,46 +315,6 @@ nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' wi
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin nathanaelkane/vim-indent-guides       "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-"" 随 vim 自启动
-"let g:indent_guides_enable_on_vim_startup=1
-"" 从第二层开始可视化显示缩进
-""let g:indent_guides_start_level=2
-"" 色块宽度
-"let g:indent_guides_guide_size=1
-"" 快捷键 i 开/关缩进可视化
-"":nmap <silent> <Leader>ci <Plug>IndentGuidesToggle
-"if has("gui_running")
-    "let g:indent_guides_auto_colors=1
-"else
-    "let g:indent_guides_auto_colors=0
-    "if rainbow_background=="light"
-        "hi IndentGuidesOdd  ctermbg=green
-        "hi IndentGuidesEven ctermbg=brown
-    "elseif rainbow_background=="dark"
-        "hi IndentGuidesOdd  ctermbg=lightgreen
-        "hi IndentGuidesEven ctermbg=yellow
-    "endif
-"endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin vim-scripts/a.vim                     "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" *.cpp 和 *.h 间切换
-"nmap <Leader>ch :A<CR>
-" 子窗口中显示 *.cpp 或 *.h
-"nmap <Leader>csh :AS<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

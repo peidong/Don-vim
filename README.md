@@ -1,32 +1,6 @@
 # Keymap
 #### Normal Mode
-###### General Keymap
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>C-w C-w</kbd> | Jump to next window
-<kbd>C-w h</kbd>   | Jump to left window
-<kbd>C-w l</kbd>   | Jump to right window
-<kbd>C-w j</kbd>   | Jump to below window
-<kbd>C-w k</kbd>   | Jump to top window
-<kbd>%</kbd>       | Go to pairing operator
-<kbd>`<leader>` r r</kbd>     | Replace the cursor word,without confirmation,without whole word
-<kbd>`<leader>` r w</kbd>   | Replace the cursor word,without confirmation,with whole word
-<kbd>`<leader>` r c</kbd>   | Replace the cursor word,with confirmation,without whole word
-<kbd>`<leader>` r c w</kbd> | Replace the cursor word,with confirmation,with whole word
-<kbd>`<leader>` r w c</kbd> | Replace the cursor word,with confirmation,with whole word
 ##### Pure vimscript plugins
-###### Plugin 'nathanaelkane/vim-indent-guides'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>`<leader>` c i</kbd>     | Turn on or turn off Indent lines
-<kbd>z a</kbd>     | Turn on or turn off cursor current code foldings
-<kbd>z M</kbd>     | Turn off all code foldings
-<kbd>z R</kbd>     | Turn on all code foldings
-###### Plugin 'vim-scripts/DrawIt'
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>:DIstart</kbd>| Draw comment
-<kbd>:DIstop</kbd> | Stop to draw comment
 ###### Plugin 'mattn/emmet-vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
@@ -144,10 +118,9 @@ Keybinding         | Description
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>jj</kbd>      | `<ESC>` : return to Normal Mode
-<kbd>kk</kbd>      | save the file and go back to insert mode
 
 # Installation
-## Linux, \*nix, Mac OSX Installation
+## Ubuntu Installation
     sudo apt-get install aptitude
     sudo aptitude install exuberant-ctags ack-grep git build-essential cmake python-dev
     cd ~
@@ -163,9 +136,27 @@ Then vim, and `:NeoBundleInstall`
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --clang-completer --omnisharp-completer --gocode-completer
     mkdir ~/.undodir/
-## Installing on Windows
-Not done
 
-## How to install (MacVim)[https://github.com/macvim-dev/macvim/releases/tag/snapshot-80]
+## Mac OSX Installation
+#### How to install (MacVim)[https://github.com/macvim-dev/macvim/releases/tag/snapshot-80]
 
     ./configure --with-features=huge --enable-cscope --enable-largefile --enable-luainterp=yes --enable-multibyte --enable-mzschemeinterp --enable-perlinterp=yes --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.7/config --enable-rubyinterp=yes --enable-tclinterp
+
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew install ack cmake
+    cd ~
+    git clone https://github.com/peidong/vimrc.git
+    mv vimrc .vim
+    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
+    mkdir -p ~/.vim/bundle
+    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
+Then vim, and `:NeoBundleInstall`
+
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.py --clang-completer --omnisharp-completer --gocode-completer
+    mkdir ~/.undodir/
+
+## Installing on Windows
+Not done

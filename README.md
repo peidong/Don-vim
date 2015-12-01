@@ -1,5 +1,7 @@
 # Installation
 ## Ubuntu Installation
+
+    sudo apt-get install pylint
     sudo apt-get install aptitude
     sudo aptitude install exuberant-ctags ack-grep git build-essential cmake python-dev
     cd ~
@@ -21,10 +23,13 @@ Then vim, and `:NeoBundleInstall`
 
     ./configure --with-features=huge --enable-cscope --enable-largefile --enable-luainterp=yes --enable-multibyte --enable-mzschemeinterp --enable-perlinterp=yes --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.7/config --enable-rubyinterp=yes --enable-tclinterp
 
+install [pip](https://pip.pypa.io/en/stable/installing/)
+
 #### Install vimrc
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install ack cmake
+    sudo pip install pylint
     cd ~
     git clone https://github.com/peidong/vimrc.git
     mv vimrc .vim

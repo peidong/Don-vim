@@ -407,51 +407,21 @@ let g:NERDTreeIndicatorMapCustom = {
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 let g:rainbow_active = 1
+
+let rainbow_ctermfgs_lightcolors = ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow']
+let rainbow_ctermfgs_darkcolors = ['lightblue', 'lightyellow', 'red', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white']
+let rainbow_guifgs_lightcolors = ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick']
+let rainbow_guifgs_darkcolors = ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick']
+
 if rainbow_background == "light"
     let g:rainbow_conf = {
-                \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-                \   'ctermfgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'],
-                \   'operators': '_,_',
-                \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-                \   'separately': {
-                \       '*': {},
-                \       'tex': {
-                \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-                \       },
-                \       'lisp': {
-                \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-                \       },
-                \       'vim': {
-                \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-                \       },
-                \       'html': {
-                \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-                \       },
-                \       'css': 0,
-                \   }
+                \   'guifgs': rainbow_guifgs_lightcolors,
+                \   'ctermfgs': rainbow_ctermfgs_lightcolors
                 \}
 elseif rainbow_background == "dark"
     let g:rainbow_conf = {
-                \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-                \   'ctermfgs': ['lightblue', 'lightyellow', 'red', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white'],
-                \   'operators': '_,_',
-                \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-                \   'separately': {
-                \       '*': {},
-                \       'tex': {
-                \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-                \       },
-                \       'lisp': {
-                \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-                \       },
-                \       'vim': {
-                \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-                \       },
-                \       'html': {
-                \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-                \       },
-                \       'css': 0,
-                \   }
+                \   'guifgs': rainbow_guifgs_darkcolors,
+                \   'ctermfgs': rainbow_ctermfgs_darkcolors
                 \}
 endif
 
@@ -528,7 +498,6 @@ if has("unix")
 	let s:uname = system("uname")
     if s:uname == "Darwin\n"
     	" Do Mac stuff here
-        "let g:vimshell_editor_command = '/Users/peidong/Developer/ProgramFiles/MacVim/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
         let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
     else
         " Do Linux stuff here

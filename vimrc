@@ -176,12 +176,12 @@ set matchtime=3
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Keyboard Mapping                             "
+" General Keyboard Mapping                     "
 "             05/13/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-inoremap jj <ESC>l
+inoremap jj <ESC><Right>
 " 定义快捷键的前缀，即<Leader>
 let mapleader="\<Space>"
 " 定义快捷键到行首和行尾

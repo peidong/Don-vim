@@ -184,33 +184,6 @@ set matchtime=3
 inoremap jj <ESC><Right>
 " 定义快捷键的前缀，即<Leader>
 let mapleader="\<Space>"
-" 定义快捷键到行首和行尾
-" nmap lb 0
-" nmap le $
-" 设置快捷键将选中文本块复制至系统剪贴板
-" vnoremap <Leader>y "+y
-" 设置快捷键将系统剪贴板内容粘贴至 vim
-" nmap <Leader>p "+p
-" 定义快捷键关闭当前分割窗口
-"nmap <Leader>q :q<CR>
-" 定义快捷键保存当前窗口内容
-"nmap <Leader>w :w<CR>
-" 定义快捷键保存所有窗口内容并退出 vim
-"nmap <Leader>WQ :wa<CR>:q<CR>
-" 不做任何保存，直接退出 vim
-"nmap <Leader>Q :qa!<CR>
-" 依次遍历子窗口
-" nnoremap <Leader>nw <C-W><C-W>
-" 跳转至右方的窗口
-" nnoremap <Leader>lw <C-W>l
-" 跳转至方的窗口
-" nnoremap <Leader>hw <C-W>h
-" 跳转至上方的子窗口
-" nnoremap <Leader>kw <C-W>k
-" 跳转至下方的子窗口
-" nnoremap <Leader>jw <C-W>j
-" 定义快捷键在结对符之间跳转，助记pair
-" nmap <Leader>pa %
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -253,45 +226,6 @@ colorscheme PaperColor
 
 " desert
 "colorscheme desert
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Replace function                             "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 替换函数。参数说明：
-" confirm：是否替换前逐一确认
-" wholeword：是否整词匹配
-" replace：被替换字符串
-
-"function! Replace(confirm, wholeword, replace)
-    "wa
-    "let flag = ''
-    "if a:confirm
-        "let flag .= 'gec'
-    "else
-        "let flag .= 'ge'
-    "endif
-    "let search = ''
-    "if a:wholeword
-        "let search .= '\<' . escape(expand('<cword>'), '/\.*$^~[') . '\>'
-    "else
-        "let search .= expand('<cword>')
-    "endif
-    "let replace = escape(a:replace, '/\&~')
-    "execute 'argdo %s/' . search . '/' . replace . '/' . flag . '| update'
-"endfunction
-"" 不确认、非整词
-"nnoremap <Leader>rr :call Replace(0, 0, input('Replace '.expand('<cword>').' with: '))<CR>
-"" 不确认、整词
-"nnoremap <Leader>rw :call Replace(0, 1, input('Replace '.expand('<cword>').' with: '))<CR>
-"" 确认、非整词
-"nnoremap <Leader>rc :call Replace(1, 0, input('Replace '.expand('<cword>').' with: '))<CR>
-"" 确认、整词
-"nnoremap <Leader>rcw :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
-"nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "

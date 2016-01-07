@@ -94,7 +94,7 @@
  NeoBundleLazy 'StanAngeloff/php.vim'
  NeoBundleLazy 'shawncplus/phpcomplete.vim'
  "Latex
- NeoBundleLazy 'xuhdev/vim-latex-live-preview'
+ NeoBundle 'xuhdev/vim-latex-live-preview'
  NeoBundleLazy 'lervag/vimtex'
  "Python
  NeoBundleLazy 'hdima/python-syntax'

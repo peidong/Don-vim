@@ -48,7 +48,8 @@
 "             11/29/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
- NeoBundle 'scrooloose/nerdcommenter'
+
+ NeoBundle 'tomtom/tcomment_vim'
  NeoBundle 'scrooloose/syntastic'
  NeoBundle 'terryma/vim-multiple-cursors'
  NeoBundle 'bling/vim-airline'
@@ -62,7 +63,6 @@
  NeoBundle 'airblade/vim-gitgutter'
  NeoBundle 'tpope/vim-fugitive'
  NeoBundle 'ntpeters/vim-better-whitespace'
- "NeoBundle 'Raimondi/delimitMate'
  NeoBundle 'jiangmiao/auto-pairs'
  NeoBundle 'docunext/closetag.vim'
  NeoBundle 'tpope/vim-repeat'

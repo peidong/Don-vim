@@ -121,9 +121,9 @@ Keybinding         | Description
 <kbd>gc`<motion>`</kbd>   | Comment/uncomment the context
 <kbd>gcc</kbd>   | Comment/uncomment the line
 <kbd>g\>`<motion>`</kbd>   | Comment the context
-<kbd>g`>`c</kbd>   | Comment the line
-<kbd>g`<``<motion>`</kbd>   | Comment the context
-<kbd>g`<`c</kbd>   | Comment the line
+<kbd>g\>c</kbd>   | Comment the line
+<kbd>g\<`<motion>`</kbd>   | Comment the context
+<kbd>g\<c</kbd>   | Comment the line
 ###### Plugin 'easymotion/vim-easymotion'
 Keybinding         | Description
 -------------------|------------------------------------------------------------

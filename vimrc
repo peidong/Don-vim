@@ -182,7 +182,7 @@ set matchtime=3
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-inoremap jj <ESC><Right>
+"inoremap jj <ESC><Right>
 " 定义快捷键的前缀，即<Leader>
 let mapleader="\<Space>"
 

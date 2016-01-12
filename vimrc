@@ -50,6 +50,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""
 
  NeoBundle 'tomtom/tcomment_vim'
+ NeoBundle 'junegunn/vim-easy-align'
  NeoBundle 'scrooloose/syntastic'
  NeoBundle 'terryma/vim-multiple-cursors'
  NeoBundle 'bling/vim-airline'
@@ -234,6 +235,19 @@ colorscheme PaperColor
 " Vimscript plugin 11/18/2015 added by Peidong "" Vimscript plugin 11/18/2015 added by Peidong "
 "                                              ""                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin junegunn/vim-easy-align               "
+"             01/11/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

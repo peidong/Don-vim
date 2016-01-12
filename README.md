@@ -115,11 +115,13 @@ Keybinding         | Description
 <kbd>-</kbd>| add file
 <kbd>cc</kbd>| git commit
 <kbd>q</kbd>| quit
-###### Plugin 'scrooloose/nerdcommenter'
+###### Plugin 'tomtom/tcomment_vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>`<leader>` c c</kbd>   | Comment the context
-<kbd>`<leader>` c u</kbd>   | Uncomment the context
+<kbd>gc`<motion>`</kbd>   | Comment/uncomment the context
+<kbd>gcc</kbd>   | Comment/uncomment the line
+<kbd>gc`<motion>`</kbd>   | Comment/uncomment the context
+<kbd>gcc</kbd>   | Comment/uncomment the line
 ###### Plugin 'easymotion/vim-easymotion'
 Keybinding         | Description
 -------------------|------------------------------------------------------------

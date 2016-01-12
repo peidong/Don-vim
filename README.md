@@ -118,12 +118,12 @@ Keybinding         | Description
 ###### Plugin 'tomtom/tcomment_vim'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>gc`<motion>`</kbd>   | Comment/uncomment the context
-<kbd>gcc</kbd>   | Comment/uncomment the line
-<kbd>g\>`<motion>`</kbd>   | Comment the context
-<kbd>g\>c</kbd>   | Comment the line
-<kbd>g\<`<motion>`</kbd>   | Comment the context
-<kbd>g\<c</kbd>   | Comment the line
+<kbd>gc`<motion>`</kbd>  | Comment/uncomment the context
+<kbd>gcc</kbd>           | Comment/uncomment the line
+<kbd>g\>`<motion>`</kbd> | Comment the context
+<kbd>g\>c</kbd>          | Comment the line
+<kbd>g\<`<motion>`</kbd> | Uncomment the context
+<kbd>g\<c</kbd>          | Uncomment the line
 ###### Plugin 'easymotion/vim-easymotion'
 Keybinding         | Description
 -------------------|------------------------------------------------------------

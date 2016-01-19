@@ -176,6 +176,9 @@ set showmatch
 set matchtime=3
 "https://github.com/svermeulen/vim-easyclip#clipboard-setting
 "set clipboard=unnamed
+"特殊符号显示
+set listchars:tab:>-,trail:-,eol:$,nbsp:%,extends:>,precedes:<
+set list
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

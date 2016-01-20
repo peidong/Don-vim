@@ -217,7 +217,9 @@ else
     let rainbow_background="dark"
 endif
 " basic color settings
-set t_Co=256
+if $TERM == "xterm-256color"
+    set t_Co=256
+endif
 
 if rainbow_background == "light"
     set background=light

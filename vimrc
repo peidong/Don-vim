@@ -365,8 +365,10 @@ let g:rainbow_active = 1
 
 let rainbow_ctermfgs_lightcolors = ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow']
 let rainbow_ctermfgs_darkcolors = ['lightblue', 'lightyellow', 'red', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white']
-let rainbow_guifgs_lightcolors = ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick']
-let rainbow_guifgs_darkcolors = ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick']
+let rainbow_guifgs_lightcolors = ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow']
+let rainbow_guifgs_darkcolors = ['lightblue', 'lightyellow', 'red', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white']
+" let rainbow_guifgs_lightcolors = ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick']
+" let rainbow_guifgs_darkcolors = ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick']
 
 if rainbow_background == "light"
     let g:rainbow_conf = {

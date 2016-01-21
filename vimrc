@@ -216,6 +216,7 @@ if current_time_hour < 18 && current_time_hour > 5
 else
     let rainbow_background="dark"
 endif
+
 " basic color settings
 if $TERM == "xterm-256color"
     set t_Co=256
@@ -363,12 +364,10 @@ let g:NERDTreeIndicatorMapCustom = {
 
 let g:rainbow_active = 1
 
-let rainbow_ctermfgs_lightcolors = ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow']
-let rainbow_ctermfgs_darkcolors = ['lightblue', 'lightyellow', 'red', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white']
-let rainbow_guifgs_lightcolors = ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow']
-let rainbow_guifgs_darkcolors = ['lightblue', 'lightyellow', 'red', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white']
-" let rainbow_guifgs_lightcolors = ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick']
-" let rainbow_guifgs_darkcolors = ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick']
+let rainbow_ctermfgs_lightcolors = [2, 9, 0, 12]
+let rainbow_ctermfgs_darkcolors = [9, 14, 11, 13, 10, 15]
+let rainbow_guifgs_lightcolors = ['#008000', '#ff0000', '#000000', '#0000ff']
+let rainbow_guifgs_darkcolors = ['#ff0000', '#00ffff', '#ffff00', '#ff00ff', '#00ff00', '#ffffff']
 
 if rainbow_background == "light"
     let g:rainbow_conf = {

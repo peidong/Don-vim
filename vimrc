@@ -135,6 +135,14 @@
 "                                              ""                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" - font type and size setting.
+if has('win32')
+    set guifont=Consolas:h12   " Win32.
+elseif has('gui_macvim')
+    set guifont=Monaco:h12     " OSX.
+else
+    set guifont=Monospace\ 12  " Linux.
+endif
 set encoding=utf-8
 "set number
 set relativenumber

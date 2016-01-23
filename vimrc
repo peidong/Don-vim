@@ -218,13 +218,19 @@ set nofoldenable
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-let current_time_hour = strftime("%H")
-if current_time_hour < 18 && current_time_hour > 5
+" let current_time_hour = strftime("%H")
+" if current_time_hour < 18 && current_time_hour > 5
+"     let rainbow_background="light"
+" else
+"     let rainbow_background="dark"
+" endif
+
+let current_time_second = strftime("%S")
+if current_time_second % 2 == 1 
     let rainbow_background="light"
 else
     let rainbow_background="dark"
 endif
-let rainbow_background="dark"
 
 " basic color settings
 if $TERM == "xterm-256color"

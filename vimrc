@@ -272,7 +272,7 @@ nmap ga <Plug>(EasyAlign)
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Plugin bling/vim-airline                     "
+" Plugin vim-airline/vim-airline               "
 "             11/16/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -280,6 +280,8 @@ nmap ga <Plug>(EasyAlign)
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

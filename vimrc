@@ -224,6 +224,7 @@ if current_time_hour < 18 && current_time_hour > 5
 else
     let rainbow_background="dark"
 endif
+let rainbow_background="dark"
 
 " basic color settings
 if $TERM == "xterm-256color"
@@ -372,10 +373,10 @@ let g:NERDTreeIndicatorMapCustom = {
 
 let g:rainbow_active = 1
 
-let rainbow_ctermfgs_lightcolors = [2, 9, 0, 12]
+let rainbow_ctermfgs_lightcolors = [2, 1, 0, 4]
 let rainbow_ctermfgs_darkcolors = [9, 14, 11, 13, 10, 15]
-let rainbow_guifgs_lightcolors = ['#008000', '#ff0000', '#000000', '#0000ff']
-let rainbow_guifgs_darkcolors = ['#ff0000', '#00ffff', '#ffff00', '#ff00ff', '#00ff00', '#ffffff']
+let rainbow_guifgs_lightcolors = ['#008700', '#af005f', '#1c1c1c', '#0000af']
+let rainbow_guifgs_darkcolors = ['#f2433d', '#0087d7', '#d7af00', '#d787ff', '#00d75f', '#d0d0d0']
 
 if rainbow_background == "light"
     let g:rainbow_conf = {

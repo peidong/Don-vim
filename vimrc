@@ -53,7 +53,7 @@
  NeoBundle 'junegunn/vim-easy-align'
  NeoBundle 'scrooloose/syntastic'
  NeoBundle 'terryma/vim-multiple-cursors'
- NeoBundle 'bling/vim-airline'
+ NeoBundle 'vim-airline/vim-airline'
  NeoBundle 'Yggdroot/indentLine'
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'Xuyuanp/nerdtree-git-plugin'

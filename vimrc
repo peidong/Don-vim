@@ -602,3 +602,12 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin vim-scripts/Vim-R-plugin              "
+"             11/18/2015 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let vimrplugin_start_libs = "base,stats,graphics,grDevices,utils,methods"

@@ -111,7 +111,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""
  NeoBundle 'Valloric/YouCompleteMe'
  NeoBundle 'dyng/ctrlsf.vim'
- NeoBundle 'vim-scripts/Vim-R-plugin'
+"  NeoBundle 'vim-scripts/Vim-R-plugin'
  "NeoBundle 'SirVer/ultisnips'
  NeoBundleLazy 'MikeCoder/markdown-preview.vim'
 

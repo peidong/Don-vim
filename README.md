@@ -3,7 +3,7 @@
 
     sudo apt-get install pylint
     sudo apt-get install aptitude
-    sudo aptitude install exuberant-ctags ack-grep git build-essential cmake python-dev
+    sudo aptitude install exuberant-ctags ack-grep git build-essential cmake python-dev cscope
     cd ~
     git clone https://github.com/peidong/vimrc.git
     mv vimrc .vim
@@ -28,7 +28,7 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
 #### Install vimrc
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install ack cmake ctags
+    brew install ack cmake ctags cscope
     sudo pip install pylint
     cd ~
     git clone https://github.com/peidong/vimrc.git

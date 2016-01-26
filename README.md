@@ -54,10 +54,14 @@ Not done
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>C-y ,</kbd>   | Emmet-vim
+###### Plugin 'brookhong/cscope.vim'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`<leader>` b c</kbd>   | scan the cursor word
 ###### Plugin 'majutsushi/tagbar'
 Keybinding         | Description
 -------------------|------------------------------------------------------------
-<kbd>`<leader>` b t</kbd>   | Open Tagbar list.`<CR>`
+<kbd>`<leader>` b t</kbd>   | Open Tagbar list.
 ###### Plugin 'scrooloose/nerdtree'
 Keybinding         | Description
 -------------------|------------------------------------------------------------

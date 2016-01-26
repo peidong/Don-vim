@@ -76,6 +76,7 @@
  NeoBundle 'szw/vim-ctrlspace'
  NeoBundle 'chrisbra/vim-diff-enhanced'
  NeoBundle 'mattn/emmet-vim'
+ NeoBundle 'tmhedberg/SimpylFold'
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
 " Lazy                                         "
@@ -103,7 +104,7 @@
  "Emacs
  "NeoBundleLazy 'peidong/Vimacs'
  "Kernel
- NeoBundle 'vivien/vim-linux-coding-style'
+"  NeoBundle 'vivien/vim-linux-coding-style'
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -212,7 +213,7 @@ let mapleader="\<Space>"
 set foldmethod=indent
 "set foldmethod=syntax
 " 启动 vim 时关闭折叠代码
-set nofoldenable
+" set nofoldenable
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -228,7 +229,7 @@ set nofoldenable
 " endif
 
 let current_time_second = strftime("%S")
-if current_time_second % 2 == 1 
+if current_time_second % 2 == 1
     let rainbow_background="light"
 else
     let rainbow_background="dark"

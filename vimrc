@@ -102,6 +102,8 @@
  NeoBundleLazy 'hdima/python-syntax'
  "Emacs
  "NeoBundleLazy 'peidong/Vimacs'
+ "Kernel
+ NeoBundle 'vivien/vim-linux-coding-style'
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

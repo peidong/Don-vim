@@ -316,8 +316,8 @@ let g:NERDTreeDirArrows = 1
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <leader>ca :call CscopeFindInteractive(expand('<cword>'))<CR>
-nnoremap <leader>cl :call ToggleLocationList()<CR>
+nnoremap <leader>bc :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>bl :call ToggleLocationList()<CR>
 " " s: Find this C symbol
 " nnoremap  <leader>cs :call CscopeFind('s', expand('<cword>'))<CR>
 " " g: Find this definition

@@ -28,7 +28,7 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
 #### Install vimrc
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install ack cmake
+    brew install ack cmake ctags
     sudo pip install pylint
     cd ~
     git clone https://github.com/peidong/vimrc.git
@@ -54,6 +54,10 @@ Not done
 Keybinding         | Description
 -------------------|------------------------------------------------------------
 <kbd>C-y ,</kbd>   | Emmet-vim
+###### Plugin 'majutsushi/tagbar'
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>`<leader>` b t</kbd>   | Open Tagbar list.`<CR>`
 ###### Plugin 'scrooloose/nerdtree'
 Keybinding         | Description
 -------------------|------------------------------------------------------------

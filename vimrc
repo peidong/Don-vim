@@ -77,6 +77,7 @@
  NeoBundle 'chrisbra/vim-diff-enhanced'
  NeoBundle 'mattn/emmet-vim'
  NeoBundle 'tmhedberg/SimpylFold'
+ NeoBundle 'majutsushi/tagbar'
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
 " Lazy                                         "
@@ -213,7 +214,7 @@ let mapleader="\<Space>"
 set foldmethod=indent
 "set foldmethod=syntax
 " 启动 vim 时关闭折叠代码
-" set nofoldenable
+set nofoldenable
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -306,6 +307,15 @@ let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeDirArrows = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugin majutsushi/tagbar                     "
+"             01/26/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+nmap <Leader>bt :TagbarToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "

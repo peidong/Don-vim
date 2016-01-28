@@ -4,44 +4,51 @@
 "                                           "
 """""""""""""""""""""""""""""""""""""""""""""
 " Note: Skip initialization for vim-tiny or vim-small.
- if 0 | endif
+if 0 | endif
 
- if has('vim_starting')
-   if &compatible
-     set nocompatible               " Be iMproved
-   endif
+if has('vim_starting')
+    if &compatible
+        set nocompatible               " Be iMproved
+    endif
 
-   " Required:
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
- endif
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
- " Required:
- call neobundle#begin(expand('~/.vim/bundle/'))
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
 
- " Let NeoBundle manage NeoBundle
- " Required:
- NeoBundleFetch 'Shougo/neobundle.vim'
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
 
- " My Bundles here:
+" My Bundles here:
 
- " pure vimscript plugins:
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
 " Base Plugins                                 "
 "             11/29/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
- NeoBundle 'Shougo/vimproc.vim', {
-             \ 'build' : {
-             \     'windows' : 'tools\\update-dll-mingw',
-             \     'cygwin' : 'make -f make_cygwin.mak',
-             \     'mac' : 'make',
-             \     'linux' : 'make',
-             \     'unix' : 'gmake',
-             \    },
-             \ }
- NeoBundle 'Shougo/vimshell.vim'
- NeoBundle 'Shougo/unite.vim'
+
+"Interactive command execution in Vim.
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \     'windows' : 'tools\\update-dll-mingw',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make',
+            \     'linux' : 'make',
+            \     'unix' : 'gmake',
+            \    },
+            \ }
+
+"Use shell inside vim, usage: :VimShell<CR>
+NeoBundle 'Shougo/vimshell.vim'
+
+"This plugin can do various things, but I only use this as a base plugin for
+"Shougo's plugins
+NeoBundle 'Shougo/unite.vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
 " Important Plugins                            "
@@ -49,65 +56,137 @@
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
- NeoBundle 'tomtom/tcomment_vim'
- NeoBundle 'junegunn/vim-easy-align'
- NeoBundle 'scrooloose/syntastic'
- NeoBundle 'terryma/vim-multiple-cursors'
- NeoBundle 'vim-airline/vim-airline'
- NeoBundle 'vim-airline/vim-airline-themes'
- NeoBundle 'Yggdroot/indentLine'
- NeoBundle 'scrooloose/nerdtree'
- NeoBundle 'Xuyuanp/nerdtree-git-plugin'
- NeoBundle 'mbbill/undotree'
- NeoBundle 'easymotion/vim-easymotion'
- NeoBundle 'tpope/vim-surround'
- "Git
- NeoBundle 'airblade/vim-gitgutter'
- NeoBundle 'tpope/vim-fugitive'
- NeoBundle 'ntpeters/vim-better-whitespace'
- NeoBundle 'jiangmiao/auto-pairs'
- NeoBundle 'docunext/closetag.vim'
- NeoBundle 'tpope/vim-repeat'
- NeoBundle 'kien/ctrlp.vim'
- "NeoBundle 'flazz/vim-colorschemes'
- NeoBundle 'NLKNguyen/papercolor-theme'
- NeoBundle 'gcmt/wildfire.vim'
- NeoBundle 'luochen1990/rainbow'
- NeoBundle 'vim-scripts/YankRing.vim'
- NeoBundle 'szw/vim-ctrlspace'
- NeoBundle 'chrisbra/vim-diff-enhanced'
- NeoBundle 'mattn/emmet-vim'
- NeoBundle 'tmhedberg/SimpylFold'
- NeoBundle 'majutsushi/tagbar'
- NeoBundle 'brookhong/cscope.vim'
+"Comment code in files, usage: gcc
+NeoBundle 'tomtom/tcomment_vim'
+
+"Align codes, usage: gaiw
+NeoBundle 'junegunn/vim-easy-align'
+
+"Check the syntastic of codes, need to install engines in PATH
+NeoBundle 'scrooloose/syntastic'
+
+"Edit code with multi-cursors, usage: <C-n> next, <C-p> previous, <C-x>
+"ignore, v Normal Mode, c Change Word
+NeoBundle 'terryma/vim-multiple-cursors'
+
+"Vim status line
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+
+"Show the indent lines
+NeoBundle 'Yggdroot/indentLine'
+
+"Show the file list, usage: :NERDTreeToggle<CR>
+NeoBundle 'scrooloose/nerdtree'
+
+"Embedded with NERDTree
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+
+"Show the undo history, usage: :UndotreeToggle<CR>
+NeoBundle 'mbbill/undotree'
+
+"Fast move cursors, usage: <Leader><Leader>j/k/f/t/F/T
+NeoBundle 'easymotion/vim-easymotion'
+
+"Fast add/delete/change surroundings, usage: csiw/ysiw/dsiw
+NeoBundle 'tpope/vim-surround'
+
+"Show git status in the left column
+NeoBundle 'airblade/vim-gitgutter'
+
+"Do git commands inside vim, usage: :Gdiff, :Gpush, :Gpull
+NeoBundle 'tpope/vim-fugitive'
+
+"Show spaces in color red
+NeoBundle 'ntpeters/vim-better-whitespace'
+
+"Auto complete pairs
+NeoBundle 'jiangmiao/auto-pairs'
+
+"Auto complete tags like Html tags
+NeoBundle 'docunext/closetag.vim'
+
+"Make repeat "." more smart
+NeoBundle 'tpope/vim-repeat'
+
+"Fast find more files, usage: <C-p>
+NeoBundle 'kien/ctrlp.vim'
+
+"Many colorschemes, but not recommend, because some of them are not up-to-date
+"NeoBundle 'flazz/vim-colorschemes'
+
+"PaperColor theme, is better for light colorscheme, also you can use it for
+"dark colorscheme
+NeoBundle 'NLKNguyen/papercolor-theme'
+
+"Fast select blocks, usage: <Enter>, <Backspace>
+NeoBundle 'gcmt/wildfire.vim'
+
+"Make pairs colorful
+NeoBundle 'luochen1990/rainbow'
+
+"Make the copy function more smart, usage: when finish pasting, <Leader>p,
+"<Leader>n
+NeoBundle 'vim-scripts/YankRing.vim'
+
+"Change between files in buffer, usage <C-Space>
+NeoBundle 'szw/vim-ctrlspace'
+
+"Make vim's diff more powerful, usage: vimdiff, vim -d
+NeoBundle 'chrisbra/vim-diff-enhanced'
+
+"Use it in HTML codes for example, usage: <C-y>,
+NeoBundle 'mattn/emmet-vim'
+
+"Better folding in Python code
+NeoBundle 'tmhedberg/SimpylFold'
+
+"More powerful show tags generated by ctags, usage: :TagbarToggle<CR>
+NeoBundle 'majutsushi/tagbar'
+
+"Useful in C code when we want to jump,
+"usage: :call CscopeFindInteractive(expand('<cword>'))<CR>
+NeoBundle 'brookhong/cscope.vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
 " Lazy                                         "
 "             11/29/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
- NeoBundleLazy 'rizzatti/dash.vim'
- NeoBundleLazy 'honza/vim-snippets'
- "Markdown
- NeoBundleLazy 'tpope/vim-markdown'
- "Json
- NeoBundleLazy 'elzr/vim-json'
- "Matlab
- NeoBundleLazy 'vim-scripts/MatlabFilesEdition'
- "Javascript
- NeoBundleLazy 'pangloss/vim-javascript'
- "PHP
- NeoBundleLazy 'StanAngeloff/php.vim'
- NeoBundleLazy 'shawncplus/phpcomplete.vim'
- "Latex
- NeoBundleLazy 'xuhdev/vim-latex-live-preview'
- NeoBundleLazy 'lervag/vimtex'
- "Python
- NeoBundleLazy 'hdima/python-syntax'
- "Emacs
- "NeoBundleLazy 'peidong/Vimacs'
- "Kernel
-"  NeoBundle 'vivien/vim-linux-coding-style'
+
+"Use in Mac OSX's Dash app
+" NeoBundleLazy 'rizzatti/dash.vim'
+
+"Code templates
+" NeoBundleLazy 'honza/vim-snippets'
+
+"Markdown highlight
+NeoBundle 'tpope/vim-markdown'
+
+"Json highlight
+NeoBundle 'elzr/vim-json'
+
+"Matlab highlight
+NeoBundle 'vim-scripts/MatlabFilesEdition'
+
+"Javascript highlight
+NeoBundle 'pangloss/vim-javascript'
+
+"PHP highlight
+NeoBundle 'StanAngeloff/php.vim'
+
+"Improved PHP omni-completion
+NeoBundle 'shawncplus/phpcomplete.vim'
+
+"Latex preview
+NeoBundle 'xuhdev/vim-latex-live-preview'
+
+"Latex edit
+NeoBundle 'lervag/vimtex'
+
+"Python highlight
+NeoBundle 'hdima/python-syntax'
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -115,23 +194,30 @@
 "             11/29/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
- NeoBundle 'Valloric/YouCompleteMe'
- NeoBundle 'dyng/ctrlsf.vim'
-"  NeoBundle 'vim-scripts/Vim-R-plugin'
- "NeoBundle 'SirVer/ultisnips'
- NeoBundleLazy 'MikeCoder/markdown-preview.vim'
 
- " Refer to |:NeoBundle-examples|.
- " Note: You don't set neobundle setting in .gvimrc!
+"Auto complete engine
+NeoBundle 'Valloric/YouCompleteMe'
 
- call neobundle#end()
+"Fast find new words
+NeoBundle 'dyng/ctrlsf.vim'
 
- " Required:
- filetype plugin indent on
+"There are bugs in this plugin
+"NeoBundle 'SirVer/ultisnips'
 
- " If there are uninstalled bundles found on startup,
- " this will conveniently prompt you to install them.
- NeoBundleCheck
+"Preview the markdown file
+NeoBundle 'MikeCoder/markdown-preview.vim'
+
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 " Put your non-Plugin stuff after this line
 
@@ -367,9 +453,9 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 if has("unix")
-	let s:uname = system("uname")
+    let s:uname = system("uname")
     if s:uname == "Darwin\n"
-    	" Do Mac stuff here
+        " Do Mac stuff here
         let g:livepreview_previewer = 'open -a Preview'
     else
         " Do Linux stuff here
@@ -510,9 +596,9 @@ set hidden
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 if has("unix")
-	let s:uname = system("uname")
+    let s:uname = system("uname")
     if s:uname == "Darwin\n"
-    	" Do Mac stuff here
+        " Do Mac stuff here
         let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
     else
         " Do Linux stuff here
@@ -625,21 +711,3 @@ let python_highlight_all = 1
 " Other needs      11/18/2015 added by Peidong "" Other needs      11/18/2015 added by Peidong "
 "                                              ""                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin StanAngeloff/php.vim                  "
-"             11/18/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Put at the very end of your .vimrc file.
-
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
-
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
-augroup END

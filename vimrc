@@ -54,6 +54,7 @@
  NeoBundle 'scrooloose/syntastic'
  NeoBundle 'terryma/vim-multiple-cursors'
  NeoBundle 'vim-airline/vim-airline'
+ NeoBundle 'vim-airline/vim-airline-themes'
  NeoBundle 'Yggdroot/indentLine'
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'Xuyuanp/nerdtree-git-plugin'

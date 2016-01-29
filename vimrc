@@ -641,10 +641,10 @@ if vim_function_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
 
     " Start interactive EasyAlign in visual mode (e.g. vipga)
-    xmap ga <Plug>(EasyAlign)
+    xnoremap ga <Plug>(EasyAlign)
 
     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-    nmap ga <Plug>(EasyAlign)
+    nnoremap ga <Plug>(EasyAlign)
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     "                                              "
@@ -654,7 +654,7 @@ if vim_function_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
 
     " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
-    nmap <Leader>bf :NERDTreeToggle<CR>
+    nnoremap <Leader>bf :NERDTreeToggle<CR>
     " 设置NERDTree子窗口宽度
     let NERDTreeWinSize=32
     " 设置NERDTree子窗口位置
@@ -703,7 +703,7 @@ if vim_function_level >= 3
         "                                              "
         """"""""""""""""""""""""""""""""""""""""""""""""
 
-        nmap <Leader>bt :TagbarToggle<CR>
+        nnoremap <Leader>bt :TagbarToggle<CR>
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
@@ -714,6 +714,8 @@ if vim_function_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
 
     nnoremap <Leader>bu :UndotreeToggle<cr>
+    " If undotree is opened, it is likely one wants to interact with it.
+    let g:undotree_SetFocusWhenToggle=1
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     "                                              "
@@ -874,7 +876,7 @@ if vim_function_level >= 5
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
-    map <leader>bm :MarkdownPreview GitHub<CR>
+    nnoremap <leader>bm :MarkdownPreview GitHub<CR>
 
 endif
 

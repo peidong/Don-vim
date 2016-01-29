@@ -11,6 +11,22 @@ silent function! WINDOWS()
     return  (has('win32') || has('win64'))
 endfunction
 
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Local vimrc
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Use local vimrc if available {
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
+" }
+
+" Use local gvimrc if available and gui is running {
+if has('gui_running')
+    if filereadable(expand("~/.gvimrc.local"))
+        source ~/.gvimrc.local
+    endif
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""
 "                                           "
 " Neobundle 11/16/2015 added by Peidong     "
@@ -245,30 +261,6 @@ NeoBundleCheck
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""
-" font type, size setting, and encoding.
-"""""""""""""""""""""""""""""""""""""""""""""""
-scriptencoding utf-8
-set encoding=utf-8
-if WINDOWS()
-    set fileencodings=utf-8,chinese,latin-1
-    set fileencoding=chinese
-    " 解决菜单乱码
-    source $VIMRUNTIME/delmenu.vim
-    source $VIMRUNTIME/menu.vim
-    " 解决consle输出乱码
-    language messages zh_CN.utf-8
-endif
-if has('gui')
-    if WINDOWS()
-        set guifont=Consolas:h12   " Win32.
-    elseif OSX()
-        set guifont=Monaco:h12     " OSX.
-    elseif LINUX()
-        set guifont=Monospace\ 12  " Linux.
-    endif
-endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""
 " Liner number
 """""""""""""""""""""""""""""""""""""""""""""""
 set number
@@ -288,6 +280,14 @@ set shiftwidth=4
 set softtabstop=4
 " 自适应不同语言的智能缩进
 filetype indent on
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Format
+"""""""""""""""""""""""""""""""""""""""""""""""
+" set nowrap                      " Do not wrap long lines
+set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
+set splitright                  " Puts new vsplit windows to the right of the current
+set splitbelow                  " Puts new split windows to the bottom of the current
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Syntax
@@ -329,6 +329,7 @@ if has('cmdline_info')
 endif
 " vim 自身命令行模式智能补全
 set wildmenu
+set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Tabs line
@@ -356,7 +357,8 @@ set matchtime=1
 set foldmethod=indent
 "set foldmethod=syntax
 " 启动 vim 时关闭折叠代码
-set nofoldenable
+" set nofoldenable
+set foldenable                  " Auto fold code
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Clipboard
@@ -374,7 +376,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""
 " Mouse
 """""""""""""""""""""""""""""""""""""""""""""""
-set mouse=a                 " Automatically enable mouse usage
+" set mouse=a                 " Automatically enable mouse usage
 set mousehide               " Hide the mouse cursor while typing
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -394,6 +396,18 @@ if has("persistent_undo")
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""
+" Scroll
+"""""""""""""""""""""""""""""""""""""""""""""""
+set scrolljump=5                " Lines to scroll when cursor leaves screen
+set scrolloff=3                 " Minimum lines to keep above and below cursor
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+" List chars
+"""""""""""""""""""""""""""""""""""""""""""""""
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 " Others
 """""""""""""""""""""""""""""""""""""""""""""""
 set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
@@ -408,6 +422,7 @@ set showmode                    " Display the current mode
 set backspace=indent,eol,start  " Backspace for dummies
 set linespace=0                 " No extra spaces between rows"
 set winminheight=0              " Windows can be 0 line high
+set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -422,10 +437,45 @@ let mapleader="\<Space>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" color            05/13/2015 added by Peidong "
+" GUI              01/28/2016 added by Peidong "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""""""""""""
+" General settings
+"""""""""""""""""""""""""""""""""""""""""""""""
+if has('gui_running')
+    set guioptions-=T           " Remove the toolbar
+    set lines=40                " 40 lines of text instead of 24
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Font type, size setting, and encoding.
+"""""""""""""""""""""""""""""""""""""""""""""""
+scriptencoding utf-8
+set encoding=utf-8
+if WINDOWS()
+    set fileencodings=utf-8,chinese,latin-1
+    set fileencoding=chinese
+    " 解决菜单乱码
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    " 解决consle输出乱码
+    language messages zh_CN.utf-8
+endif
+if has('gui_running')
+    if WINDOWS()
+        set guifont=Consolas:h12   " Win32.
+    elseif OSX()
+        set guifont=Monaco:h12     " OSX.
+    elseif LINUX()
+        set guifont=Monospace\ 12  " Linux.
+    endif
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Color settings
+"""""""""""""""""""""""""""""""""""""""""""""""
 " This is for days and nights coloring
 " let current_time_hour = strftime("%H")
 " if current_time_hour < 18 && current_time_hour > 5
@@ -443,10 +493,13 @@ else
 endif
 
 " basic color settings
-if $TERM == "xterm-256color"
+if &term == "xterm-256color"
     set t_Co=256
-elseif $TERM == "screen-256color"
+elseif &term == "screen-256color"
     set t_Co=256
+endif
+if &term == 'xterm' || &term == 'screen'
+    set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
 endif
 
 if vim_background == "light"

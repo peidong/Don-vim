@@ -12,6 +12,61 @@ silent function! WINDOWS()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""
+" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
+" across (heterogeneous) systems easier.
+"""""""""""""""""""""""""""""""""""""""""""""""
+if WINDOWS()
+    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+" language and encoding setup
+"""""""""""""""""""""""""""""""""""""""""""""""
+" always use English menu
+" NOTE: this must before filetype off, otherwise it won't work
+set langmenu=none
+
+" use English for anaything in vim-editor.
+if WINDOWS()
+    silent exec 'language english'
+elseif OSX()
+    silent exec 'language en_US'
+else
+    let s:uname = system("uname -s")
+    if s:uname == "Darwin\n"
+        " in mac-terminal
+        silent exec 'language en_US'
+    else
+        " in linux-terminal
+        silent exec 'language en_US.utf8'
+    endif
+endif
+
+" try to set encoding to utf-8
+if WINDOWS()
+    " Be nice and check for multi_byte even if the config requires
+    " multi_byte support most of the time
+    if has('multi_byte')
+        " Windows cmd.exe still uses cp850. If Windows ever moved to
+        " Powershell as the primary terminal, this would be utf-8
+        set termencoding=cp850
+        " Let Vim use utf-8 internally, because many scripts require this
+        set encoding=utf-8
+        setglobal fileencoding=utf-8
+        " Windows has traditionally used cp1252, so it's probably wise to
+        " fallback into cp1252 instead of eg. iso-8859-15.
+        " Newer Windows files might contain utf-8 or utf-16 LE so we might
+        " want to try them first.
+        set fileencodings=ucs-bom,utf-8,utf-16le,cp1252,iso-8859-15
+    endif
+else
+    " set default encoding to utf-8
+    set encoding=utf-8
+    set termencoding=utf-8
+endif
+scriptencoding utf-8
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 " Initialize variables
 """""""""""""""""""""""""""""""""""""""""""""""
 let vim_function_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
@@ -19,6 +74,7 @@ let system_has_ctags = 1
 let system_has_cscope = 1
 let vim_set_list = 1
 let vim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
+let vim_enable_syntastic = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " before.local vimrc
@@ -136,7 +192,9 @@ if vim_function_level >= 2
         NeoBundle 'junegunn/vim-easy-align'
 
         " Check the syntastic of codes, need to install engines in PATH
-        NeoBundle 'scrooloose/syntastic'
+        if vim_enable_syntastic == 1
+            NeoBundle 'scrooloose/syntastic'
+        endif
 
         " Show the indent lines
         NeoBundle 'Yggdroot/indentLine'
@@ -336,6 +394,7 @@ set relativenumber
 " Indent
 """""""""""""""""""""""""""""""""""""""""""""""
 set smartindent
+set autoindent
 " 将制表符扩展为空格
 set expandtab
 " 设置编辑时制表符占用空格数
@@ -490,6 +549,7 @@ set backspace=indent,eol,start  " Backspace for dummies
 set linespace=0                 " No extra spaces between rows"
 set winminheight=0              " Windows can be 0 line high
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+set lazyredraw " do not redraw while executing macros (much faster)
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -511,25 +571,34 @@ let mapleader="\<Space>"
 """""""""""""""""""""""""""""""""""""""""""""""
 " General settings
 """""""""""""""""""""""""""""""""""""""""""""""
+" set window size (if it's GUI)
 if has('gui_running')
-    set guioptions-=T           " Remove the toolbar
-    set lines=40                " 40 lines of text instead of 24
+    " set window's width to 130 columns and height to 40 rows
+    if exists('+lines')
+        set lines=40
+    endif
+    if exists('+columns')
+        set columns=130
+    endif
+
+    " DISABLE
+    " if WINDOWS()
+    "     au GUIEnter * simalt ~x " Maximize window when enter vim
+    " else
+    "     " TODO: no way right now
+    " endif
 endif
 
+set showfulltag " show tag with function protype.
+set guioptions+=b " present the bottom scrollbar when the longest visible line exceed the window
+
+" disable menu & toolbar
+set guioptions-=m
+set guioptions-=T
+
 """""""""""""""""""""""""""""""""""""""""""""""
-" Font type, size setting, and encoding.
+" Font
 """""""""""""""""""""""""""""""""""""""""""""""
-scriptencoding utf-8
-set encoding=utf-8
-if WINDOWS()
-    set fileencodings=utf-8,chinese,latin-1
-    set fileencoding=chinese
-    " 解决菜单乱码
-    source $VIMRUNTIME/delmenu.vim
-    source $VIMRUNTIME/menu.vim
-    " 解决consle输出乱码
-    language messages zh_CN.utf-8
-endif
 if has('gui_running')
     if WINDOWS()
         set guifont=Consolas:h12   " Win32.
@@ -769,27 +838,29 @@ if vim_function_level >= 3
     let g:yankring_replace_n_pkey = '<Leader>p'
     let g:yankring_replace_n_nkey = '<Leader>n'
 
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Plugin scrooloose/syntastic                  "
-    "             05/13/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
+    if vim_enable_syntastic == 1
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        "                                              "
+        " Plugin scrooloose/syntastic                  "
+        "             05/13/2015 added by Peidong      "
+        "                                              "
+        """"""""""""""""""""""""""""""""""""""""""""""""
 
-    " Better :sign interface symbols
-    let g:syntastic_error_symbol = '✗✗'
-    let g:syntastic_style_error_symbol = '✠✠'
-    let g:syntastic_warning_symbol = '∆∆'
-    let g:syntastic_style_warning_symbol = '≈≈'
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
+        " Better :sign interface symbols
+        let g:syntastic_error_symbol = '✗✗'
+        let g:syntastic_style_error_symbol = '✠✠'
+        let g:syntastic_warning_symbol = '∆∆'
+        let g:syntastic_style_warning_symbol = '≈≈'
+        set statusline+=%#warningmsg#
+        set statusline+=%{SyntasticStatuslineFlag()}
+        set statusline+=%*
 
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-    let g:syntastic_loc_list_height = 4
+        let g:syntastic_always_populate_loc_list = 1
+        let g:syntastic_auto_loc_list = 1
+        let g:syntastic_check_on_open = 1
+        let g:syntastic_check_on_wq = 0
+        let g:syntastic_loc_list_height = 4
+    endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     "                                              "
@@ -798,16 +869,27 @@ if vim_function_level >= 3
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
+    let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
     if OSX()
         let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
+		" Display user name on OSX.
+		let g:vimshell_prompt = $USER."% "
+        if executable('zsh') && filereadable(expand('~/.zsh_history'))
+            " Use zsh history in vimshell/history source.
+            let g:unite_source_vimshell_external_history_path =
+                        \ expand('~/.zsh_history')
+        endif
     elseif LINUX()
+		" Display user name on Linux.
+		let g:vimshell_prompt = $USER."% "
+        if executable('zsh') && filereadable(expand('~/.zsh_history'))
+            " Use zsh history in vimshell/history source.
+            let g:unite_source_vimshell_external_history_path =
+                        \ expand('~/.zsh_history')
+        endif
     elseif WINDOWS()
-    endif
-
-    if executable('zsh') && filereadable(expand('~/.zsh_history'))
-        " Use zsh history in vimshell/history source.
-        let g:unite_source_vimshell_external_history_path =
-                    \ expand('~/.zsh_history')
+		" Display user name on Windows.
+		let g:vimshell_prompt = $USERNAME."% "
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""

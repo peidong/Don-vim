@@ -6,3 +6,4 @@ let system_has_ctags = 1
 let system_has_cscope = 1
 let vim_set_list = 1
 let vim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
+let vim_enable_syntastic = 1

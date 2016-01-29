@@ -437,7 +437,7 @@ set hidden "Required by Plugin vim-ctrlspace
 """""""""""""""""""""""""""""""""""""""""""""""
 " Undo
 """""""""""""""""""""""""""""""""""""""""""""""
-set backup
+" set backup
 if has("persistent_undo")
     set undodir=~/.undodir/
     set undofile " Required by Plugin mbbill/undotree

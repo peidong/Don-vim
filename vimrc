@@ -19,17 +19,17 @@ let system_has_ctags = 1
 let vim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplcache.vim, 5:YouCompleteMe
 
 """""""""""""""""""""""""""""""""""""""""""""""
-" Local vimrc
+" before.local vimrc
 """""""""""""""""""""""""""""""""""""""""""""""
-" Use local vimrc if available
-if filereadable(expand("~/.vimrc.local"))
-    source ~/.vimrc.local
+" Use before.local vimrc if available
+if filereadable(expand("~/.vimrc.before.local"))
+    source ~/.vimrc.before.local
 endif
 
-" Use local gvimrc if available and gui is running {
+" Use before.local gvimrc if available and gui is running {
 if has('gui_running')
-    if filereadable(expand("~/.gvimrc.local"))
-        source ~/.gvimrc.local
+    if filereadable(expand("~/.gvimrc.before.local"))
+        source ~/.gvimrc.before.local
     endif
 endif
 
@@ -1081,4 +1081,24 @@ if vim_function_level >= 2
         " https://github.com/c9s/perlomni.vim
         let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
     endif
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+" before.local vimrc
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Use fork vimrc if available
+if filereadable(expand("~/.vimrc.fork"))
+	source ~/.vimrc.fork
+endif
+
+" Use local vimrc if available
+if filereadable(expand("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
+
+" Use local gvimrc if available and gui is running
+if has('gui_running')
+	if filereadable(expand("~/.gvimrc.local"))
+		source ~/.gvimrc.local
+	endif
 endif

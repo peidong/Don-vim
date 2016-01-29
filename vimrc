@@ -444,8 +444,10 @@ set smartcase                   " Case sensitive when uc present
 " Status line
 """""""""""""""""""""""""""""""""""""""""""""""
 " 总是显示状态栏
-if has('statusline')
-    set laststatus=2
+if vim_function_level >= 2
+    if has('statusline')
+        set laststatus=2
+    endif
 endif
 if has('cmdline_info')
     " 显示光标当前位置
@@ -612,18 +614,22 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""
 " Color settings
 """""""""""""""""""""""""""""""""""""""""""""""
-" This is for days and nights coloring
-" let current_time_hour = strftime("%H")
-" if current_time_hour < 18 && current_time_hour > 5
-"     let vim_background="light"
-" else
-"     let vim_background="dark"
-" endif
+if vim_function_level >= 2
+    " This is for days and nights coloring
+    " let current_time_hour = strftime("%H")
+    " if current_time_hour < 18 && current_time_hour > 5
+    "     let vim_background="light"
+    " else
+    "     let vim_background="dark"
+    " endif
 
-" This is for 50% possibility background
-let current_time_second = strftime("%S")
-if current_time_second % 2 == 1
-    let vim_background="light"
+    " This is for 50% possibility background
+    let current_time_second = strftime("%S")
+    if current_time_second % 2 == 1
+        let vim_background="light"
+    else
+        let vim_background="dark"
+    endif
 else
     let vim_background="dark"
 endif
@@ -647,6 +653,8 @@ endif
 if vim_function_level >= 2
     " NLKNguyen/papercolor-theme
     colorscheme PaperColor
+else
+    colorscheme desert
 endif
 
 " desert

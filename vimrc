@@ -836,7 +836,7 @@ let g:unite_source_history_yank_enable = 1
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if vim_complete_engine == 5 # YouCompleteMe
+if vim_complete_engine == 5 " YouCompleteMe
     " YCM 补全菜单配色
     " 菜单
     " highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
@@ -868,7 +868,7 @@ if vim_complete_engine == 5 # YouCompleteMe
     let g:ycm_error_symbol = '✗✗'
     let g:ycm_warning_symbol = '∆∆'
     "let g:ycm_show_diagnostics_ui = 0
-elseif vim_complete_engine == 3 # neocomplcache
+elseif vim_complete_engine == 3 " neocomplcache
     "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
     " Disable AutoComplPop.
     let g:acp_enableAtStartup = 0
@@ -958,7 +958,7 @@ elseif vim_complete_engine == 3 # neocomplcache
     " For perlomni.vim setting.
     " https://github.com/c9s/perlomni.vim
     let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-elseif vim_complete_engine == 4 # neocomplete
+elseif vim_complete_engine == 4 " neocomplete
     "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
     " Disable AutoComplPop.
     let g:acp_enableAtStartup = 0

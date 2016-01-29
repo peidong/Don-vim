@@ -3,3 +3,4 @@ MarkDownRes
 *.swp
 *.*~
 *~
+.DS_Store

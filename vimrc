@@ -1,3 +1,16 @@
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Identify platform
+"""""""""""""""""""""""""""""""""""""""""""""""
+silent function! OSX()
+    return has('macunix')
+endfunction
+silent function! LINUX()
+    return has('unix') && !has('macunix') && !has('win32unix')
+endfunction
+silent function! WINDOWS()
+    return  (has('win32') || has('win64'))
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""
 "                                           "
 " Neobundle 11/16/2015 added by Peidong     "
@@ -234,9 +247,9 @@ NeoBundleCheck
 """""""""""""""""""""""""""""""""""""""""""""""
 " font type, size setting, and encoding.
 """""""""""""""""""""""""""""""""""""""""""""""
+scriptencoding utf-8
 set encoding=utf-8
-if has('win32')
-    set guifont=Consolas:h12   " Win32.
+if WINDOWS()
     set fileencodings=utf-8,chinese,latin-1
     set fileencoding=chinese
     " 解决菜单乱码
@@ -244,10 +257,15 @@ if has('win32')
     source $VIMRUNTIME/menu.vim
     " 解决consle输出乱码
     language messages zh_CN.utf-8
-elseif has('gui_macvim')
-    set guifont=Monaco:h12     " OSX.
-else
-    set guifont=Monospace\ 12  " Linux.
+endif
+if has('gui')
+    if WINDOWS()
+        set guifont=Consolas:h12   " Win32.
+    elseif OSX()
+        set guifont=Monaco:h12     " OSX.
+    elseif LINUX()
+        set guifont=Monospace\ 12  " Linux.
+    endif
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -334,6 +352,46 @@ set nofoldenable
 """""""""""""""""""""""""""""""""""""""""""""""
 " https://github.com/svermeulen/vim-easyclip#clipboard-setting
 " set clipboard=unnamed
+if has('clipboard')
+    if has('unnamedplus')  " When possible use + register for copy-paste
+        set clipboard=unnamed,unnamedplus
+    else         " On mac and Windows, use * register for copy-paste
+        set clipboard=unnamed
+    endif
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Mouse
+"""""""""""""""""""""""""""""""""""""""""""""""
+set mouse=a                 " Automatically enable mouse usage
+set mousehide               " Hide the mouse cursor while typing
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Hidden
+"""""""""""""""""""""""""""""""""""""""""""""""
+set hidden "Required by Plugin vim-ctrlspace
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Undo
+"""""""""""""""""""""""""""""""""""""""""""""""
+set backup
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile " Required by Plugin mbbill/undotree
+    set undolevels=1000         " Maximum number of changes that can be undone
+    set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+endif
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Others
+"""""""""""""""""""""""""""""""""""""""""""""""
+set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
+set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
+set virtualedit=onemore             " Allow for cursor beyond last character
+set history=1000                    " Store a ton of history (default is 20)
+" set spell                           " Spell checking on
+set iskeyword-=.                    " '.' is an end of word designator
+set iskeyword-=#                    " '#' is an end of word designator
+set iskeyword-=-                    " '-' is an end of word designator
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -487,10 +545,6 @@ nmap <Leader>bt :TagbarToggle<CR>
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if has("persistent_undo")
-    set undodir=~/.undodir/
-    set undofile
-endif
 nnoremap <Leader>bu :UndotreeToggle<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -500,15 +554,10 @@ nnoremap <Leader>bu :UndotreeToggle<cr>
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if has("unix")
-    let s:uname = system("uname")
-    if s:uname == "Darwin\n"
-        " Do Mac stuff here
-        let g:livepreview_previewer = 'open -a Preview'
-    else
-        " Do Linux stuff here
-        let g:livepreview_previewer = 'okular'
-    endif
+if OSX()
+    let g:livepreview_previewer = 'open -a Preview'
+elseif LINUX()
+    let g:livepreview_previewer = 'okular'
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -619,29 +668,17 @@ let g:multi_cursor_quit_key='<Esc>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Plugin vim-ctrlspace                         "
-"             11/12/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-set hidden
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
 " Plugin Shougo/vimshell.vim                   "
 "             11/20/2015 added by Peidong      "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if has("unix")
-    let s:uname = system("uname")
-    if s:uname == "Darwin\n"
-        " Do Mac stuff here
-        let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
-    else
-        " Do Linux stuff here
-    endif
+if OSX()
+    let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
+elseif LINUX()
+elseif WINDOWS()
 endif
+
 if executable('zsh') && filereadable(expand('~/.zsh_history'))
     " Use zsh history in vimshell/history source.
     let g:unite_source_vimshell_external_history_path =

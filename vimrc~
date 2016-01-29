@@ -12,13 +12,17 @@ silent function! WINDOWS()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""
+" Initialize variables
+"""""""""""""""""""""""""""""""""""""""""""""""
+let vim_function_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
+
+"""""""""""""""""""""""""""""""""""""""""""""""
 " Local vimrc
 """""""""""""""""""""""""""""""""""""""""""""""
-" Use local vimrc if available {
+" Use local vimrc if available
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
-" }
 
 " Use local gvimrc if available and gui is running {
 if has('gui_running')
@@ -27,233 +31,290 @@ if has('gui_running')
     endif
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""
-"                                           "
-" Neobundle 11/16/2015 added by Peidong     "
-"                                           "
-"""""""""""""""""""""""""""""""""""""""""""""
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
+if vim_function_level >= 2
+    """""""""""""""""""""""""""""""""""""""""""""
+    "                                           "
+    " Neobundle 11/16/2015 added by Peidong     "
+    "                                           "
+    """""""""""""""""""""""""""""""""""""""""""""
+    " Note: Skip initialization for vim-tiny or vim-small.
+    if 0 | endif
 
-if has('vim_starting')
-    if &compatible
-        set nocompatible               " Be iMproved
+    if has('vim_starting')
+        if &compatible
+            set nocompatible               " Be iMproved
+        endif
+
+        " Required:
+        set runtimepath+=~/.vim/bundle/neobundle.vim/
     endif
 
     " Required:
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    call neobundle#begin(expand('~/.vim/bundle/'))
+
+    " Let NeoBundle manage NeoBundle
+    " Required:
+    NeoBundleFetch 'Shougo/neobundle.vim'
+
+    " My Bundles here:
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Base Plugins                                 "
+    "             11/29/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+
+    " Interactive command execution in Vim.
+    if vim_function_level >= 3
+        NeoBundle 'Shougo/vimproc.vim', {
+                    \ 'build' : {
+                    \     'windows' : 'tools\\update-dll-mingw',
+                    \     'cygwin' : 'make -f make_cygwin.mak',
+                    \     'mac' : 'make',
+                    \     'linux' : 'make',
+                    \     'unix' : 'gmake',
+                    \    },
+                    \ }
+    endif
+
+    " Use shell inside vim, usage: :VimShell<CR>
+    if vim_function_level >= 3
+        NeoBundle 'Shougo/vimshell.vim'
+    endif
+
+    " This plugin can do various things, but I only use this as a base plugin for
+    " Shougo's plugins
+    if vim_function_level >= 3
+        NeoBundle 'Shougo/unite.vim'
+    endif
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Important Plugins                            "
+    "             11/29/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+
+    " Comment code in files, usage: gcc
+    if vim_function_level >= 2
+        NeoBundle 'tomtom/tcomment_vim'
+    endif
+
+    " Align codes, usage: gaiw
+    if vim_function_level >= 3
+        NeoBundle 'junegunn/vim-easy-align'
+    endif
+
+    " Check the syntastic of codes, need to install engines in PATH
+    if vim_function_level >= 3
+        NeoBundle 'scrooloose/syntastic'
+    endif
+
+    " Edit code with multi-cursors, usage: <C-n> next, <C-p> previous, <C-x>
+    " ignore, v Normal Mode, c Change Word
+    if vim_function_level >= 4
+        NeoBundle 'terryma/vim-multiple-cursors'
+    endif
+
+    " Vim status line
+    if vim_function_level >= 2
+        NeoBundle 'vim-airline/vim-airline'
+        NeoBundle 'vim-airline/vim-airline-themes'
+    endif
+
+    " Show the indent lines
+    if vim_function_level >= 3
+        NeoBundle 'Yggdroot/indentLine'
+    endif
+
+    " Show the file list, usage: :NERDTreeToggle<CR>
+    if vim_function_level >= 3
+        NeoBundle 'scrooloose/nerdtree'
+    endif
+
+    " Embedded with NERDTree
+    if vim_function_level >= 3
+        NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+    endif
+
+    " Show the undo history, usage: :UndotreeToggle<CR>
+    if vim_function_level >= 3
+        NeoBundle 'mbbill/undotree'
+    endif
+
+    " Fast move cursors, usage: <Leader><Leader>j/k/f/t/F/T
+    if vim_function_level >= 3
+        NeoBundle 'easymotion/vim-easymotion'
+    endif
+
+    " Fast add/delete/change surroundings, usage: csiw/ysiw/dsiw
+    if vim_function_level >= 3
+        NeoBundle 'tpope/vim-surround'
+    endif
+
+    " Show git status in the left column
+    if vim_function_level >= 3
+        NeoBundle 'airblade/vim-gitgutter'
+    endif
+
+    " Do git commands inside vim, usage: :Gdiff, :Gpush, :Gpull
+    if vim_function_level >= 3
+        NeoBundle 'tpope/vim-fugitive'
+    endif
+
+    " Show spaces in color red
+    if vim_function_level >= 3
+        NeoBundle 'ntpeters/vim-better-whitespace'
+    endif
+
+    " Auto complete pairs
+    if vim_function_level >= 2
+        NeoBundle 'jiangmiao/auto-pairs'
+    endif
+
+    " Auto complete tags like Html tags
+    if vim_function_level >= 2
+        NeoBundle 'docunext/closetag.vim'
+    endif
+
+    " Make repeat "." more smart
+    if vim_function_level >= 3
+        NeoBundle 'tpope/vim-repeat'
+    endif
+
+    " Fast find more files, usage: <C-p>
+    if vim_function_level >= 3
+        NeoBundle 'kien/ctrlp.vim'
+    endif
+
+    " Many colorschemes, but not recommend, because some of them are not up-to-date
+    " NeoBundle 'flazz/vim-colorschemes'
+
+    " PaperColor theme, is better for light colorscheme, also you can use it for
+    " dark colorscheme
+    if vim_function_level >= 2
+        NeoBundle 'NLKNguyen/papercolor-theme'
+    endif
+
+    " Fast select blocks, usage: <Enter>, <Backspace>
+    if vim_function_level >= 3
+        NeoBundle 'gcmt/wildfire.vim'
+    endif
+
+    " Make pairs colorful
+    if vim_function_level >= 2
+        NeoBundle 'luochen1990/rainbow'
+    endif
+
+    " Make the copy function more smart, usage: when finish pasting, <Leader>p,
+    " <Leader>n
+    if vim_function_level >= 3
+        NeoBundle 'vim-scripts/YankRing.vim'
+    endif
+
+    " Change between files in buffer, usage <C-Space>
+    if vim_function_level >= 3
+        NeoBundle 'szw/vim-ctrlspace'
+    endif
+
+    " Make vim's diff more powerful, usage: vimdiff, vim -d
+    if vim_function_level >= 3
+        NeoBundle 'chrisbra/vim-diff-enhanced'
+    endif
+
+    " Use it in HTML codes for example, usage: <C-y>,
+    if vim_function_level >= 3
+        NeoBundle 'mattn/emmet-vim'
+    endif
+
+    " Better folding in Python code
+    NeoBundle 'tmhedberg/SimpylFold'
+
+    " More powerful show tags generated by ctags, usage: :TagbarToggle<CR>
+    NeoBundle 'majutsushi/tagbar'
+
+    " Useful in C code when we want to jump,
+    " usage: :call CscopeFindInteractive(expand('<cword>'))<CR>
+    NeoBundle 'brookhong/cscope.vim'
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Lazy                                         "
+    "             11/29/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+
+    " Use in Mac OSX's Dash app
+    " NeoBundleLazy 'rizzatti/dash.vim'
+
+    " Code templates
+    " NeoBundleLazy 'honza/vim-snippets'
+
+    " Markdown highlight
+    NeoBundle 'tpope/vim-markdown'
+
+    " Json highlight
+    NeoBundle 'elzr/vim-json'
+
+    " Matlab highlight
+    NeoBundle 'vim-scripts/MatlabFilesEdition'
+
+    " Javascript highlight
+    NeoBundle 'pangloss/vim-javascript'
+
+    " PHP highlight
+    NeoBundle 'StanAngeloff/php.vim'
+
+    " Improved PHP omni-completion
+    NeoBundle 'shawncplus/phpcomplete.vim'
+
+    " Latex preview
+    NeoBundle 'xuhdev/vim-latex-live-preview'
+
+    " Latex edit
+    NeoBundle 'lervag/vimtex'
+
+    " Python highlight
+    NeoBundle 'hdima/python-syntax'
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Other plugins                                "
+    "             11/29/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+
+    " Auto complete engine
+    if has('python')
+        NeoBundle 'Valloric/YouCompleteMe'
+    endif
+
+    " Fast find new words
+    NeoBundle 'dyng/ctrlsf.vim'
+
+    " There are bugs in this plugin
+    " NeoBundle 'SirVer/ultisnips'
+
+    " Preview the markdown file
+    if has('python')
+        NeoBundle 'MikeCoder/markdown-preview.vim'
+    endif
+
+    " Refer to |:NeoBundle-examples|.
+    " Note: You don't set neobundle setting in .gvimrc!
+
+    call neobundle#end()
+
+    " Required:
+    filetype plugin indent on
+
+    " If there are uninstalled bundles found on startup,
+    " this will conveniently prompt you to install them.
+    NeoBundleCheck
+
+    " Put your non-Plugin stuff after this line
 endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Base Plugins                                 "
-"             11/29/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Interactive command execution in Vim.
-NeoBundle 'Shougo/vimproc.vim', {
-            \ 'build' : {
-            \     'windows' : 'tools\\update-dll-mingw',
-            \     'cygwin' : 'make -f make_cygwin.mak',
-            \     'mac' : 'make',
-            \     'linux' : 'make',
-            \     'unix' : 'gmake',
-            \    },
-            \ }
-
-" Use shell inside vim, usage: :VimShell<CR>
-NeoBundle 'Shougo/vimshell.vim'
-
-" This plugin can do various things, but I only use this as a base plugin for
-" Shougo's plugins
-NeoBundle 'Shougo/unite.vim'
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Important Plugins                            "
-"             11/29/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Comment code in files, usage: gcc
-NeoBundle 'tomtom/tcomment_vim'
-
-" Align codes, usage: gaiw
-NeoBundle 'junegunn/vim-easy-align'
-
-" Check the syntastic of codes, need to install engines in PATH
-NeoBundle 'scrooloose/syntastic'
-
-" Edit code with multi-cursors, usage: <C-n> next, <C-p> previous, <C-x>
-" ignore, v Normal Mode, c Change Word
-NeoBundle 'terryma/vim-multiple-cursors'
-
-" Vim status line
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-
-" Show the indent lines
-NeoBundle 'Yggdroot/indentLine'
-
-" Show the file list, usage: :NERDTreeToggle<CR>
-NeoBundle 'scrooloose/nerdtree'
-
-" Embedded with NERDTree
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-
-" Show the undo history, usage: :UndotreeToggle<CR>
-NeoBundle 'mbbill/undotree'
-
-" Fast move cursors, usage: <Leader><Leader>j/k/f/t/F/T
-NeoBundle 'easymotion/vim-easymotion'
-
-" Fast add/delete/change surroundings, usage: csiw/ysiw/dsiw
-NeoBundle 'tpope/vim-surround'
-
-" Show git status in the left column
-NeoBundle 'airblade/vim-gitgutter'
-
-" Do git commands inside vim, usage: :Gdiff, :Gpush, :Gpull
-NeoBundle 'tpope/vim-fugitive'
-
-" Show spaces in color red
-NeoBundle 'ntpeters/vim-better-whitespace'
-
-" Auto complete pairs
-NeoBundle 'jiangmiao/auto-pairs'
-
-" Auto complete tags like Html tags
-NeoBundle 'docunext/closetag.vim'
-
-" Make repeat "." more smart
-NeoBundle 'tpope/vim-repeat'
-
-" Fast find more files, usage: <C-p>
-NeoBundle 'kien/ctrlp.vim'
-
-" Many colorschemes, but not recommend, because some of them are not up-to-date
-" NeoBundle 'flazz/vim-colorschemes'
-
-" PaperColor theme, is better for light colorscheme, also you can use it for
-" dark colorscheme
-NeoBundle 'NLKNguyen/papercolor-theme'
-
-" Fast select blocks, usage: <Enter>, <Backspace>
-NeoBundle 'gcmt/wildfire.vim'
-
-" Make pairs colorful
-NeoBundle 'luochen1990/rainbow'
-
-" Make the copy function more smart, usage: when finish pasting, <Leader>p,
-" <Leader>n
-NeoBundle 'vim-scripts/YankRing.vim'
-
-" Change between files in buffer, usage <C-Space>
-NeoBundle 'szw/vim-ctrlspace'
-
-" Make vim's diff more powerful, usage: vimdiff, vim -d
-NeoBundle 'chrisbra/vim-diff-enhanced'
-
-" Use it in HTML codes for example, usage: <C-y>,
-NeoBundle 'mattn/emmet-vim'
-
-" Better folding in Python code
-NeoBundle 'tmhedberg/SimpylFold'
-
-" More powerful show tags generated by ctags, usage: :TagbarToggle<CR>
-NeoBundle 'majutsushi/tagbar'
-
-" Useful in C code when we want to jump,
-" usage: :call CscopeFindInteractive(expand('<cword>'))<CR>
-NeoBundle 'brookhong/cscope.vim'
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Lazy                                         "
-"             11/29/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Use in Mac OSX's Dash app
-" NeoBundleLazy 'rizzatti/dash.vim'
-
-" Code templates
-" NeoBundleLazy 'honza/vim-snippets'
-
-" Markdown highlight
-NeoBundle 'tpope/vim-markdown'
-
-" Json highlight
-NeoBundle 'elzr/vim-json'
-
-" Matlab highlight
-NeoBundle 'vim-scripts/MatlabFilesEdition'
-
-" Javascript highlight
-NeoBundle 'pangloss/vim-javascript'
-
-" PHP highlight
-NeoBundle 'StanAngeloff/php.vim'
-
-" Improved PHP omni-completion
-NeoBundle 'shawncplus/phpcomplete.vim'
-
-" Latex preview
-NeoBundle 'xuhdev/vim-latex-live-preview'
-
-" Latex edit
-NeoBundle 'lervag/vimtex'
-
-" Python highlight
-NeoBundle 'hdima/python-syntax'
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Other plugins                                "
-"             11/29/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Auto complete engine
-if has('python')
-    NeoBundle 'Valloric/YouCompleteMe'
-endif
-
-" Fast find new words
-NeoBundle 'dyng/ctrlsf.vim'
-
-" There are bugs in this plugin
-" NeoBundle 'SirVer/ultisnips'
-
-" Preview the markdown file
-if has('python')
-    NeoBundle 'MikeCoder/markdown-preview.vim'
-endif
-
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-
-" Put your non-Plugin stuff after this line
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                              ""                                              "
 " General settings 05/13/2015 added by Peidong "" General settings 05/13/2015 added by Peidong "
@@ -364,20 +425,19 @@ set foldenable                  " Auto fold code
 " Clipboard
 """""""""""""""""""""""""""""""""""""""""""""""
 " https://github.com/svermeulen/vim-easyclip#clipboard-setting
-" set clipboard=unnamed
-if has('clipboard')
-    if has('unnamedplus')  " When possible use + register for copy-paste
-        set clipboard=unnamed,unnamedplus
-    else         " On mac and Windows, use * register for copy-paste
-        set clipboard=unnamed
-    endif
-endif
+" if has('clipboard')
+"     if has('unnamedplus')  " When possible use + register for copy-paste
+"         set clipboard=unnamed,unnamedplus
+"     else         " On mac and Windows, use * register for copy-paste
+"         set clipboard=unnamed
+"     endif
+" endif
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Mouse
 """""""""""""""""""""""""""""""""""""""""""""""
 " set mouse=a                 " Automatically enable mouse usage
-set mousehide               " Hide the mouse cursor while typing
+" set mousehide               " Hide the mouse cursor while typing
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Hidden
@@ -412,7 +472,7 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic white
 """""""""""""""""""""""""""""""""""""""""""""""
 set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
-set virtualedit=onemore             " Allow for cursor beyond last character
+" set virtualedit=onemore             " Allow for cursor beyond last character
 set history=1000                    " Store a ton of history (default is 20)
 " set spell                           " Spell checking on
 set iskeyword-=.                    " '.' is an end of word designator

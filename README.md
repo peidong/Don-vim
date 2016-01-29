@@ -9,7 +9,7 @@
     mv vimrc .vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
-    ln -s ~/.vim/vimrc.before.local ~/.vimrc.before.local
+    cp ~/.vim/vimrc.before.local ~/.vimrc.before.local
     mkdir ~/.undodir/
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
@@ -36,7 +36,7 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
     mv vimrc .vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
-    ln -s ~/.vim/vimrc.before.local ~/.vimrc.before.local
+    cp ~/.vim/vimrc.before.local ~/.vimrc.before.local
     mkdir ~/.undodir/
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
@@ -103,12 +103,14 @@ to verify all good, run:
     move vimrc .vim
     mklink .vimrc .vim\vimrc
     mklink .ycm_extra_conf.py .vim\ycm_extra_conf.py
-    mklink .vimrc.before.local .vim\vimrc.before.local
+    copy .vim\.vimrc.before.local vimrc.before.local
     mkdir .vim\bundle
     mkdir C:\Users\YourUserName\.undodir
     git clone https://github.com/Shougo/neobundle.vim .vim\bundle\neobundle.vim
 
 Then vim, and `:NeoBundleInstall`
+
+Download vimproc_win32/win64.dll, and copy them to .vim\bundle\vimproc.vim\lib
 
 
 # Keymap

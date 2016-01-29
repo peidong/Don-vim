@@ -16,7 +16,9 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""
 let vim_function_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
 let system_has_ctags = 1
-let vim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplcache.vim, 5:YouCompleteMe
+let system_has_cscope = 1
+let vim_set_list = 1
+let vim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " before.local vimrc
@@ -195,7 +197,7 @@ if vim_function_level >= 2
 
         " Useful in C code when we want to jump,
         " usage: :call CscopeFindInteractive(expand('<cword>'))<CR>
-        if has('cscope')
+        if system_has_cscope == 1
             NeoBundle 'brookhong/cscope.vim'
         endif
 
@@ -467,8 +469,10 @@ set scrolloff=3                 " Minimum lines to keep above and below cursor
 """""""""""""""""""""""""""""""""""""""""""""""
 " List chars
 """""""""""""""""""""""""""""""""""""""""""""""
-set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+if vim_set_list == 1
+    set list
+    set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Others
@@ -667,7 +671,7 @@ if vim_function_level >= 3
     let NERDTreeAutoDeleteBuffer=1
     let g:NERDTreeDirArrows = 1
 
-    if has('cscope')
+    if system_has_cscope == 1
         """"""""""""""""""""""""""""""""""""""""""""""""
         "                                              "
         " Plugin brookhong/cscope.vim                  "

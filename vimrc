@@ -575,24 +575,27 @@ let mapleader="\<Space>"
 """""""""""""""""""""""""""""""""""""""""""""""
 " set window size (if it's GUI)
 if has('gui_running')
-    " set window's width to 130 columns and height to 40 rows
-    if exists('+lines')
-        set lines=40
+    if OSX()
+        " set window's width to 130 columns and height to 40 rows
+        if exists('+lines')
+            set lines=54
+        endif
+        if exists('+columns')
+            set columns=100
+        endif
+    else
+        " set window's width to 130 columns and height to 40 rows
+        if exists('+lines')
+            set lines=40
+        endif
+        if exists('+columns')
+            set columns=130
+        endif
     endif
-    if exists('+columns')
-        set columns=130
-    endif
-
-    " DISABLE
-    " if WINDOWS()
-    "     au GUIEnter * simalt ~x " Maximize window when enter vim
-    " else
-    "     " TODO: no way right now
-    " endif
 endif
 
 set showfulltag " show tag with function protype.
-set guioptions+=b " present the bottom scrollbar when the longest visible line exceed the window
+" set guioptions+=b " present the bottom scrollbar when the longest visible line exceed the window
 
 " disable menu & toolbar
 set guioptions-=m

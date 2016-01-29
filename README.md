@@ -9,6 +9,8 @@
     mv vimrc .vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
+    ln -s ~/.vim/vimrc.before.local ~/.vimrc.before.local
+    mkdir ~/.undodir/
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
@@ -16,7 +18,6 @@ Then vim, and `:NeoBundleInstall`
 
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --clang-completer --omnisharp-completer --gocode-completer
-    mkdir ~/.undodir/
 
 ## Mac OSX Installation
 #### How to install [MacVim](https://github.com/macvim-dev/macvim/releases/tag/snapshot-80)
@@ -35,6 +36,8 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
     mv vimrc .vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
+    ln -s ~/.vim/vimrc.before.local ~/.vimrc.before.local
+    mkdir ~/.undodir/
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
@@ -42,22 +45,70 @@ Then vim, and `:NeoBundleInstall`
 
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --clang-completer --omnisharp-completer --gocode-completer
-    mkdir ~/.undodir/
 
 ## Installing on Windows
+
+### Installing dependencies
+
+#### Install [Vim](http://www.vim.org/download.php#pc)
+
+After the installation of Vim you must add a new directory to your environment variables path.
+
+Open Vim and write the following command, it will show the installed directory:
+
+    :echo $VIMRUNTIME
+    C:\Program Files (X86)\Vim\vim74
+
+Then you need to add it to your environment variable path. After that try execute `vim` within command prompt (press Win-R, type `cmd`, press Enter) and you’ll see the default vim page.
+
+#### Install [msysgit](http://msysgit.github.io/)
+
+After installation try running `git --version` within _command prompt_ (press Win-R,  type `cmd`, press Enter) to make sure all good:
+
+    C:\> git --version
+    git version 1.7.4.msysgit.0
+
+#### Setup [Curl](http://curl.haxx.se/)
+_Instructions blatently copied from vundle readme_
+Installing Curl on Windows is easy as [Curl] is bundled with [msysgit]!
+But before it can be used with [Vundle] it's required make `curl` run in _command prompt_.
+The easiest way is to create `curl.cmd` with [this content](https://gist.github.com/912993)
+
+    @rem Do not use "echo off" to not affect any child calls.
+    @setlocal
+
+    @rem Get the abolute path to the parent directory, which is assumed to be the
+    @rem Git installation root.
+    @for /F "delims=" %%I in ("%~dp0..") do @set git_install_root=%%~fI
+    @set PATH=%git_install_root%\bin;%git_install_root%\mingw\bin;%PATH%
+
+    @if not exist "%HOME%" @set HOME=%HOMEDRIVE%%HOMEPATH%
+    @if not exist "%HOME%" @set HOME=%USERPROFILE%
+
+    @curl.exe %*
+
+
+And copy it to `C:\Program Files\Git\cmd\curl.cmd`, assuming [msysgit] was installed to `c:\Program Files\Git`
+
+to verify all good, run:
+
+    C:\> curl --version
+    curl 7.21.1 (i686-pc-mingw32) libcurl/7.21.1 OpenSSL/0.9.8k zlib/1.2.3
+    Protocols: dict file ftp ftps http https imap imaps ldap ldaps pop3 pop3s rtsp smtp smtps telnet tftp
+    Features: Largefile NTLM SSL SSPI libz
+
+### Setup vimrc
     cd C:\Users\YourUserName
     git clone https://github.com/peidong/vimrc.git
     move vimrc .vim
     mklink .vimrc .vim\vimrc
     mklink .ycm_extra_conf.py .vim\ycm_extra_conf.py
+    mklink .vimrc.before.local .vim\vimrc.before.local
     mkdir .vim\bundle
+    mkdir C:\Users\YourUserName\.undodir
     git clone https://github.com/Shougo/neobundle.vim .vim\bundle\neobundle.vim
 
 Then vim, and `:NeoBundleInstall`
-
-    cd ~/.vim/bundle/YouCompleteMe
-    ./install.py --clang-completer --omnisharp-completer --gocode-completer
-    mkdir ~/.undodir/
 
 
 # Keymap

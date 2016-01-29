@@ -45,7 +45,20 @@ Then vim, and `:NeoBundleInstall`
     mkdir ~/.undodir/
 
 ## Installing on Windows
-Not done
+    cd C:\Users\YourUserName
+    git clone https://github.com/peidong/vimrc.git
+    move vimrc .vim
+    mklink .vimrc .vim\vimrc
+    mklink .ycm_extra_conf.py .vim\ycm_extra_conf.py
+    mkdir .vim\bundle
+    git clone https://github.com/Shougo/neobundle.vim .vim\bundle\neobundle.vim
+
+Then vim, and `:NeoBundleInstall`
+
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.py --clang-completer --omnisharp-completer --gocode-completer
+    mkdir ~/.undodir/
+
 
 # Keymap
 #### Normal Mode

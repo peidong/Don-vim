@@ -582,253 +582,297 @@ colorscheme PaperColor
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 if vim_function_level >= 2
-elseif vim_function_level >= 3
-elseif vim_function_level >= 4
-elseif vim_function_level >= 5
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin vim-airline/vim-airline               "
+    "             11/16/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+
+    if vim_background == "light"
+        let g:airline_theme='sol'
+    elseif vim_background == "dark"
+        let g:airline_theme='dark'
+    endif
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
+    let g:airline_left_sep=''
+    let g:airline_right_sep=''
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin luochen1990/rainbow                   "
+    "             11/17/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+
+    let g:rainbow_active = 1
+
+    let rainbow_ctermfgs_lightcolors = [2, 1, 0, 4]
+    let rainbow_ctermfgs_darkcolors = [9, 14, 11, 13, 10, 15]
+    let rainbow_guifgs_lightcolors = ['#008700', '#af005f', '#1c1c1c', '#0000af']
+    let rainbow_guifgs_darkcolors = ['#f2433d', '#0087d7', '#d7af00', '#d787ff', '#00d75f', '#d0d0d0']
+
+    if vim_background == "light"
+        let g:rainbow_conf = {
+                    \   'guifgs': rainbow_guifgs_lightcolors,
+                    \   'ctermfgs': rainbow_ctermfgs_lightcolors
+                    \}
+    elseif vim_background == "dark"
+        let g:rainbow_conf = {
+                    \   'guifgs': rainbow_guifgs_darkcolors,
+                    \   'ctermfgs': rainbow_ctermfgs_darkcolors
+                    \}
+    endif
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin junegunn/vim-easy-align               "
-"             01/11/2016 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+if vim_function_level >= 3
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin junegunn/vim-easy-align               "
+    "             01/11/2016 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
 
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+    " Start interactive EasyAlign in visual mode (e.g. vipga)
+    xmap ga <Plug>(EasyAlign)
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin vim-airline/vim-airline               "
-"             11/16/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+    nmap ga <Plug>(EasyAlign)
 
-if vim_background == "light"
-    let g:airline_theme='sol'
-elseif vim_background == "dark"
-    let g:airline_theme='dark'
-endif
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin scrooloose/nerdtree                   "
+    "             05/13/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin scrooloose/nerdtree                   "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+    " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+    nmap <Leader>bf :NERDTreeToggle<CR>
+    " 设置NERDTree子窗口宽度
+    let NERDTreeWinSize=32
+    " 设置NERDTree子窗口位置
+    let NERDTreeWinPos="left"
+    " 显示隐藏文件
+    let NERDTreeShowHidden=1
+    " NERDTree 子窗口中不显示冗余帮助信息
+    let NERDTreeMinimalUI=1
+    " 删除文件时自动删除文件对应 buffer
+    let NERDTreeAutoDeleteBuffer=1
+    let g:NERDTreeDirArrows = 1
 
-" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
-nmap <Leader>bf :NERDTreeToggle<CR>
-" 设置NERDTree子窗口宽度
-let NERDTreeWinSize=32
-" 设置NERDTree子窗口位置
-let NERDTreeWinPos="left"
-" 显示隐藏文件
-let NERDTreeShowHidden=1
-" NERDTree 子窗口中不显示冗余帮助信息
-let NERDTreeMinimalUI=1
-" 删除文件时自动删除文件对应 buffer
-let NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeDirArrows = 1
+    if has('cscope')
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        "                                              "
+        " Plugin brookhong/cscope.vim                  "
+        "             01/26/2016 added by Peidong      "
+        "                                              "
+        """"""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin brookhong/cscope.vim                  "
-"             01/26/2016 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+        nnoremap <leader>bc :call CscopeFindInteractive(expand('<cword>'))<CR>
+        nnoremap <leader>bl :call ToggleLocationList()<CR>
+        " " s: Find this C symbol
+        " nnoremap  <leader>cs :call CscopeFind('s', expand('<cword>'))<CR>
+        " " g: Find this definition
+        " nnoremap  <leader>cg :call CscopeFind('g', expand('<cword>'))<CR>
+        " " d: Find functions called by this function
+        " nnoremap  <leader>cd :call CscopeFind('d', expand('<cword>'))<CR>
+        " " c: Find functions calling this function
+        " nnoremap  <leader>cc :call CscopeFind('c', expand('<cword>'))<CR>
+        " " t: Find this text string
+        " nnoremap  <leader>ct :call CscopeFind('t', expand('<cword>'))<CR>
+        " " e: Find this egrep pattern
+        " nnoremap  <leader>ce :call CscopeFind('e', expand('<cword>'))<CR>
+        " " f: Find this file
+        " nnoremap  <leader>cf :call CscopeFind('f', expand('<cword>'))<CR>
+        " " i: Find files #including this file
+        " nnoremap  <leader>ci :call CscopeFind('i', expand('<cword>'))<CR>
+    endif
 
-nnoremap <leader>bc :call CscopeFindInteractive(expand('<cword>'))<CR>
-nnoremap <leader>bl :call ToggleLocationList()<CR>
-" " s: Find this C symbol
-" nnoremap  <leader>cs :call CscopeFind('s', expand('<cword>'))<CR>
-" " g: Find this definition
-" nnoremap  <leader>cg :call CscopeFind('g', expand('<cword>'))<CR>
-" " d: Find functions called by this function
-" nnoremap  <leader>cd :call CscopeFind('d', expand('<cword>'))<CR>
-" " c: Find functions calling this function
-" nnoremap  <leader>cc :call CscopeFind('c', expand('<cword>'))<CR>
-" " t: Find this text string
-" nnoremap  <leader>ct :call CscopeFind('t', expand('<cword>'))<CR>
-" " e: Find this egrep pattern
-" nnoremap  <leader>ce :call CscopeFind('e', expand('<cword>'))<CR>
-" " f: Find this file
-" nnoremap  <leader>cf :call CscopeFind('f', expand('<cword>'))<CR>
-" " i: Find files #including this file
-" nnoremap  <leader>ci :call CscopeFind('i', expand('<cword>'))<CR>
+    if system_has_ctags == 1
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        "                                              "
+        " Plugin majutsushi/tagbar                     "
+        "             01/26/2016 added by Peidong      "
+        "                                              "
+        """"""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin majutsushi/tagbar                     "
-"             01/26/2016 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+        nmap <Leader>bt :TagbarToggle<CR>
+    endif
 
-nmap <Leader>bt :TagbarToggle<CR>
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin mbbill/undotree                       "
+    "             11/16/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin mbbill/undotree                       "
-"             11/16/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+    nnoremap <Leader>bu :UndotreeToggle<cr>
 
-nnoremap <Leader>bu :UndotreeToggle<cr>
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin lervag/vimtex                         "
+    "             05/19/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin xuhdev/vim-latex-live-preview         "
-"             05/19/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+    if vim_complete_engine == 5
+        " make it work with YouCompleteMe
+        if !exists('g:ycm_semantic_triggers')
+            let g:ycm_semantic_triggers = {}
+        endif
+        let g:ycm_semantic_triggers.tex = [
+                    \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
+                    \ ]
+        " This option controls whether to append a closing brace after a label or a citation has been completed.
+        let g:vimtex_complete_close_braces = 1
+    endif
 
-if OSX()
-    let g:livepreview_previewer = 'open -a Preview'
-elseif LINUX()
-    let g:livepreview_previewer = 'okular'
-endif
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin Xuyuanp/nerdtree-git-plugin           "
+    "             11/17/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin lervag/vimtex                         "
-"             05/19/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+    let g:NERDTreeIndicatorMapCustom = {
+                \ "Modified"  : "✹",
+                \ "Staged"    : "✚",
+                \ "Untracked" : "✭",
+                \ "Renamed"   : "➜",
+                \ "Unmerged"  : "═",
+                \ "Deleted"   : "✖",
+                \ "Dirty"     : "✗",
+                \ "Clean"     : "✔︎",
+                \ "Unknown"   : "?"
+                \ }
 
-" make it work with YouCompleteMe
-if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = [
-            \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
-            \ ]
-" This option controls whether to append a closing brace after a label or a citation has been completed.
-let g:vimtex_complete_close_braces = 1
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin vim-scripts/YankRing.vim              "
+    "             11/17/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin Xuyuanp/nerdtree-git-plugin           "
-"             11/17/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+    let g:yankring_replace_n_pkey = '<Leader>p'
+    let g:yankring_replace_n_nkey = '<Leader>n'
 
-let g:NERDTreeIndicatorMapCustom = {
-            \ "Modified"  : "✹",
-            \ "Staged"    : "✚",
-            \ "Untracked" : "✭",
-            \ "Renamed"   : "➜",
-            \ "Unmerged"  : "═",
-            \ "Deleted"   : "✖",
-            \ "Dirty"     : "✗",
-            \ "Clean"     : "✔︎",
-            \ "Unknown"   : "?"
-            \ }
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin scrooloose/syntastic                  "
+    "             05/13/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin luochen1990/rainbow                   "
-"             11/17/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+    " Better :sign interface symbols
+    let g:syntastic_error_symbol = '✗✗'
+    let g:syntastic_style_error_symbol = '✠✠'
+    let g:syntastic_warning_symbol = '∆∆'
+    let g:syntastic_style_warning_symbol = '≈≈'
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
 
-let g:rainbow_active = 1
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_loc_list_height = 4
 
-let rainbow_ctermfgs_lightcolors = [2, 1, 0, 4]
-let rainbow_ctermfgs_darkcolors = [9, 14, 11, 13, 10, 15]
-let rainbow_guifgs_lightcolors = ['#008700', '#af005f', '#1c1c1c', '#0000af']
-let rainbow_guifgs_darkcolors = ['#f2433d', '#0087d7', '#d7af00', '#d787ff', '#00d75f', '#d0d0d0']
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin Shougo/vimshell.vim                   "
+    "             11/20/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
 
-if vim_background == "light"
-    let g:rainbow_conf = {
-                \   'guifgs': rainbow_guifgs_lightcolors,
-                \   'ctermfgs': rainbow_ctermfgs_lightcolors
-                \}
-elseif vim_background == "dark"
-    let g:rainbow_conf = {
-                \   'guifgs': rainbow_guifgs_darkcolors,
-                \   'ctermfgs': rainbow_ctermfgs_darkcolors
-                \}
-endif
+    if OSX()
+        let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
+    elseif LINUX()
+    elseif WINDOWS()
+    endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin vim-scripts/YankRing.vim              "
-"             11/17/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+    if executable('zsh') && filereadable(expand('~/.zsh_history'))
+        " Use zsh history in vimshell/history source.
+        let g:unite_source_vimshell_external_history_path =
+                    \ expand('~/.zsh_history')
+    endif
 
-let g:yankring_replace_n_pkey = '<Leader>p'
-let g:yankring_replace_n_nkey = '<Leader>n'
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin Shougo/unite.vim                      "
+    "             11/21/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin scrooloose/syntastic                  "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+    let g:unite_source_history_yank_enable = 1
 
-" Better :sign interface symbols
-let g:syntastic_error_symbol = '✗✗'
-let g:syntastic_style_error_symbol = '✠✠'
-let g:syntastic_warning_symbol = '∆∆'
-let g:syntastic_style_warning_symbol = '≈≈'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+    if has('python')
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        "                                              "
+        " Plugin hdima/python-syntax                   "
+        "             11/22/2015 added by Peidong      "
+        "                                              "
+        """"""""""""""""""""""""""""""""""""""""""""""""
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 4
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin terryma/vim-multiple-cursors          "
-"             07/14/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin Shougo/vimshell.vim                   "
-"             11/20/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-if OSX()
-    let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
-elseif LINUX()
-elseif WINDOWS()
+        let python_highlight_all = 1
+    endif
 endif
 
-if executable('zsh') && filereadable(expand('~/.zsh_history'))
-    " Use zsh history in vimshell/history source.
-    let g:unite_source_vimshell_external_history_path =
-                \ expand('~/.zsh_history')
+if vim_function_level >= 4
+    if has('Ruby')
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        "                                              "
+        " Plugin terryma/vim-multiple-cursors          "
+        "             07/14/2015 added by Peidong      "
+        "                                              "
+        """"""""""""""""""""""""""""""""""""""""""""""""
+
+        let g:multi_cursor_next_key='<C-n>'
+        let g:multi_cursor_prev_key='<C-p>'
+        let g:multi_cursor_skip_key='<C-x>'
+        let g:multi_cursor_quit_key='<Esc>'
+    endif
+
+    if has('Ruby')
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        "                                              "
+        " Plugin dyng/ctrlsf.vim                       "
+        "             05/13/2015 added by Peidong      "
+        "                                              "
+        """"""""""""""""""""""""""""""""""""""""""""""""
+
+        " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
+        nnoremap <Leader>rt :CtrlSF<CR>
+    endif
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin Shougo/unite.vim                      "
-"             11/21/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+if vim_function_level >= 5
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin xuhdev/vim-latex-live-preview         "
+    "             05/19/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
 
-let g:unite_source_history_yank_enable = 1
+    if OSX()
+        let g:livepreview_previewer = 'open -a Preview'
+    elseif LINUX()
+        let g:livepreview_previewer = 'okular'
+    endif
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Plugin MikeCoder/markdown-preview.vim        "
+    "             11/07/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+
+    map <leader>bm :MarkdownPreview GitHub<CR>
+
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -1031,46 +1075,3 @@ elseif vim_complete_engine == 4 " neocomplete
     " https://github.com/c9s/perlomni.vim
     let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin dyng/ctrlsf.vim                       "
-"             05/13/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
-nnoremap <Leader>rt :CtrlSF<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin SirVer/ultisnips                      "
-"             07/14/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin MikeCoder/markdown-preview.vim        "
-"             11/07/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-map <leader>bm :MarkdownPreview GitHub<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Plugin hdima/python-syntax                   "
-"             11/22/2015 added by Peidong      "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
-
-let python_highlight_all = 1

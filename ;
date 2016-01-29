@@ -61,13 +61,13 @@ if vim_function_level >= 2
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     "                                              "
-    " Basic Plugins                                "
+    " Basic Plugins                                 "
     "             11/29/2015 added by Peidong      "
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
+    " Interactive command execution in Vim.
     if vim_function_level >= 3
-        " Interactive command execution in Vim.
         NeoBundle 'Shougo/vimproc.vim', {
                     \ 'build' : {
                     \     'windows' : 'tools\\update-dll-mingw',
@@ -77,211 +77,232 @@ if vim_function_level >= 2
                     \     'unix' : 'gmake',
                     \    },
                     \ }
+    endif
 
-        " Use shell inside vim, usage: :VimShell<CR>
+    " Use shell inside vim, usage: :VimShell<CR>
+    if vim_function_level >= 3
         NeoBundle 'Shougo/vimshell.vim'
+    endif
 
-        " This plugin can do various things, but I only use this as a base plugin for
-        " Shougo's plugins
+    " This plugin can do various things, but I only use this as a base plugin for
+    " Shougo's plugins
+    if vim_function_level >= 3
         NeoBundle 'Shougo/unite.vim'
     endif
 
-
     """"""""""""""""""""""""""""""""""""""""""""""""
     "                                              "
-    " Level 2 Plugins                              "
+    " Important Plugins                            "
     "             11/29/2015 added by Peidong      "
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
+    " Comment code in files, usage: gcc
     if vim_function_level >= 2
-        " Comment code in files, usage: gcc
         NeoBundle 'tomtom/tcomment_vim'
+    endif
 
-        " Vim status line
+    " Align codes, usage: gaiw
+    if vim_function_level >= 3
+        NeoBundle 'junegunn/vim-easy-align'
+    endif
+
+    " Check the syntastic of codes, need to install engines in PATH
+    if vim_function_level >= 3
+        NeoBundle 'scrooloose/syntastic'
+    endif
+
+    " Edit code with multi-cursors, usage: <C-n> next, <C-p> previous, <C-x>
+    " ignore, v Normal Mode, c Change Word
+    if vim_function_level >= 4
+        NeoBundle 'terryma/vim-multiple-cursors'
+    endif
+
+    " Vim status line
+    if vim_function_level >= 2
         NeoBundle 'vim-airline/vim-airline'
         NeoBundle 'vim-airline/vim-airline-themes'
-
-        " Auto complete pairs
-        NeoBundle 'jiangmiao/auto-pairs'
-
-        " Auto complete tags like Html tags
-        NeoBundle 'docunext/closetag.vim'
-
-        " PaperColor theme, is better for light colorscheme, also you can use it for
-        " dark colorscheme
-        NeoBundle 'NLKNguyen/papercolor-theme'
-
-        " Many colorschemes, but not recommend, because some of them are not up-to-date
-        " NeoBundle 'flazz/vim-colorschemes'
-
-        " Make pairs colorful
-        NeoBundle 'luochen1990/rainbow'
-
     endif
 
-
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Level 3 Plugins                              "
-    "             11/29/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
-
+    " Show the indent lines
     if vim_function_level >= 3
-        " Align codes, usage: gaiw
-        NeoBundle 'junegunn/vim-easy-align'
-
-        " Check the syntastic of codes, need to install engines in PATH
-        NeoBundle 'scrooloose/syntastic'
-
-        " Show the indent lines
         NeoBundle 'Yggdroot/indentLine'
+    endif
 
-        " Show the file list, usage: :NERDTreeToggle<CR>
+    " Show the file list, usage: :NERDTreeToggle<CR>
+    if vim_function_level >= 3
         NeoBundle 'scrooloose/nerdtree'
+    endif
 
-        " Embedded with NERDTree
+    " Embedded with NERDTree
+    if vim_function_level >= 3
         NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+    endif
 
-        " Show the undo history, usage: :UndotreeToggle<CR>
+    " Show the undo history, usage: :UndotreeToggle<CR>
+    if vim_function_level >= 3
         NeoBundle 'mbbill/undotree'
+    endif
 
-        " Fast move cursors, usage: <Leader><Leader>j/k/f/t/F/T
+    " Fast move cursors, usage: <Leader><Leader>j/k/f/t/F/T
+    if vim_function_level >= 3
         NeoBundle 'easymotion/vim-easymotion'
+    endif
 
-        " Fast add/delete/change surroundings, usage: csiw/ysiw/dsiw
+    " Fast add/delete/change surroundings, usage: csiw/ysiw/dsiw
+    if vim_function_level >= 3
         NeoBundle 'tpope/vim-surround'
+    endif
 
-        " Show git status in the left column
+    " Show git status in the left column
+    if vim_function_level >= 3
         NeoBundle 'airblade/vim-gitgutter'
+    endif
 
-        " Do git commands inside vim, usage: :Gdiff, :Gpush, :Gpull
+    " Do git commands inside vim, usage: :Gdiff, :Gpush, :Gpull
+    if vim_function_level >= 3
         NeoBundle 'tpope/vim-fugitive'
+    endif
 
-        " Show spaces in color red
+    " Show spaces in color red
+    if vim_function_level >= 3
         NeoBundle 'ntpeters/vim-better-whitespace'
+    endif
 
-        " Make repeat "." more smart
+    " Auto complete pairs
+    if vim_function_level >= 2
+        NeoBundle 'jiangmiao/auto-pairs'
+    endif
+
+    " Auto complete tags like Html tags
+    if vim_function_level >= 2
+        NeoBundle 'docunext/closetag.vim'
+    endif
+
+    " Make repeat "." more smart
+    if vim_function_level >= 3
         NeoBundle 'tpope/vim-repeat'
+    endif
 
-        " Fast find more files, usage: <C-p>
+    " Fast find more files, usage: <C-p>
+    if vim_function_level >= 3
         NeoBundle 'kien/ctrlp.vim'
+    endif
 
-        " Fast select blocks, usage: <Enter>, <Backspace>
+    " Many colorschemes, but not recommend, because some of them are not up-to-date
+    " NeoBundle 'flazz/vim-colorschemes'
+
+    " PaperColor theme, is better for light colorscheme, also you can use it for
+    " dark colorscheme
+    if vim_function_level >= 2
+        NeoBundle 'NLKNguyen/papercolor-theme'
+    endif
+
+    " Fast select blocks, usage: <Enter>, <Backspace>
+    if vim_function_level >= 3
         NeoBundle 'gcmt/wildfire.vim'
+    endif
 
-        " Make the copy function more smart, usage: when finish pasting, <Leader>p,
-        " <Leader>n
+    " Make pairs colorful
+    if vim_function_level >= 2
+        NeoBundle 'luochen1990/rainbow'
+    endif
+
+    " Make the copy function more smart, usage: when finish pasting, <Leader>p,
+    " <Leader>n
+    if vim_function_level >= 3
         NeoBundle 'vim-scripts/YankRing.vim'
+    endif
 
-        " Change between files in buffer, usage <C-Space>
+    " Change between files in buffer, usage <C-Space>
+    if vim_function_level >= 3
         NeoBundle 'szw/vim-ctrlspace'
+    endif
 
-        " Make vim's diff more powerful, usage: vimdiff, vim -d
+    " Make vim's diff more powerful, usage: vimdiff, vim -d
+    if vim_function_level >= 3
         NeoBundle 'chrisbra/vim-diff-enhanced'
+    endif
 
-        " Use it in HTML codes for example, usage: <C-y>,
+    " Use it in HTML codes for example, usage: <C-y>,
+    if vim_function_level >= 3
         NeoBundle 'mattn/emmet-vim'
+    endif
 
-        " Better folding in Python code
+    " Better folding in Python code
+    if vim_function_level >= 3
         NeoBundle 'tmhedberg/SimpylFold'
+    endif
 
-        " More powerful show tags generated by ctags, usage: :TagbarToggle<CR>
-        if system_has_ctags == 1
-            NeoBundle 'majutsushi/tagbar'
-        endif
+    " More powerful show tags generated by ctags, usage: :TagbarToggle<CR>
+    if system_has_ctags == 1
+        NeoBundle 'majutsushi/tagbar'
+    endif
 
-        " Useful in C code when we want to jump,
-        " usage: :call CscopeFindInteractive(expand('<cword>'))<CR>
-        if has('cscope')
-            NeoBundle 'brookhong/cscope.vim'
-        endif
+    " Useful in C code when we want to jump,
+    " usage: :call CscopeFindInteractive(expand('<cword>'))<CR>
+    if has('cscope')
+        NeoBundle 'brookhong/cscope.vim'
+    endif
 
-        " Markdown highlight
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Lazy                                         "
+    "             11/29/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+
+    " Use in Mac OSX's Dash app
+    " if OSX()
+    "     NeoBundleLazy 'rizzatti/dash.vim'
+    " endif
+
+    " Code templates
+    " if has('python')
+    "     NeoBundle 'honza/vim-snippets'
+    " endif
+
+    " Markdown highlight
+    if vim_function_level >= 3
         NeoBundle 'tpope/vim-markdown'
+    endif
 
-        " Json highlight
+    " Json highlight
+    if vim_function_level >= 3
         NeoBundle 'elzr/vim-json'
+    endif
 
-        " Matlab highlight
+    " Matlab highlight
+    if vim_function_level >= 3
         NeoBundle 'vim-scripts/MatlabFilesEdition'
+    endif
 
-        " Javascript highlight
+    " Javascript highlight
+    if vim_function_level >= 3
         NeoBundle 'pangloss/vim-javascript'
+    endif
 
-        " PHP highlight
+    " PHP highlight
+    if vim_function_level >= 3
         NeoBundle 'StanAngeloff/php.vim'
-
-        " Improved PHP omni-completion
-        NeoBundle 'shawncplus/phpcomplete.vim'
-
-        " Latex edit
-        NeoBundle 'lervag/vimtex'
-
-        " Python highlight
-        if has('python')
-            NeoBundle 'hdima/python-syntax'
-        endif
-
     endif
 
+    " Improved PHP omni-completion
+    NeoBundle 'shawncplus/phpcomplete.vim'
+
+    " Latex preview
+    NeoBundle 'xuhdev/vim-latex-live-preview'
+
+    " Latex edit
+    NeoBundle 'lervag/vimtex'
+
+    " Python highlight
+    NeoBundle 'hdima/python-syntax'
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     "                                              "
-    " Level 4 Plugins                              "
+    " Other plugins                                "
     "             11/29/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
-
-    if vim_function_level >= 4
-        " Edit code with multi-cursors, usage: <C-n> next, <C-p> previous, <C-x>
-        " ignore, v Normal Mode, c Change Word
-        if has('Ruby')
-            NeoBundle 'terryma/vim-multiple-cursors'
-        endif
-
-        " Fast find new words
-        if has('Ruby')
-            NeoBundle 'dyng/ctrlsf.vim'
-        endif
-    endif
-
-
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Level 5 Plugins                              "
-    "             11/29/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
-
-    if vim_function_level >= 5
-        " Use in Mac OSX's Dash app
-        " if OSX()
-        "     NeoBundleLazy 'rizzatti/dash.vim'
-        " endif
-
-        " Code templates
-        " if has('python')
-        "     NeoBundle 'honza/vim-snippets'
-        " endif
-
-        " Preview the markdown file
-        if has('python')
-            NeoBundle 'MikeCoder/markdown-preview.vim'
-        endif
-
-        " Latex preview
-        NeoBundle 'xuhdev/vim-latex-live-preview'
-
-        " There are bugs in this plugin
-        " NeoBundle 'SirVer/ultisnips'
-    endif
-
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Autocomplete plugins                         "
-    "             01/29/2016 added by Peidong      "
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
@@ -290,6 +311,16 @@ if vim_function_level >= 2
         NeoBundle 'Valloric/YouCompleteMe'
     endif
 
+    " Fast find new words
+    NeoBundle 'dyng/ctrlsf.vim'
+
+    " There are bugs in this plugin
+    " NeoBundle 'SirVer/ultisnips'
+
+    " Preview the markdown file
+    if has('python')
+        NeoBundle 'MikeCoder/markdown-preview.vim'
+    endif
 
     " Refer to |:NeoBundle-examples|.
     " Note: You don't set neobundle setting in .gvimrc!
@@ -305,11 +336,11 @@ if vim_function_level >= 2
 
     " Put your non-Plugin stuff after this line
 endif
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" General settings 05/13/2015 added by Peidong "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              ""                                              "
+" General settings 05/13/2015 added by Peidong "" General settings 05/13/2015 added by Peidong "
+"                                              ""                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Liner number
@@ -564,11 +595,11 @@ colorscheme PaperColor
 " desert
 " colorscheme desert
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Vimscript plugin 11/18/2015 added by Peidong "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              ""                                              "
+" Vimscript plugin 11/18/2015 added by Peidong "" Vimscript plugin 11/18/2015 added by Peidong "
+"                                              ""                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -813,11 +844,11 @@ endif
 
 let g:unite_source_history_yank_enable = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Other plugins    11/18/2015 added by Peidong "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              ""                                              "
+" Other plugins    11/18/2015 added by Peidong "" Other plugins    11/18/2015 added by Peidong "
+"                                              ""                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -900,8 +931,8 @@ map <leader>bm :MarkdownPreview GitHub<CR>
 
 let python_highlight_all = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                                              "
-" Other needs      11/18/2015 added by Peidong "
-"                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              ""                                              "
+" Other needs      11/18/2015 added by Peidong "" Other needs      11/18/2015 added by Peidong "
+"                                              ""                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

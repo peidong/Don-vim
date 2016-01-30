@@ -84,11 +84,12 @@ scriptencoding utf-8
 " Initialize variables
 """""""""""""""""""""""""""""""""""""""""""""""
 let vim_function_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
+let vim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
+let vim_enable_syntastic = 1
+let vim_enable_gitgutter = 1
 let system_has_ctags = 1
 let system_has_cscope = 1
 let vim_set_list = 1
-let vim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
-let vim_enable_syntastic = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " before.local vimrc
@@ -227,7 +228,9 @@ if vim_function_level >= 2
         NeoBundle 'Yggdroot/indentLine'
 
         " Show git status in the left column
-        NeoBundle 'airblade/vim-gitgutter'
+        if vim_enable_gitgutter == 1
+            NeoBundle 'airblade/vim-gitgutter'
+        endif
 
         " Show spaces in color red
         NeoBundle 'ntpeters/vim-better-whitespace'

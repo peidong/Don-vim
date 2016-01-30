@@ -13,8 +13,8 @@
     sudo apt-get install aptitude
     sudo aptitude install exuberant-ctags ack-grep git build-essential cmake python-dev cscope
     cd ~
-    git clone https://github.com/peidong/vimrc.git
-    mv vimrc .vim
+    git clone https://github.com/peidong/pei-vim.git
+    mv pei-vim .vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
     cp ~/.vim/vimrc.before.local ~/.vimrc.before.local
@@ -40,8 +40,8 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
     brew install ack cmake ctags cscope
     sudo pip install pylint
     cd ~
-    git clone https://github.com/peidong/vimrc.git
-    mv vimrc .vim
+    git clone https://github.com/peidong/pei-vim.git
+    mv pei-vim .vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
     cp ~/.vim/vimrc.before.local ~/.vimrc.before.local

@@ -124,15 +124,67 @@ if vim_function_level >= 2
 
     " My Bundles here:
 
+
     """"""""""""""""""""""""""""""""""""""""""""""""
     "                                              "
-    " Basic Plugins                                "
+    " Level 2 Plugins                              "
+    "             11/29/2015 added by Peidong      "
+    "                                              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+
+    if vim_function_level >= 2
+
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Fast comment Plugins                         "
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Comment code in files, usage: gcc
+        NeoBundle 'tomtom/tcomment_vim'
+
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Pairs Plugins                                "
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Auto complete pairs
+        NeoBundle 'jiangmiao/auto-pairs'
+
+        " Auto complete tags like Html tags
+        NeoBundle 'docunext/closetag.vim'
+
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Color Plugins                                "
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " PaperColor theme, is better for light colorscheme, also you can use it for
+        " dark colorscheme
+        NeoBundle 'NLKNguyen/papercolor-theme'
+
+        " Many colorschemes, but not recommend, because some of them are not up-to-date
+        " NeoBundle 'flazz/vim-colorschemes'
+
+        " Make pairs colorful
+        NeoBundle 'luochen1990/rainbow'
+
+        " Vim status line
+        NeoBundle 'vim-airline/vim-airline'
+        NeoBundle 'vim-airline/vim-airline-themes'
+
+    endif
+
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    "                                              "
+    " Level 3 Plugins                              "
     "             11/29/2015 added by Peidong      "
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
     if vim_function_level >= 3
 
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Basic Plugins                                "
+        """"""""""""""""""""""""""""""""""""""""""""""""
         " Interactive command execution in Vim.
         NeoBundle 'Shougo/vimproc.vim', {
                     \ 'build' : {
@@ -151,64 +203,64 @@ if vim_function_level >= 2
         " Shougo's plugins
         NeoBundle 'Shougo/unite.vim'
 
-    endif
 
-
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Level 2 Plugins                              "
-    "             11/29/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
-
-    if vim_function_level >= 2
-
-        " Comment code in files, usage: gcc
-        NeoBundle 'tomtom/tcomment_vim'
-
-        " Vim status line
-        NeoBundle 'vim-airline/vim-airline'
-        NeoBundle 'vim-airline/vim-airline-themes'
-
-        " Auto complete pairs
-        NeoBundle 'jiangmiao/auto-pairs'
-
-        " Auto complete tags like Html tags
-        NeoBundle 'docunext/closetag.vim'
-
-        " PaperColor theme, is better for light colorscheme, also you can use it for
-        " dark colorscheme
-        NeoBundle 'NLKNguyen/papercolor-theme'
-
-        " Many colorschemes, but not recommend, because some of them are not up-to-date
-        " NeoBundle 'flazz/vim-colorschemes'
-
-        " Make pairs colorful
-        NeoBundle 'luochen1990/rainbow'
-
-    endif
-
-
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Level 3 Plugins                              "
-    "             11/29/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
-
-    if vim_function_level >= 3
-
-        " Align codes, usage: gaiw
-        NeoBundle 'junegunn/vim-easy-align'
-
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Grammar Plugins                              "
+        """"""""""""""""""""""""""""""""""""""""""""""""
         " Check the syntastic of codes, need to install engines in PATH
         if vim_enable_syntastic == 1
             NeoBundle 'scrooloose/syntastic'
         endif
 
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Better appearance Plugins                    "
+        """"""""""""""""""""""""""""""""""""""""""""""""
         " Show the indent lines
         NeoBundle 'Yggdroot/indentLine'
 
+        " Show git status in the left column
+        NeoBundle 'airblade/vim-gitgutter'
+
+        " Show spaces in color red
+        NeoBundle 'ntpeters/vim-better-whitespace'
+
+        " Make repeat "." more smart
+        NeoBundle 'tpope/vim-repeat'
+
+        " Make vim's diff more powerful, usage: vimdiff, vim -d
+        NeoBundle 'chrisbra/vim-diff-enhanced'
+
+        " Better folding in Python code
+        NeoBundle 'tmhedberg/SimpylFold'
+
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Fast edit Plugins                            "
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Align codes, usage: gaiw
+        NeoBundle 'junegunn/vim-easy-align'
+
+        " Fast move cursors, usage: <Leader><Leader>j/k/f/t/F/T
+        NeoBundle 'easymotion/vim-easymotion'
+
+        " Fast add/delete/change surroundings, usage: csiw/ysiw/dsiw
+        NeoBundle 'tpope/vim-surround'
+
+        " Fast select blocks, usage: <Enter>, <Backspace>
+        NeoBundle 'gcmt/wildfire.vim'
+
+        " Make the copy function more smart, usage: when finish pasting, <Leader>p,
+        " <Leader>n
+        NeoBundle 'vim-scripts/YankRing.vim'
+
+        " Use it in HTML codes for example, usage: <C-y>,
+        NeoBundle 'mattn/emmet-vim'
+
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Explorer Plugins                             "
+        """"""""""""""""""""""""""""""""""""""""""""""""
         " Show the file list, usage: :NERDTreeToggle<CR>
         NeoBundle 'scrooloose/nerdtree'
 
@@ -218,45 +270,14 @@ if vim_function_level >= 2
         " Show the undo history, usage: :UndotreeToggle<CR>
         NeoBundle 'mbbill/undotree'
 
-        " Fast move cursors, usage: <Leader><Leader>j/k/f/t/F/T
-        NeoBundle 'easymotion/vim-easymotion'
-
-        " Fast add/delete/change surroundings, usage: csiw/ysiw/dsiw
-        NeoBundle 'tpope/vim-surround'
-
-        " Show git status in the left column
-        NeoBundle 'airblade/vim-gitgutter'
-
         " Do git commands inside vim, usage: :Gdiff, :Gpush, :Gpull
         NeoBundle 'tpope/vim-fugitive'
-
-        " Show spaces in color red
-        NeoBundle 'ntpeters/vim-better-whitespace'
-
-        " Make repeat "." more smart
-        NeoBundle 'tpope/vim-repeat'
 
         " Fast find more files, usage: <C-p>
         NeoBundle 'kien/ctrlp.vim'
 
-        " Fast select blocks, usage: <Enter>, <Backspace>
-        NeoBundle 'gcmt/wildfire.vim'
-
-        " Make the copy function more smart, usage: when finish pasting, <Leader>p,
-        " <Leader>n
-        NeoBundle 'vim-scripts/YankRing.vim'
-
         " Change between files in buffer, usage <C-Space>
         NeoBundle 'szw/vim-ctrlspace'
-
-        " Make vim's diff more powerful, usage: vimdiff, vim -d
-        NeoBundle 'chrisbra/vim-diff-enhanced'
-
-        " Use it in HTML codes for example, usage: <C-y>,
-        NeoBundle 'mattn/emmet-vim'
-
-        " Better folding in Python code
-        NeoBundle 'tmhedberg/SimpylFold'
 
         " More powerful show tags generated by ctags, usage: :TagbarToggle<CR>
         if system_has_ctags == 1
@@ -269,6 +290,10 @@ if vim_function_level >= 2
             NeoBundle 'brookhong/cscope.vim'
         endif
 
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Specific language Plugins                    "
+        """"""""""""""""""""""""""""""""""""""""""""""""
         " Markdown highlight
         NeoBundle 'tpope/vim-markdown'
 
@@ -307,6 +332,10 @@ if vim_function_level >= 2
 
     if vim_function_level >= 4
 
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Fast edit Plugins                            "
+        """"""""""""""""""""""""""""""""""""""""""""""""
         " Edit code with multi-cursors, usage: <C-n> next, <C-p> previous, <C-x>
         " ignore, v Normal Mode, c Change Word
         if has('Ruby')
@@ -340,6 +369,10 @@ if vim_function_level >= 2
         "     NeoBundle 'honza/vim-snippets'
         " endif
 
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Preview Plugins                              "
+        """"""""""""""""""""""""""""""""""""""""""""""""
         " Preview the markdown file
         if has('python')
             NeoBundle 'MikeCoder/markdown-preview.vim'

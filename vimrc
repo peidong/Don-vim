@@ -1,3 +1,10 @@
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" General settings 05/13/2015 added by Peidong "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 """""""""""""""""""""""""""""""""""""""""""""""
 " Identify platform
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -91,12 +98,11 @@ if has('gui_running')
     endif
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Neobundle 01/29/2016 added by Peidong
+"""""""""""""""""""""""""""""""""""""""""""""""
 if vim_function_level >= 2
-    """""""""""""""""""""""""""""""""""""""""""""
-    "                                           "
-    " Neobundle 11/16/2015 added by Peidong     "
-    "                                           "
-    """""""""""""""""""""""""""""""""""""""""""""
+
     " Note: Skip initialization for vim-tiny or vim-small.
     if 0 | endif
 
@@ -126,6 +132,7 @@ if vim_function_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
 
     if vim_function_level >= 3
+
         " Interactive command execution in Vim.
         NeoBundle 'Shougo/vimproc.vim', {
                     \ 'build' : {
@@ -143,6 +150,7 @@ if vim_function_level >= 2
         " This plugin can do various things, but I only use this as a base plugin for
         " Shougo's plugins
         NeoBundle 'Shougo/unite.vim'
+
     endif
 
 
@@ -154,6 +162,7 @@ if vim_function_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
 
     if vim_function_level >= 2
+
         " Comment code in files, usage: gcc
         NeoBundle 'tomtom/tcomment_vim'
 
@@ -188,6 +197,7 @@ if vim_function_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
 
     if vim_function_level >= 3
+
         " Align codes, usage: gaiw
         NeoBundle 'junegunn/vim-easy-align'
 
@@ -296,6 +306,7 @@ if vim_function_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
 
     if vim_function_level >= 4
+
         " Edit code with multi-cursors, usage: <C-n> next, <C-p> previous, <C-x>
         " ignore, v Normal Mode, c Change Word
         if has('Ruby')
@@ -306,6 +317,7 @@ if vim_function_level >= 2
         if has('Ruby')
             NeoBundle 'dyng/ctrlsf.vim'
         endif
+
     endif
 
 
@@ -317,6 +329,7 @@ if vim_function_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
 
     if vim_function_level >= 5
+
         " Use in Mac OSX's Dash app
         " if OSX()
         "     NeoBundleLazy 'rizzatti/dash.vim'
@@ -337,7 +350,9 @@ if vim_function_level >= 2
 
         " There are bugs in this plugin
         " NeoBundle 'SirVer/ultisnips'
+
     endif
+
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     "                                              "
@@ -346,21 +361,32 @@ if vim_function_level >= 2
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
+
     if vim_function_level >= 2
+
         " Auto complete engine
         if vim_complete_engine == 5
+
             if has('python')
                 NeoBundle 'Valloric/YouCompleteMe'
             endif
+
         elseif vim_complete_engine == 2
+
             NeoBundle 'ajh17/VimCompletesMe'
+
         elseif vim_complete_engine == 3
+
             NeoBundle 'Shougo/neocomplcache.vim'
+
         elseif vim_complete_engine == 4
+
             if has('lua')
                 NeoBundle 'Shougo/neocomplete.vim'
             endif
+
         endif
+
     endif
 
 
@@ -378,11 +404,14 @@ if vim_function_level >= 2
 
     " Put your non-Plugin stuff after this line
 endif
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
 " General settings 05/13/2015 added by Peidong "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
+
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Liner number
@@ -618,6 +647,7 @@ endif
 " Color settings
 """""""""""""""""""""""""""""""""""""""""""""""
 if vim_function_level >= 2
+
     " This is for days and nights coloring
     " let current_time_hour = strftime("%H")
     " if current_time_hour < 18 && current_time_hour > 5
@@ -633,8 +663,11 @@ if vim_function_level >= 2
     else
         let vim_background="dark"
     endif
+
 else
+
     let vim_background="dark"
+
 endif
 
 " basic color settings
@@ -654,10 +687,14 @@ elseif vim_background == "dark"
 endif
 
 if vim_function_level >= 2
+
     " NLKNguyen/papercolor-theme
     colorscheme PaperColor
+
 else
+
     colorscheme desert
+
 endif
 
 " desert
@@ -665,18 +702,24 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
-" Plugins          11/18/2015 added by Peidong "
+" Plugins settings 11/18/2015 added by Peidong "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if vim_function_level >= 2
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Plugin vim-airline/vim-airline               "
-    "             11/16/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Level 2 Plugins                              "
+"             01/29/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+if vim_function_level >= 2
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin vim-airline/vim-airline               "
+    """"""""""""""""""""""""""""""""""""""""""""""""
     if vim_background == "light"
         let g:airline_theme='sol'
     elseif vim_background == "dark"
@@ -689,12 +732,8 @@ if vim_function_level >= 2
     let g:airline_right_sep=''
 
     """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
     " Plugin luochen1990/rainbow                   "
-    "             11/17/2015 added by Peidong      "
-    "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-
     let g:rainbow_active = 1
 
     let rainbow_ctermfgs_lightcolors = [2, 1, 0, 4]
@@ -713,17 +752,23 @@ if vim_function_level >= 2
                     \   'ctermfgs': rainbow_ctermfgs_darkcolors
                     \}
     endif
+
 endif
 
 
-if vim_function_level >= 3
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Plugin junegunn/vim-easy-align               "
-    "             01/11/2016 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Level 3 Plugins                              "
+"             01/29/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+if vim_function_level >= 3
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin junegunn/vim-easy-align               "
+    """"""""""""""""""""""""""""""""""""""""""""""""
     " Start interactive EasyAlign in visual mode (e.g. vipga)
     xnoremap ga <Plug>(EasyAlign)
 
@@ -731,12 +776,8 @@ if vim_function_level >= 3
     nnoremap ga <Plug>(EasyAlign)
 
     """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
     " Plugin scrooloose/nerdtree                   "
-    "             05/13/2015 added by Peidong      "
-    "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-
     " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
     nnoremap <Leader>bf :NERDTreeToggle<CR>
     " 设置NERDTree子窗口宽度
@@ -751,14 +792,10 @@ if vim_function_level >= 3
     let NERDTreeAutoDeleteBuffer=1
     let g:NERDTreeDirArrows = 1
 
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin brookhong/cscope.vim                  "
+    """"""""""""""""""""""""""""""""""""""""""""""""
     if system_has_cscope == 1
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        "                                              "
-        " Plugin brookhong/cscope.vim                  "
-        "             01/26/2016 added by Peidong      "
-        "                                              "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-
         nnoremap <leader>bc :call CscopeFindInteractive(expand('<cword>'))<CR>
         nnoremap <leader>bl :call ToggleLocationList()<CR>
         " " s: Find this C symbol
@@ -779,35 +816,23 @@ if vim_function_level >= 3
         " nnoremap  <leader>ci :call CscopeFind('i', expand('<cword>'))<CR>
     endif
 
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin majutsushi/tagbar                     "
+    """"""""""""""""""""""""""""""""""""""""""""""""
     if system_has_ctags == 1
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        "                                              "
-        " Plugin majutsushi/tagbar                     "
-        "             01/26/2016 added by Peidong      "
-        "                                              "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-
         nnoremap <Leader>bt :TagbarToggle<CR>
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
     " Plugin mbbill/undotree                       "
-    "             11/16/2015 added by Peidong      "
-    "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-
     nnoremap <Leader>bu :UndotreeToggle<cr>
     " If undotree is opened, it is likely one wants to interact with it.
     let g:undotree_SetFocusWhenToggle=1
 
     """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
     " Plugin lervag/vimtex                         "
-    "             05/19/2015 added by Peidong      "
-    "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-
     if vim_complete_engine == 5
         " make it work with YouCompleteMe
         if !exists('g:ycm_semantic_triggers')
@@ -821,12 +846,8 @@ if vim_function_level >= 3
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
     " Plugin Xuyuanp/nerdtree-git-plugin           "
-    "             11/17/2015 added by Peidong      "
-    "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-
     let g:NERDTreeIndicatorMapCustom = {
                 \ "Modified"  : "✹",
                 \ "Staged"    : "✚",
@@ -840,23 +861,15 @@ if vim_function_level >= 3
                 \ }
 
     """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
     " Plugin vim-scripts/YankRing.vim              "
-    "             11/17/2015 added by Peidong      "
-    "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-
     let g:yankring_replace_n_pkey = '<Leader>p'
     let g:yankring_replace_n_nkey = '<Leader>n'
 
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin scrooloose/syntastic                  "
+    """"""""""""""""""""""""""""""""""""""""""""""""
     if vim_enable_syntastic == 1
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        "                                              "
-        " Plugin scrooloose/syntastic                  "
-        "             05/13/2015 added by Peidong      "
-        "                                              "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-
         " Better :sign interface symbols
         let g:syntastic_error_symbol = '✗✗'
         let g:syntastic_style_error_symbol = '✠✠'
@@ -874,12 +887,8 @@ if vim_function_level >= 3
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
     " Plugin Shougo/vimshell.vim                   "
-    "             11/20/2015 added by Peidong      "
-    "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-
     let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
     if OSX()
         let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
@@ -904,62 +913,64 @@ if vim_function_level >= 3
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
     " Plugin Shougo/unite.vim                      "
-    "             11/21/2015 added by Peidong      "
-    "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-
     let g:unite_source_history_yank_enable = 1
 
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin hdima/python-syntax                   "
+    """"""""""""""""""""""""""""""""""""""""""""""""
     if has('python')
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        "                                              "
-        " Plugin hdima/python-syntax                   "
-        "             11/22/2015 added by Peidong      "
-        "                                              "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-
         let python_highlight_all = 1
     endif
+
 endif
 
-if vim_function_level >= 4
-    if has('Ruby')
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        "                                              "
-        " Plugin terryma/vim-multiple-cursors          "
-        "             07/14/2015 added by Peidong      "
-        "                                              "
-        """"""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Level 4 Plugins                              "
+"             01/29/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+if vim_function_level >= 4
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin terryma/vim-multiple-cursors          "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    if has('Ruby')
         let g:multi_cursor_next_key='<C-n>'
         let g:multi_cursor_prev_key='<C-p>'
         let g:multi_cursor_skip_key='<C-x>'
         let g:multi_cursor_quit_key='<Esc>'
     endif
 
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin dyng/ctrlsf.vim                       "
+    """"""""""""""""""""""""""""""""""""""""""""""""
     if has('Ruby')
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        "                                              "
-        " Plugin dyng/ctrlsf.vim                       "
-        "             05/13/2015 added by Peidong      "
-        "                                              "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-
         " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
         nnoremap <Leader>rt :CtrlSF<CR>
     endif
+
 endif
 
-if vim_function_level >= 5
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Plugin xuhdev/vim-latex-live-preview         "
-    "             05/19/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Level 5 Plugins                              "
+"             01/29/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+if vim_function_level >= 5
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin xuhdev/vim-latex-live-preview         "
+    """"""""""""""""""""""""""""""""""""""""""""""""
     if OSX()
         let g:livepreview_previewer = 'open -a Preview'
     elseif LINUX()
@@ -967,12 +978,8 @@ if vim_function_level >= 5
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
     " Plugin MikeCoder/markdown-preview.vim        "
-    "             11/07/2015 added by Peidong      "
-    "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-
     nnoremap <leader>bm :MarkdownPreview GitHub<CR>
 
 endif
@@ -983,6 +990,7 @@ endif
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 if vim_function_level >= 2
+
     if vim_complete_engine == 5 " YouCompleteMe
         " YCM 补全菜单配色
         " 菜单
@@ -1015,7 +1023,9 @@ if vim_function_level >= 2
         let g:ycm_error_symbol = '✗✗'
         let g:ycm_warning_symbol = '∆∆'
         "let g:ycm_show_diagnostics_ui = 0
+
     elseif vim_complete_engine == 3 " neocomplcache
+
         "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
         " Disable AutoComplPop.
         let g:acp_enableAtStartup = 0
@@ -1105,7 +1115,9 @@ if vim_function_level >= 2
         " For perlomni.vim setting.
         " https://github.com/c9s/perlomni.vim
         let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
     elseif vim_complete_engine == 4 " neocomplete
+
         "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
         " Disable AutoComplPop.
         let g:acp_enableAtStartup = 0
@@ -1177,8 +1189,19 @@ if vim_function_level >= 2
         " For perlomni.vim setting.
         " https://github.com/c9s/perlomni.vim
         let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
     endif
+
 endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Custom settings                              "
+"             01/29/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " before.local vimrc

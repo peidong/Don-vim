@@ -1,3 +1,11 @@
+# pei-vim : My Vim Distribution
+                  _            _
+       _ __   ___(_)    __   _(_)_ __ ___
+      | '_ \ / _ \ |____\ \ / / | '_ ` _ \
+      | |_) |  __/ |_____\ V /| | | | | | |
+      | .__/ \___|_|      \_/ |_|_| |_| |_|
+      |_|
+
 # Installation
 ## Ubuntu Installation
 

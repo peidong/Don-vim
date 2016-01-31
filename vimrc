@@ -678,11 +678,11 @@ set guioptions-=T
 """""""""""""""""""""""""""""""""""""""""""""""
 if has('gui_running')
     if WINDOWS()
-        set guifont=Consolas:h12   " Win32.
+        set guifont=Inconsolata:h15,Consolas:h12   " Win32.
     elseif OSX()
-        set guifont=Monaco:h12     " OSX.
+        set guifont=Inconsolata:h15,Monaco:h12     " OSX.
     elseif LINUX()
-        set guifont=Monospace\ 12  " Linux.
+        set guifont=Inconsolata\ 15,Monospace\ 12  " Linux.
     endif
 endif
 

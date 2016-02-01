@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 ############################  SETUP PARAMETERS
-app_name='spf13-vim'
-[ -z "$APP_PATH" ] && APP_PATH="$HOME/.spf13-vim-3"
-[ -z "$REPO_URI" ] && REPO_URI='https://github.com/spf13/spf13-vim.git'
-[ -z "$REPO_BRANCH" ] && REPO_BRANCH='3.0'
+app_name='pei-vim'
+[ -z "$APP_PATH" ] && APP_PATH="$HOME/.pei-vim-3"
+[ -z "$REPO_URI" ] && REPO_URI='https://github.com/peidong/pei-vim.git'
+[ -z "$REPO_BRANCH" ] && REPO_BRANCH='master'
 debug_mode='0'
 fork_maintainer='0'
-[ -z "$VUNDLE_URI" ] && VUNDLE_URI="https://github.com/gmarik/vundle.git"
+[ -z "$NEOBUNDLE_URI" ] && NEOBUNDLE_URI="https://github.com/Shougo/neobundle.vim.git"
 
 ############################  BASIC SETUP TOOLS
 msg() {
@@ -53,7 +53,7 @@ program_must_exist() {
 
 variable_set() {
     if [ -z "$1" ]; then
-        error "You must have your HOME environmental variable set to continue."
+        error "You must have your '$1' environmental variable set to continue."
     fi
 }
 
@@ -181,7 +181,7 @@ setup_fork_mode "$fork_maintainer" \
                 "$HOME"
 
 sync_repo       "$HOME/.vim/bundle/vundle" \
-                "$VUNDLE_URI" \
+                "$NEOBUNDLE_URI" \
                 "master" \
                 "vundle"
 

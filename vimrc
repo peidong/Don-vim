@@ -239,7 +239,9 @@ if vim_function_level >= 2
         NeoBundle 'tpope/vim-repeat'
 
         " Make vim's diff more powerful, usage: vimdiff, vim -d
-        NeoBundle 'chrisbra/vim-diff-enhanced'
+        if v:version >= 704
+            NeoBundle 'chrisbra/vim-diff-enhanced'
+        endif
 
         " Better folding in Python code
         NeoBundle 'tmhedberg/SimpylFold'
@@ -404,6 +406,10 @@ if vim_function_level >= 2
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
+
+    if v:version < 704 && vim_complete_engine == 5
+        let vim_complete_engine = 3
+    endif
 
     if vim_function_level >= 2
 

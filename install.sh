@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 ############################  SETUP PARAMETERS
 app_name='pei-vim'
-[ -z "$APP_PATH" ] && APP_PATH="$HOME/.pei-vim-3"
+[ -z "$APP_PATH" ] && APP_PATH="$HOME/.vim"
 [ -z "$REPO_URI" ] && REPO_URI='https://github.com/peidong/pei-vim.git'
 [ -z "$REPO_BRANCH" ] && REPO_BRANCH='master'
 debug_mode='0'
@@ -106,16 +106,17 @@ create_symlinks() {
     local source_path="$1"
     local target_path="$2"
 
-    lnif "$source_path/.vimrc"         "$target_path/.vimrc"
-    lnif "$source_path/.vimrc.bundles" "$target_path/.vimrc.bundles"
-    lnif "$source_path/.vimrc.before"  "$target_path/.vimrc.before"
-    lnif "$source_path/.vim"           "$target_path/.vim"
+    lnif "$source_path/vimrc"         "$target_path/.vimrc"
 
     if program_exists "nvim"; then
-        lnif "$source_path/.vim"       "$target_path/.config/nvim"
-        lnif "$source_path/.vimrc"     "$target_path/.config/nvim/init.vim"
+        msg "Not done for neovim"
+        # lnif "$source_path/.vim"       "$target_path/.config/nvim"
+        # lnif "$source_path/.vimrc"     "$target_path/.config/nvim/init.vim"
     fi
 
+    cp "$source_path/ycm_extra_conf.py"         "$target_path/.ycm_extra_conf.py"
+    cp "$source_path/tmux.conf"           "$target_path/.tmux.conf"
+    cp "$source_path/vimrc.before.local"  "$target_path/.vimrc.before.local"
     touch  "$target_path/.vimrc.local"
 
     ret="$?"
@@ -142,20 +143,17 @@ setup_fork_mode() {
     fi
 }
 
-setup_vundle() {
+setup_neobundle() {
     local system_shell="$SHELL"
     export SHELL='/bin/sh'
 
     vim \
-        -u "$1" \
-        "+set nomore" \
-        "+BundleInstall!" \
-        "+BundleClean" \
+        "+NeoBundleInstall" \
         "+qall"
 
     export SHELL="$system_shell"
 
-    success "Now updating/installing plugins using Vundle"
+    success "Now updating/installing plugins using NeoBundle"
     debug
 }
 
@@ -176,16 +174,16 @@ sync_repo       "$APP_PATH" \
 create_symlinks "$APP_PATH" \
     "$HOME"
 
-setup_fork_mode "$fork_maintainer" \
-    "$APP_PATH" \
-    "$HOME"
+# setup_fork_mode "$fork_maintainer" \
+#     "$APP_PATH" \
+#     "$HOME"
 
-sync_repo       "$HOME/.vim/bundle/vundle" \
+sync_repo       "$HOME/.vim/bundle/neobundle.vim" \
     "$NEOBUNDLE_URI" \
     "master" \
-    "vundle"
+    "neobundle"
 
-setup_vundle    "$APP_PATH/.vimrc.bundles.default"
+setup_neobundle
 
 msg             "\nThanks for installing $app_name."
 msg             "© `date +%Y` https://github.com/peidong/pei-vim"
@@ -197,13 +195,6 @@ msg             "© `date +%Y` https://github.com/peidong/pei-vim"
 #     # Do something under Windows NT platform
 # fi
 # cd ~
-# # mv .vim .vim_old
-# # mv .vimrc .vimrc_old
-# mv pei-vim .vim
-# ln -s ~/.vim/vimrc ~/.vimrc
-# ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
-# ln -s ~/.vim/tmux.conf ~/.tmux.conf
-# # cp ~/.vim/vimrc.before.local ~/.vimrc.before.local
 # mkdir ~/.undodir/
 # mkdir -p ~/.vim/bundle
 # git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim

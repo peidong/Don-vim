@@ -12,6 +12,7 @@ cd ~
 mv pei-vim .vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
+ln -s ~/.vim/tmux.conf ~/.tmux.conf
 # cp ~/.vim/vimrc.before.local ~/.vimrc.before.local
 mkdir ~/.undodir/
 mkdir -p ~/.vim/bundle

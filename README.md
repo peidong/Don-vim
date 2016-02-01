@@ -17,6 +17,7 @@
     mv pei-vim .vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
+    ln -s ~/.vim/tmux.conf ~/.tmux.conf
     cp ~/.vim/vimrc.before.local ~/.vimrc.before.local
     mkdir ~/.undodir/
     mkdir -p ~/.vim/bundle
@@ -44,6 +45,7 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
     mv pei-vim .vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
+    ln -s ~/.vim/tmux.conf ~/.tmux.conf
     cp ~/.vim/vimrc.before.local ~/.vimrc.before.local
     mkdir ~/.undodir/
     mkdir -p ~/.vim/bundle
@@ -111,6 +113,7 @@ to verify all good, run:
     move vimrc .vim
     mklink .vimrc .vim\vimrc
     mklink .ycm_extra_conf.py .vim\ycm_extra_conf.py
+    mklink .tmux.conf .vim\tmux.conf
     copy .vim\.vimrc.before.local vimrc.before.local
     mkdir .vim\bundle
     mkdir C:\Users\YourUserName\.undodir

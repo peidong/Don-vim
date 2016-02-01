@@ -77,7 +77,7 @@ do_backup() {
         ret="$?"
         success "Your original vim configuration has been backed up."
         debug
-   fi
+    fi
 }
 
 sync_repo() {
@@ -165,25 +165,25 @@ program_must_exist "vim"
 program_must_exist "git"
 
 do_backup       "$HOME/.vim" \
-                "$HOME/.vimrc" \
-                "$HOME/.gvimrc"
+    "$HOME/.vimrc" \
+    "$HOME/.gvimrc"
 
 sync_repo       "$APP_PATH" \
-                "$REPO_URI" \
-                "$REPO_BRANCH" \
-                "$app_name"
+    "$REPO_URI" \
+    "$REPO_BRANCH" \
+    "$app_name"
 
 create_symlinks "$APP_PATH" \
-                "$HOME"
+    "$HOME"
 
 setup_fork_mode "$fork_maintainer" \
-                "$APP_PATH" \
-                "$HOME"
+    "$APP_PATH" \
+    "$HOME"
 
 sync_repo       "$HOME/.vim/bundle/vundle" \
-                "$NEOBUNDLE_URI" \
-                "master" \
-                "vundle"
+    "$NEOBUNDLE_URI" \
+    "master" \
+    "vundle"
 
 setup_vundle    "$APP_PATH/.vimrc.bundles.default"
 

@@ -9,9 +9,15 @@
 # Installation
 ## Ubuntu Installation
 
-    sudo apt-get install pylint
     sudo apt-get install aptitude
-    sudo aptitude install exuberant-ctags ack-grep git build-essential cmake python-dev cscope
+    sudo aptitude install exuberant-ctags ack-grep git build-essential cmake python-dev cscope pylint vim
+
+### Automatic Installation
+
+    curl https://raw.githubusercontent.com/peidong/pei-vim/master/install.sh -L > pei-vim-install.sh && sh pei-vim-install.sh
+
+### Manually Installation
+
     cd ~
     git clone https://github.com/peidong/pei-vim.git
     mv pei-vim .vim
@@ -40,6 +46,13 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install ack cmake ctags cscope
     sudo pip install pylint
+
+### Automatic Installation
+
+    curl https://raw.githubusercontent.com/peidong/pei-vim/master/install.sh -L > pei-vim-install.sh && sh pei-vim-install.sh
+
+### Manually Installation
+
     cd ~
     git clone https://github.com/peidong/pei-vim.git
     mv pei-vim .vim
@@ -108,6 +121,9 @@ to verify all good, run:
     Features: Largefile NTLM SSL SSPI libz
 
 ### Setup vimrc
+
+#### Manually Installation
+
     cd C:\Users\YourUserName
     git clone https://github.com/peidong/vimrc.git
     move vimrc .vim

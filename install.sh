@@ -184,6 +184,9 @@ sync_repo       "$HOME/.vim/bundle/neobundle.vim" \
     "neobundle"
 
 setup_neobundle
+mkdir ~/.undodir/
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
 
 msg             "\nThanks for installing $app_name."
 msg             "© `date +%Y` https://github.com/peidong/pei-vim"
@@ -194,10 +197,3 @@ msg             "© `date +%Y` https://github.com/peidong/pei-vim"
 # elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT"  ]; then
 #     # Do something under Windows NT platform
 # fi
-# cd ~
-# mkdir ~/.undodir/
-# mkdir -p ~/.vim/bundle
-# git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-# ./.vim/bundle/neobundle.vim/bin/neoinstall
-# cd ~/.vim/bundle/YouCompleteMe
-# ./install.py --clang-completer

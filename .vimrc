@@ -81,28 +81,17 @@ endif
 scriptencoding utf-8
 
 """""""""""""""""""""""""""""""""""""""""""""""
-" Initialize variables
-"""""""""""""""""""""""""""""""""""""""""""""""
-let vim_function_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
-let vim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
-let vim_enable_syntastic = 1
-let vim_enable_gitgutter = 1
-let system_has_ctags = 1
-let system_has_cscope = 1
-let vim_set_list = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""
 " before.local vimrc
 """""""""""""""""""""""""""""""""""""""""""""""
 " Use before.local vimrc if available
-if filereadable(expand("~/.vimrc.before.local"))
-    source ~/.vimrc.before.local
+if filereadable(expand("~/.vimrc.before"))
+    source ~/.vimrc.before
 endif
 
 " Use before.local gvimrc if available and gui is running {
 if has('gui_running')
-    if filereadable(expand("~/.gvimrc.before.local"))
-        source ~/.gvimrc.before.local
+    if filereadable(expand("~/.gvimrc.before"))
+        source ~/.gvimrc.before
     endif
 endif
 

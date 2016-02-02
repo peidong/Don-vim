@@ -7,6 +7,7 @@ app_name='pei-vim'
 debug_mode='0'
 fork_maintainer='0'
 [ -z "$NEOBUNDLE_URI" ] && NEOBUNDLE_URI="https://github.com/Shougo/neobundle.vim.git"
+declare -i peivim_complete_engine
 
 ############################  BASIC SETUP TOOLS
 msg() {
@@ -135,9 +136,10 @@ initialize_vim_settings() {
 
     cp "$source_path/.ycm_extra_conf.py"         "$target_path/.ycm_extra_conf.py"
     cp "$source_path/.tmux.conf"           "$target_path/.tmux.conf"
-    cp "$source_path/.vimrc.before"  "$target_path/.vimrc.before.local"
     touch  "$target_path/.vimrc.local"
     mkdir "$target_path/.undodir/"
+
+    setup_user_local_settings "$target_path"
 
     ret="$?"
     success "Initialize vim settings."
@@ -177,6 +179,51 @@ setup_neobundle() {
     debug
 }
 
+setup_user_local_settings() {
+    local target_path="$1"
+    local system_shell="$SHELL"
+    export SHELL='/bin/sh'
+
+    printf "Which vim plugins level do you want?\n(More plugins have more functions, but also slower your vim.)\n1:no plugin\n2:fast and vimscripts only plugins\n3:normal and vimscripts only plugins\n4:many plugins with python support\n5:all the plugins"
+    read -p "Please type the number:" peivim_bundle_level
+    printf "Which of the following autocomplete plugin do you want?\n1.No auto complete plugin\n2.VimCompletesMe\n3.neocomplcache\n4.neocomplete\n5.YouCompleteMe(preferred)"
+    read -p "Please type the number:" peivim_complete_engine
+
+    if [ "$peivim_bundle_level" -eq '1' ]; then
+        echo "let g:peivim_bundle_level = 1" >> "$target_path/.vimrc.before.local"
+    elif [ "$peivim_bundle_level" -eq '2' ]; then
+        echo "let g:peivim_bundle_level = 2" >> "$target_path/.vimrc.before.local"
+    elif [ "$peivim_bundle_level" -eq '3' ]; then
+        echo "let g:peivim_bundle_level = 3" >> "$target_path/.vimrc.before.local"
+    elif [ "$peivim_bundle_level" -eq '4' ]; then
+        echo "let g:peivim_bundle_level = 4" >> "$target_path/.vimrc.before.local"
+    elif [ "$peivim_bundle_level" -eq '5' ]; then
+        echo "let g:peivim_bundle_level = 5" >> "$target_path/.vimrc.before.local"
+    else
+        echo "let g:peivim_bundle_level = 3" >> "$target_path/.vimrc.before.local"
+    fi
+
+    if [ "$peivim_complete_engine" -eq '1' ]; then
+        echo "let g:peivim_complete_engine = 1" >> "$target_path/.vimrc.before.local"
+    elif [ "$peivim_complete_engine" -eq '2' ]; then
+        echo "let g:peivim_complete_engine = 2" >> "$target_path/.vimrc.before.local"
+    elif [ "$peivim_complete_engine" -eq '3' ]; then
+        echo "let g:peivim_complete_engine = 3" >> "$target_path/.vimrc.before.local"
+    elif [ "$peivim_complete_engine" -eq '4' ]; then
+        echo "let g:peivim_complete_engine = 4" >> "$target_path/.vimrc.before.local"
+    elif [ "$peivim_complete_engine" -eq '5' ]; then
+        echo "let g:peivim_complete_engine = 5" >> "$target_path/.vimrc.before.local"
+    else
+        echo "let g:peivim_complete_engine = 2" >> "$target_path/.vimrc.before.local"
+    fi
+
+    export SHELL="$system_shell"
+
+    ret="$?"
+    success "Finish setting .vimrc.before.local"
+    debug
+}
+
 setup_youcompleteme() {
     local target_path="$1"
     local system_shell="$SHELL"
@@ -187,6 +234,7 @@ setup_youcompleteme() {
 
     export SHELL="$system_shell"
 
+    ret="$?"
     success "Now install YouCompleteMe"
     debug
 }
@@ -222,7 +270,9 @@ sync_repo       "$HOME/.vim/bundle/neobundle.vim" \
 
 setup_neobundle
 
-setup_youcompleteme "$HOME"
+if [ "$peivim_complete_engine" -eq '5' ]; then
+    setup_youcompleteme "$HOME"
+fi
 
 msg             "\nThanks for installing $app_name."
 msg             "© `date +%Y` https://github.com/peidong/pei-vim"

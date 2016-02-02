@@ -217,7 +217,7 @@ if g:peivim_bundle_level >= 2
         NeoBundle 'Yggdroot/indentLine'
 
         " Show git status in the left column
-        if count(g:peivim_bundle_general_groups, 'gitgutter')
+        if executable('git')
             NeoBundle 'airblade/vim-gitgutter'
         endif
 
@@ -880,6 +880,12 @@ if g:peivim_bundle_level >= 3
     if executable('ctags')
         nnoremap <Leader>bt :TagbarToggle<CR>
     endif
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin kien/ctrlp.vim                        "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Show hidden files
+    let g:ctrlp_show_hidden = 1
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin tacahiroy/ctrlp-funky                 "

@@ -205,7 +205,7 @@ if g:peivim_bundle_level >= 2
         " Grammar Plugins                              "
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Check the syntastic of codes, need to install engines in PATH
-        if count(g:peivim_bundle_general_groups, 'syntastic')
+        if !WINDOWS()
             NeoBundle 'scrooloose/syntastic'
         endif
 

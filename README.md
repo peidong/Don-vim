@@ -21,10 +21,11 @@
     cd ~
     git clone https://github.com/peidong/pei-vim.git
     mv pei-vim .vim
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
-    ln -s ~/.vim/tmux.conf ~/.tmux.conf
-    cp ~/.vim/vimrc.before.local ~/.vimrc.before.local
+    ln -s ~/.vim/.vimrc ~/.vimrc
+    ln -s ~/.vim/.vimrc.before ~/.vimrc.before
+    ln -s ~/.vim/.ycm_extra_conf.py ~/.ycm_extra_conf.py
+    ln -s ~/.vim/.tmux.conf ~/.tmux.conf
+    cp ~/.vim/.vimrc.before ~/.vimrc.before.local
     mkdir ~/.undodir/
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
@@ -56,10 +57,11 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
     cd ~
     git clone https://github.com/peidong/pei-vim.git
     mv pei-vim .vim
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
-    ln -s ~/.vim/tmux.conf ~/.tmux.conf
-    cp ~/.vim/vimrc.before.local ~/.vimrc.before.local
+    ln -s ~/.vim/.vimrc ~/.vimrc
+    ln -s ~/.vim/.vimrc.before ~/.vimrc.before
+    ln -s ~/.vim/.ycm_extra_conf.py ~/.ycm_extra_conf.py
+    ln -s ~/.vim/.tmux.conf ~/.tmux.conf
+    cp ~/.vim/.vimrc.before ~/.vimrc.before.local
     mkdir ~/.undodir/
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
@@ -127,10 +129,11 @@ to verify all good, run:
     cd C:\Users\YourUserName
     git clone https://github.com/peidong/vimrc.git
     move vimrc .vim
-    mklink .vimrc .vim\vimrc
-    mklink .ycm_extra_conf.py .vim\ycm_extra_conf.py
-    mklink .tmux.conf .vim\tmux.conf
-    copy .vim\.vimrc.before.local vimrc.before.local
+    mklink .vimrc .vim\.vimrc
+    mklink .vimrc.before .vim\.vimrc.before
+    mklink .ycm_extra_conf.py .vim\.ycm_extra_conf.py
+    mklink .tmux.conf .vim\.tmux.conf
+    copy .vim\.vimrc.before vimrc.before.local
     mkdir .vim\bundle
     mkdir C:\Users\YourUserName\.undodir
     git clone https://github.com/Shougo/neobundle.vim .vim\bundle\neobundle.vim

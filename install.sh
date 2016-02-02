@@ -115,7 +115,8 @@ create_symlinks() {
     local source_path="$1"
     local target_path="$2"
 
-    lnif "$source_path/vimrc"         "$target_path/.vimrc"
+    lnif "$source_path/.vimrc"         "$target_path/.vimrc"
+    lnif "$source_path/.vimrc.before"         "$target_path/.vimrc.before"
 
     if program_exists "nvim"; then
         msg "Not done for neovim"
@@ -123,13 +124,23 @@ create_symlinks() {
         # lnif "$source_path/.vimrc"     "$target_path/.config/nvim/init.vim"
     fi
 
-    cp "$source_path/ycm_extra_conf.py"         "$target_path/.ycm_extra_conf.py"
-    cp "$source_path/tmux.conf"           "$target_path/.tmux.conf"
-    cp "$source_path/vimrc.before.local"  "$target_path/.vimrc.before.local"
-    touch  "$target_path/.vimrc.local"
-
     ret="$?"
     success "Setting up vim symlinks."
+    debug
+}
+
+initialize_vim_settings() {
+    local source_path="$1"
+    local target_path="$2"
+
+    cp "$source_path/.ycm_extra_conf.py"         "$target_path/.ycm_extra_conf.py"
+    cp "$source_path/.tmux.conf"           "$target_path/.tmux.conf"
+    cp "$source_path/.vimrc.before"  "$target_path/.vimrc.before.local"
+    touch  "$target_path/.vimrc.local"
+    mkdir "$target_path/.undodir/"
+
+    ret="$?"
+    success "Initialize vim settings."
     debug
 }
 
@@ -166,6 +177,20 @@ setup_neobundle() {
     debug
 }
 
+setup_youcompleteme() {
+    local target_path="$1"
+    local system_shell="$SHELL"
+    export SHELL='/bin/sh'
+
+    cd "$target_path/.vim/bundle/YouCompleteMe"
+    ./install.py --clang-completer
+
+    export SHELL="$system_shell"
+
+    success "Now install YouCompleteMe"
+    debug
+}
+
 ############################ MAIN()
 variable_set "$HOME"
 program_must_exist "vim"
@@ -183,6 +208,9 @@ sync_repo       "$APP_PATH" \
 create_symlinks "$APP_PATH" \
     "$HOME"
 
+initialize_vim_settings "$APP_PATH" \
+    "$HOME"
+
 # setup_fork_mode "$fork_maintainer" \
 #     "$APP_PATH" \
 #     "$HOME"
@@ -193,9 +221,8 @@ sync_repo       "$HOME/.vim/bundle/neobundle.vim" \
     "neobundle"
 
 setup_neobundle
-mkdir ~/.undodir/
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer
+
+setup_youcompleteme "$HOME"
 
 msg             "\nThanks for installing $app_name."
 msg             "© `date +%Y` https://github.com/peidong/pei-vim"

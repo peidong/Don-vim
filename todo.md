@@ -8,7 +8,9 @@
 
 TODO:
 
-1. plugin list to choose
+1. plugin list to choose /done
+
+1.1 more plugins
 
 2. neovim
 

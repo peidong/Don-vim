@@ -13,7 +13,7 @@ let g:peivim_setting_groups = ['set_list']
 
 " NeoBundle Plugin settings
 let g:peivim_bundle_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
-let g:peivim_bundle_general_groups = ['ctags', 'cscope', 'syntastic', 'gitgutter']
+let g:peivim_bundle_general_groups = ['syntastic', 'gitgutter']
 let g:peivim_bundle_language_groups = ['markdown', 'json', 'matlab', 'javascript', 'php', 'latex', 'python']
 let g:peivim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
 

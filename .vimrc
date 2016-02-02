@@ -416,7 +416,7 @@ if g:peivim_bundle_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-    if v:version < 704 && g:peivim_complete_engine == 5
+    if v:version < 704 && g:peivim_complete_engine == 5 && !executable('python')
         let g:peivim_complete_engine = 3
     endif
 

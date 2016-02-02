@@ -217,7 +217,7 @@ if g:peivim_bundle_level >= 2
         NeoBundle 'Yggdroot/indentLine'
 
         " Show git status in the left column
-        if count(g:peivim_bundle_language_groups, 'gitgutter')
+        if count(g:peivim_bundle_general_groups, 'gitgutter')
             NeoBundle 'airblade/vim-gitgutter'
         endif
 

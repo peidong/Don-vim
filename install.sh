@@ -51,6 +51,15 @@ program_must_exist() {
     fi
 }
 
+set_vimrc_before_local() {
+    program_exists $1
+
+    # Not exist
+    if [ "$?" -ne 0 ]; then
+        msg "not exist '$1'"
+    fi
+}
+
 variable_set() {
     if [ -z "$1" ]; then
         error "You must have your '$1' environmental variable set to continue."

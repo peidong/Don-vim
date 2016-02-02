@@ -98,7 +98,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""
 " Neobundle 01/29/2016 added by Peidong
 """""""""""""""""""""""""""""""""""""""""""""""
-if g:peivim_function_level >= 2
+if g:peivim_bundle_level >= 2
 
     " Note: Skip initialization for vim-tiny or vim-small.
     if 0 | endif
@@ -129,7 +129,7 @@ if g:peivim_function_level >= 2
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
-    if g:peivim_function_level >= 2
+    if g:peivim_bundle_level >= 2
 
 
         """"""""""""""""""""""""""""""""""""""""""""""""
@@ -176,7 +176,7 @@ if g:peivim_function_level >= 2
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
-    if g:peivim_function_level >= 3
+    if g:peivim_bundle_level >= 3
 
 
         """"""""""""""""""""""""""""""""""""""""""""""""
@@ -296,29 +296,42 @@ if g:peivim_function_level >= 2
         " Specific language Plugins                    "
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Markdown highlight
-        NeoBundle 'tpope/vim-markdown'
+        if count(g:peivim_bundle_language_groups, 'markdown')
+            NeoBundle 'tpope/vim-markdown'
+        endif
 
         " Json highlight
-        NeoBundle 'elzr/vim-json'
+        if count(g:peivim_bundle_language_groups, 'json')
+            NeoBundle 'elzr/vim-json'
+        endif
 
         " Matlab highlight
-        NeoBundle 'vim-scripts/MatlabFilesEdition'
+        if count(g:peivim_bundle_language_groups, 'matlab')
+            NeoBundle 'vim-scripts/MatlabFilesEdition'
+        endif
 
         " Javascript highlight
-        NeoBundle 'pangloss/vim-javascript'
+        if count(g:peivim_bundle_language_groups, 'javascript')
+            NeoBundle 'pangloss/vim-javascript'
+        endif
 
-        " PHP highlight
-        NeoBundle 'StanAngeloff/php.vim'
-
-        " Improved PHP omni-completion
-        NeoBundle 'shawncplus/phpcomplete.vim'
+        if count(g:peivim_bundle_language_groups, 'php')
+            " PHP highlight
+            NeoBundle 'StanAngeloff/php.vim'
+            " Improved PHP omni-completion
+            NeoBundle 'shawncplus/phpcomplete.vim'
+        endif
 
         " Latex edit
-        NeoBundle 'lervag/vimtex'
+        if count(g:peivim_bundle_language_groups, 'latex')
+            NeoBundle 'lervag/vimtex'
+        endif
 
         " Python highlight
         if has('python')
-            NeoBundle 'hdima/python-syntax'
+            if count(g:peivim_bundle_language_groups, 'python')
+                NeoBundle 'hdima/python-syntax'
+            endif
         endif
 
     endif
@@ -331,7 +344,7 @@ if g:peivim_function_level >= 2
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
-    if g:peivim_function_level >= 4
+    if g:peivim_bundle_level >= 4
 
 
         """"""""""""""""""""""""""""""""""""""""""""""""
@@ -358,7 +371,7 @@ if g:peivim_function_level >= 2
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
-    if g:peivim_function_level >= 5
+    if g:peivim_bundle_level >= 5
 
         " Use in Mac OSX's Dash app
         " if OSX()
@@ -376,11 +389,15 @@ if g:peivim_function_level >= 2
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Preview the markdown file
         if has('python')
-            NeoBundle 'MikeCoder/markdown-preview.vim'
+            if count(g:peivim_bundle_language_groups, 'markdown')
+                NeoBundle 'MikeCoder/markdown-preview.vim'
+            endif
         endif
 
         " Latex preview
-        NeoBundle 'xuhdev/vim-latex-live-preview'
+        if count(g:peivim_bundle_language_groups, 'latex')
+            NeoBundle 'xuhdev/vim-latex-live-preview'
+        endif
 
         " There are bugs in this plugin
         " NeoBundle 'SirVer/ultisnips'
@@ -400,7 +417,7 @@ if g:peivim_function_level >= 2
         let g:peivim_complete_engine = 3
     endif
 
-    if g:peivim_function_level >= 2
+    if g:peivim_bundle_level >= 2
 
         " Auto complete engine
         if g:peivim_complete_engine == 5
@@ -511,7 +528,7 @@ set smartcase                   " Case sensitive when uc present
 " Status line
 """""""""""""""""""""""""""""""""""""""""""""""
 " 总是显示状态栏
-if g:peivim_function_level >= 2
+if g:peivim_bundle_level >= 2
     if has('statusline')
         set laststatus=2
     endif
@@ -597,7 +614,7 @@ set scrolloff=3                 " Minimum lines to keep above and below cursor
 """""""""""""""""""""""""""""""""""""""""""""""
 " List chars
 """""""""""""""""""""""""""""""""""""""""""""""
-if peivim_set_list == 1
+if count(g:peivim_setting_groups, 'set_list')
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 endif
@@ -684,7 +701,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""
 " Color settings
 """""""""""""""""""""""""""""""""""""""""""""""
-if g:peivim_function_level >= 2
+if g:peivim_bundle_level >= 2
 
     " This is for days and nights coloring
     " let current_time_hour = strftime("%H")
@@ -724,7 +741,7 @@ elseif vim_background == "dark"
     set background=dark
 endif
 
-if g:peivim_function_level >= 2
+if g:peivim_bundle_level >= 2
 
     " NLKNguyen/papercolor-theme
     colorscheme PaperColor
@@ -753,7 +770,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_function_level >= 2
+if g:peivim_bundle_level >= 2
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin vim-airline/vim-airline               "
@@ -802,7 +819,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_function_level >= 3
+if g:peivim_bundle_level >= 3
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin junegunn/vim-easy-align               "
@@ -871,14 +888,16 @@ if g:peivim_function_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin lervag/vimtex                         "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if g:peivim_complete_engine == 5
+    if g:peivim_complete_engine == 5 && count(g:peivim_bundle_language_groups, 'latex')
         " make it work with YouCompleteMe
-        if !exists('g:ycm_semantic_triggers')
-            let g:ycm_semantic_triggers = {}
+        if g:peivim_complete_engine == 5
+            if !exists('g:ycm_semantic_triggers')
+                let g:ycm_semantic_triggers = {}
+            endif
+            let g:ycm_semantic_triggers.tex = [
+                        \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
+                        \ ]
         endif
-        let g:ycm_semantic_triggers.tex = [
-                    \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
-                    \ ]
         " This option controls whether to append a closing brace after a label or a citation has been completed.
         let g:vimtex_complete_close_braces = 1
     endif
@@ -959,7 +978,9 @@ if g:peivim_function_level >= 3
     " Plugin hdima/python-syntax                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if has('python')
-        let python_highlight_all = 1
+        if count(g:peivim_bundle_language_groups, 'python')
+            let python_highlight_all = 1
+        endif
     endif
 
 endif
@@ -973,7 +994,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_function_level >= 4
+if g:peivim_bundle_level >= 4
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin terryma/vim-multiple-cursors          "
@@ -1004,21 +1025,25 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_function_level >= 5
+if g:peivim_bundle_level >= 5
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin xuhdev/vim-latex-live-preview         "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if OSX()
-        let g:livepreview_previewer = 'open -a Preview'
-    elseif LINUX()
-        let g:livepreview_previewer = 'okular'
+    if count(g:peivim_bundle_language_groups, 'latex')
+        if OSX()
+            let g:livepreview_previewer = 'open -a Preview'
+        elseif LINUX()
+            let g:livepreview_previewer = 'okular'
+        endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin MikeCoder/markdown-preview.vim        "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    nnoremap <leader>bm :MarkdownPreview GitHub<CR>
+    if count(g:peivim_bundle_language_groups, 'markdown')
+        nnoremap <leader>bm :MarkdownPreview GitHub<CR>
+    endif
 
 endif
 
@@ -1027,7 +1052,7 @@ endif
 " Complete plugins 11/18/2015 added by Peidong "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
-if g:peivim_function_level >= 2
+if g:peivim_bundle_level >= 2
 
     if g:peivim_complete_engine == 5 " YouCompleteMe
         " YCM 补全菜单配色

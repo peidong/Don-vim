@@ -14,7 +14,7 @@
 
 ### Automatic Installation
 
-    curl https://raw.githubusercontent.com/peidong/pei-vim/master/install.sh -L > pei-vim-install.sh && sh pei-vim-install.sh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/peidong/pei-vim/master/install.sh)"
 
 ### Manually Installation
 
@@ -50,7 +50,7 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
 
 ### Automatic Installation
 
-    curl https://raw.githubusercontent.com/peidong/pei-vim/master/install.sh -L > pei-vim-install.sh && sh pei-vim-install.sh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/peidong/pei-vim/master/install.sh)"
 
 ### Manually Installation
 

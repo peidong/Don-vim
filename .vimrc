@@ -327,7 +327,7 @@ if g:peivim_bundle_level >= 2
         endif
 
         " Javascript highlight
-        if count(g:peivim_bundle_list, 'javascript') && has('patch-7.4.7')
+        if count(g:peivim_bundle_list, 'javascript') && (v:version > 704 || (v:version == 704 && has('patch7')))
             NeoBundle 'pangloss/vim-javascript'
         endif
 

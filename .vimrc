@@ -312,26 +312,26 @@ if g:peivim_bundle_level >= 2
         " Specific language Plugins                    "
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Markdown highlight
-        if count(g:peivim_bundle_language_groups, 'markdown')
+        if count(g:peivim_bundle_list, 'markdown')
             NeoBundle 'tpope/vim-markdown'
         endif
 
         " Json highlight
-        if count(g:peivim_bundle_language_groups, 'json') && v:version >= 703
+        if count(g:peivim_bundle_list, 'json') && v:version >= 703
             NeoBundle 'elzr/vim-json'
         endif
 
         " Matlab highlight
-        if count(g:peivim_bundle_language_groups, 'matlab')
+        if count(g:peivim_bundle_list, 'matlab')
             NeoBundle 'vim-scripts/MatlabFilesEdition'
         endif
 
         " Javascript highlight
-        if count(g:peivim_bundle_language_groups, 'javascript') && has('patch-7.4.7')
+        if count(g:peivim_bundle_list, 'javascript') && has('patch-7.4.7')
             NeoBundle 'pangloss/vim-javascript'
         endif
 
-        if count(g:peivim_bundle_language_groups, 'php')
+        if count(g:peivim_bundle_list, 'php')
             " PHP highlight
             NeoBundle 'StanAngeloff/php.vim'
             " Improved PHP omni-completion
@@ -339,15 +339,21 @@ if g:peivim_bundle_level >= 2
         endif
 
         " Latex edit
-        if count(g:peivim_bundle_language_groups, 'latex')
+        if count(g:peivim_bundle_list, 'latex')
             NeoBundle 'lervag/vimtex'
         endif
 
         " Python highlight
-        if has('python')
-            if count(g:peivim_bundle_language_groups, 'python')
-                NeoBundle 'hdima/python-syntax'
-            endif
+        if count(g:peivim_bundle_list, 'python')
+            NeoBundle 'hdima/python-syntax'
+        endif
+
+        " Writing
+        if count(g:peivim_bundle_list, 'writing')
+            NeoBundle 'reedes/vim-litecorrect'
+            NeoBundle 'reedes/vim-textobj-sentence'
+            NeoBundle 'reedes/vim-textobj-quote'
+            NeoBundle 'reedes/vim-wordy'
         endif
 
     endif
@@ -406,13 +412,13 @@ if g:peivim_bundle_level >= 2
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Preview the markdown file
         if has('python')
-            if count(g:peivim_bundle_language_groups, 'markdown')
+            if count(g:peivim_bundle_list, 'markdown')
                 NeoBundle 'MikeCoder/markdown-preview.vim'
             endif
         endif
 
         " Latex preview
-        if count(g:peivim_bundle_language_groups, 'latex') && v:version >= 703 && has('python')
+        if count(g:peivim_bundle_list, 'latex') && v:version >= 703 && has('python')
             NeoBundle 'xuhdev/vim-latex-live-preview'
         endif
 
@@ -937,7 +943,7 @@ if g:peivim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin lervag/vimtex                         "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if g:peivim_complete_engine == 5 && count(g:peivim_bundle_language_groups, 'latex')
+    if g:peivim_complete_engine == 5 && count(g:peivim_bundle_list, 'latex')
         " make it work with YouCompleteMe
         if g:peivim_complete_engine == 5
             if !exists('g:ycm_semantic_triggers')
@@ -1028,11 +1034,43 @@ if g:peivim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin hdima/python-syntax                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if has('python')
-        if count(g:peivim_bundle_language_groups, 'python')
-            let python_highlight_all = 1
-        endif
+    if count(g:peivim_bundle_list, 'python')
+        let python_highlight_all = 1
     endif
+
+    " Writing
+    if count(g:peivim_bundle_list, 'writing')
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Plugin reedes/vim-litecorrect
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        augroup litecorrect
+            autocmd!
+            autocmd FileType markdown,mkd call litecorrect#init()
+            autocmd FileType textile call litecorrect#init()
+            autocmd FileType text call litecorrect#init()
+        augroup END
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Plugin reedes/vim-textobj-sentence
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        augroup textobj_sentence
+            autocmd!
+            autocmd FileType markdown call textobj#sentence#init()
+            autocmd FileType textile call textobj#sentence#init()
+            autocmd FileType text call textobj#sentence#init()
+        augroup END
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Plugin reedes/vim-textobj-quote
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        augroup textobj_quote
+            autocmd!
+            autocmd FileType markdown call textobj#quote#init()
+            autocmd FileType textile call textobj#quote#init()
+            autocmd FileType text call textobj#quote#init({'educate': 0})
+        augroup END
+    endif
+
 
 endif
 
@@ -1098,7 +1136,7 @@ if g:peivim_bundle_level >= 5
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin xuhdev/vim-latex-live-preview         "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if count(g:peivim_bundle_language_groups, 'latex') && v:version >= 703 && has('python')
+    if count(g:peivim_bundle_list, 'latex') && v:version >= 703 && has('python')
         if OSX()
             let g:livepreview_previewer = 'open -a Preview'
         elseif LINUX() && executable('okular')
@@ -1109,7 +1147,7 @@ if g:peivim_bundle_level >= 5
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin MikeCoder/markdown-preview.vim        "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if count(g:peivim_bundle_language_groups, 'markdown')
+    if count(g:peivim_bundle_list, 'markdown')
         nnoremap <leader>bm :MarkdownPreview GitHub<CR>
     endif
 

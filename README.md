@@ -14,7 +14,7 @@
 
 ### Automatic Installation
 
-    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/install.sh" -O pei-vim-install.sh && sh pei-vim-install.sh
+    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/pei-vim-osx-linux-install.sh" -O pei-vim-install.sh && sh pei-vim-install.sh
 
 ### Manually Installation
 
@@ -50,7 +50,7 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
 
 ### Automatic Installation
 
-    curl https://raw.githubusercontent.com/peidong/pei-vim/master/install.sh -L > pei-vim-install.sh && sh pei-vim-install.sh
+    curl https://raw.githubusercontent.com/peidong/pei-vim/master/pei-vim-osx-linux-install.sh -L > pei-vim-install.sh && sh pei-vim-install.sh
 
 ### Manually Installation
 
@@ -126,16 +126,14 @@ to verify all good, run:
 
 #### Manually Installation
 
-    cd C:\Users\YourUserName
-    git clone https://github.com/peidong/vimrc.git
-    move vimrc .vim
+    cd %userprofile%
+    git clone https://github.com/peidong/pei-vim.git
+    move pei-vim .vim
     mklink .vimrc .vim\.vimrc
     mklink .vimrc.before .vim\.vimrc.before
-    mklink .ycm_extra_conf.py .vim\.ycm_extra_conf.py
-    mklink .tmux.conf .vim\.tmux.conf
     copy .vim\.vimrc.before vimrc.before.local
     mkdir .vim\bundle
-    mkdir C:\Users\YourUserName\.undodir
+    mkdir %userprofile%\.undodir
     git clone https://github.com/Shougo/neobundle.vim .vim\bundle\neobundle.vim
 
 Then vim, and `:NeoBundleInstall`

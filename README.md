@@ -14,7 +14,7 @@
 
 ### Automatic Installation
 
-    wget "curl -fsSL https://raw.githubusercontent.com/peidong/pei-vim/master/install.sh" -O pei-vim-install.sh && sh pei-vim-install.sh
+    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/install.sh" -O pei-vim-install.sh && sh pei-vim-install.sh
 
 ### Manually Installation
 

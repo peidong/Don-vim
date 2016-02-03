@@ -16,4 +16,4 @@ TODO:
 
 3. better installation options /done
 
-4. installation for windows
+4. installation for windows /done

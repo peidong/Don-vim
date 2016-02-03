@@ -184,9 +184,9 @@ setup_user_local_settings() {
     local system_shell="$SHELL"
     export SHELL='/bin/sh'
 
-    printf "Which vim plugins level do you want?\n(More plugins have more functions, but also slower your vim.)\n1:no plugin\n2:fast and vimscripts only plugins\n3:normal and vimscripts only plugins\n4:many plugins with python support\n5:all the plugins"
+    printf "Which vim plugins level do you want?\n(More plugins have more functions, but also slower your vim.)\n1:no plugin\n2:fast and vimscripts only plugins\n3:normal and vimscripts only plugins\n4:many plugins with python support\n5:all the plugins\n"
     read -p "Please type the number:" peivim_bundle_level
-    printf "Which of the following autocomplete plugin do you want?\n1.No auto complete plugin\n2.VimCompletesMe\n3.neocomplcache\n4.neocomplete\n5.YouCompleteMe(preferred)"
+    printf "Which of the following autocomplete plugin do you want?\n1.No auto complete plugin\n2.VimCompletesMe\n3.neocomplcache\n4.neocomplete\n5.YouCompleteMe(preferred)\n"
     read -p "Please type the number:" peivim_complete_engine
 
     if [ "$peivim_bundle_level" -eq '1' ]; then

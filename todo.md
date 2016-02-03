@@ -6,14 +6,13 @@
       | .__/ \___|_|      \_/ |_|_| |_| |_|
       |_|
 
-TODO:
+#TODO LIST
+---
+###FEATURES
+1. **√** ~~plugin list to choose~~
+2. **√** ~~more plugins~~
+3. **√** ~~better installation options~~
+4. **√** ~~installation for windows~~
+5. neovim
 
-1. plugin list to choose /done
-
-1.1 more plugins /done
-
-2. neovim
-
-3. better installation options /done
-
-4. installation for windows /done
+###BUGS

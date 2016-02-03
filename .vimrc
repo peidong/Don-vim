@@ -1043,32 +1043,32 @@ if g:peivim_bundle_level >= 3
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Plugin reedes/vim-litecorrect
         """"""""""""""""""""""""""""""""""""""""""""""""
-        augroup litecorrect
-            autocmd!
-            autocmd FileType markdown,mkd call litecorrect#init()
-            autocmd FileType textile call litecorrect#init()
-            autocmd FileType text call litecorrect#init()
-        augroup END
+        " augroup litecorrect
+        "     autocmd!
+        "     autocmd FileType markdown,mkd call litecorrect#init()
+        "     autocmd FileType textile call litecorrect#init()
+        "     autocmd FileType text call litecorrect#init()
+        " augroup END
 
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Plugin reedes/vim-textobj-sentence
         """"""""""""""""""""""""""""""""""""""""""""""""
-        augroup textobj_sentence
-            autocmd!
-            autocmd FileType markdown call textobj#sentence#init()
-            autocmd FileType textile call textobj#sentence#init()
-            autocmd FileType text call textobj#sentence#init()
-        augroup END
+        " augroup textobj_sentence
+        "     autocmd!
+        "     autocmd FileType markdown call textobj#sentence#init()
+        "     autocmd FileType textile call textobj#sentence#init()
+        "     autocmd FileType text call textobj#sentence#init()
+        " augroup END
 
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Plugin reedes/vim-textobj-quote
         """"""""""""""""""""""""""""""""""""""""""""""""
-        augroup textobj_quote
-            autocmd!
-            autocmd FileType markdown call textobj#quote#init()
-            autocmd FileType textile call textobj#quote#init()
-            autocmd FileType text call textobj#quote#init({'educate': 0})
-        augroup END
+        " augroup textobj_quote
+        "     autocmd!
+        "     autocmd FileType markdown call textobj#quote#init()
+        "     autocmd FileType textile call textobj#quote#init()
+        "     autocmd FileType text call textobj#quote#init({'educate': 0})
+        " augroup END
     endif
 
 

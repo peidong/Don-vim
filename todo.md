@@ -14,6 +14,6 @@ TODO:
 
 2. neovim
 
-3. better installation options
+3. better installation options /done
 
 4. installation for windows

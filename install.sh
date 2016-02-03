@@ -134,8 +134,8 @@ initialize_vim_settings() {
     local source_path="$1"
     local target_path="$2"
 
-    cp "$source_path/.ycm_extra_conf.py"         "$target_path/.ycm_extra_conf.py"
-    cp "$source_path/.tmux.conf"           "$target_path/.tmux.conf"
+    cp --remove-destination "$source_path/.ycm_extra_conf.py"         "$target_path/.ycm_extra_conf.py"
+    cp --remove-destination "$source_path/.tmux.conf"           "$target_path/.tmux.conf"
     touch  "$target_path/.vimrc.local"
     mkdir -p "$target_path/.undodir/"
 

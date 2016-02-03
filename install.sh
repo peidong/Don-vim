@@ -78,10 +78,10 @@ lnif() {
 ############################ SETUP FUNCTIONS
 
 do_backup() {
-    if [ -e "$1" ] || [ -e "$2" ] || [ -e "$3" ]; then
+    if [ -e "$1" ] || [ -e "$2" ] || [ -e "$3" ] || [ -e "$4" ] || [ -e "$5" ] || [ -e "$6" ] || [ -e "$7" ]; then
         msg "Attempting to back up your original vim configuration."
         today=`date +%Y%m%d_%s`
-        for i in "$1" "$2" "$3"; do
+        for i in "$1" "$2" "$3" "$4" "$5" "$6" "$7"; do
             [ -e "$i" ] && [ ! -L "$i" ] && mv -v "$i" "$i.$today";
         done
         ret="$?"
@@ -137,7 +137,7 @@ initialize_vim_settings() {
     cp "$source_path/.ycm_extra_conf.py"         "$target_path/.ycm_extra_conf.py"
     cp "$source_path/.tmux.conf"           "$target_path/.tmux.conf"
     touch  "$target_path/.vimrc.local"
-    mkdir "$target_path/.undodir/"
+    mkdir -p "$target_path/.undodir/"
 
     setup_user_local_settings "$target_path"
 
@@ -185,10 +185,10 @@ setup_user_local_settings() {
     export SHELL='/bin/sh'
 
     printf "\n====================================\n"
-    printf "Which vim plugins level do you want?\n(More plugins have more functions, but also slower your vim.)\n1:no plugin\n2:fast and vimscripts only plugins\n3:normal and vimscripts only plugins\n4:many plugins with python support\n5:all the plugins\n"
+    printf "Which vim plugins level do you want?\n\n(More plugins have more functions, but also slower your vim.)\n\n1:no plugin\n2:fast and vimscripts only plugins\n3:normal and vimscripts only plugins\n4:many plugins with python support\n5:all the plugins\n"
     read -p "Please type the number:" peivim_bundle_level
     printf "\n====================================\n"
-    printf "Which of the following autocomplete plugin do you want?\n1.No auto complete plugin\n2.VimCompletesMe\n3.neocomplcache\n4.neocomplete\n5.YouCompleteMe(preferred)\n"
+    printf "Which of the following autocomplete plugin do you want?\n\n1.No auto complete plugin\n2.VimCompletesMe\n3.neocomplcache\n4.neocomplete\n5.YouCompleteMe(preferred)\n"
     read -p "Please type the number:" peivim_complete_engine
 
     if [ "$peivim_bundle_level" -eq '1' ]; then
@@ -248,7 +248,11 @@ program_must_exist "git"
 
 do_backup       "$HOME/.vim" \
     "$HOME/.vimrc" \
-    "$HOME/.gvimrc"
+    "$HOME/.gvimrc" \
+    "$HOME/.vimrc.before" \
+    "$HOME/.vimrc.local" \
+    "$HOME/.ycm_extra_conf.py" \
+    "$HOME/.vimrc.before.local"
 
 sync_repo       "$APP_PATH" \
     "$REPO_URI" \

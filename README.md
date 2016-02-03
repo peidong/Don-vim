@@ -14,7 +14,7 @@
 
 ### Automatic Installation
 
-    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/pei-vim-osx-linux-install.sh" -O pei-vim-install.sh && sh pei-vim-install.sh
+    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/pei-vim-osx-linux-install.sh" -O pei-vim-osx-linux-install.sh && sh pei-vim-osx-linux-install.sh
 
 ### Manually Installation
 
@@ -50,7 +50,7 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
 
 ### Automatic Installation
 
-    curl https://raw.githubusercontent.com/peidong/pei-vim/master/pei-vim-osx-linux-install.sh -L > pei-vim-install.sh && sh pei-vim-install.sh
+    curl https://raw.githubusercontent.com/peidong/pei-vim/master/pei-vim-osx-linux-install.sh -L > pei-vim-osx-linux-install.sh && sh pei-vim-osx-linux-install.sh
 
 ### Manually Installation
 
@@ -123,6 +123,12 @@ to verify all good, run:
     Features: Largefile NTLM SSL SSPI libz
 
 ### Setup vimrc
+
+#### Automatic Installation
+
+Type "Windows+x" to open a command window with Administrative right
+
+    curl -OL https://raw.githubusercontent.com/peidong/pei-vim/master/pei-vim-windows-install.cmd && call pei-vim-windows-install.cmd
 
 #### Manually Installation
 

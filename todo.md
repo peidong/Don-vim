@@ -14,5 +14,7 @@
 3. **√** ~~better installation options~~
 4. **√** ~~installation for windows~~
 5. neovim
+6. more languages plugins
+7. better shortkeys
 
 ###BUGS

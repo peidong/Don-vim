@@ -25,13 +25,6 @@ IF NOT EXIST "%APP_PATH%" (
      call cd "%HOME%"
      )
 
- call mklink "%HOME%\.vimrc" "%APP_PATH%\.vimrc"
- call mklink "%HOME%\_vimrc" "%APP_PATH%\.vimrc"
- call mklink "%HOME%\.vimrc.before" "%APP_PATH%\.vimrc.before"
- call mkdir "%HOME%\.undodir"
- @echo let g:peivim_bundle_level = 3 >> "%HOME%\.vimrc.before.local"
- @echo let g:peivim_complete_engine = 4 >> "%HOME%\.vimrc.before.local"
-
  IF NOT EXIST "%HOME%\.vim\bundle" (
   call mkdir "%HOME%\.vim\bundle"
  )
@@ -44,7 +37,7 @@ IF NOT EXIST "%APP_PATH%" (
      call cd %HOME%
      )
 
- call vim +NeoBundleInstall +qall
+ call vim +NeoBundleCheckUpdate +qall
 
  call cd "%APP_PATH%\bundle\vimproc.vim\lib"
  call curl -OL https://github.com/Shougo/vimproc.vim/releases/download/ver.9.2/vimproc_win32.dll

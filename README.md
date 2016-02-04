@@ -14,7 +14,7 @@
 
 ### Automatic Installation
 
-    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-osx-linux.sh" -O install-peivim-osx-install.sh && sh install-peivim-osx-install.sh
+    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh" -O base-peivim-osx-install.sh && wget "https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-osx-linux.sh" -O install-peivim-osx-install.sh && bash install-peivim-osx-install.sh
 
 ### Manually Installation
 
@@ -34,6 +34,10 @@ Then vim, and `:NeoBundleInstall`
 
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --clang-completer --omnisharp-completer --gocode-completer
+
+### Automatic Update
+
+    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh" -O base-peivim-osx-install.sh && wget "https://raw.githubusercontent.com/peidong/pei-vim/master/update-peivim-osx-linux.sh" -O update-peivim-osx-linux.sh && bash update-peivim-osx-install.sh
 
 ## Mac OSX Installation
 #### How to install [MacVim](https://github.com/macvim-dev/macvim/releases/tag/snapshot-80)
@@ -50,7 +54,7 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
 
 ### Automatic Installation
 
-    curl https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-osx-linux.sh -L > install-peivim-osx-linux.sh && sh install-peivim-osx-linux.sh
+    curl https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh -L > base-peivim-osx-linux.sh && curl https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-osx-linux.sh -L > install-peivim-osx-linux.sh && bash install-peivim-osx-linux.sh
 
 ### Manually Installation
 
@@ -70,6 +74,10 @@ Then vim, and `:NeoBundleInstall`
 
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --clang-completer --omnisharp-completer --gocode-completer
+
+### Automatic Update
+
+    curl https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh -L > base-peivim-osx-linux.sh && curl https://raw.githubusercontent.com/peidong/pei-vim/master/update-peivim-osx-linux.sh -L > update-peivim-osx-linux.sh && bash update-peivim-osx-linux.sh
 
 ## Installing on Windows
 
@@ -145,6 +153,12 @@ Type "Windows+x" to open a command window with Administrative right
 Then vim, and `:NeoBundleInstall`
 
 Download vimproc_win32/win64.dll, and copy them to .vim\bundle\vimproc.vim\lib
+
+#### Automatic Update
+
+Type "Windows+x" to open a command window with Administrative right
+
+    curl -OL https://raw.githubusercontent.com/peidong/pei-vim/master/update-peivim-windows.cmd && call update-peivim-windows.cmd
 
 
 # Keymap

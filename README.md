@@ -14,7 +14,7 @@
 
 ### Automatic Installation
 
-    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/pei-vim-osx-linux-install.sh" -O pei-vim-osx-linux-install.sh && sh pei-vim-osx-linux-install.sh
+    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-osx-linux.sh" -O install-peivim-osx-install.sh && sh install-peivim-osx-install.sh
 
 ### Manually Installation
 
@@ -50,7 +50,7 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
 
 ### Automatic Installation
 
-    curl https://raw.githubusercontent.com/peidong/pei-vim/master/pei-vim-osx-linux-install.sh -L > pei-vim-osx-linux-install.sh && sh pei-vim-osx-linux-install.sh
+    curl https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-osx-linux.sh -L > install-peivim-osx-linux.sh && sh install-peivim-osx-linux.sh
 
 ### Manually Installation
 
@@ -128,7 +128,7 @@ to verify all good, run:
 
 Type "Windows+x" to open a command window with Administrative right
 
-    curl -OL https://raw.githubusercontent.com/peidong/pei-vim/master/pei-vim-windows-install.cmd && call pei-vim-windows-install.cmd
+    curl -OL https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-windows.cmd && call install-peivim-windows.cmd
 
 #### Manually Installation
 

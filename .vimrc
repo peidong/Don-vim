@@ -219,7 +219,7 @@ if g:peivim_bundle_level >= 2
         endif
 
         " Show git status in the left column
-        if executable('git')
+        if executable('git') && !WINDOWS()
             NeoBundle 'airblade/vim-gitgutter'
         endif
 

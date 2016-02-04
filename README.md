@@ -14,7 +14,7 @@
 
 ### Automatic Installation
 
-    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh" -O base-peivim-osx-install.sh && wget "https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-osx-linux.sh" -O install-peivim-osx-install.sh && bash install-peivim-osx-install.sh
+    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh" -O base-peivim-osx-linux.sh && wget "https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-osx-linux.sh" -O install-peivim-osx-install.sh && bash install-peivim-osx-install.sh
 
 ### Manually Installation
 
@@ -37,7 +37,7 @@ Then vim, and `:NeoBundleInstall`
 
 ### Automatic Update
 
-    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh" -O base-peivim-osx-install.sh && wget "https://raw.githubusercontent.com/peidong/pei-vim/master/update-peivim-osx-linux.sh" -O update-peivim-osx-linux.sh && bash update-peivim-osx-install.sh
+    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh" -O base-peivim-osx-linux.sh && wget "https://raw.githubusercontent.com/peidong/pei-vim/master/update-peivim-osx-linux.sh" -O update-peivim-osx-linux.sh && bash update-peivim-osx-install.sh
 
 ## Mac OSX Installation
 #### How to install [MacVim](https://github.com/macvim-dev/macvim/releases/tag/snapshot-80)

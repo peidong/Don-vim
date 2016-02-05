@@ -145,9 +145,6 @@ if g:peivim_bundle_level >= 2
         " Auto complete pairs
         NeoBundle 'jiangmiao/auto-pairs'
 
-        " Auto complete tags like Html tags
-        NeoBundle 'docunext/closetag.vim'
-
 
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Color Plugins                                "
@@ -257,9 +254,6 @@ if g:peivim_bundle_level >= 2
         " <Leader>n
         NeoBundle 'vim-scripts/YankRing.vim'
 
-        " Use it in HTML codes for example, usage: <C-y>,
-        NeoBundle 'mattn/emmet-vim'
-
 
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Explorer Plugins                             "
@@ -334,6 +328,7 @@ if g:peivim_bundle_level >= 2
         if count(g:peivim_bundle_list, 'php')
             " PHP highlight
             NeoBundle 'StanAngeloff/php.vim'
+
             " Improved PHP omni-completion
             NeoBundle 'shawncplus/phpcomplete.vim'
         endif
@@ -351,9 +346,21 @@ if g:peivim_bundle_level >= 2
         " Writing
         if count(g:peivim_bundle_list, 'writing')
             NeoBundle 'reedes/vim-litecorrect'
+
             NeoBundle 'reedes/vim-textobj-sentence'
+
             NeoBundle 'reedes/vim-textobj-quote'
+
             NeoBundle 'reedes/vim-wordy'
+        endif
+
+        " Html
+        if count(g:peivim_bundle_list, 'html')
+            " Use it in HTML codes for example, usage: <C-y>,
+            NeoBundle 'mattn/emmet-vim'
+
+            " Auto complete tags like Html tags
+            NeoBundle 'docunext/closetag.vim'
         endif
 
     endif

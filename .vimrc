@@ -244,6 +244,9 @@ if g:peivim_bundle_level >= 2
         " Fast move cursors, usage: <Leader><Leader>j/k/f/t/F/T
         NeoBundle 'easymotion/vim-easymotion'
 
+        " Lightning fast left-right movement in Vim
+        NeoBundle 'unblevable/quick-scope'
+
         " Fast add/delete/change surroundings, usage: csiw/ysiw/dsiw
         NeoBundle 'tpope/vim-surround'
 

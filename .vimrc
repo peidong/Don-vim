@@ -257,6 +257,9 @@ if g:peivim_bundle_level >= 2
         " <Leader>n
         NeoBundle 'vim-scripts/YankRing.vim'
 
+        " Improved incremental searching for Vim
+        NeoBundle 'haya14busa/incsearch.vim'
+
 
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Explorer Plugins                             "
@@ -989,6 +992,13 @@ if g:peivim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     let g:yankring_replace_n_pkey = '<Leader>p'
     let g:yankring_replace_n_nkey = '<Leader>n'
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin haya14busa/incsearch.vim              "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    map /  <Plug>(incsearch-forward)
+    map ?  <Plug>(incsearch-backward)
+    map g/ <Plug>(incsearch-stay)
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin scrooloose/syntastic                  "

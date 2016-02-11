@@ -447,6 +447,13 @@ if g:peivim_bundle_level >= 2
         " There are bugs in this plugin
         " NeoBundle 'SirVer/ultisnips'
 
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " Remote sync plugins                          "
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        " need to create .sync file in directory
+        NeoBundle 'eshion/vim-sync'
+
     endif
 
 

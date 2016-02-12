@@ -1228,6 +1228,7 @@ if g:peivim_bundle_level >= 2
         let g:ycm_error_symbol = '✗✗'
         let g:ycm_warning_symbol = '∆∆'
         "let g:ycm_show_diagnostics_ui = 0
+        let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
     elseif g:peivim_complete_engine == 3 " neocomplcache
 

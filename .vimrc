@@ -1133,7 +1133,6 @@ if g:peivim_bundle_level >= 5
         let g:syntastic_check_on_open = 1
         let g:syntastic_check_on_wq = 0
         let g:syntastic_loc_list_height = 4
-        let g:syntastic_python_python_exec = '/Users/peidong/Developer/ProgramFiles/Anaconda/anaconda2/bin/python'
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
@@ -1229,7 +1228,6 @@ if g:peivim_bundle_level >= 2
         let g:ycm_error_symbol = '✗✗'
         let g:ycm_warning_symbol = '∆∆'
         "let g:ycm_show_diagnostics_ui = 0
-        let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
     elseif g:peivim_complete_engine == 3 " neocomplcache
 

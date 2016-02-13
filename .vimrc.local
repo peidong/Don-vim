@@ -1,0 +1,22 @@
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Python PATH
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+if g:peivim_bundle_level >= 5
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin scrooloose/syntastic                  "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    if !WINDOWS() && v:version >= 700
+        let g:syntastic_python_python_exec = '/Users/peidong/Developer/ProgramFiles/Anaconda/anaconda2/bin/python'
+    endif
+
+endif
+
+if g:peivim_bundle_level >= 2
+
+    if g:peivim_complete_engine == 5 " YouCompleteMe
+        let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+    endif
+
+endif

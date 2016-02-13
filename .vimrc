@@ -1133,6 +1133,7 @@ if g:peivim_bundle_level >= 5
         let g:syntastic_check_on_open = 1
         let g:syntastic_check_on_wq = 0
         let g:syntastic_loc_list_height = 4
+        let g:syntastic_python_python_exec = '/Users/peidong/Developer/ProgramFiles/Anaconda/anaconda2/bin/python'
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""

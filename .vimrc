@@ -290,6 +290,11 @@ if g:peivim_bundle_level >= 2
             NeoBundle 'brookhong/cscope.vim'
         endif
 
+        " Tmux integration (tmux version >= 1.5)
+        if executable('tmux')
+            NeoBundle 'benmills/vimux'
+        endif
+
 
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Specific language Plugins                    "
@@ -330,6 +335,8 @@ if g:peivim_bundle_level >= 2
         " Python highlight
         if count(g:peivim_bundle_list, 'python')
             NeoBundle 'hdima/python-syntax'
+
+            " NeoBundle 'ivanov/vim-ipython'
         endif
 
         " Writing
@@ -946,6 +953,13 @@ if g:peivim_bundle_level >= 3
         " nnoremap  <leader>cf :call CscopeFind('f', expand('<cword>'))<CR>
         " " i: Find files #including this file
         " nnoremap  <leader>ci :call CscopeFind('i', expand('<cword>'))<CR>
+    endif
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin benmills/vimux                        "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    if executable('tmux')
+        nnoremap <Leader>r :call VimuxRunCommand(getline("."))<CR>j
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""

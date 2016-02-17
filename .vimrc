@@ -142,10 +142,7 @@ if g:peivim_bundle_level >= 2
         endif
 
         " Comment code in files, usage: gcc
-        " NeoBundle 'tomtom/tcomment_vim'
-
-        " Comment code using nerdcommenter
-        NeoBundle 'scrooloose/nerdcommenter'
+         NeoBundle 'tomtom/tcomment_vim'
 
         " Auto complete pairs
         NeoBundle 'jiangmiao/auto-pairs'

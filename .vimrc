@@ -98,6 +98,10 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""
 " Neobundle 01/29/2016 added by Peidong
 """""""""""""""""""""""""""""""""""""""""""""""
+if (g:peivim_bundle_level >= 2) && (!((v:version > 702 || (v:version == 702 && has('patch51'))) && executable('git')))
+    let g:peivim_bundle_level = 1
+endif
+
 if g:peivim_bundle_level >= 2
 
     " Note: Skip initialization for vim-tiny or vim-small.

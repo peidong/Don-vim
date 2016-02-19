@@ -142,7 +142,7 @@ if g:peivim_bundle_level >= 2
         endif
 
         " Comment code in files, usage: gcc
-         NeoBundle 'tomtom/tcomment_vim'
+        NeoBundle 'tomtom/tcomment_vim'
 
         " Auto complete pairs
         NeoBundle 'jiangmiao/auto-pairs'
@@ -807,7 +807,9 @@ endif
 if g:peivim_bundle_level >= 3
 
     " NLKNguyen/papercolor-theme
-    colorscheme PaperColor
+    if isdirectory(expand("~/.vim/bundle/papercolor-theme"))
+        colorscheme PaperColor
+    endif
 
 else
 
@@ -815,8 +817,6 @@ else
 
 endif
 
-" desert
-" colorscheme desert
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "                                              "
@@ -839,75 +839,83 @@ if g:peivim_bundle_level >= 2
     " Plugin terryma/vim-multiple-cursors          "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if v:version >= 704
-        let g:multi_cursor_next_key='<C-n>'
-        let g:multi_cursor_prev_key='<C-p>'
-        let g:multi_cursor_skip_key='<C-x>'
-        let g:multi_cursor_quit_key='<Esc>'
-        " if you are using Neocomplete, add this to your vimrc to prevent
-        " conflict
-        if g:peivim_complete_engine == 4
-            " Called once right before you start selecting multiple cursors
-            function! Multiple_cursors_before()
-                if exists(':NeoCompleteLock')==2
-                    exe 'NeoCompleteLock'
-                endif
-            endfunction
+        if isdirectory(expand("~/.vim/bundle/vim-multiple-cursors"))
+            let g:multi_cursor_next_key='<C-n>'
+            let g:multi_cursor_prev_key='<C-p>'
+            let g:multi_cursor_skip_key='<C-x>'
+            let g:multi_cursor_quit_key='<Esc>'
+            " if you are using Neocomplete, add this to your vimrc to prevent
+            " conflict
+            if g:peivim_complete_engine == 4
+                " Called once right before you start selecting multiple cursors
+                function! Multiple_cursors_before()
+                    if exists(':NeoCompleteLock')==2
+                        exe 'NeoCompleteLock'
+                    endif
+                endfunction
 
-            " Called once only when the multiple selection is canceled (default <Esc>)
-            function! Multiple_cursors_after()
-                if exists(':NeoCompleteUnlock')==2
-                    exe 'NeoCompleteUnlock'
-                endif
-            endfunction
+                " Called once only when the multiple selection is canceled (default <Esc>)
+                function! Multiple_cursors_after()
+                    if exists(':NeoCompleteUnlock')==2
+                        exe 'NeoCompleteUnlock'
+                    endif
+                endfunction
+            endif
         endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin vim-airline/vim-airline               "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if vim_background == "light"
-        let g:airline_theme='sol'
-    elseif vim_background == "dark"
-        let g:airline_theme='dark'
+    if isdirectory(expand("~/.vim/bundle/vim-airline"))
+        if vim_background == "light"
+            let g:airline_theme='sol'
+        elseif vim_background == "dark"
+            let g:airline_theme='dark'
+        endif
+        let g:airline#extensions#tabline#enabled = 1
+        let g:airline#extensions#tabline#left_sep = ' '
+        let g:airline#extensions#tabline#left_alt_sep = '|'
+        let g:airline_left_sep=''
+        let g:airline_right_sep=''
     endif
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#left_sep = ' '
-    let g:airline#extensions#tabline#left_alt_sep = '|'
-    let g:airline_left_sep=''
-    let g:airline_right_sep=''
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin luochen1990/rainbow                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    let g:rainbow_active = 1
+    if isdirectory(expand("~/.vim/bundle/rainbow"))
+        let g:rainbow_active = 1
 
-    let rainbow_ctermfgs_lightcolors = [2, 1, 0, 4]
-    let rainbow_ctermfgs_darkcolors = [9, 14, 11, 13, 10, 15]
-    let rainbow_guifgs_lightcolors = ['#008700', '#af005f', '#1c1c1c', '#0000af']
-    let rainbow_guifgs_darkcolors = ['#f2433d', '#0087d7', '#d7af00', '#d787ff', '#00d75f', '#d0d0d0']
+        let rainbow_ctermfgs_lightcolors = [2, 1, 0, 4]
+        let rainbow_ctermfgs_darkcolors = [9, 14, 11, 13, 10, 15]
+        let rainbow_guifgs_lightcolors = ['#008700', '#af005f', '#1c1c1c', '#0000af']
+        let rainbow_guifgs_darkcolors = ['#f2433d', '#0087d7', '#d7af00', '#d787ff', '#00d75f', '#d0d0d0']
 
-    if vim_background == "light"
-        let g:rainbow_conf = {
-                    \   'guifgs': rainbow_guifgs_lightcolors,
-                    \   'ctermfgs': rainbow_ctermfgs_lightcolors
-                    \}
-    elseif vim_background == "dark"
-        let g:rainbow_conf = {
-                    \   'guifgs': rainbow_guifgs_darkcolors,
-                    \   'ctermfgs': rainbow_ctermfgs_darkcolors
-                    \}
+        if vim_background == "light"
+            let g:rainbow_conf = {
+                        \   'guifgs': rainbow_guifgs_lightcolors,
+                        \   'ctermfgs': rainbow_ctermfgs_lightcolors
+                        \}
+        elseif vim_background == "dark"
+            let g:rainbow_conf = {
+                        \   'guifgs': rainbow_guifgs_darkcolors,
+                        \   'ctermfgs': rainbow_ctermfgs_darkcolors
+                        \}
+        endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin tacahiroy/ctrlp-funky                 "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    nnoremap <Leader>bp :CtrlPFunky<CR>
-    " narrow the list down with a word under cursor
-    nnoremap <Leader>bP :execute 'CtrlPFunky ' . expand('<cword>')<CR>
-    " highlight feature
-    let g:ctrlp_funky_matchtype = 'path'
-    " syntax highlighting
-    let g:ctrlp_funky_syntax_highlight = 1
+    if isdirectory(expand("~/.vim/bundle/ctrlp-funky"))
+        nnoremap <Leader>bp :CtrlPFunky<CR>
+        " narrow the list down with a word under cursor
+        nnoremap <Leader>bP :execute 'CtrlPFunky ' . expand('<cword>')<CR>
+        " highlight feature
+        let g:ctrlp_funky_matchtype = 'path'
+        " syntax highlighting
+        let g:ctrlp_funky_syntax_highlight = 1
+    endif
 
 endif
 
@@ -925,134 +933,158 @@ if g:peivim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin junegunn/vim-easy-align               "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    " Start interactive EasyAlign in visual mode (e.g. vipga)
-    xnoremap ga <Plug>(EasyAlign)
+    if isdirectory(expand("~/.vim/bundle/vim-easy-align"))
+        " Start interactive EasyAlign in visual mode (e.g. vipga)
+        xnoremap ga <Plug>(EasyAlign)
 
-    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-    nnoremap ga <Plug>(EasyAlign)
+        " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+        nnoremap ga <Plug>(EasyAlign)
+    endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin brookhong/cscope.vim                  "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('cscope')
-        nnoremap <leader>bc :call CscopeFindInteractive(expand('<cword>'))<CR>
-        nnoremap <leader>bl :call ToggleLocationList()<CR>
-        " " s: Find this C symbol
-        " nnoremap  <leader>cs :call CscopeFind('s', expand('<cword>'))<CR>
-        " " g: Find this definition
-        " nnoremap  <leader>cg :call CscopeFind('g', expand('<cword>'))<CR>
-        " " d: Find functions called by this function
-        " nnoremap  <leader>cd :call CscopeFind('d', expand('<cword>'))<CR>
-        " " c: Find functions calling this function
-        " nnoremap  <leader>cc :call CscopeFind('c', expand('<cword>'))<CR>
-        " " t: Find this text string
-        " nnoremap  <leader>ct :call CscopeFind('t', expand('<cword>'))<CR>
-        " " e: Find this egrep pattern
-        " nnoremap  <leader>ce :call CscopeFind('e', expand('<cword>'))<CR>
-        " " f: Find this file
-        " nnoremap  <leader>cf :call CscopeFind('f', expand('<cword>'))<CR>
-        " " i: Find files #including this file
-        " nnoremap  <leader>ci :call CscopeFind('i', expand('<cword>'))<CR>
+        if isdirectory(expand("~/.vim/bundle/cscope.vim"))
+            nnoremap <leader>bc :call CscopeFindInteractive(expand('<cword>'))<CR>
+            nnoremap <leader>bl :call ToggleLocationList()<CR>
+            " " s: Find this C symbol
+            " nnoremap  <leader>cs :call CscopeFind('s', expand('<cword>'))<CR>
+            " " g: Find this definition
+            " nnoremap  <leader>cg :call CscopeFind('g', expand('<cword>'))<CR>
+            " " d: Find functions called by this function
+            " nnoremap  <leader>cd :call CscopeFind('d', expand('<cword>'))<CR>
+            " " c: Find functions calling this function
+            " nnoremap  <leader>cc :call CscopeFind('c', expand('<cword>'))<CR>
+            " " t: Find this text string
+            " nnoremap  <leader>ct :call CscopeFind('t', expand('<cword>'))<CR>
+            " " e: Find this egrep pattern
+            " nnoremap  <leader>ce :call CscopeFind('e', expand('<cword>'))<CR>
+            " " f: Find this file
+            " nnoremap  <leader>cf :call CscopeFind('f', expand('<cword>'))<CR>
+            " " i: Find files #including this file
+            " nnoremap  <leader>ci :call CscopeFind('i', expand('<cword>'))<CR>
+        endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin benmills/vimux                        "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('tmux')
-        nnoremap <Leader>r :call VimuxRunCommand(getline("."))<CR>j
+        if isdirectory(expand("~/.vim/bundle/vimux"))
+            nnoremap <Leader>r :call VimuxRunCommand(getline("."))<CR>j
+        endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin majutsushi/tagbar                     "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('ctags') && (v:version > 700 || (v:version == 700 && has('patch167')))
-        nnoremap <Leader>bt :TagbarToggle<CR>
+        if isdirectory(expand("~/.vim/bundle/tagbar"))
+            nnoremap <Leader>bt :TagbarToggle<CR>
+        endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin ctrlpvim/ctrlp.vim                    "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if v:version >= 700
-        " Show hidden files
-        let g:ctrlp_show_hidden = 1
-        let g:ctrlp_custom_ignore = {
-                    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-                    \ 'file': '\v\.(exe|so|dll)$',
-                    \ 'link': 'some_bad_symbolic_links',
-                    \ }
-        " Ignore files in .gitignore
-        let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+        if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
+            " Show hidden files
+            let g:ctrlp_show_hidden = 1
+            let g:ctrlp_custom_ignore = {
+                        \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+                        \ 'file': '\v\.(exe|so|dll)$',
+                        \ 'link': 'some_bad_symbolic_links',
+                        \ }
+            " Ignore files in .gitignore
+            let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+        endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin mbbill/undotree                       "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if v:version >= 700
-        nnoremap <Leader>bu :UndotreeToggle<CR>
-        " If undotree is opened, it is likely one wants to interact with it.
-        let g:undotree_SetFocusWhenToggle=1
+        if isdirectory(expand("~/.vim/bundle/undotree"))
+            nnoremap <Leader>bu :UndotreeToggle<CR>
+            " If undotree is opened, it is likely one wants to interact with it.
+            let g:undotree_SetFocusWhenToggle=1
+        endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin lervag/vimtex                         "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if g:peivim_complete_engine == 5 && count(g:peivim_bundle_list, 'latex')
-        " make it work with YouCompleteMe
-        if g:peivim_complete_engine == 5
-            if !exists('g:ycm_semantic_triggers')
-                let g:ycm_semantic_triggers = {}
+        if isdirectory(expand("~/.vim/bundle/vimtex"))
+            " make it work with YouCompleteMe
+            if g:peivim_complete_engine == 5
+                if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
+                    if !exists('g:ycm_semantic_triggers')
+                        let g:ycm_semantic_triggers = {}
+                    endif
+                    let g:ycm_semantic_triggers.tex = [
+                                \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
+                                \ ]
+                endif
             endif
-            let g:ycm_semantic_triggers.tex = [
-                        \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
-                        \ ]
+            " This option controls whether to append a closing brace after a label or a citation has been completed.
+            let g:vimtex_complete_close_braces = 1
         endif
-        " This option controls whether to append a closing brace after a label or a citation has been completed.
-        let g:vimtex_complete_close_braces = 1
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin haya14busa/incsearch.vim              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    map /  <Plug>(incsearch-forward)
-    map ?  <Plug>(incsearch-backward)
-    map g/ <Plug>(incsearch-stay)
+    if isdirectory(expand("~/.vim/bundle/incsearch.vim"))
+        map /  <Plug>(incsearch-forward)
+        map ?  <Plug>(incsearch-backward)
+        map g/ <Plug>(incsearch-stay)
+    endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin Shougo/vimshell.vim                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-    if OSX()
-        let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
-		" Display user name on OSX.
-		let g:vimshell_prompt = $USER."% "
-        if executable('zsh') && filereadable(expand('~/.zsh_history'))
-            " Use zsh history in vimshell/history source.
-            let g:unite_source_vimshell_external_history_path =
-                        \ expand('~/.zsh_history')
+    if isdirectory(expand("~/.vim/bundle/vimshell.vim"))
+        let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
+        if OSX()
+            let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
+            " Display user name on OSX.
+            let g:vimshell_prompt = $USER."% "
+            if executable('zsh') && filereadable(expand('~/.zsh_history'))
+                " Use zsh history in vimshell/history source.
+                let g:unite_source_vimshell_external_history_path =
+                            \ expand('~/.zsh_history')
+            endif
+        elseif LINUX()
+            " Display user name on Linux.
+            let g:vimshell_prompt = $USER."% "
+            if executable('zsh') && filereadable(expand('~/.zsh_history'))
+                " Use zsh history in vimshell/history source.
+                let g:unite_source_vimshell_external_history_path =
+                            \ expand('~/.zsh_history')
+            endif
+        elseif WINDOWS()
+            " Display user name on Windows.
+            let g:vimshell_prompt = $USERNAME."% "
         endif
-    elseif LINUX()
-		" Display user name on Linux.
-		let g:vimshell_prompt = $USER."% "
-        if executable('zsh') && filereadable(expand('~/.zsh_history'))
-            " Use zsh history in vimshell/history source.
-            let g:unite_source_vimshell_external_history_path =
-                        \ expand('~/.zsh_history')
-        endif
-    elseif WINDOWS()
-		" Display user name on Windows.
-		let g:vimshell_prompt = $USERNAME."% "
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin Shougo/unite.vim                      "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    let g:unite_source_history_yank_enable = 1
+    if isdirectory(expand("~/.vim/bundle/unite.vim"))
+        let g:unite_source_history_yank_enable = 1
+    endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin hdima/python-syntax                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if count(g:peivim_bundle_list, 'python')
-        let python_highlight_all = 1
+        if isdirectory(expand("~/.vim/bundle/python-syntax"))
+            let python_highlight_all = 1
+        endif
     endif
 
     " Writing
@@ -1106,15 +1138,19 @@ if g:peivim_bundle_level >= 4
     " Plugin dyng/ctrlsf.vim                       "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('ag') || executable('ack-grep') || executable('ack')
-        " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
-        nnoremap <Leader>rt :CtrlSF<CR>
+        if isdirectory(expand("~/.vim/bundle/ctrlsf.vim"))
+            " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
+            nnoremap <Leader>rt :CtrlSF<CR>
+        endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin vim-scripts/YankRing.vim              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    let g:yankring_replace_n_pkey = '<Leader>p'
-    let g:yankring_replace_n_nkey = '<Leader>n'
+    if isdirectory(expand("~/.vim/bundle/YankRing.vim"))
+        let g:yankring_replace_n_pkey = '<Leader>p'
+        let g:yankring_replace_n_nkey = '<Leader>n'
+    endif
 
 endif
 
@@ -1133,64 +1169,72 @@ if g:peivim_bundle_level >= 5
     " Plugin scrooloose/syntastic                  "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if !WINDOWS() && v:version >= 700
-        " Better :sign interface symbols
-        let g:syntastic_error_symbol = '✗✗'
-        let g:syntastic_style_error_symbol = '✠✠'
-        let g:syntastic_warning_symbol = '∆∆'
-        let g:syntastic_style_warning_symbol = '≈≈'
-        set statusline+=%#warningmsg#
-        set statusline+=%{SyntasticStatuslineFlag()}
-        set statusline+=%*
+        if isdirectory(expand("~/.vim/bundle/syntastic"))
+            " Better :sign interface symbols
+            let g:syntastic_error_symbol = '✗✗'
+            let g:syntastic_style_error_symbol = '✠✠'
+            let g:syntastic_warning_symbol = '∆∆'
+            let g:syntastic_style_warning_symbol = '≈≈'
+            set statusline+=%#warningmsg#
+            set statusline+=%{SyntasticStatuslineFlag()}
+            set statusline+=%*
 
-        let g:syntastic_always_populate_loc_list = 1
-        let g:syntastic_auto_loc_list = 1
-        let g:syntastic_check_on_open = 1
-        let g:syntastic_check_on_wq = 0
-        let g:syntastic_loc_list_height = 4
+            let g:syntastic_always_populate_loc_list = 1
+            let g:syntastic_auto_loc_list = 1
+            let g:syntastic_check_on_open = 1
+            let g:syntastic_check_on_wq = 0
+            let g:syntastic_loc_list_height = 4
+        endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin scrooloose/nerdtree                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
-    nnoremap <Leader>bf :NERDTreeToggle<CR>
-    " 设置NERDTree子窗口宽度
-    let NERDTreeWinSize=32
-    " 设置NERDTree子窗口位置
-    let NERDTreeWinPos="left"
-    " 显示隐藏文件
-    let NERDTreeShowHidden=1
-    " NERDTree 子窗口中不显示冗余帮助信息
-    let NERDTreeMinimalUI=1
-    " 删除文件时自动删除文件对应 buffer
-    let NERDTreeAutoDeleteBuffer=1
-    let g:NERDTreeDirArrows = 1
+    if isdirectory(expand("~/.vim/bundle/nerdtree"))
+        " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+        nnoremap <Leader>bf :NERDTreeToggle<CR>
+        " 设置NERDTree子窗口宽度
+        let NERDTreeWinSize=32
+        " 设置NERDTree子窗口位置
+        let NERDTreeWinPos="left"
+        " 显示隐藏文件
+        let NERDTreeShowHidden=1
+        " NERDTree 子窗口中不显示冗余帮助信息
+        let NERDTreeMinimalUI=1
+        " 删除文件时自动删除文件对应 buffer
+        let NERDTreeAutoDeleteBuffer=1
+        let g:NERDTreeDirArrows = 1
+    endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin Xuyuanp/nerdtree-git-plugin           "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('git')
-        let g:NERDTreeIndicatorMapCustom = {
-                    \ "Modified"  : "✹",
-                    \ "Staged"    : "✚",
-                    \ "Untracked" : "✭",
-                    \ "Renamed"   : "➜",
-                    \ "Unmerged"  : "═",
-                    \ "Deleted"   : "✖",
-                    \ "Dirty"     : "✗",
-                    \ "Clean"     : "✔︎",
-                    \ "Unknown"   : "?"
-                    \ }
+        if isdirectory(expand("~/.vim/bundle/nerdtree-git-plugin"))
+            let g:NERDTreeIndicatorMapCustom = {
+                        \ "Modified"  : "✹",
+                        \ "Staged"    : "✚",
+                        \ "Untracked" : "✭",
+                        \ "Renamed"   : "➜",
+                        \ "Unmerged"  : "═",
+                        \ "Deleted"   : "✖",
+                        \ "Dirty"     : "✗",
+                        \ "Clean"     : "✔︎",
+                        \ "Unknown"   : "?"
+                        \ }
+        endif
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin xuhdev/vim-latex-live-preview         "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if count(g:peivim_bundle_list, 'latex') && v:version >= 703 && has('python')
-        if OSX()
-            let g:livepreview_previewer = 'open -a Preview'
-        elseif LINUX() && executable('okular')
-            let g:livepreview_previewer = 'okular'
+        if isdirectory(expand("~/.vim/bundle/vim-latex-live-preview"))
+            if OSX()
+                let g:livepreview_previewer = 'open -a Preview'
+            elseif LINUX() && executable('okular')
+                let g:livepreview_previewer = 'okular'
+            endif
         endif
     endif
 
@@ -1198,7 +1242,9 @@ if g:peivim_bundle_level >= 5
     " Plugin MikeCoder/markdown-preview.vim        "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if count(g:peivim_bundle_list, 'markdown')
-        nnoremap <leader>bm :MarkdownPreview GitHub<CR>
+        if isdirectory(expand("~/.vim/bundle/markdown-preview.vim"))
+            nnoremap <leader>bm :MarkdownPreview GitHub<CR>
+        endif
     endif
 
 endif
@@ -1211,203 +1257,209 @@ endif
 if g:peivim_bundle_level >= 2
 
     if g:peivim_complete_engine == 5 " YouCompleteMe
-        " YCM 补全菜单配色
-        " 菜单
-        " highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
-        " 选中项
-        " highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
-        let g:ycm_disable_for_files_larger_than_kb = 0
-        " 补全功能在注释中同样有效
-        let g:ycm_complete_in_comments=1
-        " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
-        let g:ycm_confirm_extra_conf=0
-        " 开启 YCM 标签补全引擎
-        let g:ycm_collect_identifiers_from_tags_files=1
-        " 引入 C++ 标准库tags
-        set tags+=/data/misc/software/misc./vim/stdcpp.tags
-        " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
-        " inoremap <leader>; <C-x><C-o>
-        " 补全内容不以分割子窗口形式出现，只显示补全列表
-        set completeopt-=preview
-        " 从第一个键入字符就开始罗列匹配项
-        let g:ycm_min_num_of_chars_for_completion=1
-        " 禁止缓存匹配项，每次都重新生成匹配项
-        let g:ycm_cache_omnifunc=1
-        " 语法关键字补全
-        let g:ycm_seed_identifiers_with_syntax=1
-        let g:ycm_filetype_blacklist = {}
-        nnoremap <leader>cjd :YcmCompleter GoToDeclaration<CR>
-        " 只能是 #include 或已打开的文件
-        nnoremap <leader>cje :YcmCompleter GoToDefinition<CR>
-        let g:ycm_error_symbol = '✗✗'
-        let g:ycm_warning_symbol = '∆∆'
-        "let g:ycm_show_diagnostics_ui = 0
+        if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
+            " YCM 补全菜单配色
+            " 菜单
+            " highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+            " 选中项
+            " highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+            let g:ycm_disable_for_files_larger_than_kb = 0
+            " 补全功能在注释中同样有效
+            let g:ycm_complete_in_comments=1
+            " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
+            let g:ycm_confirm_extra_conf=0
+            " 开启 YCM 标签补全引擎
+            let g:ycm_collect_identifiers_from_tags_files=1
+            " 引入 C++ 标准库tags
+            set tags+=/data/misc/software/misc./vim/stdcpp.tags
+            " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
+            " inoremap <leader>; <C-x><C-o>
+            " 补全内容不以分割子窗口形式出现，只显示补全列表
+            set completeopt-=preview
+            " 从第一个键入字符就开始罗列匹配项
+            let g:ycm_min_num_of_chars_for_completion=1
+            " 禁止缓存匹配项，每次都重新生成匹配项
+            let g:ycm_cache_omnifunc=1
+            " 语法关键字补全
+            let g:ycm_seed_identifiers_with_syntax=1
+            let g:ycm_filetype_blacklist = {}
+            nnoremap <leader>cjd :YcmCompleter GoToDeclaration<CR>
+            " 只能是 #include 或已打开的文件
+            nnoremap <leader>cje :YcmCompleter GoToDefinition<CR>
+            let g:ycm_error_symbol = '✗✗'
+            let g:ycm_warning_symbol = '∆∆'
+            "let g:ycm_show_diagnostics_ui = 0
+        endif
 
     elseif g:peivim_complete_engine == 3 " neocomplcache
 
-        "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-        " Disable AutoComplPop.
-        let g:acp_enableAtStartup = 0
-        " Use neocomplcache.
-        let g:neocomplcache_enable_at_startup = 1
-        " Use smartcase.
-        let g:neocomplcache_enable_smart_case = 1
-        " Set minimum syntax keyword length.
-        let g:neocomplcache_min_syntax_length = 3
-        let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+        if isdirectory(expand("~/.vim/bundle/neocomplcache"))
+            "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+            " Disable AutoComplPop.
+            let g:acp_enableAtStartup = 0
+            " Use neocomplcache.
+            let g:neocomplcache_enable_at_startup = 1
+            " Use smartcase.
+            let g:neocomplcache_enable_smart_case = 1
+            " Set minimum syntax keyword length.
+            let g:neocomplcache_min_syntax_length = 3
+            let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-        " Enable heavy features.
-        " Use camel case completion.
-        "let g:neocomplcache_enable_camel_case_completion = 1
-        " Use underbar completion.
-        "let g:neocomplcache_enable_underbar_completion = 1
+            " Enable heavy features.
+            " Use camel case completion.
+            "let g:neocomplcache_enable_camel_case_completion = 1
+            " Use underbar completion.
+            "let g:neocomplcache_enable_underbar_completion = 1
 
-        " Define dictionary.
-        let g:neocomplcache_dictionary_filetype_lists = {
-                    \ 'default' : '',
-                    \ 'vimshell' : $HOME.'/.vimshell_hist',
-                    \ 'scheme' : $HOME.'/.gosh_completions'
-                    \ }
+            " Define dictionary.
+            let g:neocomplcache_dictionary_filetype_lists = {
+                        \ 'default' : '',
+                        \ 'vimshell' : $HOME.'/.vimshell_hist',
+                        \ 'scheme' : $HOME.'/.gosh_completions'
+                        \ }
 
-        " Define keyword.
-        if !exists('g:neocomplcache_keyword_patterns')
-            let g:neocomplcache_keyword_patterns = {}
+            " Define keyword.
+            if !exists('g:neocomplcache_keyword_patterns')
+                let g:neocomplcache_keyword_patterns = {}
+            endif
+            let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+            " Plugin key-mappings.
+            inoremap <expr><C-g>     neocomplcache#undo_completion()
+            inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+            " Recommended key-mappings.
+            " <CR>: close popup and save indent.
+            inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+            function! s:my_cr_function()
+                return neocomplcache#smart_close_popup() . "\<CR>"
+                " For no inserting <CR> key.
+                "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+            endfunction
+            " <TAB>: completion.
+            inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+            " <C-h>, <BS>: close popup and delete backword char.
+            inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+            inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+            inoremap <expr><C-y>  neocomplcache#close_popup()
+            inoremap <expr><C-e>  neocomplcache#cancel_popup()
+            " Close popup by <Space>.
+            "inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
+
+            " For cursor moving in insert mode(Not recommended)
+            "inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
+            "inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
+            "inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
+            "inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
+            " Or set this.
+            "let g:neocomplcache_enable_cursor_hold_i = 1
+            " Or set this.
+            "let g:neocomplcache_enable_insert_char_pre = 1
+
+            " AutoComplPop like behavior.
+            "let g:neocomplcache_enable_auto_select = 1
+
+            " Shell like behavior(not recommended).
+            "set completeopt+=longest
+            "let g:neocomplcache_enable_auto_select = 1
+            "let g:neocomplcache_disable_auto_complete = 1
+            "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+            " Enable omni completion.
+            autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+            autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+            autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+            autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+            autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+            " Enable heavy omni completion.
+            if !exists('g:neocomplcache_force_omni_patterns')
+                let g:neocomplcache_force_omni_patterns = {}
+            endif
+            let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+            let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+            let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+            " For perlomni.vim setting.
+            " https://github.com/c9s/perlomni.vim
+            let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
         endif
-        let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-        " Plugin key-mappings.
-        inoremap <expr><C-g>     neocomplcache#undo_completion()
-        inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-        " Recommended key-mappings.
-        " <CR>: close popup and save indent.
-        inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-        function! s:my_cr_function()
-            return neocomplcache#smart_close_popup() . "\<CR>"
-            " For no inserting <CR> key.
-            "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-        endfunction
-        " <TAB>: completion.
-        inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-        " <C-h>, <BS>: close popup and delete backword char.
-        inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-        inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-        inoremap <expr><C-y>  neocomplcache#close_popup()
-        inoremap <expr><C-e>  neocomplcache#cancel_popup()
-        " Close popup by <Space>.
-        "inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
-
-        " For cursor moving in insert mode(Not recommended)
-        "inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
-        "inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
-        "inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
-        "inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
-        " Or set this.
-        "let g:neocomplcache_enable_cursor_hold_i = 1
-        " Or set this.
-        "let g:neocomplcache_enable_insert_char_pre = 1
-
-        " AutoComplPop like behavior.
-        "let g:neocomplcache_enable_auto_select = 1
-
-        " Shell like behavior(not recommended).
-        "set completeopt+=longest
-        "let g:neocomplcache_enable_auto_select = 1
-        "let g:neocomplcache_disable_auto_complete = 1
-        "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-
-        " Enable omni completion.
-        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-        " Enable heavy omni completion.
-        if !exists('g:neocomplcache_force_omni_patterns')
-            let g:neocomplcache_force_omni_patterns = {}
-        endif
-        let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-        let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-        let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-        " For perlomni.vim setting.
-        " https://github.com/c9s/perlomni.vim
-        let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
     elseif g:peivim_complete_engine == 4 " neocomplete
 
-        "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-        " Disable AutoComplPop.
-        let g:acp_enableAtStartup = 0
-        " Use neocomplete.
-        let g:neocomplete#enable_at_startup = 1
-        " Use smartcase.
-        let g:neocomplete#enable_smart_case = 1
-        " Set minimum syntax keyword length.
-        let g:neocomplete#sources#syntax#min_keyword_length = 3
-        let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+        if isdirectory(expand("~/.vim/bundle/neocomplete"))
+            "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+            " Disable AutoComplPop.
+            let g:acp_enableAtStartup = 0
+            " Use neocomplete.
+            let g:neocomplete#enable_at_startup = 1
+            " Use smartcase.
+            let g:neocomplete#enable_smart_case = 1
+            " Set minimum syntax keyword length.
+            let g:neocomplete#sources#syntax#min_keyword_length = 3
+            let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-        " Define dictionary.
-        let g:neocomplete#sources#dictionary#dictionaries = {
-                    \ 'default' : '',
-                    \ 'vimshell' : $HOME.'/.vimshell_hist',
-                    \ 'scheme' : $HOME.'/.gosh_completions'
-                    \ }
+            " Define dictionary.
+            let g:neocomplete#sources#dictionary#dictionaries = {
+                        \ 'default' : '',
+                        \ 'vimshell' : $HOME.'/.vimshell_hist',
+                        \ 'scheme' : $HOME.'/.gosh_completions'
+                        \ }
 
-        " Define keyword.
-        if !exists('g:neocomplete#keyword_patterns')
-            let g:neocomplete#keyword_patterns = {}
+            " Define keyword.
+            if !exists('g:neocomplete#keyword_patterns')
+                let g:neocomplete#keyword_patterns = {}
+            endif
+            let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+            " Plugin key-mappings.
+            inoremap <expr><C-g>     neocomplete#undo_completion()
+            inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+            " Recommended key-mappings.
+            " <CR>: close popup and save indent.
+            inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+            function! s:my_cr_function()
+                return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+                " For no inserting <CR> key.
+                "return pumvisible() ? "\<C-y>" : "\<CR>"
+            endfunction
+            " <TAB>: completion.
+            inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+            " <C-h>, <BS>: close popup and delete backword char.
+            inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+            inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+            " Close popup by <Space>.
+            "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+            " AutoComplPop like behavior.
+            "let g:neocomplete#enable_auto_select = 1
+
+            " Shell like behavior(not recommended).
+            "set completeopt+=longest
+            "let g:neocomplete#enable_auto_select = 1
+            "let g:neocomplete#disable_auto_complete = 1
+            "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+            " Enable omni completion.
+            autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+            autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+            autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+            autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+            autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+            " Enable heavy omni completion.
+            if !exists('g:neocomplete#sources#omni#input_patterns')
+                let g:neocomplete#sources#omni#input_patterns = {}
+            endif
+            "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+            "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+            "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+            " For perlomni.vim setting.
+            " https://github.com/c9s/perlomni.vim
+            let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
         endif
-        let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-        " Plugin key-mappings.
-        inoremap <expr><C-g>     neocomplete#undo_completion()
-        inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-        " Recommended key-mappings.
-        " <CR>: close popup and save indent.
-        inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-        function! s:my_cr_function()
-            return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-            " For no inserting <CR> key.
-            "return pumvisible() ? "\<C-y>" : "\<CR>"
-        endfunction
-        " <TAB>: completion.
-        inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-        " <C-h>, <BS>: close popup and delete backword char.
-        inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-        inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-        " Close popup by <Space>.
-        "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-        " AutoComplPop like behavior.
-        "let g:neocomplete#enable_auto_select = 1
-
-        " Shell like behavior(not recommended).
-        "set completeopt+=longest
-        "let g:neocomplete#enable_auto_select = 1
-        "let g:neocomplete#disable_auto_complete = 1
-        "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-
-        " Enable omni completion.
-        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-        " Enable heavy omni completion.
-        if !exists('g:neocomplete#sources#omni#input_patterns')
-            let g:neocomplete#sources#omni#input_patterns = {}
-        endif
-        "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-        "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-        "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-        " For perlomni.vim setting.
-        " https://github.com/c9s/perlomni.vim
-        let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
     endif
 

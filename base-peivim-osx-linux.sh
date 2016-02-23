@@ -185,7 +185,7 @@ neobundle_update() {
     export SHELL='/bin/sh'
 
     vim \
-        "+NeoBundleCheckUpdate" \
+        "+NeoBundleUpdate" \
         "+qall"
 
     export SHELL="$system_shell"

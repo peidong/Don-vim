@@ -778,9 +778,17 @@ if g:peivim_bundle_level >= 2
     "     let vim_background="dark"
     " endif
 
-    " This is for 50% possibility background
-    let current_time_second = strftime("%S")
-    if current_time_second % 2 == 1
+    " " This is for 50% possibility background
+    " let current_time_second = strftime("%S")
+    " if current_time_second % 2 == 1
+    "     let vim_background="light"
+    " else
+    "     let vim_background="dark"
+    " endif
+
+    " This is for hour coloring
+    let current_time_hour = strftime("%H")
+    if current_time_hour % 2 == 1
         let vim_background="light"
     else
         let vim_background="dark"

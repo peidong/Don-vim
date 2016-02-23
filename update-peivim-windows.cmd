@@ -37,7 +37,7 @@ IF NOT EXIST "%APP_PATH%" (
      call cd %HOME%
      )
 
- call vim +NeoBundleCheckUpdate +qall
+ call vim +NeoBundleUpdate +qall
 
  call cd "%APP_PATH%\bundle\vimproc.vim\lib"
  call curl -OL https://github.com/Shougo/vimproc.vim/releases/download/ver.9.2/vimproc_win32.dll

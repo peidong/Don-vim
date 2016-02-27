@@ -956,6 +956,14 @@ if g:peivim_bundle_level >= 3
     endif
 
     """"""""""""""""""""""""""""""""""""""""""""""""
+    " Plugin unblevable/quick-scope                "
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    if isdirectory(expand("~/.vim/bundle/quick-scope"))
+        " Trigger a highlight in the appropriate direction when pressing these keys:
+        let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+    endif
+
+    """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin brookhong/cscope.vim                  "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('cscope')

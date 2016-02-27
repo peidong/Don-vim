@@ -881,8 +881,8 @@ if g:peivim_bundle_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
     if isdirectory(expand("~/.vim/bundle/vim-airline"))
         if vim_background == "light"
-            " let g:airline_theme='sol'
-            let g:airline_theme='xtermlight'
+            let g:airline_theme='sol'
+            " let g:airline_theme='xtermlight'
         elseif vim_background == "dark"
             " let g:airline_theme='dark'
             let g:airline_theme='kolor'

@@ -1,4 +1,4 @@
-# pei-vim : My Vim Distribution
+# pei-vim : My Vim Distribution [(中文版)](https://github.com/peidong/pei-vim/blob/master/README_zh_CN.md)
                   _            _
        _ __   ___(_)    __   _(_)_ __ ___
       | '_ \ / _ \ |____\ \ / / | '_ ` _ \

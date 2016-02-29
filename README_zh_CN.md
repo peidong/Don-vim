@@ -1,4 +1,4 @@
-# pei-vim : My Vim Distribution
+# pei-vim : Vim配置
                   _            _
        _ __   ___(_)    __   _(_)_ __ ___
       | '_ \ / _ \ |____\ \ / / | '_ ` _ \

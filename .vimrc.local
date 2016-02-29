@@ -1,9 +1,69 @@
 """"""""""""""""""""""""""""""""""""""""""""""""
-" Python PATH
+"                                              "
+" General settings 05/13/2015 added by Peidong "
+"                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Plugins settings 11/18/2015 added by Peidong "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Python PATH
+""""""""""""""""""""""""""""""""""""""""""""""""
 " 1:Default 2:Anaconda
 let g:peivim_python_type = 1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Level 2 Plugins                              "
+"             01/29/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+if g:peivim_bundle_level >= 2
+
+endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Level 3 Plugins                              "
+"             01/29/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+if g:peivim_bundle_level >= 3
+
+endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Level 4 Plugins                              "
+"             01/29/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+if g:peivim_bundle_level >= 4
+
+endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Level 5 Plugins                              "
+"             01/29/2016 added by Peidong      "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 if g:peivim_bundle_level >= 5
 
@@ -11,25 +71,48 @@ if g:peivim_bundle_level >= 5
     " Plugin scrooloose/syntastic                  "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if !WINDOWS() && v:version >= 700
-        if g:peivim_python_type == 1
-            let g:syntastic_python_python_exec = '/usr/bin/python'
-        elseif g:peivim_python_type == 2
-            let g:syntastic_python_python_exec = '/Users/peidong/Developer/ProgramFiles/Anaconda/anaconda2/bin/python'
+        if isdirectory(expand("~/.vim/bundle/syntastic"))
+            if g:peivim_python_type == 1
+                let g:syntastic_python_python_exec = '/usr/bin/python'
+            elseif g:peivim_python_type == 2
+                let g:syntastic_python_python_exec = '/Users/peidong/Developer/ProgramFiles/Anaconda/anaconda2/bin/python'
+            endif
         endif
     endif
 
 endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+"                                              "
+" Complete plugins 11/18/2015 added by Peidong "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
 if g:peivim_bundle_level >= 2
 
     if g:peivim_complete_engine == 5 " YouCompleteMe
-        if g:peivim_python_type == 1
-            let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-            let g:ycm_python_binary_path = '/usr/bin/python'
-        elseif g:peivim_python_type == 2
-            let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-            let g:ycm_python_binary_path = '/Users/peidong/Developer/ProgramFiles/Anaconda/anaconda2/bin/python'
+        if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
+            if g:peivim_python_type == 1
+                let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+                let g:ycm_python_binary_path = '/usr/bin/python'
+            elseif g:peivim_python_type == 2
+                let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+                let g:ycm_python_binary_path = '/Users/peidong/Developer/ProgramFiles/Anaconda/anaconda2/bin/python'
+            endif
         endif
+
+    elseif g:peivim_complete_engine == 3 " neocomplcache
+
+        if isdirectory(expand("~/.vim/bundle/neocomplcache"))
+
+        endif
+
+    elseif g:peivim_complete_engine == 4 " neocomplete
+
+        if isdirectory(expand("~/.vim/bundle/neocomplete"))
+
+        endif
+
     endif
 
 endif

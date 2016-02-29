@@ -81,18 +81,18 @@ endif
 scriptencoding utf-8
 
 """""""""""""""""""""""""""""""""""""""""""""""
-" before.local vimrc
+" Initialize variables in .vimrc.before.local
 """""""""""""""""""""""""""""""""""""""""""""""
-" Use before.local vimrc if available
-if filereadable(expand("~/.vimrc.before"))
-    source ~/.vimrc.before
-endif
+" General settings
+let g:peivim_setting_groups = ['set_list']
 
-" Use before.local gvimrc if available and gui is running {
-if has('gui_running')
-    if filereadable(expand("~/.gvimrc.before"))
-        source ~/.gvimrc.before
-    endif
+" NeoBundle Plugin settings
+let g:peivim_bundle_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
+let g:peivim_bundle_list = ['markdown', 'json', 'matlab', 'javascript', 'php', 'latex', 'python', 'writing', 'html']
+let g:peivim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
+
+if filereadable(expand("~/.vimrc.before.local"))
+    source ~/.vimrc.before.local
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -510,6 +510,10 @@ if g:peivim_bundle_level >= 2
         endif
 
     endif
+
+if filereadable(expand("~/.vimrc.bundles.local"))
+    source ~/.vimrc.bundles.local
+endif
 
 
     " Refer to |:NeoBundle-examples|.
@@ -1499,19 +1503,8 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""
 " before.local vimrc
 """""""""""""""""""""""""""""""""""""""""""""""
-" Use fork vimrc if available
-if filereadable(expand("~/.vimrc.fork"))
-	source ~/.vimrc.fork
-endif
 
 " Use local vimrc if available
 if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
-endif
-
-" Use local gvimrc if available and gui is running
-if has('gui_running')
-	if filereadable(expand("~/.gvimrc.local"))
-		source ~/.gvimrc.local
-	endif
 endif

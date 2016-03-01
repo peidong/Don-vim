@@ -16,5 +16,6 @@
 5. neovim
 6. more languages plugins
 7. better shortkeys
+8. Better readme and Chinese support
 
 ###BUGS

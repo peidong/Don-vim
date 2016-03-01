@@ -6,7 +6,7 @@
       | .__/ \___|_|      \_/ |_|_| |_| |_|
       |_|
 
-pei-vim is a vim configuration for Vim, Gvim and [MacVim](https://github.com/macvim-dev/macvim), and it is conpatible on Windows, Linux, \*nix and Mac. The distribution is fully customisable using `~/.vimrc.local`, `~/.vimrc.bundles.local`, and `~/.vimrc.before.local` files.
+pei-vim is a vim configuration for Vim, Gvim and [MacVim](https://github.com/macvim-dev/macvim), and it is compatible on Windows, Linux, \*nix and Mac. The distribution is fully customisable using `~/.vimrc.local`, `~/.vimrc.bundles.local`, and `~/.vimrc.before.local` files.
 
 # Screenshot
 
@@ -20,6 +20,12 @@ Dark theme screenshot
 
 
 # Installation
+## Requirements
+| Plugins Name  | Requirements  |
+|:-------------:|:-------------:|
+| [neocomplete](https://github.com/Shougo/neocomplete.vim) | lua |
+| col 2 is      | centered      |
+| zebra stripes | are neat      |
 ## Ubuntu Installation
 
     sudo apt-get install aptitude

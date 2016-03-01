@@ -117,7 +117,7 @@ create_symlinks() {
     local source_path="$1"
     local target_path="$2"
 
-    lnif "$source_path/.vimrc"         "$target_path/.vimrc"
+    lnif "$source_path/vimrc/.vimrc"         "$target_path/.vimrc"
 
     if program_exists "nvim"; then
         msg "Not done for neovim"

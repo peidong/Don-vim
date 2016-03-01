@@ -21,11 +21,13 @@ Dark theme screenshot
 
 # Installation
 ## Requirements
-| Plugins Name  | Requirements  |
-|:-------------:|:-------------:|
-| [neocomplete](https://github.com/Shougo/neocomplete.vim) | lua |
-| col 2 is      | centered      |
-| zebra stripes | are neat      |
+
+| Plugins' Names                                           | Requirements    |
+| :-------------:                                          | :-------------: |
+| [neocomplete](https://github.com/Shougo/neocomplete.vim) | lua             |
+| col 2 is                                                 | centered        |
+| zebra stripes                                            | are neat        |
+
 ## Ubuntu Installation
 
     sudo apt-get install aptitude

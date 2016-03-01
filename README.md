@@ -21,11 +21,12 @@
     cd ~
     git clone https://github.com/peidong/pei-vim.git
     mv pei-vim .vim
-    ln -s ~/.vim/.vimrc ~/.vimrc
-    ln -s ~/.vim/.vimrc.before ~/.vimrc.before
-    ln -s ~/.vim/.ycm_extra_conf.py ~/.ycm_extra_conf.py
-    ln -s ~/.vim/.tmux.conf ~/.tmux.conf
-    cp ~/.vim/.vimrc.before ~/.vimrc.before.local
+    ln -s ~/.vim/vimrc/.vimrc ~/.vimrc
+    cp ~/.vim/vimrc/.vimrc.before.local ~/.vimrc.before.local
+    cp ~/.vim/vimrc/.vimrc.bundles.local ~/.vimrc.bundles.local
+    cp ~/.vim/vimrc/.vimrc.local ~/.vimrc.local
+    cp ~/.vim/config/.ycm_extra_conf.py ~/.ycm_extra_conf.py
+    cp ~/.vim/config/.tmux.conf ~/.tmux.conf
     mkdir ~/.undodir/
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
@@ -61,11 +62,12 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
     cd ~
     git clone https://github.com/peidong/pei-vim.git
     mv pei-vim .vim
-    ln -s ~/.vim/.vimrc ~/.vimrc
-    ln -s ~/.vim/.vimrc.before ~/.vimrc.before
-    ln -s ~/.vim/.ycm_extra_conf.py ~/.ycm_extra_conf.py
-    ln -s ~/.vim/.tmux.conf ~/.tmux.conf
-    cp ~/.vim/.vimrc.before ~/.vimrc.before.local
+    ln -s ~/.vim/vimrc/.vimrc ~/.vimrc
+    cp ~/.vim/vimrc/.vimrc.before.local ~/.vimrc.before.local
+    cp ~/.vim/vimrc/.vimrc.bundles.local ~/.vimrc.bundles.local
+    cp ~/.vim/vimrc/.vimrc.local ~/.vimrc.local
+    cp ~/.vim/config/.ycm_extra_conf.py ~/.ycm_extra_conf.py
+    cp ~/.vim/config/.tmux.conf ~/.tmux.conf
     mkdir ~/.undodir/
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
@@ -143,9 +145,10 @@ Type "Windows+x" to open a command window with Administrative right
     cd %userprofile%
     git clone https://github.com/peidong/pei-vim.git
     move pei-vim .vim
-    mklink .vimrc .vim\.vimrc
-    mklink .vimrc.before .vim\.vimrc.before
-    copy .vim\.vimrc.before vimrc.before.local
+    mklink .vimrc .vim\vimrc\.vimrc
+    copy .vim\vimrc\.vimrc.before.local vimrc.before.local
+    copy .vim\vimrc\.vimrc.bundles.local vimrc.bundles.local
+    copy .vim\vimrc\.vimrc.local vimrc.local
     mkdir .vim\bundle
     mkdir %userprofile%\.undodir
     git clone https://github.com/Shougo/neobundle.vim .vim\bundle\neobundle.vim

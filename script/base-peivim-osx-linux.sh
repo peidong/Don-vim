@@ -118,7 +118,6 @@ create_symlinks() {
     local target_path="$2"
 
     lnif "$source_path/.vimrc"         "$target_path/.vimrc"
-    lnif "$source_path/.vimrc.before"         "$target_path/.vimrc.before"
 
     if program_exists "nvim"; then
         msg "Not done for neovim"
@@ -135,9 +134,11 @@ initialize_vim_settings() {
     local source_path="$1"
     local target_path="$2"
 
-    cp --remove-destination "$source_path/.ycm_extra_conf.py"         "$target_path/.ycm_extra_conf.py"
-    cp --remove-destination "$source_path/.tmux.conf"           "$target_path/.tmux.conf"
-    touch  "$target_path/.vimrc.local"
+    cp --remove-destination "$source_path/config/.ycm_extra_conf.py"         "$target_path/.ycm_extra_conf.py"
+    cp --remove-destination "$source_path/config/.tmux.conf"           "$target_path/.tmux.conf"
+    cp --remove-destination "$source_path/vimrc/.vimrc.before.local"           "$target_path/.vimrc.before.local"
+    cp --remove-destination "$source_path/vimrc/.vimrc.bundles.local"           "$target_path/.vimrc.bundles.local"
+    cp --remove-destination "$source_path/vimrc/.vimrc.local"           "$target_path/.vimrc.local"
     mkdir -p "$target_path/.undodir/"
 
     setup_user_local_settings "$target_path"

@@ -25,9 +25,11 @@ IF NOT EXIST "%APP_PATH%" (
      call cd "%HOME%"
      )
 
- call mklink "%HOME%\.vimrc" "%APP_PATH%\.vimrc"
- call mklink "%HOME%\_vimrc" "%APP_PATH%\.vimrc"
- call mklink "%HOME%\.vimrc.before" "%APP_PATH%\.vimrc.before"
+ call mklink "%HOME%\.vimrc" "%APP_PATH%\vimrc\.vimrc"
+rem  call mklink "%HOME%\_vimrc" "%APP_PATH%\.vimrc"
+ call copy "%APP_PATH%\vimrc\.vimrc.before.local" "%HOME%\.vimrc.before.local"
+ call copy "%APP_PATH%\vimrc\.vimrc.bundles.local" "%HOME%\.vimrc.bundles.local"
+ call copy "%APP_PATH%\vimrc\.vimrc.local" "%HOME%\.vimrc.local"
  call mkdir "%HOME%\.undodir"
  @echo let g:peivim_bundle_level = 3 >> "%HOME%\.vimrc.before.local"
  @echo let g:peivim_complete_engine = 4 >> "%HOME%\.vimrc.before.local"

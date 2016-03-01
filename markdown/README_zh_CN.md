@@ -6,6 +6,14 @@
       | .__/ \___|_|      \_/ |_|_| |_| |_|
       |_|
 
+- [介绍](#介绍)
+    - [截图](#截图)
+- [安装教程](#安装教程)
+    - [插件安装依赖条件](#插件安装依赖条件)
+- [Keymap](#keymap)
+
+# 介绍
+
 pei-vim可以在Vim,Gvim和[MacVim](https://github.com/macvim-dev/macvim)上使用.兼容Windows, Linux, \*nix, Mac平台.使用`~/.vimrc.local`, `~/.vimrc.bundles.local`, `~/.vimrc.before.local`自定义设置.
 
 # 截图

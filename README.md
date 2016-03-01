@@ -6,15 +6,17 @@
       | .__/ \___|_|      \_/ |_|_| |_| |_|
       |_|
 
+pei-vim is a vim configuration for Vim, Gvim and [MacVim](https://github.com/macvim-dev/macvim), and it is conpatible on Windows, Linux, \*nix and Mac. The distribution is fully customisable using `~/.vimrc.local`, `~/.vimrc.bundles.local`, and `~/.vimrc.before.local` files.
+
 # Screenshot
 
 Dark theme screenshot
 
 ![dark_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/dark_screenshot.png)
 
-Light theme screenshot
+<!--- Light theme screenshot --->
 
-![light_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/light_screenshot.png)
+<!--- ![light_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/light_screenshot.png) --->
 
 
 # Installation

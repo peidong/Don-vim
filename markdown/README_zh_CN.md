@@ -1,4 +1,4 @@
-# pei-vim : Vim配置
+# pei-vim : Vim配置 [(English version)](https://github.com/peidong/pei-vim)
                   _            _
        _ __   ___(_)    __   _(_)_ __ ___
       | '_ \ / _ \ |____\ \ / / | '_ ` _ \
@@ -15,6 +15,7 @@
 浅色主题
 
 ![light_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/light_screenshot.png)
+
 
 # Installation
 ## Ubuntu Installation

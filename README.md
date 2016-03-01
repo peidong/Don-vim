@@ -21,7 +21,8 @@
     cd ~
     git clone https://github.com/peidong/pei-vim.git
     mv pei-vim .vim
-    ln -s ~/.vim/vimrc/.vimrc ~/.vimrc
+    cd .vim
+    ln -s $(pwd)/vimrc/.vimrc ~/.vimrc
     cp ~/.vim/vimrc/.vimrc.before.local ~/.vimrc.before.local
     cp ~/.vim/vimrc/.vimrc.bundles.local ~/.vimrc.bundles.local
     cp ~/.vim/vimrc/.vimrc.local ~/.vimrc.local
@@ -62,7 +63,8 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
     cd ~
     git clone https://github.com/peidong/pei-vim.git
     mv pei-vim .vim
-    ln -s ~/.vim/vimrc/.vimrc ~/.vimrc
+    cd .vim
+    ln -s $(pwd)/vimrc/.vimrc ~/.vimrc
     cp ~/.vim/vimrc/.vimrc.before.local ~/.vimrc.before.local
     cp ~/.vim/vimrc/.vimrc.bundles.local ~/.vimrc.bundles.local
     cp ~/.vim/vimrc/.vimrc.local ~/.vimrc.local

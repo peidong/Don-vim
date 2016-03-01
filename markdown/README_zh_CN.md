@@ -6,6 +6,16 @@
       | .__/ \___|_|      \_/ |_|_| |_| |_|
       |_|
 
+# 截图
+
+深色主题
+
+![dark_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/dark_screenshot.png)
+
+浅色主题
+
+![light_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/light_screenshot.png)
+
 # Installation
 ## Ubuntu Installation
 

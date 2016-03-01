@@ -10,7 +10,11 @@
 
 Dark theme screenshot
 
-![solarized](https://github.com/wklken/gallery/blob/master/vim/solarized.png?raw=true)
+![dark_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/dark_screenshot.png)
+
+Light theme screenshot
+
+![light_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/light_screenshot.png)
 
 
 # Installation

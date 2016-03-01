@@ -6,6 +6,13 @@
       | .__/ \___|_|      \_/ |_|_| |_| |_|
       |_|
 
+# Screenshot
+
+Dark theme screenshot
+
+![solarized](https://github.com/wklken/gallery/blob/master/vim/solarized.png?raw=true)
+
+
 # Installation
 ## Ubuntu Installation
 

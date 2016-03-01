@@ -6,9 +6,17 @@
       | .__/ \___|_|      \_/ |_|_| |_| |_|
       |_|
 
+- [Introduction](#introduction)
+    - [Screenshot](#screenshot)
+- [Installation](#installation)
+    - [Requirements](#requirements)
+- [Keymap](#keymap)
+
+# Introduction
+
 pei-vim is a vim configuration for Vim, Gvim and [MacVim](https://github.com/macvim-dev/macvim), and it is compatible on Windows, Linux, \*nix and Mac. The distribution is fully customisable using `~/.vimrc.local`, `~/.vimrc.bundles.local`, and `~/.vimrc.before.local` files.
 
-# Screenshot
+## Screenshot
 
 Dark theme screenshot
 
@@ -22,11 +30,9 @@ Dark theme screenshot
 # Installation
 ## Requirements
 
-| Plugins' Names                                           | Requirements    |
-| :-------------:                                          | :-------------: |
-| [neocomplete](https://github.com/Shougo/neocomplete.vim) | lua             |
-| col 2 is                                                 | centered        |
-| zebra stripes                                            | are neat        |
+| Plugins' Names                                           | Requirements    | Solutions |
+| :-------------:                                          | :-------------: | :-------------: |
+| [neocomplete](https://github.com/Shougo/neocomplete.vim) | lua             | install vim with lua |
 
 ## Ubuntu Installation
 

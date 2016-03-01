@@ -19,7 +19,13 @@ pei-vim可以在Vim,Gvim和[MacVim](https://github.com/macvim-dev/macvim)上使�
 <!--- ![light_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/light_screenshot.png) --->
 
 
-# Installation
+# 安装教程
+## 插件安装依赖条件
+
+| 插件名称                                                 | 依赖条件        |
+| :-------------:                                          | :-------------: |
+| [neocomplete](https://github.com/Shougo/neocomplete.vim) | lua             |
+
 ## Ubuntu Installation
 
     sudo apt-get install aptitude

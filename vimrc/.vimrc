@@ -90,6 +90,7 @@ let g:peivim_setting_groups = ['set_list']
 let g:peivim_bundle_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
 let g:peivim_bundle_list = ['markdown', 'json', 'matlab', 'javascript', 'php', 'latex', 'python', 'writing', 'html']
 let g:peivim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
+let g:peivim_background_color = "hour" "hour, minute, light, dark, daynight
 
 if filereadable(expand("~/.vimrc.before.local"))
     source ~/.vimrc.before.local

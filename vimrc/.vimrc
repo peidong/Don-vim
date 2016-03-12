@@ -90,7 +90,7 @@ let g:peivim_setting_groups = ['set_list']
 let g:peivim_bundle_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
 let g:peivim_bundle_list = ['markdown', 'json', 'matlab', 'javascript', 'php', 'latex', 'python', 'writing', 'html']
 let g:peivim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
-let g:peivim_background_color = "hour" "hour, minute, light, dark, daynight
+let g:peivim_background_color_method = "hour" "hour, second, light, dark, daynight
 
 if filereadable(expand("~/.vimrc.before.local"))
     source ~/.vimrc.before.local
@@ -776,32 +776,46 @@ endif
 if g:peivim_bundle_level >= 2
 
     " This is for days and nights coloring
-    " let current_time_hour = strftime("%H")
-    " if current_time_hour < 18 && current_time_hour > 5
-    "     let vim_background="light"
-    " else
-    "     let vim_background="dark"
-    " endif
+    if g:peivim_background_color_method == "daynight"
+        let current_time_hour = strftime("%H")
+        if current_time_hour < 18 && current_time_hour > 5
+            let g:peivim_background_color="light"
+        else
+            let g:peivim_background_color="dark"
+        endif
+    endif
 
-    " " This is for 50% possibility background
-    " let current_time_second = strftime("%S")
-    " if current_time_second % 2 == 1
-    "     let vim_background="light"
-    " else
-    "     let vim_background="dark"
-    " endif
+    " This is for 50% possibility background
+    if g:peivim_background_color_method == "second"
+        let current_time_second = strftime("%S")
+        if current_time_second % 2 == 1
+            let g:peivim_background_color="light"
+        else
+            let g:peivim_background_color="dark"
+        endif
+    endif
 
     " This is for hour coloring
-    let current_time_hour = strftime("%H")
-    if current_time_hour % 2 == 1
-        let vim_background="light"
-    else
-        let vim_background="dark"
+    if g:peivim_background_color_method == "hour"
+        let current_time_hour = strftime("%H")
+        if current_time_hour % 2 == 1
+            let g:peivim_background_color="light"
+        else
+            let g:peivim_background_color="dark"
+        endif
+    endif
+
+    if g:peivim_background_color_method == "light"
+        let g:peivim_background_color="light"
+    endif
+
+    if g:peivim_background_color_method == "dark"
+        let g:peivim_background_color="dark"
     endif
 
 else
 
-    let vim_background="dark"
+    let g:peivim_background_color="dark"
 
 endif
 
@@ -815,9 +829,9 @@ if &term == 'xterm' || &term == 'screen'
     set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
 endif
 
-if vim_background == "light"
+if g:peivim_background_color == "light"
     set background=light
-elseif vim_background == "dark"
+elseif g:peivim_background_color == "dark"
     set background=dark
 endif
 
@@ -885,10 +899,10 @@ if g:peivim_bundle_level >= 2
     " Plugin vim-airline/vim-airline               "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if isdirectory(expand("~/.vim/bundle/vim-airline"))
-        if vim_background == "light"
+        if g:peivim_background_color == "light"
             let g:airline_theme='sol'
             " let g:airline_theme='xtermlight'
-        elseif vim_background == "dark"
+        elseif g:peivim_background_color == "dark"
             " let g:airline_theme='dark'
             let g:airline_theme='kolor'
         endif
@@ -910,12 +924,12 @@ if g:peivim_bundle_level >= 2
         let rainbow_guifgs_lightcolors = ['#008700', '#af005f', '#1c1c1c', '#0000af']
         let rainbow_guifgs_darkcolors = ['#f2433d', '#0087d7', '#d7af00', '#d787ff', '#00d75f', '#d0d0d0']
 
-        if vim_background == "light"
+        if g:peivim_background_color == "light"
             let g:rainbow_conf = {
                         \   'guifgs': rainbow_guifgs_lightcolors,
                         \   'ctermfgs': rainbow_ctermfgs_lightcolors
                         \}
-        elseif vim_background == "dark"
+        elseif g:peivim_background_color == "dark"
             let g:rainbow_conf = {
                         \   'guifgs': rainbow_guifgs_darkcolors,
                         \   'ctermfgs': rainbow_ctermfgs_darkcolors

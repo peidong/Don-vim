@@ -15,7 +15,7 @@
 " Python PATH
 """"""""""""""""""""""""""""""""""""""""""""""""
 " 1:Default 2:Anaconda
-let g:peivim_python_type = 1
+let g:peivim_python_type = 2
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""

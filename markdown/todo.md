@@ -17,6 +17,7 @@
 6. more languages plugins
 7. better shortkeys
 8. Better readme and Chinese support
-8. Add font instructions
+9. Add font instructions
+10. More about the environment
 
 ###BUGS

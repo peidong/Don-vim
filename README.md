@@ -35,7 +35,7 @@ Dark theme screenshot
 | :-------------:                                          | :-------------: | :-------------: |
 | [neocomplete](https://github.com/Shougo/neocomplete.vim) | lua             | install vim with lua |
 
-### Font Requirements
+#### Font Requirements
 
 For developers, I recommend to use the font named [Inconsolata](http://www.levien.com/type/myfonts/inconsolata.html)
 

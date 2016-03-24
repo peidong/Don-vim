@@ -10,7 +10,7 @@
     - [Screenshot](#screenshot)
 - [Installation](#installation)
     - [Requirements](#requirements)
-    - [Font Requirements](#font_requirements)
+    - [Font Requirements](#font-requirements)
 - [Keymap](#keymap)
 
 # Introduction

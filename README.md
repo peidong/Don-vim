@@ -1,10 +1,10 @@
 # pei-vim : One Vim Configuration [(中文版)](https://github.com/peidong/pei-vim/blob/master/markdown/README_zh_CN.md)
-                  _            _
-       _ __   ___(_)    __   _(_)_ __ ___
-      | '_ \ / _ \ |____\ \ / / | '_ ` _ \
-      | |_) |  __/ |_____\ V /| | | | | | |
-      | .__/ \___|_|      \_/ |_|_| |_| |_|
-      |_|
+      _____                          _
+     |  __ \                        (_)
+     | |  | | ___  _ __ ________   ___ _ __ ___
+     | |  | |/ _ \| '_ \______\ \ / / | '_ ` _ \
+     | |__| | (_) | | | |      \ V /| | | | | | |
+     |_____/ \___/|_| |_|       \_/ |_|_| |_| |_|
 
 - [Introduction](#introduction)
     - [Screenshot](#screenshot)

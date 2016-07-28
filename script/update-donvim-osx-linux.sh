@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source base-peivim-osx-linux.sh
+source base-donvim-osx-linux.sh
 ############################ MAIN()
 variable_set "$HOME"
 program_must_exist "vim"
@@ -14,4 +14,4 @@ sync_repo       "$APP_PATH" \
 neobundle_update
 
 msg             "\nThanks for updating $app_name."
-msg             "© `date +%Y` https://github.com/peidong/pei-vim"
+msg             "© `date +%Y` https://github.com/peidong/Don-vim"

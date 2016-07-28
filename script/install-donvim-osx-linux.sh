@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source base-peivim-osx-linux.sh
+source base-donvim-osx-linux.sh
 ############################ MAIN()
 variable_set "$HOME"
 program_must_exist "vim"
@@ -36,9 +36,9 @@ sync_repo       "$HOME/.vim/bundle/neobundle.vim" \
 
 setup_neobundle
 
-if [ "$peivim_complete_engine" -eq '5' ]; then
+if [ "$donvim_complete_engine" -eq '5' ]; then
     setup_youcompleteme "$HOME"
 fi
 
 msg             "\nThanks for installing $app_name."
-msg             "© `date +%Y` https://github.com/peidong/pei-vim"
+msg             "© `date +%Y` https://github.com/peidong/Don-vim"

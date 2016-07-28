@@ -1,9 +1,9 @@
-"              _            _
-"   _ __   ___(_)    __   _(_)_ __ ___
-"  | '_ \ / _ \ |____\ \ / / | '_ ` _ \
-"  | |_) |  __/ |_____\ V /| | | | | | |
-"  | .__/ \___|_|      \_/ |_|_| |_| |_|
-"  |_|
+"   _____                          _
+"  |  __ \                        (_)
+"  | |  | | ___  _ __ ________   ___ _ __ ___
+"  | |  | |/ _ \| '_ \______\ \ / / | '_ ` _ \
+"  | |__| | (_) | | | |      \ V /| | | | | | |
+"  |_____/ \___/|_| |_|       \_/ |_|_| |_| |_|
 "
 " Please put your custom plugins into this file
 "
@@ -14,7 +14,7 @@
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if g:peivim_bundle_level >= 2
+if g:donvim_bundle_level >= 2
 
 endif
 
@@ -26,7 +26,7 @@ endif
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if g:peivim_bundle_level >= 3
+if g:donvim_bundle_level >= 3
 
 endif
 
@@ -38,7 +38,7 @@ endif
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if g:peivim_bundle_level >= 4
+if g:donvim_bundle_level >= 4
 
 endif
 
@@ -50,7 +50,7 @@ endif
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if g:peivim_bundle_level >= 5
+if g:donvim_bundle_level >= 5
 
 endif
 
@@ -62,8 +62,8 @@ endif
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if g:peivim_bundle_level >= 2
+if g:donvim_bundle_level >= 2
 
-    " let g:peivim_complete_engine = 6
+    " let g:donvim_complete_engine = 6
 
 endif

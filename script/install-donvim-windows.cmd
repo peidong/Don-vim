@@ -13,17 +13,26 @@ IF NOT EXIST "%APP_PATH%" (
     @if exist "%HOME%\.vimrc.local" call copy "%HOME%\.vimrc.local" "%HOME%\.vimrc.local.%today%"
     @if exist "%HOME%\_vimrc" call copy "%HOME%\_vimrc" "%HOME%\_vimrc.%today%"
     @if exist "%HOME%\.gvimrc" call copy "%HOME%\.gvimrc" "%HOME%\.gvimrc.%today%"
-    echo cloning pei-vim
-    call git clone -b master https://github.com/peidong/pei-vim.git "%APP_PATH%"
+    echo cloning Don-vim
+    call git clone -b master https://github.com/peidong/Don-vim.git "%APP_PATH%"
     call cd "%HOME%"
  )ELSE (
      @set ORIGINAL_DIR=%CD%
-     echo updating pei-vim
+     echo updating Don-vim
      chdir /d "%APP_PATH%"
      call git pull
      chdir /d "%ORIGINAL_DIR%"
      call cd "%HOME%"
      )
+
+ call mklink "%HOME%\.vimrc" "%APP_PATH%\vimrc\.vimrc"
+rem  call mklink "%HOME%\_vimrc" "%APP_PATH%\.vimrc"
+ call copy "%APP_PATH%\vimrc\.vimrc.before.local" "%HOME%\.vimrc.before.local"
+ call copy "%APP_PATH%\vimrc\.vimrc.bundles.local" "%HOME%\.vimrc.bundles.local"
+ call copy "%APP_PATH%\vimrc\.vimrc.local" "%HOME%\.vimrc.local"
+ call mkdir "%HOME%\.undodir"
+ @echo let g:donvim_bundle_level = 3 >> "%HOME%\.vimrc.before.local"
+ @echo let g:donvim_complete_engine = 4 >> "%HOME%\.vimrc.before.local"
 
  IF NOT EXIST "%HOME%\.vim\bundle" (
   call mkdir "%HOME%\.vim\bundle"
@@ -37,7 +46,7 @@ IF NOT EXIST "%APP_PATH%" (
      call cd %HOME%
      )
 
- call vim +NeoBundleUpdate +qall
+ call vim +NeoBundleInstall +qall
 
  call cd "%APP_PATH%\bundle\vimproc.vim\lib"
  call curl -OL https://github.com/Shougo/vimproc.vim/releases/download/ver.9.2/vimproc_win32.dll

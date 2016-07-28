@@ -1,9 +1,9 @@
-"              _            _
-"   _ __   ___(_)    __   _(_)_ __ ___
-"  | '_ \ / _ \ |____\ \ / / | '_ ` _ \
-"  | |_) |  __/ |_____\ V /| | | | | | |
-"  | .__/ \___|_|      \_/ |_|_| |_| |_|
-"  |_|
+"   _____                          _
+"  |  __ \                        (_)
+"  | |  | | ___  _ __ ________   ___ _ __ ___
+"  | |  | |/ _ \| '_ \______\ \ / / | '_ ` _ \
+"  | |__| | (_) | | | |      \ V /| | | | | | |
+"  |_____/ \___/|_| |_|       \_/ |_|_| |_| |_|
 "
 " Your settings
 "
@@ -24,7 +24,7 @@
 " Python PATH
 """"""""""""""""""""""""""""""""""""""""""""""""
 " 1:Default 2:Anaconda
-let g:peivim_python_type = 2
+let g:donvim_python_type = 2
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -35,7 +35,7 @@ let g:peivim_python_type = 2
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_bundle_level >= 2
+if g:donvim_bundle_level >= 2
 
 endif
 
@@ -48,7 +48,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_bundle_level >= 3
+if g:donvim_bundle_level >= 3
 
 endif
 
@@ -61,7 +61,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_bundle_level >= 4
+if g:donvim_bundle_level >= 4
 
 endif
 
@@ -74,16 +74,16 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_bundle_level >= 5
+if g:donvim_bundle_level >= 5
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin scrooloose/syntastic                  "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if !WINDOWS() && v:version >= 700
         if isdirectory(expand("~/.vim/bundle/syntastic"))
-            if g:peivim_python_type == 1
+            if g:donvim_python_type == 1
                 let g:syntastic_python_python_exec = '/usr/bin/python'
-            elseif g:peivim_python_type == 2
+            elseif g:donvim_python_type == 2
                 let g:syntastic_python_python_exec = '/Users/peidong/Developer/ProgramFiles/Anaconda/anaconda2/bin/python'
             endif
         endif
@@ -97,26 +97,26 @@ endif
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-if g:peivim_bundle_level >= 2
+if g:donvim_bundle_level >= 2
 
-    if g:peivim_complete_engine == 5 " YouCompleteMe
+    if g:donvim_complete_engine == 5 " YouCompleteMe
         if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
-            if g:peivim_python_type == 1
+            if g:donvim_python_type == 1
                 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
                 let g:ycm_python_binary_path = '/usr/bin/python'
-            elseif g:peivim_python_type == 2
+            elseif g:donvim_python_type == 2
                 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
                 let g:ycm_python_binary_path = '/Users/peidong/Developer/ProgramFiles/Anaconda/anaconda2/bin/python'
             endif
         endif
 
-    elseif g:peivim_complete_engine == 3 " neocomplcache
+    elseif g:donvim_complete_engine == 3 " neocomplcache
 
         if isdirectory(expand("~/.vim/bundle/neocomplcache"))
 
         endif
 
-    elseif g:peivim_complete_engine == 4 " neocomplete
+    elseif g:donvim_complete_engine == 4 " neocomplete
 
         if isdirectory(expand("~/.vim/bundle/neocomplete"))
 

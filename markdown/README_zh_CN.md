@@ -1,10 +1,10 @@
-# pei-vim : Vim配置 [(English version)](https://github.com/peidong/pei-vim)
-                  _            _
-       _ __   ___(_)    __   _(_)_ __ ___
-      | '_ \ / _ \ |____\ \ / / | '_ ` _ \
-      | |_) |  __/ |_____\ V /| | | | | | |
-      | .__/ \___|_|      \_/ |_|_| |_| |_|
-      |_|
+# Don-vim : Vim配置 [(English version)](https://github.com/peidong/Don-vim)
+      _____                          _
+     |  __ \                        (_)
+     | |  | | ___  _ __ ________   ___ _ __ ___
+     | |  | |/ _ \| '_ \______\ \ / / | '_ ` _ \
+     | |__| | (_) | | | |      \ V /| | | | | | |
+     |_____/ \___/|_| |_|       \_/ |_|_| |_| |_|
 
 - [介绍](#介绍)
     - [截图](#截图)
@@ -14,17 +14,17 @@
 
 # 介绍
 
-pei-vim可以在Vim,Gvim和[MacVim](https://github.com/macvim-dev/macvim)上使用.兼容Windows, Linux, \*nix, Mac平台.使用`~/.vimrc.local`, `~/.vimrc.bundles.local`, `~/.vimrc.before.local`自定义设置.
+Don-vim可以在Vim,Gvim和[MacVim](https://github.com/macvim-dev/macvim)上使用.兼容Windows, Linux, \*nix, Mac平台.使用`~/.vimrc.local`, `~/.vimrc.bundles.local`, `~/.vimrc.before.local`自定义设置.
 
 # 截图
 
 深色主题
 
-![dark_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/dark_screenshot.png)
+![dark_screenshot](https://raw.githubusercontent.com/peidong/Don-vim/master/markdown/image/dark_screenshot.png)
 
 <!--- 浅色主题 --->
 
-<!--- ![light_screenshot](https://raw.githubusercontent.com/peidong/pei-vim/master/markdown/image/light_screenshot.png) --->
+<!--- ![light_screenshot](https://raw.githubusercontent.com/peidong/Don-vim/master/markdown/image/light_screenshot.png) --->
 
 
 # 安装教程
@@ -41,13 +41,13 @@ pei-vim可以在Vim,Gvim和[MacVim](https://github.com/macvim-dev/macvim)上使�
 
 ### Automatic Installation
 
-    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh" -O base-peivim-osx-linux.sh && wget "https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-osx-linux.sh" -O install-peivim-osx-linux.sh && bash install-peivim-osx-linux.sh
+    wget "https://raw.githubusercontent.com/peidong/Don-vim/master/base-donvim-osx-linux.sh" -O base-donvim-osx-linux.sh && wget "https://raw.githubusercontent.com/peidong/Don-vim/master/install-donvim-osx-linux.sh" -O install-donvim-osx-linux.sh && bash install-donvim-osx-linux.sh
 
 ### Manually Installation
 
     cd ~
-    git clone https://github.com/peidong/pei-vim.git
-    mv pei-vim .vim
+    git clone https://github.com/peidong/Don-vim.git
+    mv Don-vim .vim
     ln -s ~/.vim/.vimrc ~/.vimrc
     ln -s ~/.vim/.vimrc.before ~/.vimrc.before
     ln -s ~/.vim/.ycm_extra_conf.py ~/.ycm_extra_conf.py
@@ -64,7 +64,7 @@ Then vim, and `:NeoBundleInstall`
 
 ### Automatic Update
 
-    wget "https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh" -O base-peivim-osx-linux.sh && wget "https://raw.githubusercontent.com/peidong/pei-vim/master/update-peivim-osx-linux.sh" -O update-peivim-osx-linux.sh && bash update-peivim-osx-linux.sh
+    wget "https://raw.githubusercontent.com/peidong/Don-vim/master/base-donvim-osx-linux.sh" -O base-donvim-osx-linux.sh && wget "https://raw.githubusercontent.com/peidong/Don-vim/master/update-donvim-osx-linux.sh" -O update-donvim-osx-linux.sh && bash update-donvim-osx-linux.sh
 
 ## Mac OSX Installation
 #### How to install [MacVim](https://github.com/macvim-dev/macvim/releases/tag/snapshot-80)
@@ -81,13 +81,13 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
 
 ### Automatic Installation
 
-    curl https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh -L > base-peivim-osx-linux.sh && curl https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-osx-linux.sh -L > install-peivim-osx-linux.sh && bash install-peivim-osx-linux.sh
+    curl https://raw.githubusercontent.com/peidong/Don-vim/master/base-donvim-osx-linux.sh -L > base-donvim-osx-linux.sh && curl https://raw.githubusercontent.com/peidong/Don-vim/master/install-donvim-osx-linux.sh -L > install-donvim-osx-linux.sh && bash install-donvim-osx-linux.sh
 
 ### Manually Installation
 
     cd ~
-    git clone https://github.com/peidong/pei-vim.git
-    mv pei-vim .vim
+    git clone https://github.com/peidong/Don-vim.git
+    mv Don-vim .vim
     ln -s ~/.vim/.vimrc ~/.vimrc
     ln -s ~/.vim/.vimrc.before ~/.vimrc.before
     ln -s ~/.vim/.ycm_extra_conf.py ~/.ycm_extra_conf.py
@@ -104,7 +104,7 @@ Then vim, and `:NeoBundleInstall`
 
 ### Automatic Update
 
-    curl https://raw.githubusercontent.com/peidong/pei-vim/master/base-peivim-osx-linux.sh -L > base-peivim-osx-linux.sh && curl https://raw.githubusercontent.com/peidong/pei-vim/master/update-peivim-osx-linux.sh -L > update-peivim-osx-linux.sh && bash update-peivim-osx-linux.sh
+    curl https://raw.githubusercontent.com/peidong/Don-vim/master/base-donvim-osx-linux.sh -L > base-donvim-osx-linux.sh && curl https://raw.githubusercontent.com/peidong/Don-vim/master/update-donvim-osx-linux.sh -L > update-donvim-osx-linux.sh && bash update-donvim-osx-linux.sh
 
 ## Installing on Windows
 
@@ -163,13 +163,13 @@ to verify all good, run:
 
 Type "Windows+x" to open a command window with Administrative right
 
-    curl -OL https://raw.githubusercontent.com/peidong/pei-vim/master/install-peivim-windows.cmd && call install-peivim-windows.cmd
+    curl -OL https://raw.githubusercontent.com/peidong/Don-vim/master/install-donvim-windows.cmd && call install-donvim-windows.cmd
 
 #### Manually Installation
 
     cd %userprofile%
-    git clone https://github.com/peidong/pei-vim.git
-    move pei-vim .vim
+    git clone https://github.com/peidong/Don-vim.git
+    move Don-vim .vim
     mklink .vimrc .vim\.vimrc
     mklink .vimrc.before .vim\.vimrc.before
     copy .vim\.vimrc.before vimrc.before.local
@@ -185,7 +185,7 @@ Download vimproc_win32/win64.dll, and copy them to .vim\bundle\vimproc.vim\lib
 
 Type "Windows+x" to open a command window with Administrative right
 
-    curl -OL https://raw.githubusercontent.com/peidong/pei-vim/master/update-peivim-windows.cmd && call update-peivim-windows.cmd
+    curl -OL https://raw.githubusercontent.com/peidong/Don-vim/master/update-donvim-windows.cmd && call update-donvim-windows.cmd
 
 
 # Keymap

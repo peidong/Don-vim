@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 ############################  SETUP PARAMETERS
-app_name='pei-vim'
+app_name='Don-vim'
 [ -z "$APP_PATH" ] && APP_PATH="$HOME/.vim"
-[ -z "$REPO_URI" ] && REPO_URI='https://github.com/peidong/pei-vim.git'
+[ -z "$REPO_URI" ] && REPO_URI='https://github.com/peidong/Don-vim.git'
 [ -z "$REPO_BRANCH" ] && REPO_BRANCH='master'
 debug_mode='0'
 fork_maintainer='0'
 [ -z "$NEOBUNDLE_URI" ] && NEOBUNDLE_URI="https://github.com/Shougo/neobundle.vim.git"
-declare -i peivim_complete_engine
+declare -i donvim_complete_engine
 
 ############################  BASIC SETUP TOOLS
 msg() {
@@ -202,37 +202,37 @@ setup_user_local_settings() {
 
     printf "\n====================================\n"
     printf "Which vim plugins level do you want?\n\n(More plugins have more functions, but also slower your vim.)\n\n1:no plugin\n2:fast and vimscripts only plugins\n3:normal and vimscripts only plugins\n4:many plugins with python support\n5:all the plugins\n"
-    read -p "Please type the number:" peivim_bundle_level
+    read -p "Please type the number:" donvim_bundle_level
     printf "\n====================================\n"
     printf "Which of the following autocomplete plugin do you want?\n\n1.No auto complete plugin\n2.VimCompletesMe\n3.neocomplcache\n4.neocomplete\n5.YouCompleteMe(preferred)\n"
-    read -p "Please type the number:" peivim_complete_engine
+    read -p "Please type the number:" donvim_complete_engine
 
-    if [ "$peivim_bundle_level" -eq '1' ]; then
-        echo "let g:peivim_bundle_level = 1" >> "$target_path/.vimrc.before.local"
-    elif [ "$peivim_bundle_level" -eq '2' ]; then
-        echo "let g:peivim_bundle_level = 2" >> "$target_path/.vimrc.before.local"
-    elif [ "$peivim_bundle_level" -eq '3' ]; then
-        echo "let g:peivim_bundle_level = 3" >> "$target_path/.vimrc.before.local"
-    elif [ "$peivim_bundle_level" -eq '4' ]; then
-        echo "let g:peivim_bundle_level = 4" >> "$target_path/.vimrc.before.local"
-    elif [ "$peivim_bundle_level" -eq '5' ]; then
-        echo "let g:peivim_bundle_level = 5" >> "$target_path/.vimrc.before.local"
+    if [ "$donvim_bundle_level" -eq '1' ]; then
+        echo "let g:donvim_bundle_level = 1" >> "$target_path/.vimrc.before.local"
+    elif [ "$donvim_bundle_level" -eq '2' ]; then
+        echo "let g:donvim_bundle_level = 2" >> "$target_path/.vimrc.before.local"
+    elif [ "$donvim_bundle_level" -eq '3' ]; then
+        echo "let g:donvim_bundle_level = 3" >> "$target_path/.vimrc.before.local"
+    elif [ "$donvim_bundle_level" -eq '4' ]; then
+        echo "let g:donvim_bundle_level = 4" >> "$target_path/.vimrc.before.local"
+    elif [ "$donvim_bundle_level" -eq '5' ]; then
+        echo "let g:donvim_bundle_level = 5" >> "$target_path/.vimrc.before.local"
     else
-        echo "let g:peivim_bundle_level = 3" >> "$target_path/.vimrc.before.local"
+        echo "let g:donvim_bundle_level = 3" >> "$target_path/.vimrc.before.local"
     fi
 
-    if [ "$peivim_complete_engine" -eq '1' ]; then
-        echo "let g:peivim_complete_engine = 1" >> "$target_path/.vimrc.before.local"
-    elif [ "$peivim_complete_engine" -eq '2' ]; then
-        echo "let g:peivim_complete_engine = 2" >> "$target_path/.vimrc.before.local"
-    elif [ "$peivim_complete_engine" -eq '3' ]; then
-        echo "let g:peivim_complete_engine = 3" >> "$target_path/.vimrc.before.local"
-    elif [ "$peivim_complete_engine" -eq '4' ]; then
-        echo "let g:peivim_complete_engine = 4" >> "$target_path/.vimrc.before.local"
-    elif [ "$peivim_complete_engine" -eq '5' ]; then
-        echo "let g:peivim_complete_engine = 5" >> "$target_path/.vimrc.before.local"
+    if [ "$donvim_complete_engine" -eq '1' ]; then
+        echo "let g:donvim_complete_engine = 1" >> "$target_path/.vimrc.before.local"
+    elif [ "$donvim_complete_engine" -eq '2' ]; then
+        echo "let g:donvim_complete_engine = 2" >> "$target_path/.vimrc.before.local"
+    elif [ "$donvim_complete_engine" -eq '3' ]; then
+        echo "let g:donvim_complete_engine = 3" >> "$target_path/.vimrc.before.local"
+    elif [ "$donvim_complete_engine" -eq '4' ]; then
+        echo "let g:donvim_complete_engine = 4" >> "$target_path/.vimrc.before.local"
+    elif [ "$donvim_complete_engine" -eq '5' ]; then
+        echo "let g:donvim_complete_engine = 5" >> "$target_path/.vimrc.before.local"
     else
-        echo "let g:peivim_complete_engine = 2" >> "$target_path/.vimrc.before.local"
+        echo "let g:donvim_complete_engine = 2" >> "$target_path/.vimrc.before.local"
     fi
 
     export SHELL="$system_shell"

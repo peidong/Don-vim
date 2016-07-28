@@ -84,13 +84,13 @@ scriptencoding utf-8
 " Initialize variables in .vimrc.before.local
 """""""""""""""""""""""""""""""""""""""""""""""
 " General settings
-let g:peivim_setting_groups = ['set_list']
+let g:donvim_setting_groups = ['set_list']
 
 " NeoBundle Plugin settings
-let g:peivim_bundle_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
-let g:peivim_bundle_list = ['markdown', 'json', 'matlab', 'javascript', 'php', 'latex', 'python', 'writing', 'html']
-let g:peivim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
-let g:peivim_background_color_method = "hour" "hour, second, light, dark, daynight
+let g:donvim_bundle_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
+let g:donvim_bundle_list = ['markdown', 'json', 'matlab', 'javascript', 'php', 'latex', 'python', 'writing', 'html']
+let g:donvim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
+let g:donvim_background_color_method = "hour" "hour, second, light, dark, daynight
 
 if filereadable(expand("~/.vimrc.before.local"))
     source ~/.vimrc.before.local
@@ -99,11 +99,11 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""
 " Neobundle 01/29/2016 added by Peidong
 """""""""""""""""""""""""""""""""""""""""""""""
-if (g:peivim_bundle_level >= 2) && (!((v:version > 702 || (v:version == 702 && has('patch51'))) && executable('git')))
-    let g:peivim_bundle_level = 1
+if (g:donvim_bundle_level >= 2) && (!((v:version > 702 || (v:version == 702 && has('patch51'))) && executable('git')))
+    let g:donvim_bundle_level = 1
 endif
 
-if g:peivim_bundle_level >= 2
+if g:donvim_bundle_level >= 2
 
     " Note: Skip initialization for vim-tiny or vim-small.
     if 0 | endif
@@ -134,7 +134,7 @@ if g:peivim_bundle_level >= 2
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
-    if g:peivim_bundle_level >= 2
+    if g:donvim_bundle_level >= 2
 
 
         """"""""""""""""""""""""""""""""""""""""""""""""
@@ -183,7 +183,7 @@ if g:peivim_bundle_level >= 2
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
-    if g:peivim_bundle_level >= 3
+    if g:donvim_bundle_level >= 3
 
 
         """"""""""""""""""""""""""""""""""""""""""""""""
@@ -305,26 +305,26 @@ if g:peivim_bundle_level >= 2
         " Specific language Plugins                    "
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Markdown highlight
-        if count(g:peivim_bundle_list, 'markdown')
+        if count(g:donvim_bundle_list, 'markdown')
             NeoBundle 'tpope/vim-markdown'
         endif
 
         " Json highlight
-        if count(g:peivim_bundle_list, 'json') && v:version >= 703
+        if count(g:donvim_bundle_list, 'json') && v:version >= 703
             NeoBundle 'elzr/vim-json'
         endif
 
         " Matlab highlight
-        if count(g:peivim_bundle_list, 'matlab')
+        if count(g:donvim_bundle_list, 'matlab')
             NeoBundle 'vim-scripts/MatlabFilesEdition'
         endif
 
         " Javascript highlight
-        if count(g:peivim_bundle_list, 'javascript') && (v:version > 704 || (v:version == 704 && has('patch7')))
+        if count(g:donvim_bundle_list, 'javascript') && (v:version > 704 || (v:version == 704 && has('patch7')))
             NeoBundle 'pangloss/vim-javascript'
         endif
 
-        if count(g:peivim_bundle_list, 'php')
+        if count(g:donvim_bundle_list, 'php')
             " PHP highlight
             NeoBundle 'StanAngeloff/php.vim'
 
@@ -333,19 +333,19 @@ if g:peivim_bundle_level >= 2
         endif
 
         " Latex edit
-        if count(g:peivim_bundle_list, 'latex')
+        if count(g:donvim_bundle_list, 'latex')
             NeoBundle 'lervag/vimtex'
         endif
 
         " Python highlight
-        if count(g:peivim_bundle_list, 'python')
+        if count(g:donvim_bundle_list, 'python')
             NeoBundle 'hdima/python-syntax'
 
             " NeoBundle 'ivanov/vim-ipython'
         endif
 
         " Writing
-        if count(g:peivim_bundle_list, 'writing')
+        if count(g:donvim_bundle_list, 'writing')
             NeoBundle 'reedes/vim-litecorrect'
 
             NeoBundle 'reedes/vim-textobj-sentence'
@@ -356,7 +356,7 @@ if g:peivim_bundle_level >= 2
         endif
 
         " Html
-        if count(g:peivim_bundle_list, 'html')
+        if count(g:donvim_bundle_list, 'html')
             " Use it in HTML codes for example, usage: <C-y>,
             NeoBundle 'mattn/emmet-vim'
 
@@ -374,7 +374,7 @@ if g:peivim_bundle_level >= 2
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
-    if g:peivim_bundle_level >= 4
+    if g:donvim_bundle_level >= 4
 
 
         """"""""""""""""""""""""""""""""""""""""""""""""
@@ -404,7 +404,7 @@ if g:peivim_bundle_level >= 2
     "                                              "
     """"""""""""""""""""""""""""""""""""""""""""""""
 
-    if g:peivim_bundle_level >= 5
+    if g:donvim_bundle_level >= 5
 
         " Use in Mac OSX's Dash app
         " if OSX()
@@ -446,13 +446,13 @@ if g:peivim_bundle_level >= 2
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Preview the markdown file
         if has('python')
-            if count(g:peivim_bundle_list, 'markdown')
+            if count(g:donvim_bundle_list, 'markdown')
                 NeoBundle 'MikeCoder/markdown-preview.vim'
             endif
         endif
 
         " Latex preview
-        if count(g:peivim_bundle_list, 'latex') && v:version >= 703 && has('python')
+        if count(g:donvim_bundle_list, 'latex') && v:version >= 703 && has('python')
             NeoBundle 'xuhdev/vim-latex-live-preview'
         endif
 
@@ -477,34 +477,34 @@ if g:peivim_bundle_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-    if g:peivim_complete_engine == 5 && !((v:version >= 704 || (v:version ==703 && has('patch598'))) && executable('python') && has('python'))
-        let g:peivim_complete_engine = 3
+    if g:donvim_complete_engine == 5 && !((v:version >= 704 || (v:version ==703 && has('patch598'))) && executable('python') && has('python'))
+        let g:donvim_complete_engine = 3
     endif
 
-    if g:peivim_complete_engine == 4 && !(has('lua') && (v:version >= 704 || (v:version == 703 && has('patch885'))))
-        let g:peivim_complete_engine = 3
+    if g:donvim_complete_engine == 4 && !(has('lua') && (v:version >= 704 || (v:version == 703 && has('patch885'))))
+        let g:donvim_complete_engine = 3
     endif
 
-    if g:peivim_complete_engine == 3 && has('lua') && (v:version >= 704 || (v:version == 703 && has('patch885'))) && (!WINDOWS())
-        let g:peivim_complete_engine = 4
+    if g:donvim_complete_engine == 3 && has('lua') && (v:version >= 704 || (v:version == 703 && has('patch885'))) && (!WINDOWS())
+        let g:donvim_complete_engine = 4
     endif
 
-    if g:peivim_bundle_level >= 2
+    if g:donvim_bundle_level >= 2
 
         " Auto complete engine
-        if g:peivim_complete_engine == 5
+        if g:donvim_complete_engine == 5
 
             NeoBundle 'Valloric/YouCompleteMe'
 
-        elseif g:peivim_complete_engine == 2
+        elseif g:donvim_complete_engine == 2
 
             NeoBundle 'ajh17/VimCompletesMe'
 
-        elseif g:peivim_complete_engine == 3
+        elseif g:donvim_complete_engine == 3
 
             NeoBundle 'Shougo/neocomplcache.vim'
 
-        elseif g:peivim_complete_engine == 4
+        elseif g:donvim_complete_engine == 4
 
             NeoBundle 'Shougo/neocomplete.vim'
 
@@ -600,7 +600,7 @@ set smartcase                   " Case sensitive when uc present
 " Status line
 """""""""""""""""""""""""""""""""""""""""""""""
 " 总是显示状态栏
-if g:peivim_bundle_level >= 2
+if g:donvim_bundle_level >= 2
     if has('statusline')
         set laststatus=2
     endif
@@ -686,7 +686,7 @@ set scrolloff=3                 " Minimum lines to keep above and below cursor
 """""""""""""""""""""""""""""""""""""""""""""""
 " List chars
 """""""""""""""""""""""""""""""""""""""""""""""
-if count(g:peivim_setting_groups, 'set_list')
+if count(g:donvim_setting_groups, 'set_list')
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 endif
@@ -773,49 +773,49 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""
 " Color settings
 """""""""""""""""""""""""""""""""""""""""""""""
-if g:peivim_bundle_level >= 2
+if g:donvim_bundle_level >= 2
 
     " This is for days and nights coloring
-    if g:peivim_background_color_method == "daynight"
+    if g:donvim_background_color_method == "daynight"
         let current_time_hour = strftime("%H")
         if current_time_hour < 18 && current_time_hour > 5
-            let g:peivim_background_color="light"
+            let g:donvim_background_color="light"
         else
-            let g:peivim_background_color="dark"
+            let g:donvim_background_color="dark"
         endif
     endif
 
     " This is for 50% possibility background
-    if g:peivim_background_color_method == "second"
+    if g:donvim_background_color_method == "second"
         let current_time_second = strftime("%S")
         if current_time_second % 2 == 1
-            let g:peivim_background_color="light"
+            let g:donvim_background_color="light"
         else
-            let g:peivim_background_color="dark"
+            let g:donvim_background_color="dark"
         endif
     endif
 
     " This is for hour coloring
-    if g:peivim_background_color_method == "hour"
+    if g:donvim_background_color_method == "hour"
         let current_time_hour = strftime("%H")
         if current_time_hour % 2 == 1
-            let g:peivim_background_color="light"
+            let g:donvim_background_color="light"
         else
-            let g:peivim_background_color="dark"
+            let g:donvim_background_color="dark"
         endif
     endif
 
-    if g:peivim_background_color_method == "light"
-        let g:peivim_background_color="light"
+    if g:donvim_background_color_method == "light"
+        let g:donvim_background_color="light"
     endif
 
-    if g:peivim_background_color_method == "dark"
-        let g:peivim_background_color="dark"
+    if g:donvim_background_color_method == "dark"
+        let g:donvim_background_color="dark"
     endif
 
 else
 
-    let g:peivim_background_color="dark"
+    let g:donvim_background_color="dark"
 
 endif
 
@@ -829,13 +829,13 @@ if &term == 'xterm' || &term == 'screen'
     set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
 endif
 
-if g:peivim_background_color == "light"
+if g:donvim_background_color == "light"
     set background=light
-elseif g:peivim_background_color == "dark"
+elseif g:donvim_background_color == "dark"
     set background=dark
 endif
 
-if g:peivim_bundle_level >= 3
+if g:donvim_bundle_level >= 3
 
     " NLKNguyen/papercolor-theme
     if isdirectory(expand("~/.vim/bundle/papercolor-theme"))
@@ -864,7 +864,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_bundle_level >= 2
+if g:donvim_bundle_level >= 2
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin terryma/vim-multiple-cursors          "
@@ -877,7 +877,7 @@ if g:peivim_bundle_level >= 2
             let g:multi_cursor_quit_key='<Esc>'
             " if you are using Neocomplete, add this to your vimrc to prevent
             " conflict
-            if g:peivim_complete_engine == 4
+            if g:donvim_complete_engine == 4
                 " Called once right before you start selecting multiple cursors
                 function! Multiple_cursors_before()
                     if exists(':NeoCompleteLock')==2
@@ -899,10 +899,10 @@ if g:peivim_bundle_level >= 2
     " Plugin vim-airline/vim-airline               "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if isdirectory(expand("~/.vim/bundle/vim-airline"))
-        if g:peivim_background_color == "light"
+        if g:donvim_background_color == "light"
             let g:airline_theme='sol'
             " let g:airline_theme='xtermlight'
-        elseif g:peivim_background_color == "dark"
+        elseif g:donvim_background_color == "dark"
             " let g:airline_theme='dark'
             let g:airline_theme='kolor'
         endif
@@ -924,12 +924,12 @@ if g:peivim_bundle_level >= 2
         let rainbow_guifgs_lightcolors = ['#008700', '#af005f', '#1c1c1c', '#0000af']
         let rainbow_guifgs_darkcolors = ['#f2433d', '#0087d7', '#d7af00', '#d787ff', '#00d75f', '#d0d0d0']
 
-        if g:peivim_background_color == "light"
+        if g:donvim_background_color == "light"
             let g:rainbow_conf = {
                         \   'guifgs': rainbow_guifgs_lightcolors,
                         \   'ctermfgs': rainbow_ctermfgs_lightcolors
                         \}
-        elseif g:peivim_background_color == "dark"
+        elseif g:donvim_background_color == "dark"
             let g:rainbow_conf = {
                         \   'guifgs': rainbow_guifgs_darkcolors,
                         \   'ctermfgs': rainbow_ctermfgs_darkcolors
@@ -961,7 +961,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_bundle_level >= 3
+if g:donvim_bundle_level >= 3
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin junegunn/vim-easy-align               "
@@ -1057,10 +1057,10 @@ if g:peivim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin lervag/vimtex                         "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if g:peivim_complete_engine == 5 && count(g:peivim_bundle_list, 'latex')
+    if g:donvim_complete_engine == 5 && count(g:donvim_bundle_list, 'latex')
         if isdirectory(expand("~/.vim/bundle/vimtex"))
             " make it work with YouCompleteMe
-            if g:peivim_complete_engine == 5
+            if g:donvim_complete_engine == 5
                 if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
                     if !exists('g:ycm_semantic_triggers')
                         let g:ycm_semantic_triggers = {}
@@ -1122,14 +1122,14 @@ if g:peivim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin hdima/python-syntax                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if count(g:peivim_bundle_list, 'python')
+    if count(g:donvim_bundle_list, 'python')
         if isdirectory(expand("~/.vim/bundle/python-syntax"))
             let python_highlight_all = 1
         endif
     endif
 
     " Writing
-    if count(g:peivim_bundle_list, 'writing')
+    if count(g:donvim_bundle_list, 'writing')
         """"""""""""""""""""""""""""""""""""""""""""""""
         " Plugin reedes/vim-litecorrect
         """"""""""""""""""""""""""""""""""""""""""""""""
@@ -1173,7 +1173,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_bundle_level >= 4
+if g:donvim_bundle_level >= 4
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin dyng/ctrlsf.vim                       "
@@ -1204,7 +1204,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 
-if g:peivim_bundle_level >= 5
+if g:donvim_bundle_level >= 5
 
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin scrooloose/syntastic                  "
@@ -1269,7 +1269,7 @@ if g:peivim_bundle_level >= 5
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin xuhdev/vim-latex-live-preview         "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if count(g:peivim_bundle_list, 'latex') && v:version >= 703 && has('python')
+    if count(g:donvim_bundle_list, 'latex') && v:version >= 703 && has('python')
         if isdirectory(expand("~/.vim/bundle/vim-latex-live-preview"))
             if OSX()
                 let g:livepreview_previewer = 'open -a Preview'
@@ -1282,7 +1282,7 @@ if g:peivim_bundle_level >= 5
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin MikeCoder/markdown-preview.vim        "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if count(g:peivim_bundle_list, 'markdown')
+    if count(g:donvim_bundle_list, 'markdown')
         if isdirectory(expand("~/.vim/bundle/markdown-preview.vim"))
             nnoremap <leader>bm :MarkdownPreview GitHub<CR>
         endif
@@ -1295,9 +1295,9 @@ endif
 " Complete plugins 11/18/2015 added by Peidong "
 "                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""
-if g:peivim_bundle_level >= 2
+if g:donvim_bundle_level >= 2
 
-    if g:peivim_complete_engine == 5 " YouCompleteMe
+    if g:donvim_complete_engine == 5 " YouCompleteMe
         if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
             " YCM 补全菜单配色
             " 菜单
@@ -1332,7 +1332,7 @@ if g:peivim_bundle_level >= 2
             "let g:ycm_show_diagnostics_ui = 0
         endif
 
-    elseif g:peivim_complete_engine == 3 " neocomplcache
+    elseif g:donvim_complete_engine == 3 " neocomplcache
 
         if isdirectory(expand("~/.vim/bundle/neocomplcache"))
             "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -1426,7 +1426,7 @@ if g:peivim_bundle_level >= 2
             let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
         endif
 
-    elseif g:peivim_complete_engine == 4 " neocomplete
+    elseif g:donvim_complete_engine == 4 " neocomplete
 
         if isdirectory(expand("~/.vim/bundle/neocomplete"))
             "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!

@@ -98,8 +98,11 @@ endif
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Neobundle 01/29/2016 added by Peidong
+" dein.vim 01/18/2017 modified by Peidong
 """""""""""""""""""""""""""""""""""""""""""""""
-if (g:donvim_bundle_level >= 2) && (!((v:version > 702 || (v:version == 702 && has('patch51'))) && executable('git')))
+"Vim 7.4 or above or NeoVim.
+"git" command in $PATH (if you want to install github or vim.org plugins)
+if (g:donvim_bundle_level >= 2) && (!((v:version >= 702) && executable('git')))
     let g:donvim_bundle_level = 1
 endif
 

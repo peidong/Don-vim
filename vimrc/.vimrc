@@ -536,6 +536,13 @@ elseif g:donvim_server == 1
 
     Plug '~/.vim/bundle/repos/github.com/Shougo/neocomplcache'
     Plug '~/.vim/bundle/repos/github.com/NLKNguyen/papercolor-theme'
+    Plug '~/.vim/bundle/repos/github.com/vim-airline/vim-airline'
+    Plug '~/.vim/bundle/repos/github.com/vim-airline/vim-airline-themes'
+    Plug '~/.vim/bundle/repos/github.com/luochen1990/rainbow'
+    Plug '~/.vim/bundle/repos/github.com/terryma/vim-multiple-cursors'
+    Plug '~/.vim/bundle/repos/github.com/tomtom/tcomment_vim'
+    Plug '~/.vim/bundle/repos/github.com/jiangmiao/auto-pairs'
+    Plug '~/.vim/bundle/repos/github.com/Yggdroot/indentLine'
 
     " Initialize plugin system
     call plug#end()

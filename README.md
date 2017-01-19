@@ -61,10 +61,12 @@ For developers, I recommend to use the font named [Inconsolata](http://www.levie
     cp ~/.vim/config/.ycm_extra_conf.py ~/.ycm_extra_conf.py
     cp ~/.vim/config/.tmux.conf ~/.tmux.conf
     mkdir ~/.undodir/
-    mkdir -p ~/.vim/bundle
-    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    mkdir -p ~/.vim/bundle/repos/github.com/Shougo/dein.vim
+    git clone https://github.com/Shougo/dein.vim ~/.vim/bundle/repos/github.com/Shougo/dein.vim
+    <!-- mkdir -p ~/.vim/bundle -->
+    <!-- git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim -->
 
-Then vim, and `:NeoBundleInstall`
+Then vim, and `:call dein#install()`
 
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --clang-completer --omnisharp-completer --gocode-completer
@@ -103,10 +105,12 @@ install [pip](https://pip.pypa.io/en/stable/installing/)
     cp ~/.vim/config/.ycm_extra_conf.py ~/.ycm_extra_conf.py
     cp ~/.vim/config/.tmux.conf ~/.tmux.conf
     mkdir ~/.undodir/
-    mkdir -p ~/.vim/bundle
-    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    <!-- mkdir -p ~/.vim/bundle -->
+    <!-- git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim -->
+    mkdir -p ~/.vim/bundle/repos/github.com/Shougo/dein.vim
+    git clone https://github.com/Shougo/dein.vim ~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
-Then vim, and `:NeoBundleInstall`
+Then vim, and `:call dein#install()`
 
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --clang-completer --omnisharp-completer --gocode-completer

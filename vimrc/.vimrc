@@ -110,10 +110,10 @@ if g:donvim_bundle_level >= 2
     if &compatible
           set nocompatible
       endif
-    set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim " path to dein.vim
+    set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim " path to dein.vim
 
-    if dein#load_state(expand('~/.vim/dein'))
-        call dein#begin(expand('~/.vim/dein')) " plugins' root path
+    if dein#load_state(expand('~/.vim/bundle'))
+        call dein#begin(expand('~/.vim/bundle')) " plugins' root path
         call dein#add('Shougo/dein.vim')
 
         " My Bundles here:
@@ -822,7 +822,7 @@ endif
 if g:donvim_bundle_level >= 3
 
     " NLKNguyen/papercolor-theme
-    if isdirectory(expand("~/.vim/bundle/papercolor-theme"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/NLKNguyen/papercolor-theme"))
         colorscheme PaperColor
     endif
 
@@ -854,7 +854,7 @@ if g:donvim_bundle_level >= 2
     " Plugin terryma/vim-multiple-cursors          "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if v:version >= 704
-        if isdirectory(expand("~/.vim/bundle/vim-multiple-cursors"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/terryma/vim-multiple-cursors"))
             let g:multi_cursor_next_key='<C-n>'
             let g:multi_cursor_prev_key='<C-p>'
             let g:multi_cursor_skip_key='<C-x>'
@@ -882,7 +882,7 @@ if g:donvim_bundle_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin vim-airline/vim-airline               "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if isdirectory(expand("~/.vim/bundle/vim-airline"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/vim-airline/vim-airline"))
         if g:donvim_background_color == "light"
             let g:airline_theme='sol'
             " let g:airline_theme='xtermlight'
@@ -900,7 +900,7 @@ if g:donvim_bundle_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin luochen1990/rainbow                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if isdirectory(expand("~/.vim/bundle/rainbow"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/luochen1990/rainbow"))
         let g:rainbow_active = 1
 
         let rainbow_ctermfgs_lightcolors = [2, 1, 0, 4]
@@ -924,7 +924,7 @@ if g:donvim_bundle_level >= 2
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin tacahiroy/ctrlp-funky                 "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if isdirectory(expand("~/.vim/bundle/ctrlp-funky"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/tacahiroy/ctrlp-funky"))
         nnoremap <Leader>bp :CtrlPFunky<CR>
         " narrow the list down with a word under cursor
         nnoremap <Leader>bP :execute 'CtrlPFunky ' . expand('<cword>')<CR>
@@ -950,7 +950,7 @@ if g:donvim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin junegunn/vim-easy-align               "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if isdirectory(expand("~/.vim/bundle/vim-easy-align"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/junegunn/vim-easy-align"))
         " Start interactive EasyAlign in visual mode (e.g. vipga)
         xnoremap ga <Plug>(EasyAlign)
 
@@ -961,7 +961,7 @@ if g:donvim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin unblevable/quick-scope                "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if isdirectory(expand("~/.vim/bundle/quick-scope"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/unblevable/quick-scope"))
         " Trigger a highlight in the appropriate direction when pressing these keys:
         let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
     endif
@@ -970,7 +970,7 @@ if g:donvim_bundle_level >= 3
     " Plugin brookhong/cscope.vim                  "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('cscope')
-        if isdirectory(expand("~/.vim/bundle/cscope.vim"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/brookhon/cscope.vim"))
             nnoremap <leader>bc :call CscopeFindInteractive(expand('<cword>'))<CR>
             nnoremap <leader>bl :call ToggleLocationList()<CR>
             " " s: Find this C symbol
@@ -996,7 +996,7 @@ if g:donvim_bundle_level >= 3
     " Plugin benmills/vimux                        "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('tmux')
-        if isdirectory(expand("~/.vim/bundle/vimux"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/benmills/vimux"))
             nnoremap <Leader>r :call VimuxRunCommand(getline("."))<CR>j
         endif
     endif
@@ -1005,7 +1005,7 @@ if g:donvim_bundle_level >= 3
     " Plugin majutsushi/tagbar                     "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('ctags') && (v:version > 700 || (v:version == 700 && has('patch167')))
-        if isdirectory(expand("~/.vim/bundle/tagbar"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/majutsushi/tagbar"))
             nnoremap <Leader>bt :TagbarToggle<CR>
         endif
     endif
@@ -1014,7 +1014,7 @@ if g:donvim_bundle_level >= 3
     " Plugin ctrlpvim/ctrlp.vim                    "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if v:version >= 700
-        if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/ctrlpvim/ctrlp.vim"))
             " Show hidden files
             let g:ctrlp_show_hidden = 1
             let g:ctrlp_custom_ignore = {
@@ -1031,7 +1031,7 @@ if g:donvim_bundle_level >= 3
     " Plugin mbbill/undotree                       "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if v:version >= 700
-        if isdirectory(expand("~/.vim/bundle/undotree"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/mbbill/undotree"))
             nnoremap <Leader>bu :UndotreeToggle<CR>
             " If undotree is opened, it is likely one wants to interact with it.
             let g:undotree_SetFocusWhenToggle=1
@@ -1042,10 +1042,10 @@ if g:donvim_bundle_level >= 3
     " Plugin lervag/vimtex                         "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if g:donvim_complete_engine == 5 && count(g:donvim_bundle_list, 'latex')
-        if isdirectory(expand("~/.vim/bundle/vimtex"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/lervag/vimtex"))
             " make it work with YouCompleteMe
             if g:donvim_complete_engine == 5
-                if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
+                if isdirectory(expand("~/.vim/bundle/repos/github.com/Valloric/YouCompleteMe"))
                     if !exists('g:ycm_semantic_triggers')
                         let g:ycm_semantic_triggers = {}
                     endif
@@ -1062,7 +1062,7 @@ if g:donvim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin haya14busa/incsearch.vim              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if isdirectory(expand("~/.vim/bundle/incsearch.vim"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/haya14busa/incsearch.vim"))
         map /  <Plug>(incsearch-forward)
         map ?  <Plug>(incsearch-backward)
         map g/ <Plug>(incsearch-stay)
@@ -1071,7 +1071,7 @@ if g:donvim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin Shougo/vimshell.vim                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if isdirectory(expand("~/.vim/bundle/vimshell.vim"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/Shougo/vimshell.vim"))
         let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
         if OSX()
             let g:vimshell_editor_command = $VIM_APP_DIR.'/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab-wait-silent'
@@ -1099,7 +1099,7 @@ if g:donvim_bundle_level >= 3
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin Shougo/unite.vim                      "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if isdirectory(expand("~/.vim/bundle/unite.vim"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/Shougo/unite.vim"))
         let g:unite_source_history_yank_enable = 1
     endif
 
@@ -1107,7 +1107,7 @@ if g:donvim_bundle_level >= 3
     " Plugin hdima/python-syntax                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if count(g:donvim_bundle_list, 'python')
-        if isdirectory(expand("~/.vim/bundle/python-syntax"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/hdima/python-syntax"))
             let python_highlight_all = 1
         endif
     endif
@@ -1163,7 +1163,7 @@ if g:donvim_bundle_level >= 4
     " Plugin dyng/ctrlsf.vim                       "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('ag') || executable('ack-grep') || executable('ack')
-        if isdirectory(expand("~/.vim/bundle/ctrlsf.vim"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/dyng/ctrlsf.vim"))
             " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
             nnoremap <Leader>rt :CtrlSF<CR>
         endif
@@ -1172,7 +1172,7 @@ if g:donvim_bundle_level >= 4
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin vim-scripts/YankRing.vim              "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if isdirectory(expand("~/.vim/bundle/YankRing.vim"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/vim-scripts/YankRing.vim"))
         let g:yankring_replace_n_pkey = '<Leader>p'
         let g:yankring_replace_n_nkey = '<Leader>n'
     endif
@@ -1194,7 +1194,7 @@ if g:donvim_bundle_level >= 5
     " Plugin scrooloose/syntastic                  "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if !WINDOWS() && v:version >= 700
-        if isdirectory(expand("~/.vim/bundle/syntastic"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/scrooloose/syntastic"))
             " Better :sign interface symbols
             let g:syntastic_error_symbol = '✗✗'
             let g:syntastic_style_error_symbol = '✠✠'
@@ -1215,7 +1215,7 @@ if g:donvim_bundle_level >= 5
     """"""""""""""""""""""""""""""""""""""""""""""""
     " Plugin scrooloose/nerdtree                   "
     """"""""""""""""""""""""""""""""""""""""""""""""
-    if isdirectory(expand("~/.vim/bundle/nerdtree"))
+    if isdirectory(expand("~/.vim/bundle/repos/github.com/scrooloose/nerdtree"))
         " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
         nnoremap <Leader>bf :NERDTreeToggle<CR>
         " 设置NERDTree子窗口宽度
@@ -1235,7 +1235,7 @@ if g:donvim_bundle_level >= 5
     " Plugin Xuyuanp/nerdtree-git-plugin           "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if executable('git')
-        if isdirectory(expand("~/.vim/bundle/nerdtree-git-plugin"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/Xuyuanp/nerdtree-git-plugin"))
             let g:NERDTreeIndicatorMapCustom = {
                         \ "Modified"  : "✹",
                         \ "Staged"    : "✚",
@@ -1254,7 +1254,7 @@ if g:donvim_bundle_level >= 5
     " Plugin xuhdev/vim-latex-live-preview         "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if count(g:donvim_bundle_list, 'latex') && v:version >= 703 && has('python')
-        if isdirectory(expand("~/.vim/bundle/vim-latex-live-preview"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/xuhdev/vim-latex-live-preview"))
             if OSX()
                 let g:livepreview_previewer = 'open -a Preview'
             elseif LINUX() && executable('okular')
@@ -1267,7 +1267,7 @@ if g:donvim_bundle_level >= 5
     " Plugin MikeCoder/markdown-preview.vim        "
     """"""""""""""""""""""""""""""""""""""""""""""""
     if count(g:donvim_bundle_list, 'markdown')
-        if isdirectory(expand("~/.vim/bundle/markdown-preview.vim"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/MikeCoder/markdown-preview.vim"))
             nnoremap <leader>bm :MarkdownPreview GitHub<CR>
         endif
     endif
@@ -1282,7 +1282,7 @@ endif
 if g:donvim_bundle_level >= 2
 
     if g:donvim_complete_engine == 5 " YouCompleteMe
-        if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/Valloric/YouCompleteMe"))
             " YCM 补全菜单配色
             " 菜单
             " highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
@@ -1318,7 +1318,7 @@ if g:donvim_bundle_level >= 2
 
     elseif g:donvim_complete_engine == 3 " neocomplcache
 
-        if isdirectory(expand("~/.vim/bundle/neocomplcache"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/Shougo/neocomplcache"))
             "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
             " Disable AutoComplPop.
             let g:acp_enableAtStartup = 0
@@ -1412,7 +1412,7 @@ if g:donvim_bundle_level >= 2
 
     elseif g:donvim_complete_engine == 4 " neocomplete
 
-        if isdirectory(expand("~/.vim/bundle/neocomplete"))
+        if isdirectory(expand("~/.vim/bundle/repos/github.com/Shougo/neocomplete"))
             "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
             " Disable AutoComplPop.
             let g:acp_enableAtStartup = 0

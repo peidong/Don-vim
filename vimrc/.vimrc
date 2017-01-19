@@ -86,7 +86,7 @@ scriptencoding utf-8
 " General settings
 let g:donvim_setting_groups = ['set_list']
 
-" NeoBundle Plugin settings
+" dein.vim Plugin settings
 let g:donvim_bundle_level = 5 "1:no plugin, 2:fast and vimscripts only plugins, 3:normal and vimscripts only plugins, 4:many plugins with python support, 5:all the plugins
 let g:donvim_bundle_list = ['markdown', 'json', 'matlab', 'javascript', 'php', 'latex', 'python', 'writing', 'html']
 let g:donvim_complete_engine = 5 "1:no auto complete, 2:VimCompletesMe, 3:neocomplcache.vim, 4:neocomplete.vim, 5:YouCompleteMe
@@ -107,432 +107,413 @@ if (g:donvim_bundle_level >= 2) && (!((v:version >= 702) && executable('git')))
 endif
 
 if g:donvim_bundle_level >= 2
+    if &compatible
+          set nocompatible
+      endif
+    set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim " path to dein.vim
 
-    " Note: Skip initialization for vim-tiny or vim-small.
-    if 0 | endif
+    if dein#load_state(expand('~/.vim/dein'))
+        call dein#begin(expand('~/.vim/dein')) " plugins' root path
+        call dein#add('Shougo/dein.vim')
 
-    if has('vim_starting')
-        if &compatible
-            set nocompatible               " Be iMproved
-        endif
-
-        " Required:
-        set runtimepath+=~/.vim/bundle/neobundle.vim/
-    endif
-
-    " Required:
-    call neobundle#begin(expand('~/.vim/bundle/'))
-
-    " Let NeoBundle manage NeoBundle
-    " Required:
-    NeoBundleFetch 'Shougo/neobundle.vim'
-
-    " My Bundles here:
-
-
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Level 2 Plugins                              "
-    "             11/29/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
-
-    if g:donvim_bundle_level >= 2
+        " My Bundles here:
 
 
         """"""""""""""""""""""""""""""""""""""""""""""""
-        " Fast edit Plugins                            "
+        "                                              "
+        " Level 2 Plugins                              "
+        "             11/29/2015 added by Peidong      "
+        "                                              "
         """"""""""""""""""""""""""""""""""""""""""""""""
-        " Edit code with multi-cursors, usage: <C-n> next, <C-p> previous, <C-x>
-        " ignore, v Normal Mode, c Change Word
-        if v:version >= 704
-            NeoBundle 'terryma/vim-multiple-cursors'
-        endif
 
-        " Comment code in files, usage: gcc
-        NeoBundle 'tomtom/tcomment_vim'
-
-        " Auto complete pairs
-        NeoBundle 'jiangmiao/auto-pairs'
+        if g:donvim_bundle_level >= 2
 
 
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Color Plugins                                "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Many colorschemes, but not recommend, because some of them are not up-to-date
-        " NeoBundle 'flazz/vim-colorschemes'
-
-        " Make pairs colorful
-        NeoBundle 'luochen1990/rainbow'
-
-        " Vim status line
-        NeoBundle 'vim-airline/vim-airline'
-        NeoBundle 'vim-airline/vim-airline-themes'
-
-
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Explorer Plugins                             "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Navigates and jumps to function definitions from the current file without ctags
-        NeoBundle 'tacahiroy/ctrlp-funky'
-
-    endif
-
-
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Level 3 Plugins                              "
-    "             11/29/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
-
-    if g:donvim_bundle_level >= 3
-
-
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Color Plugins                                "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " PaperColor theme, is better for light colorscheme, also you can use it for
-        " dark colorscheme
-        NeoBundle 'NLKNguyen/papercolor-theme'
-
-
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Basic Plugins                                "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Interactive command execution in Vim.
-        NeoBundle 'Shougo/vimproc.vim', {
-                    \ 'build' : {
-                    \     'windows' : 'tools\\update-dll-mingw',
-                    \     'cygwin' : 'make -f make_cygwin.mak',
-                    \     'mac' : 'make',
-                    \     'linux' : 'make',
-                    \     'unix' : 'gmake',
-                    \    },
-                    \ }
-
-        " Use shell inside vim, usage: :VimShell<CR>
-        NeoBundle 'Shougo/vimshell.vim'
-
-        " This plugin can do various things, but I only use this as a base plugin for
-        " Shougo's plugins
-        NeoBundle 'Shougo/unite.vim'
-
-
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Better appearance Plugins                    "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Show the indent lines
-        if v:version >= 703 && has('conceal')
-            NeoBundle 'Yggdroot/indentLine'
-        endif
-
-        " Show git status in the left column
-        if executable('git') && !WINDOWS()
-            NeoBundle 'airblade/vim-gitgutter'
-        endif
-
-        " Show spaces in color red
-        NeoBundle 'ntpeters/vim-better-whitespace'
-
-        " Make repeat "." more smart
-        NeoBundle 'tpope/vim-repeat'
-
-        " Make vim's diff more powerful, usage: vimdiff, vim -d
-        if v:version >= 704
-            NeoBundle 'chrisbra/vim-diff-enhanced'
-        endif
-
-        " Better folding in Python code
-        NeoBundle 'tmhedberg/SimpylFold'
-
-
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Fast edit Plugins                            "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Align codes, usage: gaiw
-        NeoBundle 'junegunn/vim-easy-align'
-
-        " Lightning fast left-right movement in Vim
-        NeoBundle 'unblevable/quick-scope'
-
-        " Fast add/delete/change surroundings, usage: csiw/ysiw/dsiw
-        NeoBundle 'tpope/vim-surround'
-
-        " Fast select blocks, usage: <Enter>, <Backspace>
-        NeoBundle 'gcmt/wildfire.vim'
-
-        " Improved incremental searching for Vim
-        NeoBundle 'haya14busa/incsearch.vim'
-
-
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Explorer Plugins                             "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Show the undo history, usage: :UndotreeToggle<CR>
-        if v:version >= 700
-            NeoBundle 'mbbill/undotree'
-        endif
-
-        " Do git commands inside vim, usage: :Gdiff, :Gpush, :Gpull
-        if executable('git')
-            NeoBundle 'tpope/vim-fugitive'
-            if v:version < 702
-                NeoBundle 'tpope/vim-git'
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Fast edit Plugins                            "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Edit code with multi-cursors, usage: <C-n> next, <C-p> previous, <C-x>
+            " ignore, v Normal Mode, c Change Word
+            if v:version >= 704
+                call dein#add('terryma/vim-multiple-cursors')
             endif
-        endif
 
-        " Fast find more files, usage: <C-p>
-        if v:version >= 700
-            NeoBundle 'ctrlpvim/ctrlp.vim'
-        endif
+            " Comment code in files, usage: gcc
+            call dein#add('tomtom/tcomment_vim')
 
-        " More powerful show tags generated by ctags, usage: :TagbarToggle<CR>
-        if executable('ctags') && (v:version > 700 || (v:version == 700 && has('patch167')))
-            NeoBundle 'majutsushi/tagbar'
-        endif
-
-        " Useful in C code when we want to jump,
-        " usage: :call CscopeFindInteractive(expand('<cword>'))<CR>
-        if executable('cscope')
-            NeoBundle 'brookhong/cscope.vim'
-        endif
-
-        " Tmux integration (tmux version >= 1.5)
-        if executable('tmux')
-            NeoBundle 'benmills/vimux'
-        endif
+            " Auto complete pairs
+            call dein#add('jiangmiao/auto-pairs')
 
 
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Specific language Plugins                    "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Markdown highlight
-        if count(g:donvim_bundle_list, 'markdown')
-            NeoBundle 'tpope/vim-markdown'
-        endif
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Color Plugins                                "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Many colorschemes, but not recommend, because some of them are not up-to-date
+            " call dein#add('flazz/vim-colorschemes')
 
-        " Json highlight
-        if count(g:donvim_bundle_list, 'json') && v:version >= 703
-            NeoBundle 'elzr/vim-json'
-        endif
+            " Make pairs colorful
+            call dein#add('luochen1990/rainbow')
 
-        " Matlab highlight
-        if count(g:donvim_bundle_list, 'matlab')
-            NeoBundle 'vim-scripts/MatlabFilesEdition'
-        endif
-
-        " Javascript highlight
-        if count(g:donvim_bundle_list, 'javascript') && (v:version > 704 || (v:version == 704 && has('patch7')))
-            NeoBundle 'pangloss/vim-javascript'
-        endif
-
-        if count(g:donvim_bundle_list, 'php')
-            " PHP highlight
-            NeoBundle 'StanAngeloff/php.vim'
-
-            " Improved PHP omni-completion
-            NeoBundle 'shawncplus/phpcomplete.vim'
-        endif
-
-        " Latex edit
-        if count(g:donvim_bundle_list, 'latex')
-            NeoBundle 'lervag/vimtex'
-        endif
-
-        " Python highlight
-        if count(g:donvim_bundle_list, 'python')
-            NeoBundle 'hdima/python-syntax'
-
-            " NeoBundle 'ivanov/vim-ipython'
-        endif
-
-        " Writing
-        if count(g:donvim_bundle_list, 'writing')
-            NeoBundle 'reedes/vim-litecorrect'
-
-            NeoBundle 'reedes/vim-textobj-sentence'
-
-            NeoBundle 'reedes/vim-textobj-quote'
-
-            NeoBundle 'reedes/vim-wordy'
-        endif
-
-        " Html
-        if count(g:donvim_bundle_list, 'html')
-            " Use it in HTML codes for example, usage: <C-y>,
-            NeoBundle 'mattn/emmet-vim'
-
-            " Auto complete tags like Html tags
-            NeoBundle 'docunext/closetag.vim'
-        endif
-
-    endif
+            " Vim status line
+            call dein#add('vim-airline/vim-airline')
+            call dein#add('vim-airline/vim-airline-themes')
 
 
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Level 4 Plugins                              "
-    "             11/29/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Explorer Plugins                             "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Navigates and jumps to function definitions from the current file without ctags
+            call dein#add('tacahiroy/ctrlp-funky')
 
-    if g:donvim_bundle_level >= 4
-
-
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Fast edit Plugins                            "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-
-        " Fast find new words
-        if executable('ag') || executable('ack-grep') || executable('ack')
-            NeoBundle 'dyng/ctrlsf.vim'
-        endif
-
-        " Fast move cursors, usage: <Leader><Leader>j/k/f/t/F/T
-        NeoBundle 'easymotion/vim-easymotion'
-
-        " Make the copy function more smart, usage: when finish pasting, <Leader>p,
-        " <Leader>n
-        NeoBundle 'vim-scripts/YankRing.vim'
-
-
-    endif
-
-
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Level 5 Plugins                              "
-    "             11/29/2015 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
-
-    if g:donvim_bundle_level >= 5
-
-        " Use in Mac OSX's Dash app
-        " if OSX()
-        "     NeoBundleLazy 'rizzatti/dash.vim'
-        " endif
-
-        " Code templates
-        " if has('python')
-        "     NeoBundle 'honza/vim-snippets'
-        " endif
-
-
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Grammar Plugins                              "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Check the syntastic of codes, need to install engines in PATH
-        if !WINDOWS() && v:version >= 700
-            NeoBundle 'scrooloose/syntastic'
         endif
 
 
         """"""""""""""""""""""""""""""""""""""""""""""""
-        " Explorer Plugins                             "
+        "                                              "
+        " Level 3 Plugins                              "
+        "             11/29/2015 added by Peidong      "
+        "                                              "
         """"""""""""""""""""""""""""""""""""""""""""""""
-        " Show the file list, usage: :NERDTreeToggle<CR>
-        NeoBundle 'scrooloose/nerdtree'
 
-        " Embedded with NERDTree
-        if executable('git')
-            NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-        endif
-
-        " Change between files in buffer, usage <C-Space>
-        NeoBundle 'szw/vim-ctrlspace'
+        if g:donvim_bundle_level >= 3
 
 
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Preview Plugins                              "
-        """"""""""""""""""""""""""""""""""""""""""""""""
-        " Preview the markdown file
-        if has('python')
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Color Plugins                                "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " PaperColor theme, is better for light colorscheme, also you can use it for
+            " dark colorscheme
+            call dein#add('NLKNguyen/papercolor-theme')
+
+
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Basic Plugins                                "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Interactive command execution in Vim.
+            call dein#add('Shougo/vimproc.vim', {
+                        \ 'build' : {
+                        \     'windows' : 'tools\\update-dll-mingw',
+                        \     'cygwin' : 'make -f make_cygwin.mak',
+                        \     'mac' : 'make -f make_mac.mak',
+                        \     'linux' : 'make',
+                        \     'unix' : 'gmake',
+                        \    },
+                        \ })
+
+            " Use shell inside vim, usage: :VimShell<CR>
+            call dein#add('Shougo/vimshell.vim')
+
+            " This plugin can do various things, but I only use this as a base plugin for
+            " Shougo's plugins
+            call dein#add('Shougo/unite.vim')
+
+
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Better appearance Plugins                    "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Show the indent lines
+            if v:version >= 703 && has('conceal')
+                call dein#add('Yggdroot/indentLine')
+            endif
+
+            " Show git status in the left column
+            if executable('git') && !WINDOWS()
+                call dein#add('airblade/vim-gitgutter')
+            endif
+
+            " Show spaces in color red
+            call dein#add('ntpeters/vim-better-whitespace')
+
+            " Make repeat "." more smart
+            call dein#add('tpope/vim-repeat')
+
+            " Make vim's diff more powerful, usage: vimdiff, vim -d
+            if v:version >= 704
+                call dein#add('chrisbra/vim-diff-enhanced')
+            endif
+
+            " Better folding in Python code
+            call dein#add('tmhedberg/SimpylFold')
+
+
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Fast edit Plugins                            "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Align codes, usage: gaiw
+            call dein#add('junegunn/vim-easy-align')
+
+            " Lightning fast left-right movement in Vim
+            call dein#add('unblevable/quick-scope')
+
+            " Fast add/delete/change surroundings, usage: csiw/ysiw/dsiw
+            call dein#add('tpope/vim-surround')
+
+            " Fast select blocks, usage: <Enter>, <Backspace>
+            call dein#add('gcmt/wildfire.vim')
+
+            " Improved incremental searching for Vim
+            call dein#add('haya14busa/incsearch.vim')
+
+
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Explorer Plugins                             "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Show the undo history, usage: :UndotreeToggle<CR>
+            if v:version >= 700
+                call dein#add('mbbill/undotree')
+            endif
+
+            " Do git commands inside vim, usage: :Gdiff, :Gpush, :Gpull
+            if executable('git')
+                call dein#add('tpope/vim-fugitive')
+                if v:version < 702
+                    call dein#add('tpope/vim-git')
+                endif
+            endif
+
+            " Fast find more files, usage: <C-p>
+            if v:version >= 700
+                call dein#add('ctrlpvim/ctrlp.vim')
+            endif
+
+            " More powerful show tags generated by ctags, usage: :TagbarToggle<CR>
+            if executable('ctags') && (v:version > 700 || (v:version == 700 && has('patch167')))
+                call dein#add('majutsushi/tagbar')
+            endif
+
+            " Useful in C code when we want to jump,
+            " usage: :call CscopeFindInteractive(expand('<cword>'))<CR>
+            if executable('cscope')
+                call dein#add('brookhong/cscope.vim')
+            endif
+
+            " Tmux integration (tmux version >= 1.5)
+            if executable('tmux')
+                call dein#add('benmills/vimux')
+            endif
+
+
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Specific language Plugins                    "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Markdown highlight
             if count(g:donvim_bundle_list, 'markdown')
-                NeoBundle 'MikeCoder/markdown-preview.vim'
+                call dein#add('tpope/vim-markdown')
             endif
-        endif
 
-        " Latex preview
-        if count(g:donvim_bundle_list, 'latex') && v:version >= 703 && has('python')
-            NeoBundle 'xuhdev/vim-latex-live-preview'
-        endif
+            " Json highlight
+            if count(g:donvim_bundle_list, 'json') && v:version >= 703
+                call dein#add('elzr/vim-json')
+            endif
 
-        " There are bugs in this plugin
-        " NeoBundle 'SirVer/ultisnips'
+            " Matlab highlight
+            if count(g:donvim_bundle_list, 'matlab')
+                call dein#add('vim-scripts/MatlabFilesEdition')
+            endif
+
+            " Javascript highlight
+            if count(g:donvim_bundle_list, 'javascript') && (v:version > 704 || (v:version == 704 && has('patch7')))
+                call dein#add('pangloss/vim-javascript')
+            endif
+
+            if count(g:donvim_bundle_list, 'php')
+                " PHP highlight
+                call dein#add('StanAngeloff/php.vim')
+
+                " Improved PHP omni-completion
+                call dein#add('shawncplus/phpcomplete.vim')
+            endif
+
+            " Latex edit
+            if count(g:donvim_bundle_list, 'latex')
+                call dein#add('lervag/vimtex')
+            endif
+
+            " Python highlight
+            if count(g:donvim_bundle_list, 'python')
+                call dein#add('hdima/python-syntax')
+
+                " call dein#add('ivanov/vim-ipython')
+            endif
+
+            " Writing
+            if count(g:donvim_bundle_list, 'writing')
+                call dein#add('reedes/vim-litecorrect')
+
+                call dein#add('reedes/vim-textobj-sentence')
+
+                call dein#add('reedes/vim-textobj-quote')
+
+                call dein#add('reedes/vim-wordy')
+            endif
+
+            " Html
+            if count(g:donvim_bundle_list, 'html')
+                " Use it in HTML codes for example, usage: <C-y>,
+                call dein#add('mattn/emmet-vim')
+
+                " Auto complete tags like Html tags
+                call dein#add('docunext/closetag.vim')
+            endif
+
+        endif
 
 
         """"""""""""""""""""""""""""""""""""""""""""""""
-        " Remote sync plugins                          "
+        "                                              "
+        " Level 4 Plugins                              "
+        "             11/29/2015 added by Peidong      "
+        "                                              "
         """"""""""""""""""""""""""""""""""""""""""""""""
-        " need to create .sync file in directory
-        NeoBundle 'eshion/vim-sync'
 
-    endif
+        if g:donvim_bundle_level >= 4
 
 
-    """"""""""""""""""""""""""""""""""""""""""""""""
-    "                                              "
-    " Autocomplete plugins                         "
-    "             01/29/2016 added by Peidong      "
-    "                                              "
-    """"""""""""""""""""""""""""""""""""""""""""""""
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Fast edit Plugins                            "
+            """"""""""""""""""""""""""""""""""""""""""""""""
 
+            " Fast find new words
+            if executable('ag') || executable('ack-grep') || executable('ack')
+                call dein#add('dyng/ctrlsf.vim')
+            endif
 
-    if g:donvim_complete_engine == 5 && !((v:version >= 704 || (v:version ==703 && has('patch598'))) && executable('python') && has('python'))
-        let g:donvim_complete_engine = 3
-    endif
+            " Fast move cursors, usage: <Leader><Leader>j/k/f/t/F/T
+            call dein#add('easymotion/vim-easymotion')
 
-    if g:donvim_complete_engine == 4 && !(has('lua') && (v:version >= 704 || (v:version == 703 && has('patch885'))))
-        let g:donvim_complete_engine = 3
-    endif
+            " Make the copy function more smart, usage: when finish pasting, <Leader>p,
+            " <Leader>n
+            call dein#add('vim-scripts/YankRing.vim')
 
-    if g:donvim_complete_engine == 3 && has('lua') && (v:version >= 704 || (v:version == 703 && has('patch885'))) && (!WINDOWS())
-        let g:donvim_complete_engine = 4
-    endif
-
-    if g:donvim_bundle_level >= 2
-
-        " Auto complete engine
-        if g:donvim_complete_engine == 5
-
-            NeoBundle 'Valloric/YouCompleteMe'
-
-        elseif g:donvim_complete_engine == 2
-
-            NeoBundle 'ajh17/VimCompletesMe'
-
-        elseif g:donvim_complete_engine == 3
-
-            NeoBundle 'Shougo/neocomplcache.vim'
-
-        elseif g:donvim_complete_engine == 4
-
-            NeoBundle 'Shougo/neocomplete.vim'
 
         endif
 
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        "                                              "
+        " Level 5 Plugins                              "
+        "             11/29/2015 added by Peidong      "
+        "                                              "
+        """"""""""""""""""""""""""""""""""""""""""""""""
+
+        if g:donvim_bundle_level >= 5
+
+            " Use in Mac OSX's Dash app
+            " if OSX()
+                " call dein#add('rizzatti/dash.vim')
+            " endif
+
+            " Code templates
+            " if has('python')
+                " call dein#add('honza/vim-snippets')
+            " endif
+
+
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Grammar Plugins                              "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Check the syntastic of codes, need to install engines in PATH
+            if !WINDOWS() && v:version >= 700
+                call dein#add('scrooloose/syntastic')
+            endif
+
+
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Explorer Plugins                             "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Show the file list, usage: :NERDTreeToggle<CR>
+            call dein#add('scrooloose/nerdtree')
+
+            " Embedded with NERDTree
+            if executable('git')
+                call dein#add('Xuyuanp/nerdtree-git-plugin')
+            endif
+
+            " Change between files in buffer, usage <C-Space>
+            call dein#add('szw/vim-ctrlspace')
+
+
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Preview Plugins                              "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Preview the markdown file
+            if has('python')
+                if count(g:donvim_bundle_list, 'markdown')
+                    call dein#add('MikeCoder/markdown-preview.vim')
+                endif
+            endif
+
+            " Latex preview
+            if count(g:donvim_bundle_list, 'latex') && v:version >= 703 && has('python')
+                call dein#add('xuhdev/vim-latex-live-preview')
+            endif
+
+            " There are bugs in this plugin
+            " call dein#add('SirVer/ultisnips')
+
+
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " Remote sync plugins                          "
+            """"""""""""""""""""""""""""""""""""""""""""""""
+            " need to create .sync file in directory
+            call dein#add('eshion/vim-sync')
+
+        endif
+
+
+        """"""""""""""""""""""""""""""""""""""""""""""""
+        "                                              "
+        " Autocomplete plugins                         "
+        "             01/29/2016 added by Peidong      "
+        "                                              "
+        """"""""""""""""""""""""""""""""""""""""""""""""
+
+
+        if g:donvim_complete_engine == 5 && !((v:version >= 704 || (v:version ==703 && has('patch598'))) && executable('python') && has('python'))
+            let g:donvim_complete_engine = 3
+        endif
+
+        if g:donvim_complete_engine == 4 && !(has('lua') && (v:version >= 704 || (v:version == 703 && has('patch885'))))
+            let g:donvim_complete_engine = 3
+        endif
+
+        if g:donvim_complete_engine == 3 && has('lua') && (v:version >= 704 || (v:version == 703 && has('patch885'))) && (!WINDOWS())
+            let g:donvim_complete_engine = 4
+        endif
+
+        if g:donvim_bundle_level >= 2
+
+            " Auto complete engine
+            if g:donvim_complete_engine == 5
+
+                call dein#add('Valloric/YouCompleteMe')
+
+            elseif g:donvim_complete_engine == 2
+
+                call dein#add('ajh17/VimCompletesMe')
+
+            elseif g:donvim_complete_engine == 3
+
+                call dein#add('Shougo/neocomplcache.vim')
+
+            elseif g:donvim_complete_engine == 4
+
+                call dein#add('Shougo/neocomplete.vim')
+
+            endif
+
+        endif
+
+        if filereadable(expand("~/.vimrc.bundles.local"))
+            source ~/.vimrc.bundles.local
+        endif
+
+        call dein#end()
+        call dein#save_state()
     endif
 
-if filereadable(expand("~/.vimrc.bundles.local"))
-    source ~/.vimrc.bundles.local
-endif
-
-
-    " Refer to |:NeoBundle-examples|.
-    " Note: You don't set neobundle setting in .gvimrc!
-
-    call neobundle#end()
-
-    " Required:
     filetype plugin indent on
-
-    " If there are uninstalled bundles found on startup,
-    " this will conveniently prompt you to install them.
-    NeoBundleCheck
-
-    " Put your non-Plugin stuff after this line
+    syntax enable
 endif
 
 
